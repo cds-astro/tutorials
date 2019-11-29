@@ -4,3 +4,4 @@ ipyaladin
 numpy
 plotly
 pandas
+scipy
