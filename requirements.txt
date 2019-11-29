@@ -1,0 +1,6 @@
+astropy
+astroquery
+ipyaladin
+numpy
+plotly
+pandas
