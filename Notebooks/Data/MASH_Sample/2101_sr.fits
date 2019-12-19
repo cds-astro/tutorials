@@ -1,0 +1,594 @@
+SIMPLE  =                    T / file does conform to FITS standard             BITPIX  =                  -32 / number of bits per data pixel                  NAXIS   =                    2 / number of data axes                            NAXIS1  =                   89 / length of data axis 1                          NAXIS2  =                   89 / length of data axis 2                          EXTEND  =                    T / FITS dataset may contain extensions            COMMENT   FITS (Flexible Image Transport System) format defined in Astronomy andCOMMENT   Astrophysics Supplement Series v44/p363, v44/p371, v73/p359, v73/p365.COMMENT   Contact the NASA Science Office of Standards and Technology for the   COMMENT   FITS Definition document #100 and other FITS information.             PLATENUM= '17992   '           / Plate number                                   EMULSION= '4415    '           / Kodak emulsion type                            FILTER  = 'OG590   '           / Schott glass filter type                       PLTSCALE= '67.14   '           / [arcsec/mm] plate scale                        FIELDNUM= '1       '           / Sky survey field number                        EPOCH   =         1.998267E+03 / Epoch of observation                           DATE-OBS= '1998-04-06'         / [yyyy-mm-dd] UT date of observation            TELESCOP= 'UKST    '           / Telescope on which the plate was taken         TELETYPE= 'SCHM    '           / Type of telescope                              SITELAT =  -5.458410576565E-01 / [radians] latitude of telescope                SITELONG=   2.601766194458E+00 / [radians] longitude of telescope               LST     = '17:03   '           / [hh:mm] local sidereal time at start of obs    MJD-OBS =   5.090876308807E+04 / Modified Julian Date of observation            INSTRUME= 'SuperCOSMOS I'      / Measuring machine                              DATE-MES= '1999-10-26'         / [yyyy-mm-dd] Date of this plate measurement    RADECSYS= 'FK5     '           / Reference frame for RA/DEC in original file    NHKLINES=                  142 / Number of lines from house-keeping file        HKLIN001= 'JOB.JOBNO                HAR0183' /                                  HKLIN002= 'JOB.DATE-MES             1999:10:26' /                               HKLIN003= 'JOB.TIME                 14:30:45' /                                 HKLIN004= 'JOB.INSTRUME             SuperCOSMOS I' /                            HKLIN005= 'JOB.ORIGIN               Royal Observatory Edinburgh' /              HKLIN006= 'JOB.SOFTWARE             /home/scosdev/v033' /                       HKLIN007= 'JOB.OPERATOR             ebt' /                                      HKLIN008= 'JOB.USER                 htm' /                                      HKLIN009= 'JOB.USERREF              T-1088' /                                   HKLIN010= 'JOB.UORIGIN              roe' /                                      HKLIN011= 'JOB.UCOUNTRY             uk' /                                       HKLIN012= 'JOB.COMMENT              Digital colour maps of the sky' /           HKLIN013= 'JOB.IAM_FILE             iam.srt' /                                  HKLIN014= 'PLATE.TELESCOP           UKST' /                                     HKLIN015= 'PLATE.TELTYPE            SCHM' /                                     HKLIN016= 'PLATE.PLATE              17992' /                                    HKLIN017= 'PLATE.MATERIAL           film' /                                     HKLIN018= 'PLATE.EMULSION           4415' /                                     HKLIN019= 'PLATE.FILTER             OG590' /                                    HKLIN020= 'PLATE.PSCALE             67.14' /                                    HKLIN021= 'PLATE.FIELD              1' /                                        HKLIN022= 'PLATE.RA_PNT             14.933' /                                   HKLIN023= 'PLATE.DEC_PNT            -60' /                                      HKLIN024= 'PLATE.RADECSYS           FK4' /                                      HKLIN025= 'PLATE.EQUINOX            1950' /                                     HKLIN026= 'PLATE.TIMESYS            BESSELIAN' /                                HKLIN027= 'PLATE.EPOCH              1998.267' /                                 HKLIN028= 'PLATE.EXPOSURE           15' /                                       HKLIN029= 'PLATE.UTDATE             980406' /                                   HKLIN030= 'PLATE.LST                1703' /                                     HKLIN031= 'PLATE.MJD                50908.763088072' /                          HKLIN032= 'PLATE.TELLAT             -0.54584105765654' /                        HKLIN033= 'PLATE.TELLONG            2.6017661944583' /                          HKLIN034= 'PLATE.TELHT              1145' /                                     HKLIN035= 'PLATE.TEMP               273.155' /                                  HKLIN036= 'PLATE.ATMOSP             1013.25' /                                  HKLIN037= 'PLATE.HUMID              0.5' /                                      HKLIN038= 'PLATE.WAVE               6500' /                                     HKLIN039= 'PLATE.TROPL              0.0065' /                                   HKLIN040= 'CALIBRATION.CALTYPE      SPLINE' /                                   HKLIN041= 'CALIBRATION.STEPWEDG     KPNO' /                                     HKLIN042= 'CALIBRATION.NSTEPS       16' /                                       HKLIN043= 'MEASUREMENT.ORIENTAT     news' /                                     HKLIN044= 'MEASUREMENT.EMULPOS      UP' /                                       HKLIN045= 'MEASUREMENT.SCANFILT     6' /                                        HKLIN046= 'MEASUREMENT.SOSP         552' /                                      HKLIN047= 'MEASUREMENT.STEPSIZE     10' /                                       HKLIN048= 'MEASUREMENT.SCANLEN      1152' /                                     HKLIN049= 'MEASUREMENT.A-XMIN       3926000' /                                  HKLIN050= 'MEASUREMENT.A-YMIN       3926000' /                                  HKLIN051= 'MEASUREMENT.A-XMAX       31574000' /                                 HKLIN052= 'MEASUREMENT.A-YMAX       31574000' /                                 HKLIN053= 'MEASUREMENT.X_PNT        17750000' /                                 HKLIN054= 'MEASUREMENT.Y_PNT        17750000' /                                 HKLIN055= 'ANALYSIS.NPARAMS         32' /                                       HKLIN056= 'ANALYSIS.AREACUT         8' /                                        HKLIN057= 'ANALYSIS.AP-PARAM        1.07' /                                     HKLIN058= 'DEBLEND.DB-PARAM         1.05' /                                     HKLIN059= 'DEBLEND.DB-AMIN          16' /                                       HKLIN060= 'DEBLEND.DB-AMAX          100000' /                                   HKLIN061= 'DEBLEND.DB-ACUT          8' /                                        HKLIN062= 'DEBLEND.DB-LEVEL         16' /                                       HKLIN063= 'DEBLEND.SELECT           PARENT+CHILD' /                             HKLIN064= 'SKY.SKYSQUAR             64' /                                       HKLIN065= 'SKY.SKYDEFN              MEDIAN' /                                   HKLIN066= 'SKY.SKYFILTR             bdkjunk' /                                  HKLIN067= 'SKY.F-THRESH             8' /                                        HKLIN068= 'SKY.F-SCLEN              4' /                                        HKLIN069= 'THRESHOLDING.PCUT        5.999994' /                                 HKLIN070= 'IAMQC.AREAMIN            8' /                                        HKLIN071= 'IAMQC.AREAMAX            88449' /                                    HKLIN072= 'IAMQC.MINMAG             -30765' /                                   HKLIN073= 'IAMQC.MAXMAG             -17457' /                                   HKLIN074= 'IAMQC.MINELL             0' /                                        HKLIN075= 'IAMQC.MAXELL             1' /                                        HKLIN076= 'IAMQC.MODELL             0.12' /                                     HKLIN077= 'IAMQC.MODOR              22' /                                       HKLIN078= 'IAMQC.MIDELL             0.24' /                                     HKLIN079= 'IAMQC.MIDOR              72' /                                       HKLIN080= 'IAMQC.MEANELL            0.2802208' /                                HKLIN081= 'IAMQC.MEANOR             80.70791' /                                 HKLIN082= 'IAMQC.NUMOBJ             1939429' /                                  HKLIN083= 'IAMQC.PARENTS            1158490' /                                  HKLIN084= 'IAMQC.RANGING            TRUE' /                                     HKLIN085= 'IAMQC.LANE_1             92643' /                                    HKLIN086= 'IAMQC.LANE_2             183231' /                                   HKLIN087= 'IAMQC.LANE_3             269815' /                                   HKLIN088= 'IAMQC.LANE_4             349653' /                                   HKLIN089= 'IAMQC.LANE_5             426152' /                                   HKLIN090= 'IAMQC.LANE_6             509535' /                                   HKLIN091= 'IAMQC.LANE_7             592364' /                                   HKLIN092= 'IAMQC.LANE_8             677220' /                                   HKLIN093= 'IAMQC.LANE_9             764111' /                                   HKLIN094= 'IAMQC.LANE_10            851682' /                                   HKLIN095= 'IAMQC.LANE_11            933622' /                                   HKLIN096= 'IAMQC.LANE_12            1011567' /                                  HKLIN097= 'IAMQC.LANE_13            1085999' /                                  HKLIN098= 'IAMQC.LANE_14            1160116' /                                  HKLIN099= 'IAMQC.LANE_15            1235621' /                                  HKLIN100= 'IAMQC.LANE_16            1311830' /                                  HKLIN101= 'IAMQC.LANE_17            1384160' /                                  HKLIN102= 'IAMQC.LANE_18            1454243' /                                  HKLIN103= 'IAMQC.LANE_19            1525510' /                                  HKLIN104= 'IAMQC.LANE_20            1603698' /                                  HKLIN105= 'IAMQC.LANE_21            1687791' /                                  HKLIN106= 'IAMQC.LANE_22            1774227' /                                  HKLIN107= 'IAMQC.LANE_23            1861088' /                                  HKLIN108= 'IAMQC.LANE_24            1939429' /                                  HKLIN109= 'XYTORADEC.STARCAT        /scat5/scos/data/tycho2.FIT' /              HKLIN110= 'XYTORADEC.BRIGHTLIM      9' /                                        HKLIN111= 'XYTORADEC.C-EQUIN        2000' /                                     HKLIN112= 'XYTORADEC.C-EQTSYS       JULIAN' /                                   HKLIN113= 'XYTORADEC.C-EPOCH        2000' /                                     HKLIN114= 'XYTORADEC.C-EPTSYS       JULIAN' /                                   HKLIN115= 'XYTORADEC.R-EQUIN        2000' /                                     HKLIN116= 'XYTORADEC.R-TSYS         JULIAN' /                                   HKLIN117= 'XYTORADEC.MAXITER        10000' /                                    HKLIN118= 'XYTORADEC.RCRITINI       500000' /                                   HKLIN119= 'XYTORADEC.RCRITABS       40000' /                                    HKLIN120= 'XYTORADEC.RCRITREL       1' /                                        HKLIN121= 'XYTORADEC.RCRITFIN       3' /                                        HKLIN122= 'XYTORADEC.HARDCOPY       /scos1/scos/HAR0183/HAR0183.ps' /           HKLIN123= 'XYTORADEC.REFSMULT       5' /                                        HKLIN124= 'XYTORADEC.RESDMULT       1000' /                                     HKLIN125= 'XYTORADEC.RACOL          RA' /                                       HKLIN126= 'XYTORADEC.DECOL          DEC' /                                      HKLIN127= 'XYTORADEC.RAPMCOL        PMRA' /                                     HKLIN128= 'XYTORADEC.DECPMCOL       PMDE' /                                     HKLIN129= 'XYTORADEC.PLXCOL         NONE' /                                     HKLIN130= 'XYTORADEC.RVCOL          NONE' /                                     HKLIN131= 'XYTORADEC.MAGCOL         VT' /                                       HKLIN132= 'XYTORADEC.STARSC         3967' /                                     HKLIN133= 'XYTORADEC.STARSU         2279' /                                     HKLIN134= 'XYTORADEC.COEFFS_1       17.788895407449' /                          HKLIN135= 'XYTORADEC.COEFFS_2       -307.49746464606' /                         HKLIN136= 'XYTORADEC.COEFFS_3       -0.694740922545' /                          HKLIN137= 'XYTORADEC.COEFFS_4       17.58097771701' /                           HKLIN138= 'XYTORADEC.COEFFS_5       -0.64799525273082' /                        HKLIN139= 'XYTORADEC.COEFFS_6       307.47687956916' /                          HKLIN140= 'XYTORADEC.DISTR          -0.33333333333333' /                        HKLIN141= 'XYTORADEC.RA_PNT         3.9257672447181' /                          HKLIN142= 'XYTORADEC.DEC_PNT        -1.0516858788559' /                         HISTORY = 'SuperCOSMOS data written to FITS format' /                           HISTORY = 'Any questions/comments/suggestions/bug reports should be sent' /     HISTORY = 'to N.Hambly@roe.ac.uk' /                                             ASTSIGX =         2.200000E-01 / [arcsec] std. dev. of astrometric fit in X     ASTSIGY =         2.100000E-01 / [arcsec] std. dev. of astrometric fit in Y     CRVAL1  =   2.278375000000E+02 / Axis 1 reference value                         CRPIX1  =   4.404677292437E+01 / Axis 1 pixel value                             CTYPE1  = 'RA---TAN'           / Quantity represented by axis 1                 CRVAL2  =  -6.114805555556E+01 / Axis 2 reference value                         CRPIX2  =   4.461309974216E+01 / Axis 2 pixel value                             CTYPE2  = 'DEC--TAN'           / Quantity represented by axis 2                 CD1_1   =  -1.861386655063E-04 / Co-ordinate transformation matrix              CD1_2   =  -8.634112970684E-06 / Co-ordinate transformation matrix              CD2_1   =  -8.548702477904E-06 / Co-ordinate transformation matrix              CD2_2   =   1.861854786754E-04 / Co-ordinate transformation matrix              CDELT1  =  -1.863388062193E-04 / DEPRECATED - Increment per pixel on axis 1     CDELT2  =   1.863816320984E-04 / DEPRECATED - Increment per pixel on axis 2     PC001001=   9.989259311191E-01 / DEPRECATED - Axis rotation matrix              PC001002=   4.633556018665E-02 / DEPRECATED - Axis rotation matrix              PC002001=  -4.586665746865E-02 / DEPRECATED - Axis rotation matrix              PC002002=   9.989475710630E-01 / DEPRECATED - Axis rotation matrix              CROTA2  =   2.642332284319E+00 / DEPRECATED - rotation of axis 2                EQUINOX =         2.000000E+03 / Julian reference frame equinox                 DATATYPE= 'REAL*4  '           / Type of data                                   DATUNITS= 'INTENSITY'          / Units: transmission, density or intensity      XPIXELSZ=   9.997332300000E+00 / [microns] X pixel size                         YPIXELSZ=   1.000000000000E+01 / [microns] Y pixel size                         OBJCTRA = ' 15 11 21.000'      / Centre Right Ascension (J2000)                 OBJCTDEC= '-61  8 53.00'       / Centre Declination (J2000)                     OBJCTX  =   6.356046772924E+03 / [pixels] Centre X on plate                     OBJCTY  =   8.766613099742E+03 / [pixels] Centre Y on plate                     DATAMINI=         2.028221E+03 / [DATUNITS] Minimum pixel value                 DATAMAXI=         7.257661E+03 / [DATUNITS] Maximum pixel value                 DATAMEDI=         2.231737E+03 / [DATUNITS] Median pixel value                  DATAMODE=         2.169225E+03 / [DATUNITS] Modal pixel value                   FLATFLD =                    F / Are the pixel data flat-fielded?               END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             EéjEéEÆEÄJEvmE1ÿEŞßE'ñEê-EªwE×E¥\E
+2½E9¸E0øEGìE‰(EĞ‰EõäE
+¼òEE¢>EF2ELÁEPE"ıEÔoE
+ÄLE%ñE!E…qEEkETZE4ıÓEUuÄEU	ÁE8ĞEE'ñïE¾+E;†EÅˆEHäE UºE!EJ·EVÖE¢SE	Å7E	fEe-EÊñE
+7ãE@*E
+ê"E
+(nEºE¯nE
+Ô
+E%[EÖÉE3EÈgE	 ²EÌEE–EMeE'ÎEÚøELÓE”TEˆZE¹‘E-EwËE'E
+ŸEó(EEwdE	E¤ûE‡ÊE‘EE[ÁE }E=GE *«E?9E$Eÿ^E§‡Eü¶EÕîEn.E‹´E,CEW·E¦@E„E	úDE8”E	…jE'HE‡
+E·Ep’EHEsÌEëE®„E&EF³E6¾ExE’E\ÛEU=E‰½EßEyE°E45jEXúEYƒ»E>yyE%]E¤.EzE.AE'ïE.E2ØmE'vEíKE¯äEìoE
+ãÓE
+\E
+	¡E	ÊNE¤(E`2E	´ùE‹åEñ7E#EtåEĞE,€E±–E	¾EÖÉEÂE
+âÆEà»E“ÔE¦´EQEdE%E;€EŠÊEoÿE
+ºÜEÖE­ºE
+ÎE}şE´dE5LEE´Ej¦E¥EyEFEºE±XE
+á¸EñEöÑEÆêE—DEE&2'E"ËE_ÏEúEpŠE™§EÓ#EE`Eì¨EW%E•ƒE¹EçæE#·E
+ÒüE	€_E
+ˆ¶E	~\EöoE
+nºEs6E	@E	 ²E@EwRE&Y3E7y*E;GÂE,˜gE!–íEWEãÕEª
+E¿İE)™¾E)¸E"¦•E'6Eï$E_ÖEôPE0@E1ÔE_ÃEvE
+ÄLE	‚aEkøE/QEè›EgEÿ/E€E2EìE1”EcEùEE²-E—EÕEFdEéEÎzE,qE
+2½E@.E†7Eÿ±E	e1Ec`E€–E	pBE	ˆsEwwE	5E»EëEµÑEBE	Ü¡E!İEPaEX³E³JE¸“EhEw›E+SE(ÕùE\YEƒÿE´ÔE
+ÄLEAEÿ`EäE74E|ÛE	3E*EOEŒEÕÓE/ÖE/ÔE	AEãE
+ÇpE
+‘E	€_E	šŸEş^EúàE‘-EŒE’E“ÔEèçE¼IE:ÃEãåEwâE‚HE1zE}_EåGEr†E"zÚE%«ÚE%~ÁE!%÷Es,EwÑE¬^E3Eç­EàºE'`·E11„E3äWE"¢lEo5E(!EZéEO:E•E
+¹E
+yEñ7EÆEš˜E¾E¥EÌìE
+L‹E
+ÖE	Ä5Ex_E;ES~E’ùE	˜EVêE	wOE
+|;Eå˜EœEw«E•EE\öEJEE&‚E ½Em1E¼‘E FE"ÔŸE»§Ep£E€E®”E`šEÛ)EE¿EÈâEXjEİaEë1Eå!EE5vEÚ\EgãE¬OE	P"E
+E^BEdE
+oÂE
+?EÆ!Ee`E°Eë@ET3E	=E
+¾ E-ƒEÜEÚ›E,
+EñhEAÒE“aE#Ñ†E4sEA¹E>ĞµE-ï’EÚpEyjEèE®”EV_E/‹E()?E4cE9=¿E%öÀE°Eó¶EMOEïgEKŒE	1E
+’E	}[E¥EËÕE
+¹ÎEş‡Eå˜E	n@Ej§EãEc^E"ÈE–`E‡3E	h9E¦–E	AE½)E†…E‡µEcïEpºE‡¸E‰(E!ËE˜¨E³jEúeE·E íE”E`E&?EïæEâ4EÁE6E
+FXE&ZE—‘E´E(„Ec»E'HEßöE»TE¨E‚TE%EEEóûEÑ«E	Ÿ±EpŠEYæE˜ÀEá¶E	£¼EräE¸E	T%E¬5Ed9E
++‰E„¦EuE}HEÄ{E3sßEP¾ EfOŒES.äE8º‚E$ EEiEÌOEˆ‘EÀELEö@E"…?E$	ªE^²E»³EAE\öE	^*E£†E¿EöEÏİEµíEÂãE
+äE/€Ed9E}pEÇ
+EEûoEN0EµüE
+E<ÔEå“EŞßEš®Es¬ECE)E	šŸE	%%E3TEÃE¡jEU%EŒdER]Eî–E‰Eê2E$`±E*‚¤E+ntE 3EÓÁE•E§E
+¢ÊE
+àªE1¢E
+Eæ¬Es6E	‚aEüE	MEÜEüŞEÆúE¥ìEáÂE*E	+E	sEE	4EŸ¬EÒrEéE¨Ep•EóE	KE­ºEù)EcHEùE4¤§EV./EpØºEYW«E4E ÔEô@EjEëEnşE»8E†EEU@E«E
+WêE& EaiE
+6ÛEKÊEŠE	ME	f2E:XE
+3ÅEªwELÁEàøE>/E=çEûE²@Ex$E%E.¾EBE#·EákE¬ÈEŒE	CEeME™µE	`,E
+óŸE'|E	MEnÎEAEÒEjTEüEëE+ºÆEAB‹EIŒ¼E=ıûE!ÇÂEÔEÆìEÌÇE¸EmÓE	ñEB€EvE	}[EJ²E
+äEaˆEz€Eò¡E+ÖEéyEEÑ}E/³E»Eœ$EjîEâ¶EE÷E6zEÑE	ŠvEÍ„E3SE‚şE÷]E(®ËE8ŞÑEG©E=E$ÁREwêEÆ¿EmEW+E>fEÀÄEŞQEÌjE˜E±–E	V"E¿XE	W#E	âÁE£¿E´ßE
+æøE¯sEğ@E EèEŸØEvÔEÊfEkEÏEBºEw5EÑEä¤EbàEÔEÁŠEyE!èE‚˜E…5E[E	ş\E
+ÀEV@E€E
+KƒE	Œ}EEšÎEE±™E+ˆ²E=í¥EP%5EAø°E"ç‡EOfEØvE‡"EETEL)E'¾Eš˜E¶QEî‰E`2E‹>E
+‹ØEaGETOE@»EçFEMOEÁŠE[EµÓEÅEyE¦ŒEøkEkoE.”E&ÏEwÑEàEòE´ïE%E%Œ?E!øÕEEUİEr¡E	E!6E'¬ŸE'=TE{E¹E/3E€¦EîIEÀ­E–7EÉâE
+hE"IEô$E
+¨E‡
+E{GEc»E¤(EËìE¥âE‹½EĞÕEkâE
+cOEÍE»EeqEn«EÊBE†Ew¶E, EÅ£EbEÎâEÖCEØ1EEÔ7E¥»Eı‡EºÇEekE+xE*!ËE*wE0ø4E+EàEmïE\E`5E'ÕE¾5EÖ›Et¼EÊ´E
+£×E<2EÿE²E¶ÇE
+ªE
+‘E	íşEE,ÄE8iEÀLEÅ1EİëE½oEå“EJêE‡­EòöE}ìE¡«E&nEÓoE
+³E•E [Eš¡E^×E¼´E5áE#àE2QÚEGŒEL}uE3wE®}E§E2EEßE9oE½El„E:FEôËEvE©}EÅ£EÚ®EçæEµÓEp'EZQEã®E_ÓE\ËEòEcE£†E~EÛ—E8“Eæ"E´EíE
+Â1E
+—PE	EEÄE
+EU7EEÀ§E‘^E8ïE!»‡E#s<EËÌE¸EfE`>E<HEE0E$àE‰XE _ˆER E‘¢E	2EQEãªEÆE©~EïE	#(EÜ÷EWÅE¾@EiïEÏİE8/E
+l¥E
+6ÛE¶EzúEËEëEvœE EÈöE³¿ER`EÙ_EUdE„³EAWEÈNE •E,*REE“2EjqEwzÆEQ¶ÅE-Eù©EøúE^„E&bjE14E*iE óøE‚¨ER—ElNE	úDEÖCE?9E'E
+-˜E	ºE±OEfLEÒ EìòE
+TEœJEZEŞ'ExLE0åE9EA¦E'}E
+7ãEKªE
+Ì¯EkºE}EèE†7E¸¡EkE B!E&ÚêE~`EÈNEAE›;EnşE!EY\E¶RE_«ExhEíµEyÛEKEº?E	“ŒEïUE* EÈ-EµoEŒ	Eè˜Ec]E¹8EìME8“E4	E+E
+(nE™EYõE	³òE
+äE]ÑE
+(E_E‚E|`EôPEEéTE<E^E–¹E%cÈE?R»EeeşEs¢EQx&E*ìE×E0ÅE"ªÄE<sçET4~EGn:E40E ‚ôE”*EßEÍçEìMEŒ‹E¶EjîEáàEuµEv÷EšOEûoEèÔE	CE|ãEÀLE£œE‘ZE(‹E	("EÑ}EÚêEM¹E«rE
+1¶EjE%®E½;Ek}E“ôE´HE‰ÁEwèE³EE×xEøªEN¢EEĞNEoÿEùE½E1E~8E>âE	ÓwEğ@E©E¢oEãFEXiE†àE½oEÈOE­YE	GEÔ˜EÄñEÜ~Ex$EãªE©}EËÕEúàEO¥E.aE»eE(‡ÄE$ãE²ÈE¸WEµäE¶RE×ÉE‘µE)£ÁE<¿;EIÜOEBãçE%®E¢Eİ>E,“EP\EoQEdEN+)E-Q¥E›EÏ3Eï]EEEU¬EŸ¬E9Eü¤EGEEEEEÊÏER—EéjE	n@Eı‡E
+±lE
+Ÿ§E
+ÙJE
+flE	›¡E
+›E Eç”EµíE1ÜE™‹E‹GE7àEU·E"9EÇE-{EÒ%EXEıdE£™E
+âÆE	P"EEEE3*E$yEt¨EqaExƒE
+nE^™E­mEx$EÄE—E
+‡­E[TE
+1¶E.ëEEY‡E¾Er}EOKEŒúE	BE¶CE	³òE"EM–EE7¸ªEIˆE;·ÛE'ÙüE€üE’Eù=E«tE¨OEÏïE!J!E,Ã²E%uEˆNE¿¶E?CE$¬E@hMEY,EY¡5EB<
+E)bÖE'Eä˜E
+ÜsEM{EVE¾E•·EØòE¥
+E	ãÈE	qCE	AEİ±EôĞE	¾E8E«!E%[E	Ö‡E–ÜE
+¼òEp'EdEEËÄEL¹E—EUİE?•E8Eš|E¯SE9EÉrE;€E´®EZEE‘ZE	ŠvE¼EÆùEÂEH[EÔÂE
+ßœE
+Í½E	ƒEEØ$Eî‰E‚TEÜE	?E	tGE
+.ŸE´E
+M’EzÌEKEöaE•âE’ùEƒ}EûöEEEãE-ÅÄEHéûE^EP7wE1†—E¨³EÔ¤E¥E¾]E
+ŸE-ùEn(E ÔE‰EóõE¶µEÕEëğE,*RE:jëE?´)E;)E-À9EÉE$€E
+ÜsEN0E{E¨E»\EÖCEdE:E
+
+¨EA†E¼)E
+‚{E	½E@.E•yE°¢E®”EüE»TE3EÂßEME
+XòEÁĞE
+#EMEx¥E-PEgEm×E.¬E-EC¨E¤üEóEÒE
+Ÿ§E	/EŸ E§‘EªcEñE«E
+„‹EºEÍEqÏEÆ;E		IE–ÜE	…jE	µúEø^ELÄEKÙEp•E…EümEÉ«EéÂEEEE/ÖEFÍEÚÌE  E3m~EHÕEB„RE+ıEyxE5vE+-EAõE#Eƒ¼EßPE{ëEwÛE¥E¯‰E‰½E×ãE(F;E76E@'¢E?–mE4¡[E#FE ˆE„bEUCE²EÍE¢™EE^EÕyEûEÀ®EìE"0Eî‰EF|E‰E„0E#9ÙE GüEûœEEEıÅEĞCE‹.EÆ‘EL¹E´ÔEe'EVnE‡E
+wE }EÇ“E
+µE? EoE™µEoŸE
+ùøE
+Ì¯E`2E–E2+E
+Ø<E/ÊEîENüE<E+İE
+ùøEùfE¸E7oE	)"E—°E¢™E_œEÓfE4=E@*Eğ@EæE9cEºëEA Eƒ¼EhE$`±E)ÕşE*}ŠE$¸€EeE²;E‡EºëEg†EPaE¥jE/}E>ÃE rEX²E§€E!4E4!äEP¥…EbqƒEV./EA#ÀE'*EÂƒEq_E
+:ÿE¦ŒEÅ1EÜ÷E˜’E|÷Eı€EÚ]E	4E	ƒE­#E§E"rE6qED~E>¿E9!E+OE%‡Ec^E’îE-İEx•Eb&E8“EEÂEù=E
+ÿ>E¹+E
+!?E„E
+ÎEÕOE	«×E	@Eá?ETE‚ EMeEÑEµäE…EoEb¼EE—~EW[E
+
+¨E›ÂEŸôEæE
+Í½E	ş\E	Å7EéğEa,E	çÙE
+±lE/³E	ÛŸEnEÂøEÄE–¹EçyEi\EGDE\öE¤ûE /E—mE0¯EøªEÌ¬E’EÜUEõ¸E™EC}E(İZECwEwhE‡ƒEƒ±éEK*åE&ä?EÂÀEà®EAWE¦ŒEÕOE
+ãÓEÇûEŠEBºE‚EdvE‰@EbˆEÏPE7u¢Eb‹ÍE†TE‚ÉpE`Ë1E=œ1EãEPãE7NEZ›EÛ)E	zSEôéEWàEj§EU=E
+>E
+àªE«E	Â,E».E3‘E	‚aE	>Eß¬E•ÉEKEæºEÚEÔÁE8ÅE!ÏæEåwE3ÔE:gEİEË EöŞEf[E
+[En„E
+İE	™EçÁEdE¸¡EÂÒE	^Eº3E¿XE:ÄEYE^ÍEÜUEˆE@Ex½E3eE7àEŒmE™•E,,E&æ’E. ôE,
+RE#‚+E¾ûEŒE*…5EFœ	E€¨ĞEìÓE“&!ETÔE+?`Ea3E—]E	\(EÅ1E†YE!E£¿EJ«Eù&E´EMÌEæ\E}HE!L%ECÏ`E†±E¬€ßE­è	E‹üÁEVœ¼E9E,E­EÁE
+FXEÑ}EmÓEJ¾Eü]Ea~E@E	=E4dEeE®E¸Ew–E
+oÂE	‚aE" E%ÙE\SEÍE"ËE-áE0ÔE-²UE#‘!EËãE ½EòFE—E×E
+šnEmÜEŠ#E²öEí†E±EJäE¾ãE/ÖE».E3‘E	œ§E¨øE¥E¾+EdnE+AEİyE9*EE­#EnˆE#Q/EE™EV¸…EKæmE3×lE"ïîEÏuE#5šE;ŞÂEhi¼E‡-ŒE°VEL\E($mEQkE
+P¯E›0EKĞEmiE	İ¨EÑEèÔEBE’òE¬rEMtE¿©E!FE?1E‚xE­%E¶ÎE’}E]…EÊñEE¦–E	*#Ez­Ex‹EÛµEÇEûöE5‹EŒ‹EXE2ƒEG'EìE0½E	JEB€Ew\E$©E"REoÆE&AE6MEG°ER.§EJôME>+E,ìoEšE˜EN¢ERE‡™E†…E	ÿcEÈâE
+ƒƒE€¦EÍEİ†EÜóE	Z&Eû¤EÆ!E2E¨'E/wEÉñE
+„‹EósEˆ;E
+cOE{îEh#E0†|E`ÛEƒnÆEtŠtE:NE ®gE­šEq	E)…E;jhEJ'E@NgE/‰ EÉcEöÑEöúE
+[E4‹E	5ERmE@“EE0E`,EıE,qE‰ÛEjE2ØmE\yEˆRE‘×ÜEy6ùEG¥ìE²öEUBEó–EÊ´EE¬5E
+.ŸE¶E[Ew5EêŞE¼E	uMEr}EÕyE2ƒE
+E:KE$E
+wE?ÆE%ĞE>;‘EaİE„²÷EçE„çdEgZEC¥|E+D™EqdE|ØEZ­E{âEbE—mE	¥ÃE
+ÕEpºEfIEyšEMÌE‚TEµHEàòE9E}ïE
+ŞEƒNEäEÛ)E
+ ´E
+ûEÖE}£E1•ÖE_| Eƒ©~En/‘E6ôE¼ E<E!ìEÊıE ¬pE)tJE¤wEÿ>EÆE–5E?²EoEÿ^Eê_E”ÎE6E'øEJ–E	ş\E
+ÆbEàòETEd E"¬ÙE4RÀEM2ñES(kEDñE1n8E¼Eˆ€EÇ<EÆìEkE¶ŞE…5E
+7ãEx$EéjEmÓE½6E	9EgÊEE®2Ey’Eº2EÄE±E«ôE2û E\˜ZE“3ÈE·bEÇi¼Eµ:*E‘ÓEd’˜E;êtE&ûE
+:E)ŸEÔE#(EË	E
+:ÿE€4EQÚE¬5EósEWpEÀ¸E
+ŠËEE9‡EWEåIEodE	?EÓoE	åĞE™WEßÊE°·E*ÛECRERA®EC{¼E*³oEaòE\NE¤üEğSEÂÈEo>EûäE­JE
+YE	ˆsE	ME	»E\NEbpEZEr}E
+oÂE_«E²E	+EQÚEÂÈEy!EEÚøE(AhE( UE!±YEGEw–E¿E
+6E#àE-#E(‡ÄE0mEAEhE	ƒhE	‡rEo:EÙEU¬EUBEdE
+È}ERùE’QE‹AE DE2[-EgTE§?ĞEÕ*’EánvEÕn­E©&nE{[EFQ×E8#_E5e"E)~?EŒ%E@&EX—E!(EE	AEbqEw–Eå"Eq†EAE	¼E
+ùøEÕâEğEYÄEXEl|EóêE
+z&EtJE€EkE }E'6AE#âÅE*ÃEÊ]EñhE”E	E¢ËE¢Eá?EE	Ÿ±EŸ¬EÂE —E…E ÃE¸¯E¸´E?0Ex‹E».E0E²-EÛE¡EEEÛÓE EÈ!E [E>ûE
+¶«EOŞEÖ›E*éE;ö/E:'DE"ÃÚE«hE
+¤àE«E	ÿcE	
+IEÛØEHiE‘÷E
+VâEXxE
+¾ ESE rEÑFE1¿Ec`E¢µEÕ*’EâÍJEÙPÉE­è	E(EZ<óEYãµEbÒ5EJFE/²`E›ÄETE
+ÇpEh¬EØæE^­EËìE	sEEEÚEÍE	<Es¬E
+ŠËEMEbDı‡EøE	EE	‰tEu&E±dEocE8hEEcBEìGE3‘E3EŠE	GEİüE|uEù£E
+TEvAEj”E'´EØEgEîiEbE~ÄEı]E
+‚EäoE#EEßPE”EUEE=µEô‚EJçExwE~´E#æE!–íE.Ë§E,'¨E(EäjE÷kEóEæıE	?E¹£E<ÔEØ&E	QEñçE
+Ë¡EàEŸEµÄE'’yEM`ºEX_E¶ÎEÆnE¸îgE”óşEoÍEaÂEw»AE€jEfbkE;¬2E=ıEåVE¾EJĞECEËìEş9Eú|E¢™E^˜EWÅE1kE
+UÚE
+Ÿ§E	÷/EÀ®EQE¡“E	`ET3E½OEæºE
+<E8”EöçE
+ÚWEæ™EŠE-¬E'øE
+HgEnE
+öÉEìÜE	Œ}EÙ¿EÍE`¹E®ÙEt_EKÙE	g8E	$)E
+öÉEcHE`E|ÁE/}EaKE"ÌE 6`E!P.E(¸EyEAEwÛE%µEŸñEeÕEğEŠÚE‰ÛEÔ?E
+ECE¤E	ãÈEq†E@EOE	. E	yQE	ÌWEËÕEZEEä“EÍE3ÁE^=hE‚ÑE‹dnE€dEdÀJEIÖùEI-öEYfTEq¨ E`vE;¬2E ¦€Es,EÏÅEÌ,E]ãEÙE‰ÈEhİE-¥E/bE"ıEãE…qE	7EmiE	E”ÎE¼eES×E	ÍYE`,E
+ÿ>EÓ#E	Ù‘E74E‡
+E	ĞhE	e1EEEÌìE	E&E‘(E¹+E¢ÚE-›EµE‚E¬rE	0EÑôEÚ\E
+ŒàE¸EÒEŸEE{­E!Å·E,5E0ş9E,e@ETEòÏEëEÒ@E·E“€E¨E¸UEùOEê
+E
+|;E uE	ËPE„¦E	Ÿ±EfEéE
+oÂEˆ.E	¿E
+E_E$E,qEËäEÄ{E3œEBÖ5EJ}E>…ŞE6Ñ”E/ƒÎE/X]E7ÍëEC¸E:zE+ ñEdnEÔ«ElyEq*E
+²zE.”E	èàEW%E_8EÕ]EmÖEcçE
+kE)çECLEàE¶CE
+/§EÛE	g8E
+KEXuE8E	ì÷E£¿Eà}EéE	·E¶CEE	ş\EßE¿…E
+‘E”çE
+/§Eõ§E¬rE¤E
+‹E&ÏE>ûEEm‰E¹+E¡¹E™E!Ü)E:AŠEU¬E]-¼EN±E/;~E!L%EİoEÌEE
+R¾E‹IEY EêÑE—mE	{TEÍôE£œE
+‡­EµHE8”E	@E	=E¢`Eg*E
+¯WEZ›Eì~ElyE\BEw«EC}E"pwE*GìE%E%QØEªæEÜØE!†·E"ø\E½ïE½*E³«EAòEgèEmEšĞE
+-˜EŸEªgE	n@E
+ŞE©sE
+a?E-E7oEzúE™Eí†E:ÄE
+ªE^àEÂÈE_E(!E	ZEãE
+ÖE	”E´ÔE	¬ØE
+“!E¾‘E
+iˆEƒIEà}E›E{{EÖYE{!E„DE_ôE^vE¥hE®#ESE&‚EgÿE!`ME8’ºEp—E—hEºÂEˆMĞESbÄE4lãEÅE¢¡E_EM¹E	ME	ø6E³jEä˜E*¬E
+Í½E	áºEN³E‡HE‚ËEnÎEíE|(EzúEåxEèvE•âETE
+ê"E€EÉ’E’ñEtWEÓ9EÈ+EÊ‘EŞ^E‘^Ed‹Ei%Eô>Eú E·E?²EG…E>EäoE…[E
+±E
+ÿ>E¥E
+EümE•GE©E8“E
+)zE%[Ev:EÒE°ûEğExEJ²E0E
+ÚWEf[E4‹E
+sE•ƒEğCEØ¿EîgE¸¬EÍEÎ E	²ñEÜE	=EgE]E²RE(EsJEÔ?EØİE‘-E%=´EN%VEŒñïE¸8oEÄV²Eª½‡E€¸EH«E,ìoEE÷EBtE
+»äEßE
+Ø<EkÃEÊ>E!N)EädEøªE
+±lE
+E
+¯WE¥
+EÑ¼EğE	+#EHE	÷/E	uME
+éE	zSE
+®IEzÃEÆêE‚WETPE8JEÜçEfIE©BE½)EÈgE˜ÍE’ÉEN¢E‹åE8E{ÌE:E²-EfIEÑiEc*E˜™E
+€aE
+'kE¡×EƒsE	l>EÔÂEN2E–Ed®E!ñEtWE¶hE%®E
+m­E·»EúâE›=E‘÷EôtE’E´MEéE74E/³E	6E
+¹E	'&E",E	d0E£öE¦fE»uE$ŒE€E„tE&Y3EF&E‡ÙAE³MrEÃkEE¯–¬Eƒ˜­ELJçE7AEÒ E’ùEŒE
+ÎE†…Eø†E"ÎTE3ª[E5(E!±YE^EéğE	T%E{!EúâE:ŸEÅE‰wE¯¿E;ŸE
+üEZéE†ÜEVEÈÂE;EÃ¯EúeE
+@%EósEæ™E”ÎEáàE§äEéEˆ­EG'E	§ËE	Ü¡E
+Í½E8|E©óEJ$El«EÄE
+ªE	^EM{EEä~Er«E«ÔE"&
+E3—E<·FE2TöE ØENĞEi´E
+üE
+XòEóöEÅ£EËÄEräE%E¸¯E|uE¤³E	:E	‰tEMEæE™EZéE4=E E*E]'EÌ}E%|E:œ
+EmW4E‘|‰EŸ µESÌEeEDıE:÷IEÓEEØEğ@Ef6E~8EÍE.·µECàE>+E%Œ?EÂŒEOïEÎE€§EÜ~EÅE@E@El=E‹>EñìE	UEƒIEE-E
+¯WE²ßE>EFET†EKÊE	8ElĞE°iE/³EÂßEÿE	/E
+˜YE
+FXE
+üE\E°E†E
+·³E©}E	}[E¬rE
+TÎEîÓE.BE<ÀE-¤xEQÜ‚Ee¹ELèèE0˜ZEïìEŠ‚E
+‡­E
+.ŸEc]E/EF?E¦E
+edE
+øêEñçEL)EW5E	ºElĞE	DE	+Ec`E	AE
+q×E\E¸E¡E"ËE6
+EV®EsP2E~x×ElÁ¹EU¹ÂEQâËEW=^EJ«EEÇîE…eEY‡EĞCE%½óE3jJE6D{E'ÙER¡E¤E!EE-¬E	`,E•âE(^EÓ£EÜEUBE\½Eú>EËÄE¹8E$yE”ÎEXiEO®E
+…˜E
+$UEa~EÅE¡“E”ÎEÙÒE+E¸¯Et§E
+)zE	/!Eí¦E–UE	2Ep•EûoE.”E\âE8/E	|ZE]kE¥ÓE,oüEPïvEj·ES[E6KREaòE?E
+HgE	2EE­EºE
+HgE­E³7EŞwEZÖE§E¸ÜE¥’E?¤E
+ş0EAYE
+nE	{TE%ÙEBîEüE B!E9ÑnE\şaEj±EfF!EXñwEUâ¶EoÔ
+EŒÁE	AE_8E	¼E7oET3E²FE‚HE%99E"‡SEh8E÷>E/3EU=EøÆECE‰(EeBE~ÍEª0EìEs6E	+#EÑ}Eu¡E¶EºuEáàE3÷ETZE
+ĞáE‹IE
+ñƒE	^E@EHEWàEı’E	òE
+åêE
+ê"E
+rßEçâE€E\öE±WE<ÔE•èE8E¥âE£œE$ŒE*˜E"©E:èEH/´E:ëÕE(mEëE²E
+ECuE
+E‡E>âE»ıEş=EXE#^ECuE…[E0åEøÆE‡òE	ñE
+¶«E	¹E†ÜE¹UEÜÉE·ÇE uE8E[ŞEh8ÓE]üúEP7wEX'kE…³µE°•E9EE"IE
+£×EeBEocE–ÇE‰óEIoEÓVE,’E‹%E? E»TEvEF8EœeE‹>Eù&EáE¹¾EÙE’ÓEEJE$E	÷/E
+.ŸEõäE!7E
+E‹åE´dE	¹E	Œ}Eb|E>¶E	ï ECuE@÷EB€Es6E
+îYE	|EâÇEãœEQE uE	ãÈE`E	µúE¿ŒEãBE,E%cÈE)~?E$¿E'ElùEªE	=EÄJE0E‘³EAYEóE¡EKEXEéEª	EYæE0¨EïUEc]E3E.¾E$×E»EùòE,CEE03zEBãçEPUğEIMxEJïEU2)E…½E®-E>E-“E
+˜YE	êîE³QE
+'kE"REë±E/E¡«EšĞE›EÌ,EG-E	ªÕE!7E=AE	ÏfE¼hEDıEËïEóûE";E|(E	‡rEÖaEx•E	rDEöE	/!E·E	¾E	Ç?E	&%E	›¡E	AE
+tôEŠ]Ew¾E9E	€_E˜ZE€EKĞEÜ~E;RElÙEXjE¥ìE;´EE	Ã.E“ëEZ3EE%ENÛEŒEÏĞE±XEŸØEı€EU<EEœ
+E
+G_EBEK¸E&LEÎcEzeE
+EPE°]EÓ…EÚEyE’QE‚Ee¨EÛ§E!Á¥E#	2E0˜ZE3qE/ÃâE4O{E?,ÕE^]¾E…?“Eú‹E¢ÚE	@E	·E"œE
+ê"E6E¥»E	/E	¤ÂE	=EfE‘¢Eô—E
+-˜EëEZ_EñxE
+ïgE	.E§‡E¿E	MEóE
+ÏØE+kEóE•âE…>E5ªEGìEIÉEå™EEèvE
+•6E¸E¹+E	k<EaGE	<E	j;E˜zE)%EŒúEÕOEYEBEÒrE…E	n@E	@E	2EûXE^™E×¶E	”EîEò-EàE¿ÑELÌE\öE27E#>EyLElÙE¸“Ee E6«E[E§‹Ec^EÏîExLEIÖE
++‰EìGE€E\ÇE"ØE!R-E"®óEênE”\E$UÄE+ìE5šÛEG¿REf—E+İE
+4ÌE	vNEıE
+İE—×E¿XE ÿEtxEOKEq¸EÊxEÃøE‹åE	5EÆEhõE	T%ER—E	KEÅ£EÀLE®EaEg†ERùEBE¿ÑE»TEÁE`™Eq‰EëÁE^ËE	ˆsE	_+EÊEg*EøE	EE
+[EOE
+œ‰E_œEùEV”EŞßE	êîE
+¸ÁEYE
+‚{EûEsÌE
+JvE€EüEL“E¼EØòEÇîE&ZE
+›E¾EZ_E4ïEÃFE©E	c/E–¤E¸UEªãE=E»{EáE0¦E­mEÄE:Er†E"ĞoE$;›E·hE¦ÛE üEYüEıYE!-üE&Ñ•E˜ıEµäE	÷/ET†EECE E†9E®ÙEŸôEüŞEÅ1E•EéjE&ZEÔ7E"E
+bGEL“EŒE
+q×EqEü]EÓ¼EWeEìhEl„EÇ6EŞ±Ei¿EU¬E(7EQÈEF8E>¶EôïE	šŸE	òE&nE	¯çEø£E	BE
+oÂEa¼ET3EzúE+õE4‹E#&E
+ë0Eæ¬E¶ŞE
+4ÌEEHE	²ñE	4E3Eh
+E?¤E4ªEXÇE´ßEÅE3E¡“E­¨Eb|EzE	‡rE¶ıE²¦ElÙEøE²ôEØmEñ«EÏĞE8ãE:ÄEŞ^EşüE²1E”CEmÁEfíEÑñEİÏE‹AEûıE©ÃEwÑEë+E,qE
+©Eı‡E‡HEEØE	U&E*­Eø^EA–EE‰/E¥ğE±EYEöØEÍ¶EÚÌEÇ\E¥§EäE	*#EHáE*ERE
+EÈÄEÍÄE`EæE
+®IEúE¼EÕÓEÅGE»EÌ,EoE_xEĞÌEê+E?»EÖE	ËPE	QE>¶E¤E”çE–¤E
+Ë¡E;REÓfE1¢E¡×EZ9EPE0hE¾EËE
+oÂE	Á&EËtEòÇE@Eb&EMEQE
+YE	>E =EM{E7oEåúEIÉE
+IoE"0EáE«"EË	EŞ(E…ıE…E»èEtïEqöE©ÃEjE-‹EAEyEË	E0EZE.ÄEÕOE³¿E
+…˜E»E§‹E	¡´EÉÛE
+èEtEaEÖEøEÈNE	d0EbqE	/!EòxEó	E}EÑ$EĞ‰EE4SEfE6ŸE1ÿE9EZEŞ´E™EbÑE'ÎEB~E.éE¼·EÂ¸E~`EªÙEæ©ECuEÃE
+®IE
+ eEA†Eù»E¥\EÇ›E¢`EèµE óöE„@ES‘EÉÛE¸âE†ÌE	ì÷E`E+õEĞ‰E
+È}EMÌEÚºE‘uEØòEƒIEmÓE	ÑoEM¹E,ËE
+4ÌE	éçE	äÊEkEÍE)çEEÆêE™wE?E–¹E[ƒE" E 8UEŞE©óEŠ-EqE
+FXE›EoÂEëE
+üE
+HgEùfEÑ«E˜ZE
+íE
+^#Eù)E
+,E	¬ØEWpEØ1EAEÖJEèEƒkE¶ZE©gE€§E
+_+EeBEßE“E¢~EÂãE<HE.TE2ŸâE'ıóE!V6E!DE!ïE"öAE(˜ÒE'gÌE(®ËE Ğ!EˆEûòE
+‰ÃE
+ÜsE	šŸEÚºEìŒEÄ"E¶NEæEg5E‡E2ƒEŞ¡EÎ™E$ŞE
+Ø<E›0E›0E	ÏfEÅE
+¿E–7E
+EæE¸¯E
+<E
+YEéjE¸=EŒEjîE¥§E—°E	\(EÊñE
+NšE»E¥ÄE·6ECîE*òEv¦E"pwE|ÁEŠEöçE²E
+åêE}EŸôEÛÍE
+ÀE
+R¾Er}El2EÅEÕOEr²EGfE´ÔES‘E'øE	ôE	¬ØE¸´ETÄEÙƒE
+ÙJEÂE¸¯En³E EŒ‹Eó¶ET3EñEËiE0à(E@uHE/l™E)$ÒE*™¹E5,_E9mŠEDWsEHIfEAÇ‰E-€}EıfEãHE¨ED¤E	2EpºE	QEéÂE88EŒ	EmÖEIE ”Eh¬EE~EE”EéjEOïE
+EiE
+:E&÷E]ÑE©sEFòEÕÉEc^EN0Et/EöˆE›=E»‡E	`E	ğE
+¹E
+—PE˜„EgkE…ÁEğE£öE#‘!E4vE6«E3EöaE%µE$EDVEvmE5~E
+tôEÑ}EëÁE|
+E»zE`¹E
+ÎE+kE)6Eƒ‹EºÇEŸbE¤EákE8/E E¶ÇEû¤E´ßEğCE¼4EƒE„2EºE‘hE!E*ŒæE$Û×E'ÂE0QEHÒERT¾E]ÔßEcE]ìéEE$+E&ÌëEÅECîE$EO®E	7E½)E
+R¾EEkâEÜ÷Ei¿E“EZ9EdEEu¡E:XEà}E	³òE
+ÜsE	P"EœE®KEÕÉE	1E¢™EM¹E	ˆE«[E
+>E E‡
+EÎËEÄEíhE	÷/Eô$E} EE-E	›¡EL)EAE"ncEkE…XE•ÄEšTE7EœE
+<EîIE˜ıEÜóE
+ÄLE	Æ=E0E+ÖE|uE	UE
+ÿ>EÅ EÆ;E
+ûE
+µEå™E;E‘uEv•E¶KEF?E	T%EèEı`E×EÛE{€EgEïûEífEÿ–E¦ËE*°ŞE<8ÌEIñ—EXRsE[ÖVE]uEDÄ‚E'ãEXüEÛÈEMKE	õ&E	Œ}E
+jE	QE	DE
+ÑîEI„EáòEpÂEEíEù‡Ez4EyLEµHE}pEÆoE½OE` E	5EÙ¤EE†9E	!'E|ÛE	ƒhE E*ÜE-İE!Ed9EÎâE	±êE­JEï^E@¾E¨‚E	tGE	¦ÅEkDE|ÁER™E”TE9E±E’Eù)EJ²EïîE4•EÀ­E	 ²E
+¦úE9Eµ…E`,E|ÛE9E‹IE
+~PE	T%E	EE»EÁòE5REÁ,E®ÙE
+åêE¢cE‡EA‡EíES1E–UE‡ıEtE¿=EÚ›EÖŞE&w)E6Œ„E?(EDD”EEşZE2)€E †áEB~E»uE¡¬EĞE
+E’E„GE	±êEÿ±EzeE¯6EaKEEëEÎ$EÂE¸¬E·ÅEa,EbEèE	2E	<EE*PEÄE¶ EûòE
+ş0E
+"FE	E¡«E
+)zE
+öE
+”.E>¶EJêE@EïUE uE».EhE`EòÖEd.EW0E÷wELEà,E&‚Eµ	E?›EfĞEtEEÔ«E(fE{îEÎEÜQE‚ÉEÈºENErÎE‹åEõoE	£¼E
+˜YE“E·ÌEuYEÄE36EŸAE *«EÌ¬EE´E-ùEvAE	ıTEY E{E'õE-E1IÁE3
+íE'EíKE½E¡ÌE´dE	†kE	xPE	üME
+âÆEmÙEÜE`¯E:)E’E
+E0EdE¥E	•“E-¥Eì†E „E„E	ÛŸEc*E˜™E3TE­ºEĞİE=åEÉ˜Eœ
+E	”EµüE	½E)rEù)E"œEÁòE	–•E¤ĞE »E	
+IE‘#EŞwEJäEE”E¤E¢‰ENQEIEğyEy…E5AERcE!ê~EÍÆE¨5EßEf—E~NEWEp1EÔvEÉFE“ÆEï]EŒùE^àE
+™E
+ŸE˜ÒEGfEÄEÃèE]yE7;EHKE;&EcEÈÂE
+ÎÊEjEdEHËEh8E&E%Œ?E-g¬E)vEeÓE»eEcïE-›E
+™E—~E×1E:FE˜IEÎ|EåE#^EšÉE‹åE	®àEí†E
+­AE¡§E	$)EZëE—EÛ|EÜE.aEU7EjÖE'ñE«~Eå¥E(ÖEbˆE
+ÒüE|(EG E
+IoEòE<GE/³E~ÌE	òE3E•âE±E­ºE
+ãÓE3E¨›ERcE!%÷EEZEî¡E$«BE4Å˜ECª!EC{¼E8ÁÁE$Û×EñE(EmÁEc|E»E“DEóoEvEE
+ì=En„E_ôE
+O¢Eù»EO¥EyÛE>ûE]@EÌE ]E
+@%E	€_E¶CE
+¯WErğEE½™EªWE!h`E* âE)ï.E 8UEÆE…Eu‡EäEOıEé¹Eë‚E£áEbEÚE.ÈE®ŞE6ÓEŒ}E
+~PEêŠE„DE^QEl„Eø)Eu>EF›Eq*E³jEîIE=AEÂ|EÂŒEô@E™wE°‚EÚ®E& E‰vE	!'E	DEß/EXE‘#E¢¡E»‡E%E
+¦úE
+âÆEğrE®EnHE-‹EdïEL0E Ä9E0q­E\î£E‚xE…HsEam\E9òòE&±EùE¾tEØtEïuEßE
+ŞE[TEV@E	ÊNEf[E›ÂEeMERïEİ±EºÇE*¬EHtE3;E
+åêE’òEŸ E–ÜEÁÈE“mE	 YE.¬E*ÉE×ãE#¢BE#LğE ¨wEi‡EEUİE»>E8ïE%?ïE&?êEÂ`EL-EMKE	EõúE“EÈxEíhEñŒE6ŸEògEÈ+EàE5AEênEJPE¿¶EÑñEİÏEF˜EÅEèEaßE°•E	P"E
+WêE	UE(7E	¬ØE3qEôéE	·E«üE
+ªElÉE:EàE‡¡EæEµEi9E`BE!4E)·ÏEB“E„v9E§( E¬·OE@“ERû6E1·}E¸HER`EE®KE»E
+flE
+_+E™ÌE™ÌEËÄEkE…ÁE²EªeEş^E	@E` E	‚aE ÃE™EU¬E¹øEúEÁEjéEËÕE:EïûEÊEÿ+EeÓELEßöE¯ÊE¬ÌEûÈE‚¬E!T1EƒER`EFWE
+>E!E
+Ê”E VE*¬E×1EòîEwËE<E(ZE2ŸâE4+¤E,oüE$ÒşE!ÒE!ÏæE%ÍÖE)E'cE¤'E"DEäEJ²E/ÖE…)Eb|Eü]E
+&dEÏâEE¥Eu‡EÛESøE…tEğYEKXE¡E'E$taE1
+CEF¯âE„KEª½‡E±ò#E“EXÔcE0¶8E¨³E{òE-E·>E‚rE¶CEz€EôtE^­EßgEPE|E·Eµ‹E¨˜EÊEºEa,EkUEÛØEß/EÎEØ¿E|
+E“íE
+#ME
+ùøE¢cEQ EéEÍE¾tEP¿EqEfÎE¦FE«E¬ÌEpAE;€E	{TE
+™E	n@EBEæ¬E³EYEEüğE%ÿßE8‹~ET²«EW™EDoE. ôE)gĞE'ÂE-CéE7¼4E1wYE"œ)EL1EÚ¹EtE
+…˜EË÷EçETZE	"(E]E;{EUEupECEWPEŸõE)ŸEÄ{EÇEZE2)€EHhPEV'JEv{§E‘ÿKE–EuBæECAE(KE²EÇ´EÅ0EmÙE
+iˆEAEe-E	Z&E"ĞExLEÛEÜ~E]EªãE(aEÂE×EˆßEÁE²jE¹¾E•ƒE
+!EîIE
+åêE
+&dEªcE;&EX£EEï¥E
+åêE	9E	CE
+9òEjÖE2EG1Eä˜EÀ.EúfEr}EF8E±–E—~E´®E÷]EøE$—zE*ÚE9ş"ETá€Eb”—EZiÏE92ÃE/ôE(˜ÒE0bÓE;!YE5¿ôE&p<EÌE¥8E
+ 7Eé÷EÀáEA–E	:Eb&E
+lE
+ªE;­EQ EyjE‘bE ÇEäEû Ep¶E&{EBãçEhó«Ex¥ÊE~[ÏE(Em,[EGÄgE0†|E ñúEZ<E\BE	O!E
+„E	Î_E²<Eº3E%[E®E$ŞE}ĞE^EËE
+ÀE/€E…)EwwEœE	DEr}EÈÄE	ãÈE^E…E
+öÉEÔÂEV_E“mEEĞNEÃøE	ÍYE™E
+±EvEÍ„E	IEÿE§‹E	3EÊxE—¹EĞ‰Eà§E€_E`ñEstE3€E6–E#•hE(îŠE?5>EOÖvES{EEbËE9çÃE8ÿ‘E@RºEG6ÒE=WiE+AúE
+#E²<E	»EÅE_œEiE	@EíAEë‹E
+ßœENŠEõE?•EØmEı\EE%‹E" E2¢ÿEZ‡ÎEcÕE£	½Eœÿ(E„˜ŞE[LnE7‡?E" E°ÜEU½Eh’E·>EÑEŞE°E-›E‰@EiE3ÉEEE.†E
+ÿ>E¢~E	9E	èàE5LE×ØE’[ENcEİKE2ƒE	½E‡™EEÅÊE E%ÙEY E	Ü¡EvEÓE	'&EøEbEÇ“E
+¡¼E
+?Eø E¹¢EĞİE	°èE	¬ØEíhEÎEÇ“EVnEIİE]'E3¦EŞE0È-EKrEE]œğE^möEK
+EG‡„E\şaEe@şEMë2E0­AEôE4vEˆ€E	²ñEä4E
+üEÏİE	IE	 YE
+HgE5vE ÍEÓE¯‰E¡òEøúEëÊE%‡ÁEB¶KE~ŞÏE®-EÌrEÅ¨„E›âÄEgá2E=EyzE›¼EE¿…E9*E |EBtEtJE	ÒqE×ÄE
+gtE1PE`E.DEuóEPíEmE@EÅ£E?EÇåEL“EHîE©E
+1¶E>âEfIEª	EònEû Eh#EßE6AE
+îEfÎEÚE£+E0E¹øEÒEwaE	ÌWE¤—E0¨EWEú‹E6_E>âEßÊEKEƒE^!EPÔE-¡°EL¤îEv”úE€™˜EauóESŞÙE_RÖEgPdEQ9ÕE0û6Eü%E‘ZE¾pE?E´ÔEĞ‰E«[EıEN³ED8EaøE5ˆECuEEôdE±íEşµEó}E?1E‚ÁBE¶Õ_E×VEÒÎE§‡TEqyÉE:_ E"…E£ÒE¹yEyE-ùEÎEI E
+q×E(íE:ÓE4ªE	?E¶ŞEÖJE¾ïE }ÌEÚE¦ÓEĞIEXÇEÀEÆºEà§EÈâE	ĞEµíEÑEĞ¿EÈE"ø\EÎ*EÆ_E	Õ€E	2EëUE‚ÉE£Eê+E·¬E(fE‡YE•âE,ÉE'EıEFWEüE˜’Eó¶E	;EÊÏE:XE‚¨E*ÊEGÄgEf ‰Es¼6EWCEFæ¬EEdEFØE=E'ù"EˆE—E	Ü¡Eƒ‹ExwEÀVE+İE
+TÎEû¤E™áE’ÉE[ÄE˜IEÑ(E‘(EW5Eó(E²E3JgElÔE¡¦ûEÅFÿEÂ)‡EœÜEhÕûE4¡[EïER™E}áEAERSE# E3eE]kE¥»E›=E¥ìE•âEsÌEÊÏEE„E"ıE¾ïE hÈEş—EãĞE6lEÚêE	EEP¿E¸UEĞ­E—[EåÌEø”E‰ÏEEWeE
+7ãE
+sE\ÛE'ñE¿ŒE¶oEÏ3Eš˜EĞNEâ’EE»ıEhE	yQEÿ'E™áEâXE	ÈFEZ,E¿E gfE.ùdEBºİEEdE4(fE)ÁàE+ŠE(`äE#TE¥mEÛE	BE^EdTE\NE!YEÊÏE	QE	Ü¡E	/EqE¾+Eß€Eš¡EÀtE	QE0¬EÙöE(úÜEFtjEsìuE‘–ˆEŸLErÙ$EOÃE.@ÚE¿E­˜E˜kE{EWPEdEí#E¯nE
+°dEE˜ZEÕ]E…êE„"EÏîE ıåEHeEPãE?EòöE¡iE‰>EİaE
+«&EHtEEè~E_ÌETE™ÇEËµE!EÕâE	
+IE¶ÇE	¢ºE	KE{{E„Eë+E£™Eu>EiEõÉEAE|ÛE\E
+²zE‘¢EÃEöçEÍEXkE]E#æE*ºE$mÑE>EÊıEtE´ïEïæEE5E‰¢EÍEÅE!©E†EHãE&	EÛµE5ÖEÌ[EO®EEöúE–¤En„Eh"E<GEÁE2
+E,U$EB
+šEO
+ÓEN1E;@E0İ&E'YE ÉEåwEÔQE¢.E©,EÎöEà,ED8EÚºE•·E%E¾cE†àEòÇEîŒEeE EûöEEEEóöE";E{Eè)ElÙE
+·³EšãE6–E`hE~üE¸eE_eEâ3E	¾EÆE
+.ŸES‘E¸´E²×EY¨E$EàEMyEE2]E'6EŸÎEŸÏE,;E˜EL)E¨ÄEµ/EúEŠE¢~E+DEö¤EYeEüE{ÄE6E±}EÒ_E¤§EÃÈE
+‹E\öEÏîELnEÀLEãĞE—E*Eñ(E–rE	…jE	¦ÅE¥ErğE¼4E™‹EH°E DE'BE&$lE"±E=ıEúE”\E/}E™E*GE&¢E!ˆ½E#ÜLE †áE	E«!EoÈE
+NšEæEvEE[kEOE˜Eq‰Ez€E÷iE¶ãE>SE´3EêŞE"DEM–E¸6EëEŒ}E
+ë0E
+¬3E	ûFE	vNEæıE
+EºuEq*E ÅŒEmEskE‡¸E¶ŞE$€EÃEóõEºŠEìhEZ,En E–ÃEG1E¤	E
+ÀE´EA¦EbE
+Ÿ§EmÜEí¦EIE	æ×EÍTE¸ÜE°]EHE
+ÀEa,E×5E6‡E‘³E¸´Ec`E-¬E uEúfE	pBE
+!?ElNEgoE…EÀ€E»©EekE¤ÄEhcEE_«EjE[˜E•hE„äE" E.¯*E=GQE@‚DE6“jE#DrEZ»EƒE*E	_+E–¤EI÷E„qE‹½EjEA¦EYQEE"œE¨EXEûöE·ÁEE
+ ´EŒdEßEë‹EE¥\EL“EñE!EgkE½E¸]EIEƒ@E/³E¤§ERùE
+_+Eì~Eâ}ElùELEJPEFE>EP¿E)çE¢¡EöØEûXE	EE\NE	ÛŸE	("EÑ}EgE$ŞEdEEîgE¶KEœEŠEIDE|”E‰/E
+kEùfE	ĞhE	X$E*EÌğE
+8ëEYEs6EáòEKªEÈöEuSE0EmÓEA†EÀEƒíE˜IEßE(e¾EAXšEj¤Evá)ES|ËE29E'nçEt<EYEÅE	UE¡§E	6EÚ°E\âEçåEª6EK¦E	AE/ÿE‰ÈEÁE	f2E	xPEgúE•GEj¦EÓÓEcE¨‚EâXE•·E|”EÏhE	5E¶ãEZ9Eš[Eü¤E%E	k<E‡E
+˜YEfEùOEÓ@E”\E[ıEH°ENÅE
+«&E
+õ»EEZ­E£™EQÒE	UE(7E	S$E vEEêWE„"EÀ¸EàÅE±E
+^#EŞHE×E	Ä5EÚE	5E†9E
+]E}ÿE‚şEä˜E
+àªE	Ç?E‡­EùEG'EŠEÇE	b.Eó¶EÊxEEekE!jeEE-ÈEï­E{£Eo²aE?¼­E)àE{âE
+¶«E
+/§E	šŸEKŒE,ÄE)ÄE«rE™E!GEÙ=E¼EËìEõ§EÒE6¾EbpEËEÕ]EChEÒ E;JE$ŞE'}EºeE¥ìE¶ãE
+L‹E	EEÏàE×ÄE>îE	¢ºE
+ßœE*­E	µúE
+Í½EÚ•E%ØEµEiE
+E·Eƒ‹EÏàE®®E)¯EŒ´E÷E
+äÜE¢ËE	9EáÂEà}Eq†Eş—EdTEzEGE“áE‹EÌE'HE¸ElÉEJĞE	ÏfE	¿E,UE8iE	=ET†E¾$E£†E	áºE	İ¨E	€_E	&%E
+Â1E
+‡­E'PEòE¢‰E5G	Eb¦,E÷(Eb +E:NE"E\!EjÖE	©ÏE	¤ÂEÁŠE(îE*E@¾EÎ¯E¶NE;oEvENfEúE=wEIÕEš¼E4EcE-¥EãbEo¦EEEE¾@Ea,E	T%Eé÷E>SE®2Ee²E
+yE	šŸE
+ë0Eÿ`Eã.E#kE
+G_EïîE0¯Eñ7EåIE
+lE	üME	 ²E
+z&EmÙEÒ@E EÅ‡E	õ&E¿ÑEM»E!EıE·øEcE¸ÍE	|E27EíEéE	2E
+ÄLE2EjE	¼ES~EÀ¸E	ÉGE›=EŸôEŸÖEÂE
+‹E	a-EHáEßE	¯çE`2E­CEãÔE£:EdïE }E5¯EG¶E<÷E* E'ExkE¦ĞE-ÄE	”ExEtxE“=EÜ~E¾E°pEPÕE^ËE<•EçæEöoE«EöE	h9E¬.Eÿ‹E|Eƒ@Eğ@E&ZEt§EMEKÙEmúE´EÛE
+HgEV Eı`EÅbEqìEıŞE
+Ø<EİÏE¡òE#tEQÚEOEá§E	Œ}E
+ÀE	:E
+Ø<E
+¦úEëEOE[&E”E PEÌÏEã®E=wEÃFE8“EÃEå"EÿE/ÖEîE:ÄEÈOEvE‹EbàEß/Ey'EıEt/EN0Et_EjîE#ŠE
+KƒE",E	X$E
+ŸEãBEÇEùYE»eEÑFE!|˜EguE˜fEJ8EZëEósE‰/EöØE’îEõ±EEKE˜ZE:XE
+bGEëEÊ’E6EmÄEmúEĞÕEEIÉEX E °SE8E@EBE±WEÏEåE	™E
+ŒàE¼hEmEßÃEE³xE¯¹EóÈEo>E¿'E¸WE:1Ep£E_xE6EÌE6E
+Ÿ§E
+=Eƒ_EÊñEZéEÃhEøÆE¹£EéEæıE¥’E›ŠEû7EúE™ÎEjîEæÜEOŞEÿ`E$•E’àE‡E˜E	+EÏİE;JEƒkEyEş^E	Â,E	óEÂ4EÚE;æE±EWEÄEl@Ek}EëÆEÕîEYÔEü¶E¤ÔEæºE˜ÍE	”Eˆ;E‹½E«EêUEšÇE½)E	¾EŞ±E_œEÍEÅ£E;æESaEa›EXE`NE_mEÊEJ«Et/E-¬E	}[E —EöüE
+¼òE¯nEPEÅTEÜØE(TÁE.Ô4E0âE2HˆE%s€EğE¨E²ÈEnHEënEåE”¯E”¯EçâE
+)zE/€E(E}ßEyEŠE}ĞEQE	. Eş^E ”EhßE kÇEƒkE˜zEË	E½úED€E¾«E€…Ex‹E	@E
+ŸE	±êE
+bGE
+„‹E	«×EE
+sìEç”EÜE*Ef6EzÌE
+ŸE´™EÒ@E-EéEx$E^àEIE­YEê+E‹%EiE¨E»‡E7¦EË0EEõÖE
+0®EEéEKŒE–¤E·ÌE2çEHiEè˜E:ŸE=E–E‚rEq¸EZQET†E	g8E
+&dE	'&EôËEm1EÃñE(‡ÄE5—|EJ\²E^]¾Eh¸`ES|ËE5WÁE$VEõeE™•EÏÅEI„EƒiEÏ’ECE	Å7E4‹EØæEšÇEı’E—‘EIÖE`2E,ãE¾@Eü¤EğpE–ÊEıE…êEğ$E5EETÜEˆ‘E*ÃEvmE
+èE%[E¶ÇE	m?E¶oEÆ!E	‚aE
+ƒƒEP¿E\BEw\EáÂEŒdE@E	ıTEá?ETE	^EEE	œ§EÎ EtåEÿEÀtEÆÊE¿EEôĞEÛE$yEË0E »EFE
+ÎEE¾ïE³ëE[TE®ÙEÜkEû7EcEC›EzúEŒE<ÔE²EˆœEşœEHºE&ÏEƒ¯E´ÙEVE(îŠE:c_Ei//E’„E7-E‡Œ~ER[!E/UtE–ÚEÆìEÎ[E«EtEºëE
+Í½E‘#ETOE
+İEœ
+EàÍEÔlE×EçE™EƒkE@÷EÀ¸E’§E´Eq*E‘#E¼{E?E‰ÛEˆE±XE
+ŒàE
+‘E	W#E	QE`áEâE¹øE
+¯WEbE¾+E‡÷E<•EâÂE_EFòE¹8EmiE¯ñE =E÷vE.E×<E	O!E
+»äEœEmÙEx•E«[Eˆ;E,ËE†9E¨‚EM¹E9E>¶EÿEÂ4Eê°E	e1EëEVªEI÷E,ËEå"E¦ÓE|”EIÉE	Ö‡E*PEÛ|EÏÅEOäEP‹E&ÿE;¤qEqŒEŸæE¯\3E¼EVğIE*ñeEO E~6E^E
+ÙJEçE–ÜE
+7ãEC›E EÃøE E	("Eî‰E!7E	|EŒ	EEÔEæBEø3EğpEÂßEÙ¤EÎâE
+íKEğSE¯EÀ§E
+Â1EFWE
+®IE*E—~E]EŞEı]E
+ºÜEÄEÆoEõåETOE	>E÷ÍEéÂEÌ¸E»‡E$ŸE.ÄE§E»‡E	ıTE„bE=×E?E	=E ENcEeBE
+·³E
+ŸEı€EC›E¼EDVE	m?EšõE
+ñƒEN®EŒ EHE2ƒEV{E>¶E\MEŞ¡E·»E
+ë0EEKEŞÉE üEdùE0Å,ES\BE„˜ŞE’Ç9E~[ÏEFÒ·E%0NEt<E)rEkøE	c/E©EšAE
+<EÎâEıEkâE
+1¶E
+#ME|ÛE
+„‹EÓfE74E	/EÚ®ET1EœE…êEjîE	j;E­CE	€_EçâEùYE{îEÇ6E’E#kE
+ÒüEBE<GEAEÖCE¾@Eº?Ew=EXÈE
+ÙJEæE74E¥E%ˆE¢`E™gE^ñEş9E	pBE2+EÙ·Eî‰E	Å7EQÈE²EHiEº3E’E@E4	Eš[EĞE/ÿEtE
+ô­E\ME?EÈgEø3EôËExƒE‹ìE‰/E×EÛEEVVEOEÀtE#(E~5E#H±E0K"EIÖùEZ&˜EN‚øE-b*ECE‚jEU%EßE1”E].EÆEôËEïEªeEÏîE/³E	^E	h9E	pBEE÷E	Ä5Eæ™EÔZE@EØ­E‡
+E »E¸E•ƒE	9E³¿E‘(E8E®EŒkE‹?E'HE±WE
+„E¾$E	uME
+~PEfÎE
+L‹EğEäEú(EÅ£EÜE(^EÛ¯EŠE”Ew5E
+8ëEšÉE EàE	ÍYE©UE ”EüEEk”EÎE"ÈEE´dEÂEC6E
+`2E]EıÅEYE–`E×ÿE'EÅ1E‰vE˜ZE«[E`¹E	CE	Á&E	¾E`ñE‡"E±ÁE—çE$éE,œE)]İEkLEÅºEôËE |EàE
+²zE EA¦EÚ®Eù&EñEjE¨øE4\E
+0®E
+¹E©}EAE>6E’òE}EËEÓEíEs6E	èàEc|EKE‰@E	¨ÍE™µE§EéE\ME		IE>E	ÒqEEØEîIE*­E
+NšE`,EÁÈEÇ6EŸôE°iEU4EHãE
+E´Eµ/E.ÈE.ÛEEïEH¿E
+ªE uEREù×E¸EÇ EBE
+·³E	=EIE'|E	÷/EÒŠEƒIE—°EiE¬OEOEü¤E2E)%E¥ğE
+¢ÊE×E#&E	ï EÚ¹E@ESE"EÂŒEø†E?›E7E@÷E
+±lE$ERõED¤E
+jE
+B4EHE	$)Eu#EÒ@E€E¥8E%[E
+ˆ¶Eq‰E^àE©}E
+Eß¬E‘³E[EìE	ù=EV@EoEœ0E E	("EGE4ïEOïE[TE±XEİüEï¥EzÌE=×EHmE«hEPE¦@EaME ÅE	X$EIEÏİE	ĞEeE³jEá&EòEU£E=µE@òE¿«EbEÄJEÕ,EŒ EìŒEQ¶E:EĞ½EËÄEÀEĞ‰E
+›|E[TEàÅEîwE
+R¾EµHEì¨EáàE›0EôĞED5E—E)%E‘÷E@EÉñEåE=ÏE „E–5EÇ EMKEñxEÈgEï*E
+×3E+-Eh’EÌE¹øED>EjˆE`5EWE›E&…E!Eº?EIïEèéE*E
+E	5E¤—EöüEEi’EfíE®*Eæ E
+ı"E¹¢EEƒNE)çEÌ¸E
+ãÓEœ
+E’E»eEfwEJ÷EòîE5ÑEãåEífEÑE	³òEvmE>E? EÅ0EÍE‘E#OE%
+jEˆgE°EhşE	¹E9EûÃEºEŒ‹EƒIEqmE–E·øEÍEîE	g8E°]E	×‰EjéE¡yEÉEÒÉEK¦E$ŸE]ºEÂßE”çE
+”.EBEÇ´E!E?)E	åĞEsõEEÈÂE	DEXiEeBE­mELZEŸEÆ!EK%EYüETE.	EÒDE‡µEvmEe'E)oEG…E<°Et¨EVºE½;E	|ZEEV{EhƒE0EpE">ÆEEÚE?²E¤—ERE3qEvœE.”Ec|E™WEnˆE»8E‚ëE€¦E6E¹E¹‘EgoE@JEšÎEDE_«EìâE"v³E)yDE,›E$›ßE>EE*§E€§EYQEµtEQ¶E±ˆE_mEb®E2·EòöE!©EI÷EœE&nEjE‰>E.DEqşEÉUEE>Et¹EF8E	EEîEŒÅEe@EE.µET3E
+NšElÙE§‡E”ÎEÊElÙE	©E	ôE
+Ê”E*EäÓE óE‘hE8 E.ÈE·yE¡ÌEñ,EçÛEL)ENüEE	EÍ EZ«EIªEÀ.E ¬E*—EAø°E&öìE€E¾pE	£¼E	ÑoEÏ-E
+°dE
+sEwER`EîÓEmE_E
+âÆE8|EÒiENŠE	Æ=EwETEÚEvE–¥EØHE ÚE(¿éE(³­E·øEy!EÓoELÌE8“E0‘E’Eb®E¶ËEíÍE ö?EmÕE¢™E!©EŸØEHŸE }EÙEÁŸE	QE	_+EÁ@E	ˆEùEE<•EèE…[E‰ÏE#mE(CEqÕE'E¹8EÆE˜E;oEïEÍ¬E{îE,ËE	LErğEE7ˆE·E}íEm1Eæ©EvzE£XE;E¹yE E&k E%=´EÑ‰E}HEÅØEÄE!òE:ßEa©E+÷µE‹!EşpEŞ±EìEWE¸&Eµ…EúeEÏ-EÂãE	xPE	d0E¤³E¥§E E	ËPEE«rE	pBE—]E@.EVfEËäEà®E!Ş5E(v½E"ÖºE½EèE
+ªE	òEBEê_EAÙEù£E€EK¦ER£E	UEòxE—EÔxE²E«[E	ÊNE7nE¢ËECuEàE›Ef6E	×‰E,UE3Ed‹ETE†…E¼eE>/EíEMOEÖYEÆúEîE”E¢¡E
+¢ÊEe'EJØEŸE)EÒ%E¼çEL#Ei%ExhELE,¥EB3EK*åE=E'á(EØ&ER™EÀE#	2E5e"E[¨:E2²±E"¤€EÕE&…ECEqƒE¿=EQÚEr"E¡§E
+õ»EŸAE`EİaEi¿EüEUEEO`E„bEŸE<GE¹µEJäE°ûE# E4—E4±ÏE'ıóEA·EfE“EãªE4‹E&E'—E*õE
+øêEBtEğ}E
+Q¶EÖJEê°EoÈEÊñE	=EŠÑE	Ÿ±E	xPEÌ¸E%ÙE9*EŠETÜEMKE
+±lEECEÛEVêE* Ec]Eß/EV1E÷ÍE‘³EİKE¸E	Ÿ±E /EtEÁEfE{zEƒÿEÚ›EÛÄEOE)SêELã5E{ªE†Ekº´E=E íÿEßE0E%E$ÇñE6Œ„E"«Eÿ/EÂ¸EE(E.	EÇ<EGEHºE	ñE™iEV Er²EˆßE¸E±ˆE}ßEEñŒE	°èE	üMEÊ´EAWE¿©E/¢E(®ËE?…wEIrQE6ş·E„EbE5EE	±êEîwE(ETEÅEXE¼'EQ¶EÉUECE¥]EjîE
+íEÁÈEÈºE
+æøE	­ßE	EÖE•E‰EÇ\E	¸E	šŸEjE";E…œEVE÷²EêŞE™tEF&E&E•½EF8E<ÀE¥8EÍ¶EÒ%Eµ	EâêE{‚E¿E
+ïgEÀ
+E+ıE\3Ex[Eœ¥XE….EOâE-EÏÜEvREİEš|E 6`EËÕE]EØŞE|ÁE”TE‚ÜE @E’ñE°E6_E¼E EOEYE©E~El|E üEÂ4E	=E§‡E
+JvE
+‡­EñÄEš¡E'E=ECM~E1å’EE¬¾E4=E6¾EŠèEN0EE¶ãE„@E´¼E	“EÒ Ec»E­¨E	=E¨øEE} E$E
+±lE
+?E
+bGE¥’EüE³¿E	,Ew–E}ìE¤“E¤EbqEøkE	 YEÙEª–EÅÀE„NE	®àE%[E£“EiûE³RE‚ËEgüE
+Ô
+EúEO®EÏâE‘¤EEô–EwhE‡©2Eo›ûE@pôE%Ù*EMlE¶hE/E=«EËµE¦ĞE	çÙE¢™E<ßEÿE;EMÔE¼ÑE/ÊE&	E
+™E
+ê"E|÷Er}ExE‡E
+TEIÖE	UEĞ‰EE	>E^àEw¾Eğ”EøE+•E$\ME3€EE
+cOE?9EçFE¿E¡“EÎ™E@BE\9EPE¹îEª0EßE	­ßE
+îE	GE
+Â1E8EÿEÎËEÓ¦EUCE4‹E
+±EÙ¤EaGEÎ$E5ãEP9E RWEåE
+ƒƒEÂßE¬.E_EE¯EògE6_EÇáEE4dEãªEÜçEè”EĞ½E¯|E¤ĞEvoE,B`EB!EM!ĞE?øtE'z½EÈE†E1UE›EáE$EBE*E:E^ÍE¾pE®ŞE”*E}íEíhEuSE‚E	
+IE'E@“EéEUÖE'9EEEÈgEËÄE›E³¿EtåE E)^E'@EJE†çEŠ]EE¿EjoE½6E#·E­÷EÀ®EGEÎ‡E Î¦E‹ÖEĞE­÷E­CE
+‹E	.EYQEóE
+óŸE%®EZEAE!(E
+EF8EiûE	ÔyEHîEOkEæEwÌEEÒrEÍôEçFEÄ†EOEª0EYEXE;EÕyEq†ETYEµE‘uEø^E¡×E}ïE,€E]÷E"»{E$7?EŒE8®E³öE#^EAE€¦E—E*E	?E
+!E„bE
+6ÛEÊñE
+#MEYE'ñE
+öÉE¶ŞE×5Ea›Ej§Eå"ED"EQÈE9zEx‹E	T%E	;E
+‹EŠÊEmÁE…~E¯6ETDEM(E¶oE˜„E
+¬3EÁ@E‚E4ªE~E‡ÀE’îEóœE/»E*ÆE×ØE9îEE	ØE	±êE
+2½E
+bGE+èE)ëE’[E5ÕEsE	¦ÅE‰/Eˆ”E¡«EZŠE–rEñE;EôéEM{E!7E	;E(îEÜµE´ßEi¿EÙÒEÑ¼EPEéEÒ E `EAØE^ñEÄEiEvmEe E‹%Ev¦E4‚E—E<©Es·E•ÉENmE'E©BEEZE	¤ÂEEE »E|âEEEEÚºEzEn³Er}E7oE&ZE[×EEüEËE(7E	¹E3;E
+VâEúfEaE
+ò‘E	­ßEoÿEp™EîÓEÙ¤E LE
+)zEÌ¸E;æEıE<2Eı€E1%EŒäEÖ/E İÜE¦ÓEÊBE#&E	ÉGEÕOE
+¦úEKE÷]EnåEaAEıdEÁERõE¸=EÃhEòöEEEşE¶÷E€EÈgE(>E	LE¢™EŠE!EÜE7REPãEğÛEùE˜zEèEÀLEñ(ExE!©E)%E
+|;EñxE
+£×E	Y%EÄEü¶EAEœECĞE3TE©BEw=EEnE	ø6E	ØEÑ«E>E:EÉWE]ãE_E	BE	2EàÍEğ}E–¤EŒEŒ‹E”çEC®E
+XòE4‹E	ş\E¤EMOE{GEr²EhEãEt/E	äÊE
+üE„GE{!EåúEItE²EzJE;{E^ïEËtEE,ËE)çE4dE
+EÏE³xE)ô?E-(E °dE\EäEÖE¤³EëE«EÜçEöçE+-E}íEó¶E6_EçE\MEÑ«Ek5E€ìE¼üE´EEÅ£EçFEE®„EëEÖJE÷²EÚêE	%%E
+ò‘E{ÌE
+hE ËE_ÃE
+KE¢SE;ßE÷/Eâ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional binary table                     NAXIS1  =                  131 / width of table in bytes                        NAXIS2  =                   31 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group (required keyword)              TFIELDS =                   30 / number of fields in each row                   TTYPE1  = 'RA      '           / label for field   1                            TFORM1  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT1  = 'RADIANS{IHMS.3}'    / physical unit of field                         TTYPE2  = 'DEC     '           / label for field   2                            TFORM2  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT2  = 'RADIANS{+IDMS.2}'   / physical unit of field                         TTYPE3  = 'l2      '           / label for field   3                            TFORM3  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT3  = 'degrees '           / physical unit of field                         TTYPE4  = 'b2      '           / label for field   4                            TFORM4  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT4  = 'degrees '           / physical unit of field                         TTYPE5  = 'R_Ha    '           / label for field   5                            TFORM5  = '1E      '           / data format of field: 4-byte REAL              TUNIT5  = 'magnitude'          / physical unit of field                         TTYPE6  = 'SR2     '           / label for field   6                            TFORM6  = '1E      '           / data format of field: 4-byte REAL              TUNIT6  = 'magnitude'          / physical unit of field                         TTYPE7  = 'SR1     '           / label for field   7                            TFORM7  = '1E      '           / data format of field: 4-byte REAL              TUNIT7  = 'magnitude'          / physical unit of field                         TTYPE8  = 'I       '           / label for field   8                            TFORM8  = '1E      '           / data format of field: 4-byte REAL              TUNIT8  = 'magnitude'          / physical unit of field                         TTYPE9  = 'AREA_Ha '           / label for field   9                            TFORM9  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT9  = 'pixels  '           / physical unit of field                         TTYPE10 = 'AREA_SR2'           / label for field  10                            TFORM10 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT10 = 'pixels  '           / physical unit of field                         TTYPE11 = 'AREA_SR1'           / label for field  11                            TFORM11 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT11 = 'pixels  '           / physical unit of field                         TTYPE12 = 'AREA_I  '           / label for field  12                            TFORM12 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT12 = 'pixels  '           / physical unit of field                         TTYPE13 = 'ELL_Ha  '           / label for field  13                            TFORM13 = '1E      '           / data format of field: 4-byte REAL              TTYPE14 = 'ELL_SR2 '           / label for field  14                            TFORM14 = '1E      '           / data format of field: 4-byte REAL              TTYPE15 = 'ELL_SR1 '           / label for field  15                            TFORM15 = '1E      '           / data format of field: 4-byte REAL              TTYPE16 = 'ELL_I   '           / label for field  16                            TFORM16 = '1E      '           / data format of field: 4-byte REAL              TTYPE17 = 'PRFSTT_Ha'          / label for field  17                            TFORM17 = '1E      '           / data format of field: 4-byte REAL              TUNIT17 = 'sigma   '           / physical unit of field                         TTYPE18 = 'PRFSTT_SR2'         / label for field  18                            TFORM18 = '1E      '           / data format of field: 4-byte REAL              TUNIT18 = 'sigma   '           / physical unit of field                         TTYPE19 = 'PRFSTT_SR1'         / label for field  19                            TFORM19 = '1E      '           / data format of field: 4-byte REAL              TUNIT19 = 'sigma   '           / physical unit of field                         TTYPE20 = 'PRFSTT_I'           / label for field  20                            TFORM20 = '1E      '           / data format of field: 4-byte REAL              TUNIT20 = 'sigma   '           / physical unit of field                         TTYPE21 = 'BLEND_Ha'           / label for field  21                            TFORM21 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE22 = 'BLEND_SR2'          / label for field  22                            TFORM22 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE23 = 'BLEND_SR1'          / label for field  23                            TFORM23 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE24 = 'BLEND_I '           / label for field  24                            TFORM24 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE25 = 'QUAL_Ha '           / label for field  25                            TFORM25 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE26 = 'QUAL_SR2'           / label for field  26                            TFORM26 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE27 = 'QUAL_SR1'           / label for field  27                            TFORM27 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE28 = 'QUAL_I  '           / label for field  28                            TFORM28 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE29 = 'PA      '           / label for field  29                            TFORM29 = '1I      '           / data format of field: 2-byte INTEGER           TUNIT29 = 'degrees '           / physical unit of field                         TTYPE30 = 'CLASS   '           / label for field  30                            TFORM30 = '1B      '           / data format of field: BYTE                     EXTNAME = 'IAM_SUBSET'         / name of this binary table extension            TDISP1  = 'D20.12  '           / CURSA external display format specifier        TCOMM1  = 'Celestial Right Ascension' /                                         TDISP2  = 'D20.12  '           / CURSA external display format specifier        TCOMM2  = 'Celestial Declination' /                                             TDISP3  = 'F11.6   '           / CURSA external display format specifier        TCOMM3  = 'Galactic longitude' /                                                TDISP4  = 'F11.6   '           / CURSA external display format specifier        TCOMM4  = 'Galactic latitude'  /                                                TDISP5  = 'F7.3    '           / CURSA external display format specifier        TCOMM5  = 'Halpha R equivalent magnitude' /                                     TDISP6  = 'F7.3    '           / CURSA external display format specifier        TCOMM6  = 'Matched film photographic R magnitude' /                             TDISP7  = 'F7.3    '           / CURSA external display format specifier        TCOMM7  = 'Old short red survey photographic R magnitude' /                     TDISP8  = 'F7.3    '           / CURSA external display format specifier        TCOMM8  = 'Photographic I magnitude' /                                          TDISP9  = 'I9      '           / CURSA external display format specifier        TCOMM9  = 'Image area (Halpha film)' /                                          TDISP10 = 'I9      '           / CURSA external display format specifier        TCOMM10 = 'Image area (Short red film)' /                                       TDISP11 = 'I9      '           / CURSA external display format specifier        TCOMM11 = 'Image area (Old short red glass)' /                                  TDISP12 = 'I9      '           / CURSA external display format specifier        TCOMM12 = 'Image area (I band survey)' /                                        TDISP13 = 'F7.4    '           / CURSA external display format specifier        TCOMM13 = 'Image ellipticity (Halpha film)' /                                   TDISP14 = 'F7.4    '           / CURSA external display format specifier        TCOMM14 = 'Image ellipticity (Short red film)' /                                TDISP15 = 'F7.4    '           / CURSA external display format specifier        TCOMM15 = 'Image ellipticity (Old short red glass)' /                           TDISP16 = 'F7.4    '           / CURSA external display format specifier        TCOMM16 = 'Image ellipticity (I band survey)' /                                 TDISP17 = 'F8.3    '           / CURSA external display format specifier        TCOMM17 = 'N(0,1) profile statistic (Halpha film)' /                            TDISP18 = 'F8.3    '           / CURSA external display format specifier        TCOMM18 = 'N(0,1) profile statistic (Short red film)' /                         TDISP19 = 'F8.3    '           / CURSA external display format specifier        TCOMM19 = 'N(0,1) profile statistic (Old short red glass)' /                    TDISP20 = 'F8.3    '           / CURSA external display format specifier        TCOMM20 = 'N(0,1) profile statistic (I band survey)' /                          TDISP21 = 'I6      '           / CURSA external display format specifier        TCOMM21 = 'Deblending flag (Halpha film)' /                                     TDISP22 = 'I6      '           / CURSA external display format specifier        TCOMM22 = 'Deblending flag (Short red film)' /                                  TDISP23 = 'I6      '           / CURSA external display format specifier        TCOMM23 = 'Deblending flag (Old short red glass)' /                             TDISP24 = 'I6      '           / CURSA external display format specifier        TCOMM24 = 'Deblending flag (I band survey)' /                                   TDISP25 = 'I10     '           / CURSA external display format specifier        TCOMM25 = 'Image quality flag (Halpha film)' /                                  TDISP26 = 'I10     '           / CURSA external display format specifier        TCOMM26 = 'Image quality flag (Short red film)' /                               TDISP27 = 'I10     '           / CURSA external display format specifier        TCOMM27 = 'Image quality flag (Old short red glass)' /                          TDISP28 = 'I10     '           / CURSA external display format specifier        TCOMM28 = 'Image quality flag (I band survey)' /                                TDISP29 = 'I4      '           / CURSA external display format specifier        TCOMM29 = 'Celestial position angle' /                                          TDISP30 = 'I2      '           / CURSA external display format specifier        TCOMM30 = 'Image classification flag' /                                         SYMBOL1 = '{PA ELL_SR2 AREA_SR2} {ellipse white {double(1.0-$ELL_SR2)} {$P' /   SYMBOL2 = 'A} {} {}} {{sqrt(7.0*$AREA_SR2*double(1.0-$ELL_SR2)/22.0)} {}}' /    END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @ĞKS¿ñöê­ˆd@sğz¿¹¿ÀÖíí®Ä¤Aˆ9XA‰ó¶BÇÿ}A}l‹      ,       W><Í¸>)^´Aÿ—>Çæş¿›¦=‘hsDyÿğ?ú^5         †Ÿ            †Ÿ     ¡@ÏëU#¿ñôÉÀş¸@sğWÕ©ëÀÕ!L¾AŒİ/A›¦BÇÿ}AŒ-             =!>f’ìAÿ—>_u\?G®?ßß;Dyÿğ¿ £×        †Ÿ            †Ÿ     d@Ï´ ©Ó¿ñîÌüÈh@sğÄC‘OÀÑ‚#[NÛAdZA‡BÇÿ}AŠ²   
+          >m€=¹:èAÿ—>;Èˆ¿5?¾ÔzáDyÿğ¿†‡+        †Ÿ            †Ÿ     ,@ĞjÖã|¿ñé‘~˜@sğ0S‚ˆÀÛ/<-®A…A“l‹BÇÿ}A‹-              >=ĞŒ?¸Aÿ—?<¿’Ğå?¸r°Dyÿğ@r°        †Ÿ            †Ÿ     \@Ï×P´Mz¿ñçô™‰@sğ)·ÀÒÊW§†ÂA…ùÛA‡©üBÇÿ}AV      3       A>£=¾xAÿ—> 1î>NÙ<D›¦Dyÿğ?‡P        †Ÿ            †Ÿ     o@Ï»ÒSŸd¿ñ×ë¹Ìë@sğĞAÌSÀÏ»^g”A„İ/A†p¤BÇÿ}Aƒ‹D   %   =       ->€óH=è½pAÿ—=9Cà?´İ/?ˆQìDyÿğ¿7
+=       †Ÿ            †Ÿ     z@ĞWSNÇ¿ñÖé!Â@sğ.î•tqÀØ!)Es¨Aˆ›¦A‡í‘BÇÿ}A‚~ú      U       X=z:p>±Í@Aÿ—>¿ñ\?}²-@Á7LDyÿğ@Š°!        †Ÿ            †Ÿ     J@ÏŸëBXÀ¿ñÏ€0fû@sğ—,×ÏÀÍa²¢Aˆ‘hA‰=qBÇÿ}Aj£×      7       Š;|A >Ñ,(Aÿ—>ˆKnÀ7;d?ìjDyÿğ?¥¡Ë       †Ÿ            †Ÿ     «@ÏÜ£¥§¿ñÈçºäÃ@sğ¡ıjÀĞaÕˆA‰7LA‰ıôBÇÿ}A†ff      +       '>:İ<>k Aÿ—>˜`¿\?ùÛDyÿğ½×
+=         †Ÿ            †Ÿ     °@Ïæ…Z¿ñÃ&÷a@sğ¡ƒrçÀÌL˜_A|îA‚+BÇÿ}Aj£×   B   U       Š>œ_Ø>V™(Aÿ—>ˆKn?  Å?ª=qDyÿğ?¥¡Ë       †Ÿ            †Ÿ     @ÏT_Ó¥.¿ñÀaYŒ8@sğG'Ü¾ÀÇÃ0j+A}çmAl‹BÇÿ}Az‹D   2   H       @>Ã¼=‚âAÿ—=…mğ¿“¶F¿ÅDyÿğ¿®vÉ        †Ÿ            †Ÿ     ®@Ï¸QÀ’¿ñ¶î¿ö@sğğRÀÌ] l‡A„JA†Æ¨BÇÿ}A{`B   %   /       T>?>ä=İù¨Aÿ—>ÙŒf?Ÿ¾¿ß;Dyÿğ?¤¼j       †Ÿ            †Ÿ     ²@Ğ%üu¿ñ¦/ÕÕ@sğ+=ÑçÀĞÍB=’2AiçmAk7LBÇÿ}A`¬   ~   “       >qÃô>°ÏÒAÿ—>š	ú>Ö‡+½çl‹Dyÿğ>œ(ö         †Ÿ            †Ÿ     h@Ğs©Åá¡¿ñ¡ÕÓ0¿@sğ:,ìÈÀÔ«Oœ A÷ÏAzáBÇÿ}A‹&é   	          >Œ‰È>6ÓğAÿ—=±(è¿-¿!G®Dyÿğ¿Ç®         †Ÿ             †Ÿ     c@ÏV¢N¿ñ–4à1„@sğ…U>÷ÀÃÓäï‚ArıôAt$İBÇÿ}Ag®   ~   ®       Ä>¤©t>4¿àAÿ—>ªk€@YxÕ@Aë…Dyÿğ@X1'       †Ÿ           †Ÿ     h@ÏHN"wÏ¿ñŒwA)@sğøø¤ÂÀÂëcÉArñªAyC–BÇÿ}Ac33      ƒ       Ò>¦V>sË8Aÿ—>å¤@`r°?Æ$İDyÿğ@4¼j       †Ÿ           †Ÿ     q@ÏÁã9Ë©¿ñŒÚw@sğŸ˜·ÀÈÄzôA†ß;A‰ZBÇÿ}A‚‹D      %       0>ñô=R Aÿ—<ÿF`¿YÛ#¿‘hDyÿğ¿‘&é         †Ÿ             †Ÿ     p@ĞftÔf¿ñ…ç!@sğ:õ3ô#ÀÑ86¨2ºA‹İ/AãTBÇÿ}A†ƒ             %>	Øœ>?ˆAÿ—=?q ¾Ö¾¼jDyÿğ¿V         †Ÿ             †Ÿ     š@ÏèíĞ¿ñ_ˆ¦­(@sğ'å!WiÀÆœí0¶AiÒòA{BÇÿ}Ay33   Š   {       u>YP°?­"Aÿ—>î@ff@ÛÆ¨Dyÿğ@™ãT         †Ÿ             †Ÿ     s@Ğ,BÔ¿ñW«b™Ó@sğ/ü]öÀÇı?[_¢BÇÿ}A—dZBÇÿ}BÇÿ}               Aÿ—=Ä|°Aÿ—Aÿ—Dyÿğ>ûdZDyÿğDyÿğ †Ÿ     †Ÿ †Ÿ †Ÿ     †Ÿ †Ÿ W@ÏƒáK‰ì¿ñCôÌp1@sğX¼Y¸À¾h ÓI¿Ay²-Azn˜BÇÿ}Aj   \   †       ƒ>–dŞ>¡ÏTAÿ—>œ‚v@ÍÊÁ@yÛ#Dyÿğ?ä¼j         †Ÿ             †Ÿ     \@ĞVcE¿ñ?!şØc@sğ@c{ĞÀÉÚ"ö¥AhffA€G®BÇÿ}AU/   €   g       à>ÄŒ*>¿ë~Aÿ—=Ëİˆ? @¾wDyÿğ<‹C–        †Ÿ            †Ÿ     @Ğ[üñ®¿ñ6Á29ä@sğAŞ&‘dÀÉŞ Ñ·AhffAs‡BÇÿ}AU/   €   §       à>ÄŒ*>)sÜAÿ—=Ëİˆ? ?«dZDyÿğ<‹C–        †Ÿ           †Ÿ     „@ÏéùrG¿ñ2ğT°@sğ-ë=ÑÀÂZh+b„BÇÿ}A“  BÇÿ}A‹›¦              Aÿ—?m·Aÿ—>ÂøDyÿğ@ĞåDyÿğ?0£× †Ÿ     †Ÿ     †Ÿ     †Ÿ     '@ÏŸ…@ò¿ñ'º„à@sğ ¶ùü±À½8SK×BÇÿ}A—dZBÇÿ}AIº              Aÿ—>ƒ¢èAÿ—?7zhDyÿğ=ıó¶Dyÿğ@ZMÓ †Ÿ     †Ÿ     †Ÿ     †Ÿ     |@Ğ9ZÇ³¿ñPó¸t@sğ>‚Q~xÀÄ´JA„VA„?}BÇÿ}A{p¤   #   G       B=¡¸>IÁèAÿ—>f¿hr°?²-Dyÿğ¿’-        †Ÿ            †Ÿ     ™@Ï®Š—s$¿ñ'¦b*@sğ&ÆŞvBÀ»L<µAûçA€n˜BÇÿ}Az     3   Q       K>N>a|Aÿ—>'A>9X¾ãSøDyÿğ¾+         †Ÿ             †Ÿ     D@Ï€0fû¿ñöÒ¯ºÃ@sğ |A™şÀ¶È´9XBÇÿ}A˜
+=BÇÿ}AÒò              Aÿ—>íıAÿ—>äÖøDyÿğ?¨bDyÿğ@/¾w †Ÿ     †Ÿ     †Ÿ     †Ÿ     8@Ï]Ãª5¿ñèbTˆî@sğ»èxûÀ³8ÅClA‚MÓAƒ“uBÇÿ}A{²-   *   ?       C>@J¬>F¿dAÿ—=‰¿@ƒ¿f§ğDyÿğ¿_;d        †Ÿ            †Ÿ     V@ĞÆJ¿ñâûã:Í@sğ@ŞôÀ½ c|AŠVA‰ƒBÇÿ}Aƒ5?      6       A?Ù.>éU$Aÿ—>ê„@]ó¶@FùÛDyÿğ@#×
+         †Ÿ             †Ÿ      @Ğt{'¾¿ñŞqå;@sğP³Z§ÀÁëBÙÏA™šABÇÿ}AŠÄœ             >—ˆê?(—ºAÿ—=¦Èø>=p¤@cçmDyÿğ¾ß;d         †Ÿ             †Ÿ     r                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional binary table                     NAXIS1  =                  136 / width of table in bytes                        NAXIS2  =                   31 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group (required keyword)              TFIELDS =                   32 / number of fields in each row                   TTYPE1  = 'RA      '           / label for field   1                            TFORM1  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT1  = 'RADIANS{IHMS.3}'    / physical unit of field                         TTYPE2  = 'DEC     '           / label for field   2                            TFORM2  = '1D      '           / data format of field: 8-byte DOUBLE            TUNIT2  = 'RADIANS{+IDMS.2}'   / physical unit of field                         TTYPE3  = 'XMIN    '           / label for field   3                            TFORM3  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT3  = '0.01 micron'        / physical unit of field                         TTYPE4  = 'XMAX    '           / label for field   4                            TFORM4  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT4  = '0.01 micron'        / physical unit of field                         TTYPE5  = 'YMIN    '           / label for field   5                            TFORM5  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT5  = '0.01 micron'        / physical unit of field                         TTYPE6  = 'YMAX    '           / label for field   6                            TFORM6  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT6  = '0.01 micron'        / physical unit of field                         TTYPE7  = 'AREA    '           / label for field   7                            TFORM7  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT7  = 'pixels  '           / physical unit of field                         TTYPE8  = 'IPEAK   '           / label for field   8                            TFORM8  = '1J      '           / data format of field: 4-byte INTEGER           TUNIT8  = 'intensity'          / physical unit of field                         TTYPE9  = 'COSMAG  '           / label for field   9                            TFORM9  = '1E      '           / data format of field: 4-byte REAL              TUNIT9  = 'magnitude'          / physical unit of field                         TTYPE10 = 'ISKY    '           / label for field  10                            TFORM10 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT10 = 'intensity'          / physical unit of field                         TTYPE11 = 'XCEN_I  '           / label for field  11                            TFORM11 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT11 = '0.01 micron'        / physical unit of field                         TTYPE12 = 'YCEN_I  '           / label for field  12                            TFORM12 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT12 = '0.01 micron'        / physical unit of field                         TTYPE13 = 'A_U     '           / label for field  13                            TFORM13 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT13 = '0.01 micron'        / physical unit of field                         TTYPE14 = 'B_U     '           / label for field  14                            TFORM14 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT14 = '0.01 micron'        / physical unit of field                         TTYPE15 = 'THETA_U '           / label for field  15                            TFORM15 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT15 = 'deg     '           / physical unit of field                         TTYPE16 = 'A_I     '           / label for field  16                            TFORM16 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT16 = '0.01 micron'        / physical unit of field                         TTYPE17 = 'B_I     '           / label for field  17                            TFORM17 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT17 = '0.01 micron'        / physical unit of field                         TTYPE18 = 'THETA_I '           / label for field  18                            TFORM18 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT18 = 'deg     '           / physical unit of field                         TTYPE19 = 'CLASS   '           / label for field  19                            TFORM19 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE20 = 'PA      '           / label for field  20                            TFORM20 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT20 = 'deg     '           / physical unit of field                         TTYPE21 = 'AP_1    '           / label for field  21                            TFORM21 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT21 = 'pixels  '           / physical unit of field                         TTYPE22 = 'AP_2    '           / label for field  22                            TFORM22 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT22 = 'pixels  '           / physical unit of field                         TTYPE23 = 'AP_3    '           / label for field  23                            TFORM23 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT23 = 'pixels  '           / physical unit of field                         TTYPE24 = 'AP_4    '           / label for field  24                            TFORM24 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT24 = 'pixels  '           / physical unit of field                         TTYPE25 = 'AP_5    '           / label for field  25                            TFORM25 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT25 = 'pixels  '           / physical unit of field                         TTYPE26 = 'AP_6    '           / label for field  26                            TFORM26 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT26 = 'pixels  '           / physical unit of field                         TTYPE27 = 'AP_7    '           / label for field  27                            TFORM27 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT27 = 'pixels  '           / physical unit of field                         TTYPE28 = 'AP_8    '           / label for field  28                            TFORM28 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT28 = 'pixels  '           / physical unit of field                         TTYPE29 = 'BLEND   '           / label for field  29                            TFORM29 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE30 = 'QUALITY '           / label for field  30                            TFORM30 = '1J      '           / data format of field: 4-byte INTEGER           TTYPE31 = 'N_0_1   '           / label for field  31                            TFORM31 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT31 = '0.001 sigma'        / physical unit of field                         TTYPE32 = 'PRFMAG  '           / label for field  32                            TFORM32 = '1J      '           / data format of field: 4-byte INTEGER           TUNIT32 = 'millimags'          / physical unit of field                         EXTNAME = 'IAM_DATA'           / name of this binary table extension            TDISP1  = 'D20.12  '           / CURSA external display format specifier        TCOMM1  = 'Celstial Right Ascension' /                                          TDISP2  = 'D20.12  '           / CURSA external display format specifier        TCOMM2  = 'Celestial Declination' /                                             TDISP3  = 'I9      '           / CURSA external display format specifier        TCOMM3  = 'Left extent'        /                                                TDISP4  = 'I9      '           / CURSA external display format specifier        TCOMM4  = 'Right extent'       /                                                TDISP5  = 'I9      '           / CURSA external display format specifier        TCOMM5  = 'Bottom extent'      /                                                TDISP6  = 'I9      '           / CURSA external display format specifier        TCOMM6  = 'Top extent'         /                                                TDISP7  = 'I10     '           / CURSA external display format specifier        TCOMM7  = 'Total area'         /                                                TDISP8  = 'I10     '           / CURSA external display format specifier        TCOMM8  = 'Brightest intensity above sky' /                                     TDISP9  = 'F7.3    '           / CURSA external display format specifier        TCOMM9  = 'SuperCOSMOS instrumental magnitude' /                                TDISP10 = 'I10     '           / CURSA external display format specifier        TCOMM10 = 'Sky intensity at XCEN_I, YCEN_I' /                                   TDISP11 = 'I9      '           / CURSA external display format specifier        TCOMM11 = 'Intensity weighted X centroid' /                                     TDISP12 = 'I9      '           / CURSA external display format specifier        TCOMM12 = 'Intensity weighted Y centroid' /                                     TDISP13 = 'I7      '           / CURSA external display format specifier        TCOMM13 = 'Unweighted semi-major axis' /                                        TDISP14 = 'I7      '           / CURSA external display format specifier        TCOMM14 = 'Unweighted semi-minor axis' /                                        TDISP15 = 'I3      '           / CURSA external display format specifier        TCOMM15 = 'Unweighted orientation' /                                            TDISP16 = 'I7      '           / CURSA external display format specifier        TCOMM16 = 'Weighted semi-major axis' /                                          TDISP17 = 'I7      '           / CURSA external display format specifier        TCOMM17 = 'Weighted semi-minor axis' /                                          TDISP18 = 'I3      '           / CURSA external display format specifier        TCOMM18 = 'Weighted orientation' /                                              TDISP19 = 'I2      '           / CURSA external display format specifier        TCOMM19 = 'Image classification flag' /                                         TDISP20 = 'I3      '           / CURSA external display format specifier        TCOMM20 = 'Celestial position angle' /                                          TDISP21 = 'I8      '           / CURSA external display format specifier        TCOMM21 = 'Area above areal profile level 1' /                                  TDISP22 = 'I8      '           / CURSA external display format specifier        TCOMM22 = 'Area above areal profile level 2' /                                  TDISP23 = 'I8      '           / CURSA external display format specifier        TCOMM23 = 'Area above areal profile level 3' /                                  TDISP24 = 'I8      '           / CURSA external display format specifier        TCOMM24 = 'Area above areal profile level 4' /                                  TDISP25 = 'I8      '           / CURSA external display format specifier        TCOMM25 = 'Area above areal profile level 5' /                                  TDISP26 = 'I8      '           / CURSA external display format specifier        TCOMM26 = 'Area above areal profile level 6' /                                  TDISP27 = 'I8      '           / CURSA external display format specifier        TCOMM27 = 'Area above areal profile level 7' /                                  TDISP28 = 'I8      '           / CURSA external display format specifier        TCOMM28 = 'Area above areal profile level 8' /                                  TDISP29 = 'I6      '           / CURSA external display format specifier        TCOMM29 = 'Deblending flag (0 if not deblended)' /                              TDISP30 = 'I9      '           / CURSA external display format specifier        TCOMM30 = 'Image quality flag' /                                                TDISP31 = 'I6      '           / CURSA external display format specifier        TCOMM31 = 'N(0,1) profile classification statistic' /                           TDISP32 = 'I6      '           / CURSA external display format specifier        TCOMM32 = 'SuperCOSMOS profile magnitude' /                                     SYMBOL1 = '{PA A_I B_I AREA} {ellipse white {double($B_I)/double($A_I)} {(' /   SYMBOL2 = '$PA)} {} {}} {{sqrt(7.0*$AREA*double($B_I)/(22.0*double($A_I)))' /   SYMBOL3 = '} {}}   '           /                                                END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @ĞKS¿ñöê­ˆd œ®i œÉ¿ Àê˜ Á   , ¼­ğÁ¥OßU©ˆ œº\ ÁÖ  <  ^   J  ^  (   F      ¡   %                                  Gÿÿ­ä@ÏëU#¿ñôÉÀş¸ œÍ§ œèı Àú8 Á¨    ^«BÁ¡ËUª\ œÚ6 Á¾  1  
+       	[         d                                    Õÿÿ°@Ï´ ©Ó¿ñîÌüÈh " #‘ Áğ Á`    n2Á%U²Z Õ Áf  ¾  
+Š   ‰  	ï  		   “      ,                                  ÿÿşaÿÿ°M@ĞjÖã|¿ñé‘~˜ œ5Y œ\f Á	 Á‘    K¯†Á™¡ËU§Ğ œLã Á    û     R  j         \                                     ¡ÿÿ±œ@Ï×P´Mz¿ñçô™‰ œİE  k Áğ Á%0   3 õ?øÁ§ÌÍU« œï¡ Áq  I         Ö         o   /   (                               ÿÿ¬ş@Ï»ÒSŸd¿ñ×ë¹Ìë œüƒ #‘ Á Á<    =KşÁ©¸U­Œ   Á).  S  Ç   #  ;            z   6   -   "                          )ÿÿ¬ƒ@ĞWSNÇ¿ñÖé!Â œ9A œ‡[ Á	Ù Á@‰   U ¥í&Á§Uª œab Á#i  #Ú  ‰   §  ÷  è   £      J   4   %                              –ÿÿ­@ÏŸëBXÀ¿ñÏ€0fû Á :ÿ Á!H ÁT   7 ğÓ”Á¦“Uºp +{ Á4:  È  Ì   T  ó  d   U      «   /   #                             7ÿÿ­@ÏÜ£¥§¿ñÈçºäÃ œÕv œô´ Á) ÁL@   + Ç›PÁ¥C–U«B œè Á8±  i  Ã   Y  8  =   R      °   %   #         	                     mÿÿ­è@Ïæ…Z¿ñÃ&÷a S >ç Á%0 Á[à   U©ãêÁ­~úU» - ÁBv  g  V   w       [         G   ?   ;   #                      2ÿÿªÖ@ÏT_Ó¥.¿ñÀaYŒ8 iÜ é Á8¸ Á_È   H{HÁ¯×
+Uİ¸ ~ ÁIX  ¹  I   W  à  ı   K      ®   D   =   8   (          
+           ÿÿùùÿÿ©ß@Ï¸QÀ’¿ñ¶î¿ö  k © Á<  Á_È   /+šÔÁ¨ÂU®d @ ÁO  k  q   [  ç     g      ²   -   )                           ÿÿıÎÿÿ¬¥@Ğ%üu¿ñ¦/ÕÕ œw¼ œº  Á@ˆ Áw8   “í_Á¸“U¦ê œ•O Á\­  ï  y     Ş            h   †   ‚   v   ^   K   0             ÿÿÿÿÿ¥á@Ğs©Åá¡¿ñ¡ÕÓ0¿ œ1q œHà ÁT Ág™    tá„Á‰7U£` œ?U Á]²  F  	¸     	Â           c                                   ÿÿıŠÿÿ°t@ÏV¢N¿ñ–4à1„ Z= ¬? Á[à Áš`   ®_ğ Á´£×UÛğ y\ Áy{  &7  
+     ú  7         h   ¡      m   <                    Öÿÿ§§@ÏHN"wÏ¿ñŒwA) eô ¬? Ác° Á¦   ƒ|¶”Á²‹DUâ” ˆª Á…Y  !  T     @  z         q   {   n   T   3                    ÿÿ¨©@ÏÁã9Ë©¿ñŒÚw œô´ 
+ Áoh Á¨   % äÅæÁ¥÷ÏUªö l Á¥  å       
+ä  
+}   !      p   !                                ÿÿû1ÿÿ­¨@ĞftÔf¿ñ…ç! œA œX~ ÁsQ Á©    †FÀÁ º^UÖ œLh Á~¸  Ä  B   C  
+Ô  	n   R      š                                   ÿÿşÿÿ¯p@ÏèíĞ¿ñ_ˆ¦­( œ²P S ÁH ÁÉ@   { ÓÜøÁ®‘hU¥@ œÕr Á°¡  *E  Ë     #$  R         s   l   a   Q   8                        Ôÿÿªh@Ğ,BÔ¿ñW«b™Ó œ¢± œ²P Á­è ÁÁp    18äÁ“ĞåUŸd œªT Á·¨  ƒ  p      x  ¨          W                                       ëÿÿ³+@ÏƒáK‰ì¿ñCôÌp1 © ^% Á½ˆ Áìh   †¸¨Á²JUÄŞ C ÁÕI  ¡  Ó     ø  Ã   
+      \   }   s   g   T   2                     @ÿÿ¨ä@ĞVcE¿ñ?!şØc œ5Y œoí Áµ¹ ÁğQ   g	wPÁ¯OßU‘ œZg ÁĞ  ì  R   v  ø  œ   u         Z   M   A   1                      Iÿÿª@Ğ[üñ®¿ñ6Á29ä œ-‰ œoí Áµ¹ Áô9   §¸¸ÈÁµbUŠ œTÄ ÁÙs   >  ^   -    ?   _      „   ’   u   R   C   /                 ;ÿÿ§r@ÏéùrG¿ñ2ğT° œÅ× œİE ÁØà ÁğP    8	¸Áš7LU¢6 œÒu Áã  —  5   „     Â   ƒ      '         
+                              üÿÿ±r@ÏŸ…@ò¿ñ'º„à Á +` Áìh Áü    /(äÁ“ÒòU·
+ # Áô-  ¸  ©   %  @  !   "      |   	                                     |ÿÿ³+@Ğ9ZÇ³¿ñPó¸t œd6 œ‹C ÁÜÈ ÂÀ   G_éÁ«hsUü œxª ÁøD  ®  „   B  
+  á   =      ™   ?   8   -         	                Sÿÿ«§@Ï®Š—s$¿ñ'¦b* œøœ 'x Áÿğ Â'    QıôÁ¯-U¯0 ù Â  ¨  ÷   ¡  c  G   ²      D   G   @   6   -                     ÿÿşDÿÿª'@Ï€0fû¿ñöÒ¯ºÃ :ÿ N† Â'  Â6     .Á’¼jUÅ C Â-·  
+š  ¼   •  
+)  p   —      8   	                                    !ÿÿ³l@Ï]Ãª5¿ñèbTˆî VU ˜¹ Â.Ğ ÂN   ?£©¼Á¬ UÕ` hU Â?ú  ª  ú   ³  ¬  Ó   ²      V   2   +   &                        ÿÿü{ÿÿ«c@ĞÆJ¿ñâûã:Í œƒt œ¢± Â'  ÂQø   6 •¿rÁ¥ÌÍU œ”P Â<i  ğ  F   I  m     F          1   +   !                            %ÿÿ­¸@Ğt{'¾¿ñŞqå; œ%º œLÇ Â.Ñ ÂJ)    ^ƒNÁÄœUw– œ4 Â=-  I  ‚     N  õ         r                                     éÿÿ°                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
