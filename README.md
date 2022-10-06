@@ -1,13 +1,17 @@
+<!-- markdownlint-disable MD033 -->
+
 # CDS Tutorials
 
-<img align="right" width="20%" alt="CDS logo" src="Notebooks/images/cds.png">
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![GitHub CI](https://github.com/cds-astro/tutorials/actions/workflows/ci.yml/badge.svg)
 
 Welcome to the repository of [CDS](https://cds.u-strasbg.fr/) jupyter notebooks.
+
+<img align="right" width="20%" alt="CDS logo" src="Notebooks/images/cds.png">
 
 All tutorials here illustrate how astronomers can search, find, and access data they need from archives accross the world. We offer a specific focus on data hosted at the Strasbourg astronomical Data Center (CDS) and on archives compliant with Virtual Observatory (VO) protocols and standards. These standards are defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/)) and can be read from their [repository](https://github.com/ivoa-std).
 
 Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/) usually with the same or a similar name.
-
 
 ***
 
@@ -35,6 +39,8 @@ To have an interactive look at these tutorials without the need to install anyth
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 
 ### On your machine
+
+[![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)]
 
 You can download the notebooks to your personal machine and use them there. Note that you might have to install a few packages to do so. In the `requirements.txt` file you will find a list of all packages that we use in our tutorials.
 
