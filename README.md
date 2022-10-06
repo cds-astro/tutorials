@@ -3,7 +3,6 @@
 # CDS Tutorials
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![GitHub CI](https://github.com/cds-astro/tutorials/actions/workflows/ci.yml/badge.svg)
 
 Welcome to the repository of [CDS](https://cds.u-strasbg.fr/) jupyter notebooks.
 
@@ -34,17 +33,17 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ### Online
 
-To have an interactive look at these tutorials without the need to install anything have a look at our Binder:
-
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
+
+To have an interactive look at these tutorials in your browser click on the Binder button here.
 
 ### On your machine
 
-[![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)]
+![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)
 
-You can download the notebooks to your personal machine and use them there. Note that you might have to install a few packages to do so. In the `requirements.txt` file you will find a list of all packages that we use in our tutorials.
+You can also download the notebooks to your personal machine and use them there. Note the currently supported python versions and the list of dependencies in the file `requirements.txt`.
 
-We are particularly happy to present examples for the usage of the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) and [`MOCPy`](https://cds-astro.github.io/mocpy/index.html) packages, which were developed at the CDS. Furthermore, we will make extensive use of the [`PyVO`](https://pyvo.readthedocs.io/en/latest/#) and [`astroquery`](https://astroquery.readthedocs.io/en/latest/) packages.
+Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is supported in Jupyter Notebooks but not in JupyterLab.
 
 ## Brief summaries of the tutorials
 
