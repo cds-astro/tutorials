@@ -1,9 +1,12 @@
 # CDS Tutorials
 
-Welcome to the CDS Tutorial Repository. Here we collect Jupyter notebook tutorials on how to interact with Virtual Observatory compliant archives and CDS archives in particular.
+Welcome to the repository of [CDS](https://cds.u-strasbg.fr/) jupyter notebook tutorials.
+
 ***
 
-All tutorials in this repository are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/) usually with the same or a similar name. The aim of these tutorials is to enable astronomers to search, find and access the data they need from archives across the world and at the CDS. We focus in particular on archives that are compliant with Virtual Observatory (VO) protocols and standards as defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/))
+All tutorials here illustrate how astronomers can search, find, and access data they need from archives accross the world. We offer a specific focus on data hosted at the Strasbourg astronomical Data Center (CDS) and on archives compliant with Virtual Observatory (VO) protocols and standards. These standards are defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/)) and can be read from their [repository](https://github.com/ivoa-std).
+
+Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/) usually with the same or a similar name.
 
 ## Table of contents
 
