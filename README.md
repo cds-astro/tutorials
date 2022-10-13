@@ -54,12 +54,11 @@ The tutorials come in a recommended order ranging from basic usage of the CDS to
 
 ### [1. Intro to CDS services in notebooks](Notebooks/1_Intro_to_CDS_services_in_notebooks.ipynb)
 
-For the CDS tutorial two versions exist: a short (The_CDS_tutorial.ipynb) and an extended one (The_CDS_tutorial_extended.ipynb).
-In the short version we use `ipyaladin` to look at the Antennae galaxy pair. Then we demonstrate how to access catalogues and tables in VizieR using both `astroquery` and `PyVO`. Here we are searching for a table of Arp's peculiar galaxies. We close by visualising the downloaded table in the AladinLite widget create with `ipyaladin`.
-
-In the extended version we start off as in the short version. After visualising the table of Arp's peculiar galaxies in the AladinLite widget, we move on to investigate which galaxies in the table are within the footprint of both the SDSS and the GALEX survey. For this step we download the SDSS and GALEX MOCs from the CDS MOC server with `astroquery` and use implicitly `MOCPy` to handle the MOCs.
+We show how to call Simbad, Aladin Lite, Vizier and X-match in a Jupyter Notebook.
 
 ### [2. Arp peculiar galaxies catalog _ First steps with MOCs](Notebooks/2_Arp_peculiar_galaxies_catalog__first_steps_with_MOCs.ipynb)
+
+We explore Arp's Catalog of peculiar Galaxies and extract the galaxies explored both in the SDSS and GALEX surveys.
 
 ### [3. Abel1656 - The Coma Cluster of Galaxies](Notebooks/3_Abel1656_The_Coma_Cluster_of_Galaxies.ipynb)
 
@@ -88,4 +87,4 @@ Each folder represents a different summer school and the associated tutorials. T
 
 ## To-Do list
 
-- [] remove `healpy` dependency for [windows support](https://github.com/healpy/healpy/blob/main/INSTALL.rst)
+- remove `healpy` dependency for [windows support](https://github.com/healpy/healpy/blob/main/INSTALL.rst)
