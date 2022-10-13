@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# This runs alls notebooks in the Notebooks folder
 
 name: runs notebooks
 
@@ -17,8 +17,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  test_linux:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -37,4 +36,23 @@ jobs:
       - name: Test with pytest
         run: |
           pytest --nbmake -n=auto "./Notebooks"
-
+          
+  test-macos: 
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install nbmake pytest-xdist
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Test with pytest
+        run: |
+          pytest --nbmake -n=auto "./Notebooks"
