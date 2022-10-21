@@ -1,6 +1,6 @@
 # This runs alls notebooks in the Notebooks folder
 
-name: runs notebooks
+name: mac-os
 
 # Controls when the workflow will run
 on:
