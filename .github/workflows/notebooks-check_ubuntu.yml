@@ -1,6 +1,8 @@
 # This runs alls notebooks in the Notebooks folder
 
-name: runs notebooks
+# This runs alls notebooks in the Notebooks folder
+
+name: ubuntu
 
 # Controls when the workflow will run
 on:
