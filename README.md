@@ -83,6 +83,10 @@ This tutorial is centred on using HiPS and MOC to efficiently reach your science
 
 Each folder represents a different summer school and the associated tutorials. These are not maintained but still accessible.
 
+## Need help?
+
+Don't hesitate to ask a question in the Q&A of our `Discussions` section.
+
 ## Glossary
 
 - **MOC**: MultiOrder Coverage map - efficient way of describing arbitrary patches of the sky, logical operations such as union, intersection of MOC can be calculated, tables can be filtered by MOCs, more information [here](https://ivoa.net/documents/MOC/)
