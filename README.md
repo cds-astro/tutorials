@@ -42,7 +42,10 @@ To have an interactive look at these tutorials in your browser click on the Bind
 
 ### On your machine
 
-![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)
+![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational) 
+[![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
+[![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
+[![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
 
 You can also download the notebooks to your personal machine and use them there. Note the currently supported python versions :arrow_up: and the list of dependencies in the file [`requirements.txt`](requirements.txt).
 
@@ -79,6 +82,10 @@ This tutorial is centred on using HiPS and MOC to efficiently reach your science
 ## Additional tutorials used in conferences and schools
 
 Each folder represents a different summer school and the associated tutorials. These are not maintained but still accessible.
+
+## Need help?
+
+Don't hesitate to ask a question in the Q&A of our `Discussions` section.
 
 ## Glossary
 
