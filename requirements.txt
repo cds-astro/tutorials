@@ -3,7 +3,7 @@ astroquery==0.4.*
 healpy==1.16.*
 ipyaladin==0.1.*
 MOCpy==0.11.*
-plotly==5.9.*
+plotly==5.10.*
 pyvo==1.4.*
 regions==0.5
 seaborn==0.11.*
