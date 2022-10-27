@@ -61,11 +61,12 @@ We show how to call Simbad, Aladin Lite, Vizier and X-match in a Jupyter Noteboo
 
 ### [2. Arp peculiar galaxies catalog _ First steps with MOCs](Notebooks/2_Arp_peculiar_galaxies_catalog__first_steps_with_MOCs.ipynb)
 
-We explore Arp's Catalog of peculiar Galaxies and extract the galaxies explored both in the SDSS and GALEX surveys.
+We explore Arp's Catalog of peculiar Galaxies and extract the galaxies explored both in the SDSS and GALEX surveys by using MOCs. 
+This tutorial highlights two python modules for querying data : [astroquery](https://astroquery.readthedocs.io/en/latest/index.html) and [pyvo](https://pyvo.readthedocs.io/en/latest/index.html).
 
 ### [3. Abel1656 - The Coma Cluster of Galaxies](Notebooks/3_Abel1656_The_Coma_Cluster_of_Galaxies.ipynb)
 
-This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search for redshift information of galaxies in the spatial vicinity of the cluster centre. To get this information we get catalogues with measured redshifts and a spectrum, from which we measure a redshift.
+This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search for redshift information of galaxies in the spatial vicinity of the cluster centre. To get this information we get catalogues with measured redshifts and a spectrum, from which we measure a redshift. It uses the Simple Spectral Access (SSA) protocol of the virtual observatory. 
 
 ### [4. High Energy tutorial](Notebooks/4_HighEnergy-tutorial.ipynb)
 
@@ -77,7 +78,7 @@ In this tutorial we obtain catalog data from SDSS and 2MASS in a given sky regio
 
 ### [6. Advanced usage of HiPS and MOC](Notebooks/6_Advanced_usage_of_HiPS_and_MOC.ipynb)
 
-This tutorial is centred on using HiPS and MOC to efficiently reach your science goals. In particular it will help you answer questions such as: What is the footprint of my imaging survey? Where on the sky do we have low foreground extinction? Where do these two regions overlap? How can I get interesting catalogue entries within these regions? We build our own MOCs from a set of images and for an all-sky survey, where pixel values are within a certain range. We then move on to query catalogues within an intersection of these MOCs.
+This tutorial is centred on using HiPS and MOC to efficiently reach your science goals. In particular it will help you answer questions such as: What is the footprint of my imaging survey? Where on the sky do we have low foreground extinction? Where do these two regions overlap? How can I get interesting catalogue entries within these regions? This questions are answered by building MOCs from a set of images. We also build a MOC from the pixel values of an all-sky survey. We then move on to query catalogues in an intersection of these MOCs.
 
 ## Additional tutorials used in conferences and schools
 
