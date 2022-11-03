@@ -52,7 +52,6 @@ You can also download the notebooks to your personal machine and use them there.
 :rotating_light: Known issues :rotating_light:
 
 - for tutorial #2: we use the method contains_from_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement of MOCpy version to be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy)
-- for tutorial #6: Windows users won't be able to run the tutorial. Heaply does not support windows and we use it to converts a HIPS from galactic to equatorial coordinates. We're currently looking for an alternative solution. Our appologies.
 
 Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is supported in Jupyter Notebooks but not in JupyterLab.
 
