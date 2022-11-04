@@ -51,7 +51,7 @@ You can also download the notebooks to your personal machine and use them there.
 
 :rotating_light: Known issues :rotating_light:
 
-- for tutorial #2: we use the method contains_from_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement of MOCpy version to be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy)
+- for tutorial #2: we use the method contains_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement version of MOCpy than can be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy)
 
 Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is supported in Jupyter Notebooks but not in JupyterLab.
 
