@@ -42,18 +42,20 @@ To have an interactive look at these tutorials in your browser click on the Bind
 
 ### On your machine
 
-![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)
+![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-informational)
 [![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
 
-You can also download the notebooks to your personal machine and use them there. Note the currently supported python versions :arrow_up: and the list of dependencies in the file [`requirements.txt`](requirements.txt).
+You can also download the notebooks to your personal machine and use them there. 
+
+Note the currently supported python versions :arrow_up: and the list of dependencies in the file [`requirements.txt`](requirements.txt).
 
 :rotating_light: Known issues :rotating_light:
 
 - for tutorial #2: we use the method contains_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement version of MOCpy than can be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy)
 
-Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is supported in Jupyter Notebooks but not in JupyterLab.
+Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin) widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
 ## Flight plan
 
