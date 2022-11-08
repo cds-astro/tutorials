@@ -23,14 +23,16 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
     - [On your machine](#on-your-machine)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
-    - [2. Arp peculiar galaxies catalog _ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-_-first-steps-with-mocs)
+    - [2. Arp peculiar galaxies catalog __ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-__-first-steps-with-mocs)
     - [3. Abel1656, The Coma Cluster of Galaxies __ The Simple Spectral Access Protocol](#3-abel1656-the-coma-cluster-of-galaxies-__-the-simple-spectral-access-protocol)
-    - [4. High Energy tutorial](#4-high-energy-tutorial)
-    - [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases](#5-discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases)
+    - [4. High Energy tutorial __ advanced use of CDS services](#4-high-energy-tutorial-__-advanced-use-of-cds-services)
+    - [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases __ advanced use of CDS services](#5-discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases-__-advanced-use-of-cds-services)
     - [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC](#6-the-mash-planetary-nebulae-catalog-__-advanced-usage-of-hips-and-moc)
   - [Additional tutorials used in conferences and schools](#additional-tutorials-used-in-conferences-and-schools)
   - [Need help?](#need-help)
   - [Glossary](#glossary)
+    - [IVOA Standards](#ivoa-standards)
+    - [CDS Services](#cds-services)
 
 ## How to use the tutorials
 
@@ -47,7 +49,7 @@ To have an interactive look at these tutorials in your browser click on the Bind
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
 
-You can also download the notebooks to your personal machine and use them there. 
+You can also download the notebooks to your personal machine and use them there.
 
 Note the currently supported python versions :arrow_up: and the list of dependencies in the file [`requirements.txt`](requirements.txt).
 
@@ -70,7 +72,7 @@ The tutorials come in a recommended order ranging from basic usage of the CDS to
 
 We show how to call Simbad, Aladin Lite, Vizier and X-match in a Jupyter Notebook.
 
-### [2. Arp peculiar galaxies catalog _ First steps with MOCs](Notebooks/2_Arp_peculiar_galaxies_catalog__first_steps_with_MOCs.ipynb)
+### [2. Arp peculiar galaxies catalog __ First steps with MOCs](Notebooks/2_Arp_peculiar_galaxies_catalog__first_steps_with_MOCs.ipynb)
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
@@ -89,7 +91,7 @@ This tutorial highlights two python modules for querying data : [astroquery](htt
 
 This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search for redshift information of galaxies in the spatial vicinity of the cluster centre. To get this information we get catalogues with measured redshifts and a spectrum, from which we measure a redshift. It uses the Simple Spectral Access (SSA) protocol of the virtual observatory.
 
-### [4. High Energy tutorial](Notebooks/4_HighEnergy-tutorial.ipynb)
+### [4. High Energy tutorial __ advanced use of CDS services](Notebooks/4_HighEnergy-tutorial.ipynb)
 
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
@@ -98,7 +100,7 @@ This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search 
 
 For this tutorial we focus on gamma-ray and high energy spectral bands and start by querying suitable catalogues using VO tools. After that we cross-correlate catalogues to find entries for objects in different photon energy bands. We then apply selection criteria to extract sources from a catalogue and use the resulting observational measures of the selected objects to explore possible correlations. We close by displaying spectral energy distributions obtained from different photometric data sets.
 
-### [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases](Notebooks/5_Discovery_of_Brown_Dwarfs_mining_the_2MASS_and_SDSS_databases.ipynb)
+### [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases __ advanced use of CDS services](Notebooks/5_Discovery_of_Brown_Dwarfs_mining_the_2MASS_and_SDSS_databases.ipynb)
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
@@ -125,13 +127,15 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 ## Glossary
 
 ### IVOA Standards
+
 - **MOC**: MultiOrder Coverage map - efficient way of describing arbitrary patches of the sky, logical operations such as union, intersection of MOC can be calculated, tables can be filtered by MOCs, more information [here](https://ivoa.net/documents/MOC/ "https://ivoa.net/documents/MOC/")
 - **HiPS**: Hierarchical Progressive Surveys - efficient tiling systems to serve (all-sky) imaging surveys, cubes or catalogues, the user only downloads and sees what they are interested in and the more they zoom the more they see, more information [here](https://aladin.u-strasbg.fr/hips/ "https://aladin.u-strasbg.fr/hips/")
 - **SSA**: Simple Spectral Access [protocol](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA") to access spectrums
 
 ### CDS Services
--  [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/"): dynamic astronomical database of objects appearing in scientific publications, updated every working day,
--  [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml"): an interactive sky atlas, 
--  [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR"): a collection of published astronomical catalogues, 
--  [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/"): an efficient cross-matching tool between very large catalogues,
--  ![MOCpy](https://img.shields.io/badge/MOCpy-gray "https://img.shields.io/badge/MOCpy-gray"): a python library allowing MOC manipulation
+
+- [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/"): dynamic astronomical database of objects appearing in scientific publications, updated every working day,
+- [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml"): an interactive sky atlas,
+- [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR"): a collection of published astronomical catalogues,
+- [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/"): an efficient cross-matching tool between very large catalogues,
+- ![MOCpy](https://img.shields.io/badge/MOCpy-gray "https://img.shields.io/badge/MOCpy-gray"): a python library allowing MOC manipulation
