@@ -28,7 +28,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
     - [4. High Energy tutorial __ advanced use of CDS services](#4-high-energy-tutorial-__-advanced-use-of-cds-services)
     - [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases __ advanced use of CDS services](#5-discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases-__-advanced-use-of-cds-services)
     - [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC](#6-the-mash-planetary-nebulae-catalog-__-advanced-usage-of-hips-and-moc)
-  - [Additional tutorials used in conferences and schools](#additional-tutorials-used-in-conferences-and-schools)
+  - [Tutorials used in past conferences and schools](#additional-tutorials-used-in-past-conferences-and-schools)
   - [Need help?](#need-help)
   - [Glossary](#glossary)
     - [IVOA Standards](#ivoa-standards)
@@ -51,13 +51,13 @@ To have an interactive look at these tutorials in your browser click on the Bind
 
 You can also download the notebooks to your personal machine and use them there.
 
-Note the currently supported python versions :arrow_up: and the list of dependencies in the file [`requirements.txt`](requirements.txt).
+Note the currently supported python versions and the list of dependencies in the file [`requirements.txt`](requirements.txt).
 
 :rotating_light: Known issues :rotating_light:
 
 - for tutorial #2: we use the method contains_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement version of MOCpy than can be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
 
-Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file `postBuild`. This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
+Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file [`postBuild`](https://github.com/cds-astro/postBuild "https://github.com/cds-astro/postBuild"). This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
 ## Flight plan
 
@@ -116,13 +116,13 @@ In this tutorial we obtain catalog data from SDSS and 2MASS in a given sky regio
 
 This tutorial is centred on using HiPS and MOC to efficiently reach your science goals. In particular it will help you answer questions such as: What is the footprint of my imaging survey? Where on the sky do we have low foreground extinction? Where do these two regions overlap? How can I get interesting catalogue entries within these regions? This questions are answered by building MOCs from a set of images. We also build a MOC from the pixel values of an all-sky survey. We then move on to query catalogues in an intersection of these MOCs.
 
-## Additional tutorials used in conferences and schools
+## Additional tutorials used in past conferences and schools
 
 Each folder represents a different summer school and the associated tutorials. These are not maintained but still accessible.
 
 ## Need help?
 
-Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://github.com/cds-astro/tutorials/discussions "https://github.com/cds-astro/tutorials/discussions") section.
+Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://github.com/cds-astro/tutorials/discussions "https://github.com/cds-astro/tutorials/discussions/categories/q-a") section.
 
 ## Glossary
 
@@ -130,7 +130,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 
 - **MOC**: MultiOrder Coverage map - efficient way of describing arbitrary patches of the sky, logical operations such as union, intersection of MOC can be calculated, tables can be filtered by MOCs, more information [here](https://ivoa.net/documents/MOC/ "https://ivoa.net/documents/MOC/")
 - **HiPS**: Hierarchical Progressive Surveys - efficient tiling systems to serve (all-sky) imaging surveys, cubes or catalogues, the user only downloads and sees what they are interested in and the more they zoom the more they see, more information [here](https://aladin.u-strasbg.fr/hips/ "https://aladin.u-strasbg.fr/hips/")
-- **SSA**: Simple Spectral Access [protocol](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA") to access spectrums
+- **SSA**: Simple Spectral Access protocol to access spectrums, more information [here](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA")
 
 ### CDS Services
 
