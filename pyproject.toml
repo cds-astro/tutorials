@@ -22,12 +22,19 @@ seaborn = "0.12.*"
 specutils = "1.9.*"
 
 [tool.black]
+line-length = 88
 include = '\.pyi?$'
 exclude = '''
 /(
     \.git
-  | \.github
-  | \.ipynb_checkpoints
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
 )/
 '''
 
