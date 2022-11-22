@@ -23,12 +23,12 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
     - [On your machine](#on-your-machine)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
-    - [2. Arp peculiar galaxies catalog __ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-__-first-steps-with-mocs)
-    - [3. Abel1656, The Coma Cluster of Galaxies __ The Simple Spectral Access Protocol](#3-abel1656-the-coma-cluster-of-galaxies-__-the-simple-spectral-access-protocol)
-    - [4. High Energy tutorial __ advanced use of CDS services](#4-high-energy-tutorial-__-advanced-use-of-cds-services)
-    - [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases __ advanced use of CDS services](#5-discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases-__-advanced-use-of-cds-services)
-    - [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC](#6-the-mash-planetary-nebulae-catalog-__-advanced-usage-of-hips-and-moc)
-  - [Tutorials used in past conferences and schools](#additional-tutorials-used-in-past-conferences-and-schools)
+    - [2. Arp peculiar galaxies catalog \_\_ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-__-first-steps-with-mocs)
+    - [3. Abel1656, The Coma Cluster of Galaxies \_\_ The Simple Spectral Access Protocol](#3-abel1656-the-coma-cluster-of-galaxies-__-the-simple-spectral-access-protocol)
+    - [4. High Energy tutorial \_\_ advanced use of CDS services](#4-high-energy-tutorial-__-advanced-use-of-cds-services)
+    - [5. The MASH Planetary Nebulae Catalog \_\_ Advanced usage of HiPS and MOC](#5-the-mash-planetary-nebulae-catalog-__-advanced-usage-of-hips-and-moc)
+    - [6. Multi-Order Coverage data structure to plan Multi Messenger Astronomy observations](#6-multi-order-coverage-data-structure-to-plan-multi-messenger-astronomy-observations)
+  - [Additional tutorials used in past conferences and schools](#additional-tutorials-used-in-past-conferences-and-schools)
   - [Need help?](#need-help)
   - [Glossary](#glossary)
     - [IVOA Standards](#ivoa-standards)
@@ -100,21 +100,20 @@ This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search 
 
 For this tutorial we focus on gamma-ray and high energy spectral bands and start by querying suitable catalogues using VO tools. After that we cross-correlate catalogues to find entries for objects in different photon energy bands. We then apply selection criteria to extract sources from a catalogue and use the resulting observational measures of the selected objects to explore possible correlations. We close by displaying spectral energy distributions obtained from different photometric data sets.
 
-### [5. Discovery of Brown Dwarfs mining the 2MASS and SDSS databases __ advanced use of CDS services](Notebooks/5_Discovery_of_Brown_Dwarfs_mining_the_2MASS_and_SDSS_databases.ipynb)
-
-[![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
-[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
-[![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
-[![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
-
-In this tutorial we obtain catalog data from SDSS and 2MASS in a given sky region. Then we cross-match the results of these searches and filter the resulting table for brown dwarfs. In the end we verify our sample of brown dwarfs by getting more information about our candidates from Simbad.
-
-### [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC](Notebooks/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.ipynb)
+### [5. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC](Notebooks/5_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.ipynb)
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![MOCpy](https://img.shields.io/badge/MOCpy-gray)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
 
 This tutorial is centred on using HiPS and MOC to efficiently reach your science goals. In particular it will help you answer questions such as: What is the footprint of my imaging survey? Where on the sky do we have low foreground extinction? Where do these two regions overlap? How can I get interesting catalogue entries within these regions? This questions are answered by building MOCs from a set of images. We also build a MOC from the pixel values of an all-sky survey. We then move on to query catalogues in an intersection of these MOCs.
+
+### [6. Multi-Order Coverage data structure to plan Multi Messenger Astronomy observations](Notebooks/6_Multi-Order-Coverage-data-structure-to-plan-multi-messenger-observations-v2.ipynb)
+
+[![MOCpy](https://img.shields.io/badge/MOCpy-gray)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![SAMP](https://img.shields.io/badge/SAMP-gray)](https://www.ivoa.net/documents/SAMP/ "https://www.ivoa.net/documents/SAMP/")
+[![Aladin Desktop](https://img.shields.io/badge/Aladin-gray)](https://aladin.cds.unistra.fr/AladinDesktop/ "https://aladin.cds.unistra.fr/AladinDesktop/")
+
+TODO: description
 
 ## Additional tutorials used in past conferences and schools
 
