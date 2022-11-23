@@ -20,6 +20,7 @@ pyvo = "1.4"
 regions = "0.7"
 seaborn = "0.12.*"
 specutils = "1.9.*"
+astroplan = "^0.8"
 
 [tool.black]
 line-length = 88
