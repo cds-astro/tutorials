@@ -39,6 +39,9 @@ exclude = '''
 )/
 '''
 
+[tool.nbqa.md]
+blacken-docs = true
+
 [tool.jupytext]
 formats = "ipynb,py:percent"
 # remove notebooks metadata from scripts
