@@ -2,16 +2,8 @@ default_language_version:
   # force all unspecified python hooks to run python3
   python: python3.8
 repos:
--   repo: https://github.com/psf/black
-    rev: 21.12b0
-    hooks:
-    -   id: black
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
-    hooks:
-    - id: flake8
 -   repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.30.0
+    rev: v0.32.2
     hooks:
     -   id: markdownlint
         args:
@@ -20,7 +12,7 @@ repos:
             "--disable=MD047"
           ]
 -   repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.1.1
+    rev: 1.5.3
     hooks:
     -   id: nbqa-black
         name: nbqa-black
@@ -30,3 +22,7 @@ repos:
         require_serial: true
         types: [jupyter]
         additional_dependencies: [black]
+    -   id: nbqa-flake8
+        name: nbqa-flake8
+        description: "Run flake8 on a Jupyter notebook"
+    
