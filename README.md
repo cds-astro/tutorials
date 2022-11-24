@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 
-# CDS Tutorials
+# CDS/ESCAPE Tutorials
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -57,6 +57,8 @@ Note the currently supported python versions and the list of dependencies in the
 :rotating_light: Known issues :rotating_light:
 
 - for tutorial #2: we use the method contains_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement version of MOCpy than can be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+- with python 3.11: installation of MOCpy returns "module frozen" error
+- ipyaladin does not show in mybinder 
 
 Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file [`postBuild`](https://github.com/cds-astro/postBuild "https://github.com/cds-astro/postBuild"). This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
