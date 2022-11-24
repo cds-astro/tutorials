@@ -2,6 +2,7 @@
 
 # CDS/ESCAPE Tutorials
 
+[![DOI](https://zenodo.org/badge/224865065.svg)](https://zenodo.org/badge/latestdoi/224865065)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Welcome to the repository of [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/") jupyter notebooks.
@@ -143,7 +144,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 - **MOC** also **SMOC**: MultiOrder Coverage map (or Space MultiOrder Coverage) - efficient way of describing arbitrary patches of the sky, logical operations such as union, intersection of MOC can be calculated, tables can be filtered by MOCs, more information [here](https://ivoa.net/documents/MOC/ "https://ivoa.net/documents/MOC/")
 - **STMOC**: Space-Time MultiOrder Coverage map - is a MOC that encompasses time information.
 - **SSA**: Simple Spectral Access protocol to access spectrums, more information [here](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA")
-- **SAMP**: Simple Application Messaging Protocol - a messaging system to share information between different astronomical softwares, such as python, Aladin, Topcat, etc. More information [here](https://www.ivoa.net/documents/SAMP/ "https://www.ivoa.net/documents/SAMP/")
+- **SAMP**: Simple Application Messaging Protocol - a messaging system to share information between different astronomical softwares, such as python, Aladin, Topcat, etc. more information [here](https://www.ivoa.net/documents/SAMP/ "https://www.ivoa.net/documents/SAMP/")
 
 ### CDS Services
 
