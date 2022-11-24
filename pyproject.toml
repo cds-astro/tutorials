@@ -9,47 +9,5 @@ license = "BSD-3-Clause"
 readme = "README.md"
 keywords = ["astronomy", "tutorials", "virtual-observatory"]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-astropy = "5.1.1"
-astroquery = "0.4.*"
-ipyaladin = "0.1.*"
-mocpy = "0.11.*"
-plotly = "5.11.*"
-pyvo = "1.4"
-regions = "0.7"
-seaborn = "0.12.*"
-specutils = "1.9.*"
-astroplan = "^0.8"
-cdshealpix = "^0.6.3"
-
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-
 [tool.nbqa.md]
 blacken-docs = true
-
-[tool.jupytext]
-formats = "ipynb,py:percent"
-# remove notebooks metadata from scripts
-notebook_metadata_filter = "-all"
-cell_metadata_filter = "-all"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
