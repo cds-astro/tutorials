@@ -1,0 +1,190 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/BSD-3-Clause",
+    "codeRepository": "git+https://github.com/cds-astro/tutorials",
+    "contIntegration": "https://github.com/cds-astro/tutorials/actions",
+    "datePublished": "2022-11-24",
+    "dateModified": "2022-11-24",
+    "issueTracker": "https://github.com/cds-astro/tutorials/issues",
+    "name": "cds-escape-tutorials",
+    "version": "1.0.0",
+    "description": "Jupyter Notebook tutorials using astronomical databases and Virtual Observatory tools",
+    "applicationCategory": "Astronomy",
+    "funding": [
+        "European Union Horizon Program call INFRAEOSC-03-2020 - Grant Agreement Number 101017536",
+        "European Union’s Horizon 2020 research and innovation program under the Grant Agreement n. 824064",
+        "European Union’s Horizon 2020 Programme under the AHEAD2020 project - Grant agreement Number 871158"
+    ],
+    "readme": "https://github.com/cds-astro/tutorials/blob/master/README.md",
+    "developmentStatus": "active",
+    "isPartOf": "https://github.com/cds-astro",
+    "funder": {
+        "@type": "Organization",
+        "name": "European Union’s Horizon 2020 research and innovation program "
+    },
+    "keywords": [
+        "virtual-observatory databases python"
+    ],
+    "programmingLanguage": [
+        "python3.*"
+    ],
+    "operatingSystem": [
+        "Linux",
+        "Windows",
+        "MacOS"
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Centre de Données Astronomiques de Strasbourg",
+        "url": "http://cdsweb.u-strasbg.fr/"
+    },
+    "softwareRequirements": "https://github.com/cds-astro/tutorials/blob/master/requirements.txt",
+    "author": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-5713-0998",
+            "givenName": "Manon",
+            "familyName": "Marchand",
+            "email": "manon.marchand@bubbly.space",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-6616-7554",
+            "givenName": "Katharina",
+            "familyName": "Lutz",
+            "email": "research@katha-lutz.de",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-4200-9965",
+            "givenName": "Stefania",
+            "familyName": "Amodeo",
+            "email": "stefania.amodeo@astro.unistra.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-5818-2781",
+            "givenName": "Thomas",
+            "familyName": "Boch",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-6118-2985",
+            "givenName": "Caroline",
+            "familyName": "Bot",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "0000-0002-6185-8292",
+            "givenName": "Giulia",
+            "familyName": "Iafrate",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "INAF - Italian National Institute for Astrophysics"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "0000-0002-2307-2432",
+            "givenName": "Jenny",
+            "familyName": "Sorce",
+            "affiliation": [
+                {
+                    "@type": "Organization",
+                    "name": "Univ. Lille, CNRS, Centrale Lille, UMR 9189 CRIStAL, F-59000 Lille, France"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Université Paris-Saclay, CNRS, Institut d'Astrophysique Spatiale, 91405, Orsay, France"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Leibniz-Institut für Astrophysik (AIP), An der Sternwarte 16, D-14482 Potsdam, Germany"
+                }
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0003-2373-451X",
+            "givenName": "Ada",
+            "familyName": "Nebot Gómez-Morán",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": " 0000-0002-6985-9476",
+            "givenName": "Francisco",
+            "familyName": "Jiménez-Esteban",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Centro de Astrobiología (CAB), CSIC-INTA, Camino Bajo del Castillo s/n, E-28692, Villanueva de la Cañada, Madrid, Spain"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "0000-0003-1885-5130",
+            "givenName": "Enrique",
+            "familyName": "Solano Marquez",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Centro de Astrobiología (CAB), CSIC-INTA, Camino Bajo del Castillo s/n, E-28692, Villanueva de la Cañada, Madrid, Spain"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Matthieu",
+            "familyName": "Baumann",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-2353-6604",
+            "givenName": "Giuseppe",
+            "familyName": "Greco",
+            "affiliation": {
+                "@type": "Organization",
+                "name": " INFN, Sezione di Perugia, I-06123 Perugia, Italy"
+            }
+        }
+    ],
+    "maintainer": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-5713-0998",
+            "givenName": "Manon",
+            "familyName": "Marchand",
+            "email": "manon.marchand@bubbly.space",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+            }
+        }
+    ]
+}
