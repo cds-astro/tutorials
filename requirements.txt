@@ -1,3 +1,4 @@
+astroplan==0.8
 astropy==5.1.1
 astroquery==0.4.*
 ipyaladin==0.1.*
@@ -7,4 +8,3 @@ pyvo==1.4
 regions==0.7
 seaborn==0.12.*
 specutils==1.9.*
-astroplan==0.8
