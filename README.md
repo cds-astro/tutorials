@@ -17,7 +17,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ## Table of contents
 
-- [CDS Tutorials](#cds-tutorials)
+- [CDS/ESCAPE Tutorials](#cdsescape-tutorials)
   - [Table of contents](#table-of-contents)
   - [How to use the tutorials](#how-to-use-the-tutorials)
     - [Online](#online)
@@ -59,7 +59,7 @@ Note the currently supported python versions and the list of dependencies in the
 
 - for tutorial #2: we use the method contains_skycoord that will exist in MOCpy 11.1. Right now, it is only available with the developpement version of MOCpy than can be downloaded and installed from [its repository](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
 - with python 3.11: installation of MOCpy returns "module frozen" error
-- ipyaladin does not show in mybinder 
+- ipyaladin does not show in mybinder
 
 Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file [`postBuild`](https://github.com/cds-astro/postBuild "https://github.com/cds-astro/postBuild"). This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
