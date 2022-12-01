@@ -59,7 +59,6 @@ Note the currently supported python versions and the list of dependencies in the
 
 - with python 3.11: installation of MOCpy returns "module frozen" error
 - on MACOS: only python 3.11 seems to be able to dowload ressources for tutorial 7
-- ipyaladin does not show in mybinder
 
 Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file [`postBuild`](https://github.com/cds-astro/postBuild "https://github.com/cds-astro/postBuild"). This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
