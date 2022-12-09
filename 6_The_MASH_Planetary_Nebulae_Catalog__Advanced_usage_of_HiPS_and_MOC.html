@@ -1,0 +1,1701 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced usage of HiPS and MOCs to explore complex regions of interest &#8212; ESCAPE/Euro-VO Tutorials</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Discovery of brown dwarfs mining the 2MASS and SDSS database" href="5_Brown_Dwarf_Search_via_Cross-matching_Catalogs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Tutorials_front_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ESCAPE/Euro-VO Tutorials</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to the ESCAPE/Euro-VO tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">
+   Introduction to the CDS services
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_Arp_peculiar_galaxies_catalog__first_steps_with_MOCs.html">
+   First steps with Multi-Order Coverage data structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Abel1656_The_Coma_Cluster_of_Galaxies.html">
+   The Simple Spectral Access Protocol to explore Abel 1656
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_HighEnergy-tutorial.html">
+   Combining the CDS services to study gamma-ray and high energy spectral bands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_Brown_Dwarf_Search_via_Cross-matching_Catalogs.html">
+   Cross matching catalogs to discover potential brown dwarfs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Advanced usage of HiPS and MOCs in the MASH planetary nebulae catalog
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?urlpath=tree/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cds-astro/tutorials"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-finding-the-images">
+   Step 1: Finding the images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-a-moc-of-the-mash-images">
+   Step 2: Create a MOC of the MASH images
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organising-data">
+     Organising data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-moc">
+     Create the MOC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-moc">
+     Plot the MOC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions">
+   Step 3: Load an archival extinction map and create the MOC of the low extinction regions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above">
+   Step 4:  Find out which regions are covered by the MASH short-red images in the low extinction regions defined above
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-query-the-2mass-and-gaia-catalogues-by-moc">
+   Step 5: Query the 2MASS and Gaia Catalogues by MOC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-cross-match-gaia-and-wise-sources-in-all-fields">
+   Step 6: Cross-match Gaia and WISE sources in all fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-build-a-color-color-diagram">
+   Step 7: Build a color-color diagram
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Advanced usage of HiPS and MOCs to explore complex regions of interest</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-finding-the-images">
+   Step 1: Finding the images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-create-a-moc-of-the-mash-images">
+   Step 2: Create a MOC of the MASH images
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organising-data">
+     Organising data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-moc">
+     Create the MOC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-moc">
+     Plot the MOC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions">
+   Step 3: Load an archival extinction map and create the MOC of the low extinction regions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above">
+   Step 4:  Find out which regions are covered by the MASH short-red images in the low extinction regions defined above
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-query-the-2mass-and-gaia-catalogues-by-moc">
+   Step 5: Query the 2MASS and Gaia Catalogues by MOC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-cross-match-gaia-and-wise-sources-in-all-fields">
+   Step 6: Cross-match Gaia and WISE sources in all fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-build-a-color-color-diagram">
+   Step 7: Build a color-color diagram
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="advanced-usage-of-hips-and-mocs-to-explore-complex-regions-of-interest">
+<h1>Advanced usage of HiPS and MOCs to explore complex regions of interest<a class="headerlink" href="#advanced-usage-of-hips-and-mocs-to-explore-complex-regions-of-interest" title="Permalink to this headline">#</a></h1>
+<p>Stefania Amodea¹, Matthieu Baumann¹, Thomas Boch¹, Caroline Bot¹, Katarina A. Lutz¹.</p>
+<ol class="simple">
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+</ol>
+<p>Thomas Boch and Caroline Bot wrote the original version of this tutorial, available on the <a class="reference external" href="http://www.euro-vo.org/?q=science/scientific-tutorials">EURO-VO tutorials page</a>. It was presented at the workshop “<a class="reference external" href="https://www.lsstcorporation.org/node/107">Detecting the unexpected, Discovery in the Era of Astronomically Big Data</a>”. The version here is an adaptation to jupyter notebooks by the Strasbourg astronomical Data Center (<a class="reference external" href="https://cdsweb.u-strasbg.fr/">CDS</a>) team.</p>
+<hr class="docutils" />
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>This tutorial demonstrates an advanced usage of Hierarchical Progressive Surveys (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2017ivoa.spec.0519F/abstract">HiPS</a>) and Multi-Order Coverage (<a class="reference external" href="https://www.ivoa.net/documents/MOC/">MOC</a>) maps. Wis this tutorial, you will:</p>
+<ol class="simple">
+<li><p>learn how to find fits files</p></li>
+<li><p>build a map of the coverage of all the fits files</p></li>
+<li><p>select only the parts of this map that correspond to low-extinction regions</p></li>
+<li><p>retrieve objects from large catalogs inside the obtained map – that has a non-trivial shape and non-necessarily-connected regions</p></li>
+<li><p>combine catalogs to visualize a color-color diagram</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General python packages</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># For vizualization</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Packages specific to astronomy tasks</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span><span class="p">,</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">match_coordinates_sky</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">import</span> <span class="nn">mocpy</span>
+<span class="kn">import</span> <span class="nn">cdshealpix</span>
+<span class="kn">import</span> <span class="nn">pyvo</span>
+<span class="kn">from</span> <span class="nn">astroquery.vizier</span> <span class="kn">import</span> <span class="n">Vizier</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-finding-the-images">
+<h2>Step 1: Finding the images<a class="headerlink" href="#step-1-finding-the-images" title="Permalink to this headline">#</a></h2>
+<p>We want to find all Short-Red images in the Macquarie/AAO/Strasbourg Hα Planetary Galactic catalog (<a class="reference external" href="https://vizier.cfa.harvard.edu/vizier/MASH/index.htx">MASH</a>) using the VizieR associated data service.</p>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>The <a class="reference external" href="https://vizier.cds.unistra.fr/">VizieR</a> service at CDS inventories astronomical catalogs published in the literature. Some of these catalogs contain data associated with publications and the tables therein. This data can be browsed and explored through the VizieR-associated data service, linked to the traditional VizieR table service. Here we look for images associated with the MASH catalog of planetary nebulae (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2006yCat.5127....0P/abstract">Parker <em>et. al.</em> 2006-2008</a>). The MASH fits files are cut-outs extracted from a larger Hα and Short Red survey to constitute a set of regions of interest around planetary nebulae.</p>
+<p>To find VizieR-associated data, we use the Table Access Protocol (TAP) with the VizieR endpoint. Through the VizieR TAP endpoint, we can search for tables, their content, and information on associated data.</p>
+<p>First, we search for the MASH catalog:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># give the address of the service, you can also directly visit the website</span>
+<span class="n">tap_vizier</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span><span class="s2">&quot;https://tapvizier.cds.unistra.fr/TAPVizieR/tap&quot;</span><span class="p">)</span>
+
+<span class="c1"># a query that searches for all tables with the words MASH and Parker in their description</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT  *  FROM tables </span>
+<span class="s2">        WHERE description LIKE &#39;%MASH%Parker%&#39;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+<span class="n">mash_catalogues</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mash_catalogues</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139994461549184" class="table-striped table-bordered table-condensed">
+<thead><tr><th>schema_name</th><th>table_name</th><th>table_type</th><th>description</th><th>utype</th><th>nrows</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>J_MNRAS</td><td>J/MNRAS/412/223/table4</td><td>table</td><td>The nine MASH PNe detected and possibly detected in the PMN survey ( Bojicic I.S., Parker Q.A., Filipovic M.D., Frew D.J.)</td><td></td><td>9</td></tr>
+<tr><td>J_MNRAS</td><td>J/MNRAS/412/223/table1</td><td>table</td><td>MASH PNe detected in the NVSS ( Bojicic I.S., Parker Q.A., Filipovic M.D., Frew D.J.)</td><td></td><td>201</td></tr>
+<tr><td>V_combined</td><td>V/127A/mash2</td><td>table</td><td>The MASH-II Supplement (from paper II) ( Parker Q.A., Acker A., Frew D.J., Hartley M., Peyaud A.E.J., Phillipps S., Russeil D., Beaulieu S.F., Cohen M., Koppen J., Marcout J., Miszalski B., Morgan D.H., Morris R.A.H., Ochsenbein F., Pierce M.J.,)</td><td></td><td>335</td></tr>
+<tr><td>V_combined</td><td>V/127A/mash1</td><td>table</td><td>The MASH Catalog of Planetary Nebulae (paper I) ( Parker Q.A., Acker A., Frew D.J., Hartley M., Peyaud A.E.J., Phillipps S., Russeil D., Beaulieu S.F., Cohen M., Koppen J., Marcout J., Miszalski B., Morgan D.H., Morris R.A.H., Ochsenbein F., Pierce M.J.,)</td><td></td><td>903</td></tr>
+<tr><td>J_MNRAS</td><td>J/MNRAS/412/223/mpgs2</td><td>table</td><td>MASH PNe detected in the MPGS-2 (Cat. VIII/82) ( Bojicic I.S., Parker Q.A., Filipovic M.D., Frew D.J.)</td><td></td><td>81</td></tr>
+</table></div></div></div>
+</div>
+<p>In this tutorial, we are interested in the tables belonging to the catalogs <code class="docutils literal notranslate"><span class="pre">V/127A</span></code>. This includes tables <code class="docutils literal notranslate"><span class="pre">V/127A/mash1</span></code> and <code class="docutils literal notranslate"><span class="pre">V/127A/mash2</span></code>. To have a look at the content of these tables, we do the following:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT TOP 5 * FROM </span><span class="se">\&quot;</span><span class="s2">V/127A/mash1</span><span class="se">\&quot;</span><span class="s2"> </span>
+<span class="s2">        &quot;&quot;&quot;</span>
+<span class="n">mash1_head</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mash1_head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139993545123408" class="table-striped table-bordered table-condensed">
+<thead><tr><th>recno</th><th>n_PNG</th><th>PNG</th><th>Name</th><th>RAJ2000</th><th>DEJ2000</th><th>GLon</th><th>GLat</th><th>MajDiam</th><th>MinDiam</th><th>CS</th><th>Morph</th><th>Tel</th><th>ObsDate</th><th>HaExp</th><th>HaFld</th><th>Comments</th><th>img</th><th>ImageHa</th><th>ImageSr</th><th>AssocData</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th>&apos;Y:M:D&apos;</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>int32</th><th>str1</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>29</td><td>L</td><td>G234.7-02.2</td><td>PHR0724-2021</td><td>111.05458333333331</td><td>-20.36361111111111</td><td>234.7045</td><td>-2.2774</td><td>134.5</td><td>54.0</td><td></td><td>A</td><td>SA</td><td>2452672.0</td><td>HA18201</td><td>HA842</td><td>Large, very faint diffuse arcuate nebula; has [NII]~2xH-alpha, nothing in blue</td><td>1029</td><td>img_ha</td><td>img_sr</td><td>fits</td></tr>
+<tr><td>2</td><td>P</td><td>G227.3-12.0</td><td>PHR0633-1808</td><td>98.35374999999999</td><td>-18.13972222222222</td><td>227.3207</td><td>-12.0289</td><td>17.0</td><td>15.0</td><td></td><td>Ea</td><td>SA</td><td>2452672.0</td><td>HA18191</td><td>HA926</td><td>Very faint, partial arcuate nebula also observed M1 060100; [NII]~0.8xH-alpha, strong [SII], only weak H-beta in blue - inconclusive</td><td>1002</td><td>img_ha</td><td>img_sr</td><td>fits</td></tr>
+<tr><td>16</td><td>T</td><td>G227.2-03.4</td><td>PHR0705-1419</td><td>106.41041666666665</td><td>-14.318055555555553</td><td>227.2852</td><td>-3.4029</td><td>15.0</td><td>15.0</td><td></td><td>E</td><td>SA</td><td>2452668.0</td><td>HA18244</td><td>HA1017</td><td>Small, circular PN around a faint central star; also observed M1 040100; [NII]~0.7 H-alpha, [OIII]&gt;&gt;H-beta</td><td>1016</td><td>img_ha</td><td>img_sr</td><td>fits</td></tr>
+<tr><td>5</td><td>L</td><td>G223.6-06.8</td><td>PHR0646-1235</td><td>101.60583333333332</td><td>-12.598888888888887</td><td>223.6338</td><td>-6.8035</td><td>40.0</td><td>37.0</td><td></td><td>E</td><td>SA</td><td>2453788.0</td><td>HA18194</td><td>HA1016</td><td>Slightly oval very faint PN candidate - has [OIII] and H-alpha</td><td>1005</td><td>img_ha</td><td>img_sr</td><td>fits</td></tr>
+<tr><td>10</td><td>P</td><td>G224.3-05.5</td><td>PHR0652-1240</td><td>103.08458333333331</td><td>-12.67611111111111</td><td>224.3504</td><td>-5.5463</td><td>187.0</td><td>180.0</td><td></td><td>I</td><td>SA</td><td>2452670.0</td><td>HA18244</td><td>HA1017</td><td>Faint, extended S-shaped emission nebula, possible evolved PN, also observed M1 080100; has [NII]~0.8Ha, [OIII], strong [SII], [OIII]&gt;H-beta</td><td>1010</td><td>img_ha</td><td>img_sr</td><td>fits</td></tr>
+</table></div></div></div>
+</div>
+<p>As you can see, the last column of this table is called <code class="docutils literal notranslate"><span class="pre">AssocData</span></code> and contains the entry <code class="docutils literal notranslate"><span class="pre">fits</span></code>. If you look at this table on the VizieR web interface, you can download the associated fits file. Within this notebook, we query the <code class="docutils literal notranslate"><span class="pre">obscore</span></code> database to get the URLs to the fits file. Using the <code class="docutils literal notranslate"><span class="pre">astropy.io.fits</span></code> module, we can open the fits files from their URLs.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs_tap_vizier</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span>
+    <span class="s2">&quot;https://cdsarc.cds.unistra.fr/saadavizier.tap/tap&quot;</span>
+<span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT TOP 5  *  FROM obscore </span>
+<span class="s2">        WHERE obs_collection=&#39;V/127A&#39;   </span>
+<span class="s2">        &quot;&quot;&quot;</span>
+<span class="n">mash_fits</span> <span class="o">=</span> <span class="n">obs_tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mash_fits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139993542555632" class="table-striped table-bordered table-condensed">
+<thead><tr><th>access_estsize</th><th>access_format</th><th>access_url</th><th>bib_reference</th><th>calib_level</th><th>dataproduct_type</th><th>em_band</th><th>em_max</th><th>em_min</th><th>extension</th><th>facility_name</th><th>has_wcs</th><th>instrument_name</th><th>obs_collection</th><th>obs_id</th><th>obs_publisher_did</th><th>oidsaada</th><th>o_ucd</th><th>pol_states</th><th>s_dec</th><th>s_fov</th><th>s_ra</th><th>s_region</th><th>s_resolution</th><th>target_name</th><th>t_exptime</th><th>t_max</th><th>t_min</th><th>t_resolution</th></tr></thead>
+<thead><tr><th>kbyte</th><th></th><th></th><th></th><th></th><th></th><th>spect</th><th></th><th></th><th>meta.code</th><th></th><th>meta.code</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th></th><th>arcsec</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>int64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>717120</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411706</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1392_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1392_sr.fits</td><td>864975549779411706</td><td>obs.image</td><td>NotSet</td><td>-29.96079070460861</td><td>0.0675097107632931</td><td>258.3952176302173</td><td>Polygon ICRS  258.43389666051115 -29.99363154450191  258.35733068673926 -29.994281796755693  258.35656415539984 -29.9279385747428  258.4330790466094 -29.92728878007427</td><td>0.9485530546667195</td><td></td><td>--</td><td>--</td><td>51365.0</td><td>--</td></tr>
+<tr><td>722880</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411716</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1397_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1397_sr.fits</td><td>864975549779411716</td><td>obs.image</td><td>NotSet</td><td>-29.084391747538362</td><td>0.06704013527503769</td><td>258.9418985464765</td><td>Polygon ICRS  258.9804131644544 -29.117082701522246  258.90450824510754 -29.11803099317544  258.9034083716892 -29.051689802622487  258.9792644306722 -29.05074214328098</td><td>0.9485391926179025</td><td></td><td>--</td><td>--</td><td>51365.0</td><td>--</td></tr>
+<tr><td>858240</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411721</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1400_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1400_ha.fits</td><td>864975549779411721</td><td>obs.image</td><td>NotSet</td><td>-30.03775079140411</td><td>0.06701371700007362</td><td>259.01701185146936</td><td>Polygon ICRS  259.0559285779006 -30.070421874567092  258.9793074155726 -30.071408712689465  258.9781207841269 -30.00506826123683  259.05469067743377 -30.004082125310934</td><td>0.9485058646616864</td><td></td><td>--</td><td>--</td><td>51392.0</td><td>--</td></tr>
+<tr><td>855360</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411727</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1403_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1403_ha.fits</td><td>864975549779411727</td><td>obs.image</td><td>NotSet</td><td>-28.76575081361883</td><td>0.06661209788390857</td><td>259.452903168679</td><td>Polygon ICRS  259.4914503704496 -28.798295912617736  259.41578550424515 -28.799526227485106  259.41438000380487 -28.733194781578792  259.48999681338677 -28.731965262818385</td><td>0.9484262388609991</td><td></td><td>--</td><td>--</td><td>51392.0</td><td>--</td></tr>
+<tr><td>619200</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411732</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1405_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1405_sr.fits</td><td>864975549779411732</td><td>obs.image</td><td>NotSet</td><td>-33.8239887608685</td><td>0.06852297022186309</td><td>259.4840358191052</td><td>Polygon ICRS  259.5236167591695 -33.85747431646607  259.4437649808735 -33.8568385959148  259.44448587264424 -33.79049057097747  259.52427572180346 -33.791125846905814</td><td>0.9485844141195813</td><td></td><td>--</td><td>--</td><td>52051.0</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+<p>As you can see, the result from this query provides information on the fits files associated with the MASH catalogs. In particular, the column <code class="docutils literal notranslate"><span class="pre">access_url</span></code> provides the location of the data. To get the first image we could do:</p>
+<p><code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">fits.open(mash_fits['access_url'][0])</span></code></p>
+<p>and then work on the image, plot it or save it to our machine. However, downloading all the data takes quite some time. For this tutorial, <strong>we prepared a subsample of 335 of these Short Red images that will run promptly</strong> but we encourage you to try accessing the full Short Red sample on your own later. The subsample is available either at <a class="reference external" href="http://astro.u-strasbg.fr/~bot/BochBot.tar.gz">http://astro.u-strasbg.fr/~bot/BochBot.tar.gz</a> or in the Data Folder of this repository. If you run this tutorial on Binder, you do not need to download anything.</p>
+</div>
+<div class="section" id="step-2-create-a-moc-of-the-mash-images">
+<h2>Step 2: Create a MOC of the MASH images<a class="headerlink" href="#step-2-create-a-moc-of-the-mash-images" title="Permalink to this headline">#</a></h2>
+<p>The multi-order coverage (MOC) map of a set of images represents their sky coverage. MOCs can describe arbitrary zones in the sky which do not need to be connected. You’ll see that the union or intersection of two MOCs requires few time and computational effort. Catalogs can also be filtered by MOCs.</p>
+<p>Here we want to use the fits files just downloaded to create a MOC map corresponding to the coverage of the MASH images.</p>
+<div class="section" id="organising-data">
+<h3>Organising data<a class="headerlink" href="#organising-data" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Where to find fits images downloaded from the archive above</span>
+<span class="n">datadir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;Data/MASH_Sample/&quot;</span><span class="p">)</span>
+<span class="n">datadir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Make new directory where to save MOCs</span>
+<span class="n">outdir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;Data/Result_moc/&quot;</span><span class="p">)</span>
+<span class="n">outdir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In most cases, we could ignore the next cell.  However, some possible deprecated keywords in the fits header would hamper the MOC creation and would cause errors in the underlying <code class="docutils literal notranslate"><span class="pre">astropy.wcs.WCS</span></code> module. This is why we rewrite the headers of the fits files so that they only contain the useful keywords needed to define the coordinate frame correctly before using <code class="docutils literal notranslate"><span class="pre">mocpy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a list of all fits files in datadir</span>
+<span class="n">mash_file_list</span> <span class="o">=</span> <span class="n">datadir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*_sr.fits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Modify the header so that the MOC creation works smoothly</span>
+<span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">mash_file_list</span><span class="p">:</span>
+    <span class="n">ima</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">hdr</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">needed_keywords</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;SIMPLE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;BITPIX&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NAXIS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EXTEND&quot;</span><span class="p">,</span>  <span class="c1"># basic fits keywords</span>
+        <span class="c1"># essential WCS keywords</span>
+        <span class="s2">&quot;NAXIS1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NAXIS2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;RADECSYS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CD1_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CD1_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CD2_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CD2_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CTYPE1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CUNIT1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CDELT1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CRPIX1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CRVAL1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CTYPE2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CUNIT2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CDELT2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CRPIX2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CRVAL2&quot;</span><span class="p">,</span>
+        <span class="c1"># used additionally by mocpy</span>
+        <span class="s2">&quot;EQUINOX&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;BLANK&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">new_hdr</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">needed_keywords</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_hdr</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="n">ima</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="n">new_hdr</span><span class="p">[</span><span class="s2">&quot;RADESYS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_hdr</span><span class="p">[</span><span class="s2">&quot;RADECSYS&quot;</span><span class="p">]</span>
+    <span class="n">fits</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span>
+        <span class="n">outdir</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="s2">&quot;_modified.fits&quot;</span><span class="p">),</span>
+        <span class="n">ima</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">new_hdr</span><span class="p">,</span>
+        <span class="n">output_verify</span><span class="o">=</span><span class="s2">&quot;fix&quot;</span><span class="p">,</span>
+        <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ima</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-the-moc">
+<h3>Create the MOC<a class="headerlink" href="#create-the-moc" title="Permalink to this headline">#</a></h3>
+<p>Here we can create the MOC of the MASH images with the <code class="docutils literal notranslate"><span class="pre">MOCPy</span></code> module. This can take a few seconds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a list of the updated files and create the MOC</span>
+<span class="n">mash_file_list</span> <span class="o">=</span> <span class="n">outdir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*_sr_modified.fits&quot;</span><span class="p">)</span>
+<span class="n">moc_mash</span> <span class="o">=</span> <span class="n">mocpy</span><span class="o">.</span><span class="n">MOC</span><span class="o">.</span><span class="n">from_fits_images</span><span class="p">(</span><span class="n">mash_file_list</span><span class="p">,</span> <span class="n">max_norder</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">moc_mash</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">outdir</span> <span class="o">/</span> <span class="s2">&quot;mash_moc.fits&quot;</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-moc">
+<h3>Plot the MOC<a class="headerlink" href="#plot-the-moc" title="Permalink to this headline">#</a></h3>
+<p>We’ll use the MOCpy <code class="docutils literal notranslate"><span class="pre">World2ScreenMPL</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_centre</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+    <span class="s2">&quot;21:49:00&quot;</span><span class="p">,</span> <span class="s2">&quot;-02:30:00&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span> <span class="n">frame</span><span class="o">=</span><span class="s2">&quot;galactic&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">with</span> <span class="n">mocpy</span><span class="o">.</span><span class="n">World2ScreenMPL</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">fov</span><span class="o">=</span><span class="mf">2.5</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="n">fig_centre</span><span class="p">,</span>
+    <span class="n">coordsys</span><span class="o">=</span><span class="s2">&quot;galactic&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;AIT&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">wcs</span><span class="p">:</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
+    <span class="n">moc_mash</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;RA&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Dec&quot;</span><span class="p">)</span>
+    <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="s2">&quot;hh:mm:ss&quot;</span><span class="p">)</span>
+    <span class="n">lat</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="s2">&quot;dd:mm&quot;</span><span class="p">)</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">set_ticklabel</span><span class="p">(</span><span class="n">exclude_overlapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lat</span><span class="o">.</span><span class="n">set_ticklabel</span><span class="p">(</span><span class="n">exclude_overlapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_16_0.png" src="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_16_0.png" />
+</div>
+</div>
+<p>This figure only shows a small region on the Sky, but you can see how the MOC has arbitrary shapes and not all regions are connected.</p>
+</div>
+</div>
+<div class="section" id="step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions">
+<h2>Step 3: Load an archival extinction map and create the MOC of the low extinction regions<a class="headerlink" href="#step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions" title="Permalink to this headline">#</a></h2>
+<p>Different works (e.g. <a class="reference external" href="https://iopscience.iop.org/article/10.1086/305772">Schlegel et al. 1998</a>, <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2011AAS...21831803S/abstract">Schlafly  &amp; Finkbeiner 2011</a>, <a class="reference external" href="https://iopscience.iop.org/article/10.1088/0004-637X/810/1/25">Green et al. 2015</a>…) have created extinction maps of the sky that are publicly available. Some of these maps are all-sky maps, while others have higher resolutions, or come from different methods… They can be found in HEALPix format (among others) on the Legacy Archive for Microwave Background Data Analysis (<a class="reference external" href="https://lambda.gsfc.nasa.gov/">LAMBDA</a>) website or on the Analysis Center for Extended Data (<a class="reference external" href="http://cade.irap.omp.eu/dokuwiki/doku.php?id=start">CADE</a>) website.</p>
+<p>For this tutorial, we will download the well-known all-sky extinction map from Schlegel <em>et al.</em> from the LAMBDA  website and define the low extinction area for which <span class="math notranslate nohighlight">\(0 &lt; E(B-V) &lt; 0.5\)</span> as a MOC. It has an <a class="reference external" href="https://lambda.gsfc.nasa.gov/product/foreground/fg_sfd_info.html">information page</a>.</p>
+<p>The map is available here: <a class="reference external" href="https://lambda.gsfc.nasa.gov/data/foregrounds/SFD/lambda_sfd_ebv.fits">https://lambda.gsfc.nasa.gov/data/foregrounds/SFD/lambda_sfd_ebv.fits</a> and we save it to disc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ext_map</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+    <span class="s2">&quot;https://lambda.gsfc.nasa.gov/data/foregrounds/SFD/&quot;</span> <span class="o">+</span> <span class="s2">&quot;lambda_sfd_ebv.fits&quot;</span>
+<span class="p">)</span>
+<span class="n">ext_map</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">outdir</span> <span class="o">/</span> <span class="s2">&quot;Schlegel_extinction_map.fits&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ext_map</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are only interested in regions with low extinction. So we aim to get a MOC of all regions where the extinction values from the Schlegel <em>et al.</em> map are between 0 and 0.5mag. The extinction map we got from the NASA webpage is in the HEALPix format. This is an efficient presentation of all-sky maps. The HEALPix tesselation is also used by MOCs. So to get the MOC from the extinction map, we do the following.</p>
+<p>First, we check the coordinate system in the map header. We will need to convert to equatorial coordinates, change the projection of the map, and set the order (<em>i.e.</em> resolution) of the map.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open the downloaded FITS file</span>
+<span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">outdir</span> <span class="o">/</span> <span class="s2">&quot;Schlegel_extinction_map.fits&quot;</span><span class="p">)</span>
+<span class="n">hdr</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+<span class="n">hdr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SIMPLE  =                    T / file does conform to FITS standard             
+BITPIX  =                   32 / number of bits per data pixel                  
+NAXIS   =                    0 / number of data axes                            
+EXTEND  =                    T / FITS dataset may contain extensions            
+COMMENT   FITS (Flexible Image Transport System) format is defined in &#39;Astronomy
+COMMENT   and Astrophysics&#39;, volume 376, page 359; bibcode: 2001A&amp;A...376..359H 
+DATE    = &#39;2003-02-05T00:00:00&#39; /file creation date (YYYY-MM-DDThh:mm:ss UT)    
+OBJECT  = &#39;ALL-SKY &#39;           / Portion of sky given                           
+COMMENT   This file contains an all-sky Galactic reddening map, E(B-V), based on
+COMMENT   the derived reddening maps of Schlegel, Finkbeiner and Davis (1998).  
+COMMENT   Software and data files downloaded from their website were used to    
+COMMENT   interpolate their high resolution dust maps onto pixel centers        
+COMMENT   appropriate for a HEALPix Nside=512 projection in Galactic            
+COMMENT   coordinates. This file is distributed and maintained by LAMBDA.       
+REFERENC= &#39;Legacy Archive for Microwave Background Data Analysis (LAMBDA)      &#39;
+REFERENC= &#39;                http://lambda.gsfc.nasa.gov/                        &#39;
+REFERENC= &#39;Maps of Dust Infrared Emission for Use in Estimation of Reddening an&#39;
+REFERENC= &#39; Cosmic Microwave Background Radiation Foregrounds&#39;,                &#39;
+REFERENC= &#39; Schlegel, Finkbeiner &amp; Davis 1998 ApJ 500, 525                     &#39;
+REFERENC= &#39;Berkeley mirror site for SFD98 data: http://astron.berkeley.edu/dust&#39;
+REFERENC= &#39;Princeton mirror site for SFD98 data:                               &#39;
+REFERENC= &#39;                           http://astro/princeton.edu/~schlegel/dust&#39;
+REFERENC= &#39;HEALPix Home Page: http://www.eso.org/science/healpix/              &#39;
+RESOLUTN=                    9 / Resolution index                               
+SKYCOORD= &#39;Galactic&#39;           / Coordinate system                              
+PIXTYPE = &#39;HEALPIX &#39;           / Pixel algorithm                                
+ORDERING= &#39;NESTED  &#39;           / Ordering scheme                                
+NSIDE   =                  512 / Resolution parameter                           
+NPIX    =              3145728 / # of pixels                                    
+FIRSTPIX=                    0 / First pixel (0 based)                          
+LASTPIX =              3145727 / Last pixel (0 based)                           
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3145728,)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FITS_rec([( 9.625492, 1.), (46.090515, 1.), ( 8.18071 , 1.), ...,
+          (15.149189, 1.), (14.107367, 1.), (15.463686, 1.)],
+         dtype=(numpy.record, [(&#39;TEMPERATURE&#39;, &#39;&gt;f4&#39;), (&#39;N_OBS&#39;, &#39;&gt;f4&#39;)]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data field here has a specific shape. It contains tuples for which the first value is the extinction (named ‘TEMPERATURE’) and the second one is the number of observations of the value (you can check that it is <code class="docutils literal notranslate"><span class="pre">1</span></code> everywhere).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extinction_values</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;TEMPERATURE&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s extract the information about the number of sides and the order of the healpix map from the header of the fits file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nside</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;NSIDE&quot;</span><span class="p">]</span>
+<span class="n">norder</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;RESOLUTN&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The header allows to see that this map is in galactic coordinates. We will need to convert this into equatorial coordinates to compare with our other maps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creation of an HEALpix grid at order 9 in nested ordering</span>
+<span class="n">healpix_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**</span><span class="n">norder</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;We can check the the NPIX value corresponds to the one in the header here: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">healpix_index</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We can check the the NPIX value corresponds to the one in the header here: 3145728
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the coordinates of the centers of these healpix cells</span>
+<span class="n">center_coordinates_in_equatorial</span> <span class="o">=</span> <span class="n">cdshealpix</span><span class="o">.</span><span class="n">healpix_to_skycoord</span><span class="p">(</span>
+    <span class="n">healpix_index</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">9</span>
+<span class="p">)</span>
+<span class="n">center_coordinates_in_equatorial</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SkyCoord (ICRS): (ra, dec) in deg
+    [( 45.        ,  0.0746039 ), ( 45.08789062,  0.14920793),
+     ( 44.91210938,  0.14920793), ..., (315.08789062, -0.14920793),
+     (314.91210938, -0.14920793), (315.        , -0.0746039 )]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert this into galactic coordinates</span>
+<span class="n">center_coordinates_in_galactic</span> <span class="o">=</span> <span class="n">center_coordinates_in_equatorial</span><span class="o">.</span><span class="n">galactic</span>
+<span class="n">center_coordinates_in_galactic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;SkyCoord (Galactic): (l, b) in deg
+    [(176.8796283 , -48.85086427), (176.89078038, -48.7358142 ),
+     (176.70525363, -48.86216423), ..., ( 48.82487228, -28.4122831 ),
+     ( 48.7216889 , -28.26178141), ( 48.84578935, -28.29847774)]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the bilinear interpolation we must apply to each healpix cell to get the values in the other coordinate system</span>
+<span class="n">healpix</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">cdshealpix</span><span class="o">.</span><span class="n">bilinear_interpolation</span><span class="p">(</span>
+    <span class="n">center_coordinates_in_galactic</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">center_coordinates_in_galactic</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">norder</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the interpolation</span>
+<span class="n">ext_map_equatorial_nested</span> <span class="o">=</span> <span class="p">(</span><span class="n">extinction_values</span><span class="p">[</span><span class="n">healpix</span><span class="o">.</span><span class="n">data</span><span class="p">]</span> <span class="o">*</span> <span class="n">weights</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ext_map_equatorial_nested</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.08981742, 0.0991632 , 0.08249644, ..., 0.08323811, 0.08352184,
+       0.0820533 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we declare which pixel we want to use, let’s take all pixels with an extinction lower than 0.5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">low_extinction_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ext_map_equatorial_nested</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The low extinction criteria keeps </span><span class="si">{</span><span class="nb">round</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">low_extinction_index</span><span class="p">)</span><span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">extinction_values</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">% of the sky map&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The low extinction criteria keeps 86.74% of the sky map
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s create a MOC from this criteria</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_low_extinction</span> <span class="o">=</span> <span class="n">mocpy</span><span class="o">.</span><span class="n">MOC</span><span class="o">.</span><span class="n">from_healpix_cells</span><span class="p">(</span>
+    <span class="n">low_extinction_index</span><span class="p">,</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span>
+                <span class="n">low_extinction_index</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">norder</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above">
+<h2>Step 4:  Find out which regions are covered by the MASH short-red images in the low extinction regions defined above<a class="headerlink" href="#step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above" title="Permalink to this headline">#</a></h2>
+<p>To find out the sky regions of the MASH sample that are at low extinction, we build the intersection of the two MOCs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_intersection</span> <span class="o">=</span> <span class="n">moc_low_extinction</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">moc_mash</span><span class="p">)</span>
+<span class="c1"># Once the intersection is bluit, we can for example print the sky fraction :</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The intersection of the two MOCs covers </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">moc_intersection</span><span class="o">.</span><span class="n">sky_fraction</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">% of the sky&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The intersection of the two MOCs covers 0.0013% of the sky
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can visualize the coverage of the two MOCs and their intersection. The grey area is where the extinction is low. The blue one is the MASH coverage. The tiny red dots show the MASH coverage in low extinction regions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">with</span> <span class="n">mocpy</span><span class="o">.</span><span class="n">World2ScreenMPL</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">fov</span><span class="o">=</span><span class="mi">200</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="n">SkyCoord</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s2">&quot;icrs&quot;</span><span class="p">),</span>
+    <span class="n">coordsys</span><span class="o">=</span><span class="s2">&quot;icrs&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
+    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;AIT&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">wcs</span><span class="p">:</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
+    <span class="n">moc_low_extinction</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;low extinction&quot;</span>
+    <span class="p">)</span>
+    <span class="n">moc_mash</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MASH coverage&quot;</span>
+    <span class="p">)</span>
+    <span class="n">moc_intersection</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MASH in low extinction regions&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Sets labels</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;RA&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Dec&quot;</span><span class="p">)</span>
+    <span class="c1"># Sets ticks</span>
+    <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="s2">&quot;hh:mm:ss&quot;</span><span class="p">)</span>
+    <span class="n">lat</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="s2">&quot;dd:mm&quot;</span><span class="p">)</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">set_ticklabel</span><span class="p">(</span><span class="n">exclude_overlapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lat</span><span class="o">.</span><span class="n">set_ticklabel</span><span class="p">(</span><span class="n">exclude_overlapping</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">spacing</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_40_0.png" src="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_40_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-5-query-the-2mass-and-gaia-catalogues-by-moc">
+<h2>Step 5: Query the 2MASS and Gaia Catalogues by MOC<a class="headerlink" href="#step-5-query-the-2mass-and-gaia-catalogues-by-moc" title="Permalink to this headline">#</a></h2>
+<p>Without the usage of MOC, querying for sources in the low extinction regions covered by the MASH subsample would be tedious or even impossible. Indeed, one would need to load the whole catalog and make selections which would not be possible given the size of some catalogs. Alternatively, one would need to query the catalog field by field, which would take time and several queries. Instead, here we will use the power of MOC files to query large catalogs directly in the covered regions only. We will use coverages of the low extinction and MASH regions to query for sources from the Gaia and 2MASS surveys in these highly non-continuous and non-trivial shape areas.</p>
+<p>First, let’s see which Gaia and 2MASS catalogs are available on VizieR. We could, as above, use the TAP endpoint of VizieR. But we show below the <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> module in the <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> package.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_twomass</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;Cutri&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">catalog_list_twomass</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: The unit &#39;pix&#39; has been deprecated in the VOUnit standard. [astropy.units.format.utils]
+WARNING: UnitsWarning: The unit &#39;ct&#39; has been deprecated in the VOUnit standard. [astropy.units.format.utils]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>II/126 :  IRAS Serendipitous Survey Catalog (IPAC 1986)
+II/241 :  2MASS Catalog Incremental Data Release (IPAC/UMass, 2000)
+II/246 :  2MASS All-Sky Catalog of Point Sources (Cutri+ 2003)
+II/281 :  2MASS 6X Point Source Working Database / Catalog (Cutri+ 2006)
+II/307 :  WISE Preliminary Data Release (Cutri+ 2011)
+II/311 :  WISE All-Sky Data Release (Cutri+ 2012)
+II/328 :  AllWISE Data Release (Cutri+ 2013)
+II/365 :  The CatWISE2020 catalog (updated version 28-Jan-2021) (Marocco+, 2021)
+VII/233 :  The 2MASS Extended sources (IPAC/UMass, 2003-2006)
+J/ApJ/560/566 :  K-band galaxy luminosity function from 2MASS (Kochanek+, 2001)
+J/ApJ/564/421 :  Spectra of T dwarfs. I. (Burgasser+, 2002)
+J/ApJ/569/23 :  Optical polarisation of 2MASS QSOs (Smith+, 2002)
+J/ApJ/635/214 :  Chandra X-ray sources and NIR identifications (Ebisawa+, 2005)
+J/ApJ/713/330 :  Spitzer observations of major-merger galaxies (Xu+, 2010)
+J/ApJ/719/550 :  Deep NIR imaging of {rho} Oph cloud core (Marsh+, 2010)
+J/ApJ/741/68 :  Main Belt asteroids with WISE/NEOWISE. I. (Masiero+, 2011)
+J/ApJ/742/40 :  Jovian Trojans asteroids with WISE/NEOWISE (Grav+, 2011)
+J/ApJ/743/156 :  NEOWISE observations of NEOs: preliminary results (Mainzer+, 2011)
+J/ApJ/744/197 :  WISE/NEOWISE observations of Hilda asteroids (Grav+, 2012)
+J/ApJ/759/L8 :  WISE/NEOWISE observations of main belt asteroids (Masiero+, 2012)
+J/ApJ/760/L12 :  WISE/NEOWISE NEOs preliminary thermal fits (Mainzer+, 2012)
+J/ApJ/780/92 :  Light curves of the RR Lyr SDSS J015450.17+001500.7 (Szabo+, 2014)
+J/ApJ/783/122 :  AllWISE motion survey (Kirkpatrick+, 2014)
+J/ApJ/784/110 :  NEOWISE observations of 105 near-Earth objects (Mainzer+, 2014)
+J/ApJ/792/30 :  NEOWISE magnitudes for near-Earth objects (Mainzer+, 2014)
+J/ApJ/805/90 :  WISE ELIRGs and comparison with QSOs (Tsai+, 2015)
+J/ApJ/814/117 :  NEOWISE Reactivation mission: 1st yr data (Nugent+, 2015)
+J/ApJ/874/82 :  Follow-up photometry &amp; spectroscopy of PTF14jg (Hillenbrand+, 2019)
+J/ApJS/95/1 :  Atlas of Quasar Energy Distributions (Elvis+ 1994)
+J/ApJS/172/663 :  Infrared observations of the Pleiades (Stauffer+, 2007)
+J/ApJS/175/191 :  Variables from 2MASS calibration fields (Plavchan+, 2008)
+J/ApJS/190/100 :  NIR proper motion survey using 2MASS (Kirkpatrick+, 2010)
+J/ApJS/199/26 :  The 2MASS Redshift Survey (2MRS) (Huchra+, 2012)
+J/ApJS/224/36 :  The AllWISE motion survey (AllWISE2) (Kirkpatrick+, 2016)
+J/ApJS/234/23 :  The WISE AGN candidates catalogs (Assef+, 2018)
+J/AJ/112/62 :  Quasar absorption-line systems (Tanner+ 1996)
+J/AJ/125/2521 :  2MASS6x survey of the Lockman Hole (Beichman+, 2003)
+J/AJ/126/63 :  Host galaxies of 2MASS-QSOs with z&lt;=3 (Hutchings+, 2003)
+J/AJ/127/646 :  Unbiased census of AGN in 2MASS (Francis+, 2004)
+J/AJ/135/2245 :  Absolute spectrum of the Sun and Vega for 0.2-30um (Rieke+, 2008)
+J/AJ/144/148 :  Infrared photometry of brown dwarf and Hyper-LIRG (Griffith+, 2012)
+J/AJ/152/63 :  NEOWISE reactivation mission: 2nd yr data (Nugent+, 2016)
+J/AJ/154/53 :  WISE/NEOWISE observations of comets (Bauer+, 2017)
+J/AJ/154/168 :  NEOWISE: thermal model fits for NEOs and MBAs (Masiero+, 2017)
+J/AJ/156/60 :  Thermal model fits for short-arc NEOs with NEOWISE (Masiero+, 2018)
+J/PASP/113/10 :  Sub-mJy radio sources complete sample (Masci+, 2001)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_gaia</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;Gaia DR2&quot;</span><span class="p">,</span> <span class="n">max_catalogs</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">catalog_list_gaia</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;Rgeo&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;Earth&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
+WARNING: UnitsWarning: The unit &#39;au&#39; has been deprecated in the VOUnit standard. Suggested: 1.4959787e+11m. [astropy.units.format.utils]
+WARNING: UnitsWarning: Unit &#39;Sun&#39; not supported by the VOUnit standard. Did you mean uN? [astropy.units.format.vounit]
+WARNING: UnitsWarning: The unit &#39;pix&#39; has been deprecated in the VOUnit standard. [astropy.units.format.utils]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;Mjup&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
+WARNING: UnitsWarning: The unit &#39;a&#39; has been deprecated in the VOUnit standard. Suggested: 365.25d. [astropy.units.format.utils]
+WARNING: UnitsWarning: Unit &#39;kau&#39; not supported by the VOUnit standard. Did you mean 1000a, kA, ka (deprecated), kadu or ku? [astropy.units.format.vounit]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;Mgeo&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;ppm&#39; not supported by the VOUnit standard. Did you mean Pm or pm? [astropy.units.format.vounit]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I/345 :  Gaia DR2 (Gaia Collaboration, 2018)
+I/347 :  Distances to 1.33 billion stars in Gaia DR2 (Bailer-Jones+, 2018)
+I/349 :  StarHorse, Gaia DR2 photo-astrometric distances (Anders+, 2019)
+II/360 :  Gaia DR2 x AllWISE catalogue (Marton+, 2019)
+IV/35 :  Gaia DR2-WISE Galactic Plane Matches (Wilson+, 2018)
+VI/156 :  M-dwarf Lum-Temp-Radius relationships (Morrell+, 2019)
+VII/285 :  Gaia DR2 quasar and galaxy classification (Bailer-Jones+, 2019)
+J/ApJ/862/138 :  BANYAN. XIII. Nearby young assoc. with Gaia DR2 (Gagne+, 2018)
+J/ApJ/863/89 :  Gaia DR2 PMs of stars in ultra-faint MW satellites (Simon, 2018)
+J/ApJ/866/99 :  Revised radii of KIC stars &amp; planets using Gaia DR2 (Berger+, 2018)
+J/ApJ/867/151 :  YSOs in the Gould Belt regions with Gaia-DR2 data (Dzib+, 2018)
+J/ApJ/868/70 :  Hot subdwarf stars from Gaia DR2 and LAMOST DR5 (Lei+, 2018)
+J/ApJ/870/32 :  Kinematics in young star clusters &amp; associations (Kuhn+, 2019)
+J/ApJ/872/85 :  Detached eclipsing binaries with Gaia parallaxes (Graczyk+, 2019)
+J/ApJ/873/132 :  ICRF3 radio-loud quasars with Gaia DR2 data (Makarov+, 2019)
+J/ApJ/874/138 :  Gaia and LAMOST DR4 M giant members of Sgr stream (Li+, 2019)
+J/ApJ/875/77 :  Proper motions of MW satellites with Gaia &amp; DES (Pace+, 2019)
+J/ApJ/877/29 :  Opt &amp; NIR SMARTS/ANDICAM photometry for DQ Tau (Muzerolle+, 2019)
+J/ApJ/878/111 :  Members in Serpens Molecular Cloud with Gaia DR2 (Herczeg+, 2019)
+J/ApJ/881/135 :  Hot subdwarf stars from Gaia DR2 and LAMOST DR5. II. (Lei+, 2019)
+J/ApJ/883/8 :  Cand. young OB stars from GALEX &amp; Gaia DR2 (Casetti-Dinescu+, 2019)
+J/ApJ/884/6 :  Known members of Orion A with Gaia DR2 data (McBride+, 2019)
+J/ApJ/886/100 :  High-mass white dwarfs in Gaia DR2 (Cheng+, 2019)
+J/ApJ/887/126 :  Follow-up obs. of the PSJ0147+4630 lens system (Goicoechea+, 2019)
+J/ApJ/888/73 :  Varstrometry of SDSS quasars with Gaia DR2 data (Hwang+, 2020)
+J/ApJ/889/99 :  Gaia DR2 Blanco 1 member candidates (Zhang+, 2020)
+J/ApJ/889/117 :  Hot subdwarf stars from Gaia DR2 &amp; LAMOST DR6+7. I. (Lei+, 2020)
+J/ApJ/889/176 :  Very low-mass binaries with Gaia DR2 data (Faherty+, 2020)
+J/ApJ/898/64 :  Hot subdwarf stars from Gaia with LAMOST sp. II. RVs (Luo+, 2020)
+J/ApJ/898/173 :  Solar analog rotations from Kepler &amp; Gaia (Do Nascimento+, 2020)
+J/ApJ/899/83 :  723 Gaia DR2 White dwarfs cand. in Local Galactic Halo (Kim+, 2020)
+J/ApJ/910/46 :  Galactic anticenter substructure stars from LAMOST (Li+, 2021)
+J/ApJS/245/32 :  Newly identified star clusters in Gaia DR2 (Liu+, 2019)
+J/ApJS/246/4 :  Catalog of ultrawide binary stars from Gaia DR2 (Tian+, 2020)
+J/ApJS/252/3 :  High-velocity stars in the Gal. halo from LAMOST &amp; Gaia (Li+, 2021)
+J/ApJS/253/58 :  Ages of field stars from white dwarf comp. in Gaia (Qiu+, 2021)
+J/ApJS/254/20 :  Stellar groups in Taurus field from Gaia DR2 &amp; LAMOST (Liu+, 2021)
+J/ApJS/256/28 :  Hot subdwarf stars with Gaia DR2 and LAMOST DR7 data (Luo+, 2021)
+J/ApJS/260/8 :  541 new open cluster candidates (He+, 2022)
+J/A+A/616/A7 :  Gaia DR2 radial velocity standard stars catalog (Soubiran+, 2018)
+J/A+A/616/A12 :  Gaia DR2 sources in GC and dSph (Gaia Collaboration+, 2018)
+J/A+A/616/A37 :  Close encounters to the Sun in Gaia DR2 (Bailer-Jones+, 2018)
+J/A+A/616/L2 :  Planetary Nebulae distances in Gaia DR2 (Kimeswenger+, 2018)
+J/A+A/616/L15 :  Parallaxes and Proper Motions of OB stars (Xu+, 2018)
+J/A+A/617/A135 :  20 years of photometric microlensing (Mustill+, 2018)
+J/A+A/618/A44 :  Predicted microlensing events from Gaia DR2 (Bramich, 2018)
+J/A+A/618/A56 :  Gaia GraL. II. Known multiply imaged quasars (Ducourant+, 2018)
+J/A+A/618/A59 :  Gaia DR2 confirmed new nearby open clusters (Castro-Ginard+, 2018)
+J/A+A/618/A93 :  Gaia DR2 open clusters in the Milky Way (Cantat-Gaudin+, 2018)
+J/A+A/619/A8 :  Cepheid period-luminosity-metallicity relation (Groenewegen, 2018)
+J/A+A/619/A106 :  3D shape of Orion A from Gaia DR2 (Grossschedl+, 2018)
+J/A+A/619/A155 :  Open cluster kinematics with Gaia DR2 (Soubiran+, 2018)
+J/A+A/619/A180 :  Gaia DR2 photometric sensitivity curves (Maiz Apellaniz+, 2018)
+J/A+A/619/L8 :  Ultra-cool dwarfs candidates in Gaia DR2 (Reyle, 2018)
+J/A+A/620/A91 :  New asteroid models (Durech+, 2018)
+J/A+A/620/A128 :  Gaia DR2 study of Herbig Ae/Be stars (Vioque+, 2018)
+J/A+A/620/A141 :  Physical properties of AM CVn stars (Ramsay+, 2018)
+J/A+A/620/A155 :  Gaia proper motions of 7 UFD galaxies (Massari+, 2018)
+J/A+A/620/A172 :  Solar neighbourhood young stars 3D mapping (Zari+, 2018)
+J/A+A/621/A38 :  Gaia catalogue of hot subluminous stars (Geier+, 2019)
+J/A+A/621/A48 :  Gaia-DR2 extended kinematical maps. I. (Lopez-Corredoira+, 2019)
+J/A+A/621/L2 :  Hyades tidal tails revealed by Gaia DR2 (Roeser+, 2019)
+J/A+A/621/L3 :  Hyades tidal tails with Gaia DR2 (Meingast+, 2019)
+J/A+A/622/A60 :  Gaia DR2 misclassified RR Lyrae list (Clementini+, 2019)
+J/A+A/622/A165 :  Gaia GraL. III. New lensed systems (Delchambre+, 2019)
+J/A+A/622/L13 :  Stellar stream in Gaia DR2 discovery (Meingast+, 2019)
+J/A+A/623/A22 :  IC 4996 Vilnius phot. and Gaia DR2 astrometry (Straizys+, 2019)
+J/A+A/623/A25 :  Photometric and astrometric study of NGC 6530 (Damiani+, 2019)
+J/A+A/623/A72 :  Binarity of Hipparcos stars from Gaia pm anomaly (Kervella+, 2019)
+J/A+A/623/A108 :  Age of 269 GDR2 open clusters (Bossini+, 2019)
+J/A+A/623/A110 :  Gaia DR2. Variable stars in CMD (Gaia Collaboration+, 2019)
+J/A+A/623/A112 :  The Sco OB2 population from Gaia DR2 data (Damiani+, 2019)
+J/A+A/623/A116 :  Galactic Cepheids and RR Lyrae multiplicity. I. (Kervella+, 2019)
+J/A+A/623/A117 :  Galactic Cepheids and RR Lyrae multiplicity. II (Kervella+, 2019)
+J/A+A/623/A129 :  New satellites of the LMC search (Fritz+, 2019)
+J/A+A/624/A78 :  Masses and ages of 1059 HARPS-GTO stars (Delgado Mena+, 2019)
+J/A+A/624/A126 :  New open clusters in Perseus direction (Cantat-Gaudin+, 2019)
+J/A+A/625/A14 :  Reclassification of Cepheids in the Gaia DR2 (Ripepi+, 2019)
+J/A+A/626/A80 :  Census of Rho Oph candidate members from Gaia DR2 (Canovas+, 2019)
+J/A+A/627/A35 :  New open clusters in Galactic anti-centre (Castro-Ginard+, 2019)
+J/A+A/627/A119 :  Extended halo of NGC 2682 (M 67) (Carrera+ 2019)
+J/A+A/628/A81 :  Gaia DR2-based catalogue of 237 Ap stars (Scholz+, 2019)
+J/A+A/629/A114 :  sigma Ori GTC+INT spectroscopy (Caballero+, 2019)
+J/A+A/630/A119 :  Gaia DR2 distances to two clusters (Maiz Apellaniz, 2019)
+J/A+A/630/A137 :  Structure and kinematics of the Taurus region (Galli+, 2019)
+J/A+A/630/A150 :  Astrometric data for 211 GAPN sample (Gonzalez-Santamaria+, 2019)
+J/A+A/631/A2 :  List of new asteroid models (Durech+, 2019)
+J/A+A/631/A145 :  HIP stars DEC proper motions comparison (Damljanovic+, 2019)
+J/A+A/633/A98 :  Gaia16aye microlensing event photometry (Wyrzykowski+, 2020)
+J/A+A/633/A99 :  Gaia DR2 open clusters in the Milky Way. II (Cantat-Gaudin+, 2020)
+J/A+A/633/A135 :  Solar neighbourhood carbon stars properties (Abia+, 2020)
+J/A+A/634/A98 :  Corona-Australis DANCe. I. (Galli+, 2020)
+J/A+A/635/A45 :  570 new open clusters in the Galactic disc (Castro-Ginard+, 2020)
+J/A+A/635/L3 :  Candidate member stars of the Sagittarius stream (Antoja+, 2020)
+J/A+A/636/A20 :  OGLE-III parallax events with Gaia DR2 (Wyrzykowski+, 2020)
+J/A+A/637/A95 :  16 open clusters UBVI and Gaia DR2 photometry (Perren+, 2020)
+J/A+A/638/A21 :  New Herbig Ae/Be and classical Be stars catalog (Vioque+, 2020)
+J/A+A/638/A103 :  Central stars of planetary nebulae in Gaia DR2 (Chornay+, 2020)
+J/A+A/638/A104 :  Gaia DR2 candidate RR Lyrae of Sgr stream &amp; dwarf (Ramos+, 2020)
+J/A+A/641/A79 :  FEDReD. Extinction map with 2MASS and Gaia DR2 (Hottier+, 2020)
+J/A+A/642/A21 :  Astrometric parameters for 135 OB stars (Russeil+, 2020)
+J/A+A/643/A148 :  Lupus DANCe. Census and 6D structure with Gaia-DR2 (Galli+, 2020)
+J/A+A/644/A17 :  Astrometrically-selected QSO candidates (Heintz+, 2020)
+J/A+A/645/A72 :  Radial velocities of UCAC4 721-037069 (Clavel+, 2021)
+J/A+A/645/A116 :  NGC 2808, NGC 6266 and NGC 6397 Gaia DR2 sources (Kundu+, 2021)
+J/A+A/646/A46 :  Chamaeleon DANCe. Stellar population with Gaia-DR2 (Galli+, 2021)
+J/A+A/646/A99 :  Gaia DR2 Monoceros and ACS candidates (Ramos+, 2021)
+J/A+A/646/A104 :  Improving the open cluster census. I. (Hunt+, 2021)
+J/A+A/646/A183 :  Transit photometry of NGTS-14Ab (Smith+, 2021)
+J/A+A/648/A44 :  Large-amplitude variables in Gaia DR2 (Mowlavi+, 2021)
+J/A+A/653/A160 :  Updated radial velocities from Gaia DR2 (Seabroke+, 2021)
+J/A+A/657/A131 :  Ten new systems with O stars (Maiz Apellaniz+, 2022)
+J/AJ/156/94 :  APOGEE and Gaia DR2 analysis of IC 166 (Schiappacasse-Ulloa+, 2018)
+J/AJ/156/139 :  Main belt asteroid shape distrib. from Gaia DR2 (Mommert+, 2018)
+J/AJ/156/259 :  Robo-AO detected close binaries in Gaia DR2 (Ziegler+, 2018)
+J/AJ/156/264 :  California-Kepler Survey. VII. Planet radius gap (Fulton+, 2018)
+J/AJ/157/78 :  Double &amp; multiple star systems from GaiaDR2 (Jimenez-Esteban+, 2019)
+J/AJ/158/20 :  K-M stars of class I candidate RSGs in Gaia DR2 (Messineo+, 2019)
+J/AJ/158/109 :  Occurrence rates of planets orbiting FGK stars (Hsu+, 2019)
+J/AJ/158/155 :  SB candidates from the RAVE &amp; Gaia DR2 surveys (Birko+, 2019)
+J/AJ/159/84 :  Machine-learning regression of extinction in Gaia DR2 (Bai+, 2020)
+J/AJ/159/95 :  IC 1369 Vilnius photometry and Gaia DR2 astrometry (Straizys+, 2020)
+J/AJ/159/121 :  V-band light curve &amp; RVs of the Cepheid V473Lyr (Evans+, 2020)
+J/AJ/159/139 :  Multiple M dwarf stars with Robo-AO and Gaia DR2 (Lamman+, 2020)
+J/AJ/159/166 :  Membership &amp; properties of moving groups with Gaia (Ujjwal+, 2020)
+J/AJ/159/259 :  Opt-NIR light curve of the quasar 3C 273 (Sobrino Figaredo+, 2020)
+J/AJ/160/138 :  68 Gaia DR2 ultra-short-period planet host stars (Hamer+, 2020)
+J/AJ/160/284 :  2590 binary stars in Hipparcos and Gaia DR2 (Makarov, 2020)
+J/AJ/161/65 :  THYME. IV. 3 Exoplanets around TOI-451 B (Newton+, 2021)
+J/AJ/161/231 :  A list of ~330000 stars Kepler missed (Wolniewicz+, 2021)
+J/AJ/161/234 :  1.7 million K and M dwarfs cross-matching (Medan+, 2021)
+J/AJ/161/237 :  Positions of Triton with Sheshan Station telescope (Zhang+, 2021)
+J/AJ/162/181 :  RVel &amp; Hipparcos positions of epsilon Eridani (Llop-sayson+, 2021)
+J/AJ/163/219 :  Gaia DR2 stellar flybys in the Sco-Cen OB association (Ma+, 2022)
+J/PASP/130/L4101 :  NGC 2112, 2477, 7789 and Col 261 members (Gao+ 2018)
+J/PASP/131/D4101 :  Likely Pleiades members with Gaia DR2 (Gao, 2019)
+J/MNRAS/480/467 :  Surface gravities for 15 000 Kepler stars (Pande+, 2018)
+J/MNRAS/480/4505 :  A white dwarf catalogue from Gaia-DR2 (Jimenez-Esteban+, 2018)
+J/MNRAS/480/5242 :  (non-)existence of five sparse open clusters (Kos+, 2018)
+J/MNRAS/481/1195 :  Gaia DR2 RR Lyrae stars as standard candles (Muraveva+, 2018)
+J/MNRAS/481/3887 :  Astrometry and photometry of 7 open clusters (Dias+, 2018)
+J/MNRAS/482/4570 :  Gaia DR2 white dwarf candidates (Gentile Fusillo+, 2019)
+J/MNRAS/482/5138 :  Galactic GC mean proper motions &amp; velocities (Baumgardt+, 2019)
+J/MNRAS/482/5222 :  DA and DB white dwarfs properties in Gaia DR2 (Tremblay+, 2019)
+J/MNRAS/483/5508 :  Three new Galactic star clusters (Ferreira+, 2019)
+J/MNRAS/484/1838 :  Spatial substructure of Cygnus OB2 (Berlanas+, 2019)
+J/MNRAS/484/2832 :  Proper motions of Milky Way globular clusters (Vasiliev, 2019)
+J/MNRAS/485/4906 :  GC number density profiles using Gaia DR2 (de Boer+, 2019)
+J/MNRAS/485/5573 :  Gaia-DR2 100pc white dwarf population (Torres+, 2019)
+J/MNRAS/486/2477 :  Catalogue of members of NGC 6530 (Wright+, 2019)
+J/MNRAS/487/2771 :  Gaia-DR2 distance to the W3 Complex (Navarete+, 2019)
+J/MNRAS/488/3024 :  Globular clusters members with Gaia DR2 (Bustos Fierro+, 2019)
+J/MNRAS/489/3093 :  Gaia DR2 parallax of globular clusters (Shao+, 2019)
+J/MNRAS/492/1164 :  Abundances of Gaia DR2 wide binaries (Hawkins+, 2020)
+J/MNRAS/492/L40 :  Disentangling cataclysmic variables in Gaia DR2 (Abril+, 2020)
+J/MNRAS/493/2339 :  Internal motions in OB-associations (Melnik+, 2020)
+J/MNRAS/495/663 :  Gaia DR2 OB associations (Ward+, 2020)
+J/MNRAS/496/2021 :  New Galactic open clusters (Ferreira+, 2020)
+J/MNRAS/502/6080 :  New members of Cygnus OB2 from Gaia DR2 (Orellana+, 2021)
+J/MNRAS/502/L90 :  Gaia DR2 Galactic bulge new star clusters (Ferreira+, 2021)
+J/MNRAS/503/3660 :  Gaia Spectrophotometric Standard Stars. V. (Pancino+, 2021)
+J/MNRAS/504/356 :  Updated parameters of 1743 open clusters (Dias+, 2021)
+J/MNRAS/505/1135 :  Gaia/IPHAS catalogue of Ha-excess sources (Fratta+, 2021)
+J/AZh/97/733 :  Binary Star Pop. with Common Proper Motion (Sapozhnikov+, 2020)
+J/AZh/98/239 :  Orbits of Four Visual Binaries (Romanenko+, 2021)
+J/AN/340/386 :  Catalogue of spectroscopic binary candidate stars (Jack, 2019)
+J/AN/341/770 :  Corrected proper motion for HIP stars (Damljanovic, 2020)
+J/AN/342/538 :  Frolov 1 and NGC 7510 CCD UBV photometry (Yontan+, 2021)
+J/AcA/68/351 :  Predicted Microlensing Events by nearby VLM objects (Nielsen+ 2018)
+J/other/ApSS/365.112 :  Kinematic data for high luminosity stars (Melnik+, 2020)
+J/other/RAA/21.93 :  74 new open clusters found in Gaia DR2 (He+, 2021)
+J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;uas&#39; not supported by the VOUnit standard. Did you mean 1e-06a, uA or ua (deprecated)? [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Did you mean K? [astropy.units.format.vounit]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For 2MASS we will want to use <code class="docutils literal notranslate"><span class="pre">II/246</span> <span class="pre">:</span>&#160; <span class="pre">2MASS</span> <span class="pre">All-Sky</span> <span class="pre">Catalog</span> <span class="pre">of</span> <span class="pre">Point</span> <span class="pre">Sources</span> <span class="pre">(Cutri+</span> <span class="pre">2003)</span></code> and for Gaia <code class="docutils literal notranslate"><span class="pre">I/345</span> <span class="pre">:</span>&#160; <span class="pre">Gaia</span> <span class="pre">DR2</span> <span class="pre">(Gaia</span> <span class="pre">Collaboration,</span> <span class="pre">2018)</span></code>. Before we query the full two tables we only look at a few sources for each table to understand which columns are available. The query below will give us 50 sources each – the default for the <code class="docutils literal notranslate"><span class="pre">get_catalogs</span></code> method.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_twomass</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;II/246&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_twomass</span><span class="p">)</span>
+<span class="n">test_twomass</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:II/246/out&#39; with 15 column(s) and 50 row(s) 
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=50</i>
+<table id="table139993293832688" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>_2MASS</th><th>Jmag</th><th>e_Jmag</th><th>Hmag</th><th>e_Hmag</th><th>Kmag</th><th>e_Kmag</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Xflg</th><th>Aflg</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>str17</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>str3</th><th>str3</th><th>str3</th><th>uint8</th><th>uint8</th></tr></thead>
+<tr><td>44.880847</td><td>0.616721</td><td>02593140+0037001</td><td>13.799</td><td>0.025</td><td>13.222</td><td>0.026</td><td>13.167</td><td>0.037</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.919229</td><td>0.610531</td><td>02594061+0036379</td><td>16.794</td><td>0.158</td><td>16.093</td><td>0.170</td><td>15.451</td><td>0.206</td><td>CCC</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.921658</td><td>0.617475</td><td>02594119+0037029</td><td>14.666</td><td>0.033</td><td>14.261</td><td>0.043</td><td>14.140</td><td>0.067</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.906036</td><td>0.626795</td><td>02593744+0037364</td><td>15.339</td><td>0.050</td><td>14.535</td><td>0.051</td><td>13.654</td><td>0.045</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.935480</td><td>0.621464</td><td>02594451+0037172</td><td>16.350</td><td>0.198</td><td>15.759</td><td>0.266</td><td>15.198</td><td>0.208</td><td>CDC</td><td>222</td><td>111</td><td>ccc</td><td>0</td><td>0</td></tr>
+<tr><td>44.937738</td><td>0.624476</td><td>02594505+0037281</td><td>8.227</td><td>0.023</td><td>8.079</td><td>--</td><td>7.871</td><td>--</td><td>AUU</td><td>166</td><td>100</td><td>c00</td><td>0</td><td>0</td></tr>
+<tr><td>44.937798</td><td>0.625384</td><td>02594507+0037313</td><td>8.562</td><td>0.048</td><td>8.094</td><td>0.042</td><td>7.972</td><td>0.063</td><td>AAA</td><td>111</td><td>111</td><td>ccc</td><td>0</td><td>0</td></tr>
+<tr><td>44.915768</td><td>0.634722</td><td>02593978+0038049</td><td>16.275</td><td>0.104</td><td>15.532</td><td>0.098</td><td>15.565</td><td>0.228</td><td>AAD</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.897343</td><td>0.629454</td><td>02593536+0037460</td><td>15.688</td><td>0.064</td><td>15.529</td><td>0.102</td><td>15.062</td><td>0.150</td><td>AAB</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>44.785319</td><td>0.640323</td><td>02590847+0038251</td><td>16.398</td><td>0.134</td><td>15.889</td><td>0.148</td><td>15.408</td><td>0.195</td><td>BBC</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.788202</td><td>0.655162</td><td>02590916+0039185</td><td>15.973</td><td>0.089</td><td>15.531</td><td>0.122</td><td>14.965</td><td>0.137</td><td>ABB</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.806605</td><td>0.671498</td><td>02591358+0040173</td><td>15.770</td><td>0.071</td><td>15.275</td><td>0.080</td><td>15.149</td><td>0.155</td><td>AAB</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.771958</td><td>0.697915</td><td>02590526+0041524</td><td>16.373</td><td>0.126</td><td>15.634</td><td>0.170</td><td>15.013</td><td>0.149</td><td>BCB</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.794553</td><td>0.719519</td><td>02591069+0043102</td><td>16.459</td><td>0.131</td><td>16.263</td><td>0.219</td><td>16.233</td><td>--</td><td>BDU</td><td>220</td><td>110</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.816167</td><td>0.725490</td><td>02591588+0043317</td><td>14.996</td><td>0.047</td><td>14.406</td><td>0.030</td><td>14.239</td><td>0.071</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.461157</td><td>0.461605</td><td>02575067+0027417</td><td>15.449</td><td>0.059</td><td>14.891</td><td>0.070</td><td>14.732</td><td>0.087</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.445146</td><td>0.474037</td><td>02574683+0028265</td><td>16.127</td><td>0.113</td><td>15.826</td><td>0.166</td><td>15.801</td><td>0.242</td><td>BCD</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+<tr><td>44.459680</td><td>0.483199</td><td>02575032+0028595</td><td>14.214</td><td>0.032</td><td>13.861</td><td>0.036</td><td>13.713</td><td>0.040</td><td>AAA</td><td>222</td><td>111</td><td>000</td><td>0</td><td>0</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_gaia</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;I/345&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_gaia</span><span class="p">)</span>
+<span class="n">test_gaia</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 20 tables:
+	&#39;0:I/345/gaia2&#39; with 32 column(s) and 50 row(s) 
+	&#39;1:I/345/rvstdcat&#39; with 32 column(s) and 50 row(s) 
+	&#39;2:I/345/rvstdmes&#39; with 7 column(s) and 50 row(s) 
+	&#39;3:I/345/allwise&#39; with 2 column(s) and 50 row(s) 
+	&#39;4:I/345/iers&#39; with 2 column(s) and 50 row(s) 
+	&#39;5:I/345/cepheid&#39; with 25 column(s) and 50 row(s) 
+	&#39;6:I/345/rrlyrae&#39; with 23 column(s) and 50 row(s) 
+	&#39;7:I/345/lpv&#39; with 13 column(s) and 50 row(s) 
+	&#39;8:I/345/varres&#39; with 9 column(s) and 50 row(s) 
+	&#39;9:I/345/shortts&#39; with 9 column(s) and 50 row(s) 
+	&#39;10:I/345/tsstat&#39; with 13 column(s) and 50 row(s) 
+	&#39;11:I/345/numtrans&#39; with 4 column(s) and 50 row(s) 
+	&#39;12:I/345/transits&#39; with 20 column(s) and 50 row(s) 
+	&#39;13:I/345/rm&#39; with 9 column(s) and 50 row(s) 
+	&#39;14:I/345/rmseg&#39; with 16 column(s) and 50 row(s) 
+	&#39;15:I/345/rmout&#39; with 2 column(s) and 50 row(s) 
+	&#39;16:I/345/ssoobj&#39; with 6 column(s) and 50 row(s) 
+	&#39;17:I/345/ssoorb&#39; with 19 column(s) and 50 row(s) 
+	&#39;18:I/345/ssores&#39; with 10 column(s) and 50 row(s) 
+	&#39;19:I/345/ssoobs&#39; with 7 column(s) and 50 row(s) 
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=50</i>
+<table id="table139993293836384" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>e_RA_ICRS</th><th>DE_ICRS</th><th>e_DE_ICRS</th><th>Source</th><th>Plx</th><th>e_Plx</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>Dup</th><th>FG</th><th>e_FG</th><th>Gmag</th><th>e_Gmag</th><th>FBP</th><th>e_FBP</th><th>BPmag</th><th>e_BPmag</th><th>FRP</th><th>e_FRP</th><th>RPmag</th><th>e_RPmag</th><th>BP-RP</th><th>RV</th><th>e_RV</th><th>Teff</th><th>AG</th><th>E_BP-RP_</th><th>Rad</th><th>Lum</th></tr></thead>
+<thead><tr><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th></th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th>K</th><th>mag</th><th>mag</th><th>solRad</th><th>solLum</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>uint8</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>10.61832979733</td><td>0.0393</td><td>69.66757412465</td><td>0.0418</td><td>529988725127225216</td><td>0.5155</td><td>0.0498</td><td>1.814</td><td>0.080</td><td>-0.419</td><td>0.075</td><td>0</td><td>4417</td><td>2.404</td><td>16.5755</td><td>0.0006</td><td>1460</td><td>12.28</td><td>17.4408</td><td>0.0091</td><td>4442</td><td>9.8</td><td>15.6429</td><td>0.0024</td><td>1.7979</td><td>--</td><td>--</td><td>4016.00</td><td>--</td><td>--</td><td>2.15</td><td>1.086</td></tr>
+<tr><td>10.61399513134</td><td>0.2397</td><td>69.67151942554</td><td>0.2564</td><td>529988725127232256</td><td>0.7421</td><td>0.2879</td><td>2.641</td><td>0.564</td><td>-0.734</td><td>0.489</td><td>0</td><td>298.9</td><td>0.9341</td><td>19.4996</td><td>0.0034</td><td>67.62</td><td>7.111</td><td>20.7762</td><td>0.1142</td><td>396.1</td><td>5.92</td><td>18.2673</td><td>0.0162</td><td>2.5089</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.60674559929</td><td>0.3681</td><td>69.67615038558</td><td>0.3893</td><td>529988729419907712</td><td>0.6973</td><td>0.4505</td><td>-3.387</td><td>1.003</td><td>-0.915</td><td>0.763</td><td>0</td><td>174.8</td><td>0.8403</td><td>20.0822</td><td>0.0052</td><td>56.42</td><td>7.19</td><td>20.9729</td><td>0.1384</td><td>220.2</td><td>6.737</td><td>18.9049</td><td>0.0332</td><td>2.0679</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.60650128212</td><td>0.3994</td><td>69.68285469028</td><td>0.4468</td><td>529988729419898112</td><td>1.4280</td><td>0.4744</td><td>-4.705</td><td>1.029</td><td>-0.314</td><td>0.825</td><td>0</td><td>156</td><td>0.8248</td><td>20.2053</td><td>0.0057</td><td>55.18</td><td>5.606</td><td>20.9968</td><td>0.1103</td><td>177.9</td><td>4.368</td><td>19.1364</td><td>0.0267</td><td>1.8605</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.60788542461</td><td>0.4957</td><td>69.68236569425</td><td>0.5472</td><td>529988729422389248</td><td>0.3178</td><td>0.5732</td><td>-0.113</td><td>1.271</td><td>-0.382</td><td>1.070</td><td>0</td><td>121.7</td><td>0.7924</td><td>20.4749</td><td>0.0071</td><td>50.8</td><td>6.001</td><td>21.0867</td><td>0.1282</td><td>143.2</td><td>8.21</td><td>19.3723</td><td>0.0623</td><td>1.7143</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.59594372682</td><td>0.1557</td><td>69.67788454519</td><td>0.1609</td><td>529988729425169536</td><td>0.0271</td><td>0.1982</td><td>-1.070</td><td>0.345</td><td>0.537</td><td>0.300</td><td>0</td><td>530.2</td><td>1.033</td><td>18.8773</td><td>0.0021</td><td>162.3</td><td>7.393</td><td>19.8256</td><td>0.0495</td><td>543.4</td><td>5.356</td><td>17.9241</td><td>0.0107</td><td>1.9015</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.58232493475</td><td>0.1362</td><td>69.67866474779</td><td>0.1386</td><td>529988725127247360</td><td>0.6460</td><td>0.1708</td><td>0.568</td><td>0.299</td><td>-2.263</td><td>0.257</td><td>0</td><td>638.9</td><td>1.175</td><td>18.6748</td><td>0.0020</td><td>204</td><td>9.395</td><td>19.5774</td><td>0.0500</td><td>677.6</td><td>7.759</td><td>17.6844</td><td>0.0124</td><td>1.8929</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.60079636127</td><td>0.1956</td><td>69.67833201134</td><td>0.1999</td><td>529988725131416960</td><td>0.1404</td><td>0.2459</td><td>-2.161</td><td>0.444</td><td>-2.503</td><td>0.374</td><td>0</td><td>419.3</td><td>1.036</td><td>19.1321</td><td>0.0027</td><td>109</td><td>6.727</td><td>20.2582</td><td>0.0670</td><td>471.8</td><td>6.251</td><td>18.0776</td><td>0.0144</td><td>2.1806</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.59962410748</td><td>0.1444</td><td>69.67952294745</td><td>0.1481</td><td>529988729425168640</td><td>0.2925</td><td>0.1784</td><td>-2.342</td><td>0.323</td><td>0.686</td><td>0.272</td><td>0</td><td>608.1</td><td>1.113</td><td>18.7285</td><td>0.0020</td><td>217.8</td><td>9.589</td><td>19.5063</td><td>0.0478</td><td>609</td><td>4.757</td><td>17.8003</td><td>0.0085</td><td>1.7059</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>10.89414852105</td><td>1.4474</td><td>69.62676341882</td><td>1.5069</td><td>529988866861744384</td><td>2.0399</td><td>1.5689</td><td>-2.430</td><td>4.333</td><td>1.318</td><td>2.668</td><td>0</td><td>88.56</td><td>1.071</td><td>20.8203</td><td>0.0131</td><td>47.02</td><td>8.587</td><td>21.1707</td><td>0.1983</td><td>105.7</td><td>9.692</td><td>19.7016</td><td>0.0995</td><td>1.4692</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.88179027059</td><td>0.2214</td><td>69.62848212352</td><td>0.2311</td><td>529988862566077824</td><td>0.3511</td><td>0.2476</td><td>1.350</td><td>0.468</td><td>-1.290</td><td>0.415</td><td>0</td><td>412.5</td><td>1.084</td><td>19.1498</td><td>0.0029</td><td>119.9</td><td>9.473</td><td>20.1546</td><td>0.0858</td><td>469.4</td><td>8.594</td><td>18.0830</td><td>0.0199</td><td>2.0716</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.89123961832</td><td>2.0200</td><td>69.63466227994</td><td>2.1248</td><td>529988866863109760</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>82.07</td><td>1.142</td><td>20.9029</td><td>0.0151</td><td>69.03</td><td>22.78</td><td>20.7538</td><td>0.3583</td><td>140.5</td><td>17.69</td><td>19.3928</td><td>0.1367</td><td>1.3609</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.88904073076</td><td>0.1058</td><td>69.63476021144</td><td>0.1125</td><td>529988862566093312</td><td>0.3729</td><td>0.1312</td><td>-4.524</td><td>0.224</td><td>0.921</td><td>0.206</td><td>0</td><td>1069</td><td>1.579</td><td>18.1163</td><td>0.0016</td><td>335</td><td>9.594</td><td>19.0386</td><td>0.0311</td><td>1132</td><td>8.088</td><td>17.1277</td><td>0.0078</td><td>1.9109</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.87516238413</td><td>0.2802</td><td>69.62724071664</td><td>0.3025</td><td>529988862566074112</td><td>0.0884</td><td>0.3154</td><td>-1.937</td><td>0.659</td><td>-0.653</td><td>0.539</td><td>0</td><td>277.6</td><td>1.066</td><td>19.5797</td><td>0.0042</td><td>93.43</td><td>5.407</td><td>20.4252</td><td>0.0628</td><td>296.9</td><td>7.752</td><td>18.5805</td><td>0.0284</td><td>1.8447</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.87814365138</td><td>0.0968</td><td>69.63129472264</td><td>0.1026</td><td>529988862566085888</td><td>0.1251</td><td>0.1167</td><td>-2.881</td><td>0.200</td><td>0.191</td><td>0.188</td><td>0</td><td>1077</td><td>1.449</td><td>18.1076</td><td>0.0015</td><td>443.4</td><td>9.92</td><td>18.7345</td><td>0.0243</td><td>967.4</td><td>8.896</td><td>17.2979</td><td>0.0100</td><td>1.4366</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.87721251860</td><td>0.1123</td><td>69.63922460905</td><td>0.1240</td><td>529988866864164096</td><td>0.2221</td><td>0.1335</td><td>-2.170</td><td>0.237</td><td>0.472</td><td>0.225</td><td>0</td><td>858.3</td><td>1.436</td><td>18.3543</td><td>0.0018</td><td>285.9</td><td>10.17</td><td>19.2108</td><td>0.0386</td><td>870.5</td><td>9.534</td><td>17.4125</td><td>0.0119</td><td>1.7982</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.86770511885</td><td>0.3649</td><td>69.63554202844</td><td>0.4515</td><td>529988862570377344</td><td>-0.3085</td><td>0.4627</td><td>-2.119</td><td>0.922</td><td>0.799</td><td>0.838</td><td>0</td><td>175.4</td><td>0.9377</td><td>20.0780</td><td>0.0058</td><td>69.73</td><td>5.956</td><td>20.7428</td><td>0.0927</td><td>197.4</td><td>7.3</td><td>19.0233</td><td>0.0401</td><td>1.7195</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>10.86311129029</td><td>0.0651</td><td>69.63642438561</td><td>0.0711</td><td>529988866864999680</td><td>0.0851</td><td>0.0821</td><td>-0.846</td><td>0.153</td><td>0.849</td><td>0.134</td><td>0</td><td>2120</td><td>2.235</td><td>17.3723</td><td>0.0011</td><td>485.2</td><td>8.859</td><td>18.6365</td><td>0.0198</td><td>2540</td><td>11.44</td><td>16.2499</td><td>0.0049</td><td>2.3866</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+<p>As you will see below, we only need coordinates, 2MASS photometry in the H and K band, and Gaia photometry in the Gaia G band. So we’ll query the tables <code class="docutils literal notranslate"><span class="pre">II/246/out</span></code> for 2MASS and <code class="docutils literal notranslate"><span class="pre">I/345/gaia2</span></code> for Gaia DR2:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">twomass</span> <span class="o">=</span> <span class="n">moc_intersection</span><span class="o">.</span><span class="n">query_vizier_table</span><span class="p">(</span><span class="s2">&quot;II/246/out&quot;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">20000</span><span class="p">)</span>
+<span class="n">twomass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=19784</i>
+<table id="table139993293832640" class="table-striped table-bordered table-condensed">
+<thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>e_Jmag</th><th>e_Hmag</th><th>e_Kmag</th><th>Qfl</th><th>Rfl</th><th>X</th><th>MeasureJD</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th>d</th></tr></thead>
+<thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>int16</th><th>uint8</th><th>float64</th></tr></thead>
+<tr><td>07004924-2609161</td><td>105.205199</td><td>-26.154478</td><td>0.06</td><td>0.06</td><td>90.0</td><td>12.241</td><td>11.679</td><td>11.401</td><td>0.027</td><td>0.026</td><td>0.023</td><td>AAA</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005553-2609080</td><td>105.231379</td><td>-26.152241</td><td>0.07</td><td>0.07</td><td>45.0</td><td>15.443</td><td>14.916</td><td>14.773</td><td>0.033</td><td>0.049</td><td>0.109</td><td>AAB</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005410-2608455</td><td>105.225439</td><td>-26.145973</td><td>0.06</td><td>0.06</td><td>90.0</td><td>10.554</td><td>10.259</td><td>10.203</td><td>0.024</td><td>0.024</td><td>0.019</td><td>AAA</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005605-2608553</td><td>105.233576</td><td>-26.14872</td><td>0.06</td><td>0.06</td><td>90.0</td><td>11.891</td><td>11.6</td><td>11.596</td><td>0.026</td><td>0.024</td><td>0.023</td><td>AAA</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005809-2608512</td><td>105.242043</td><td>-26.147581</td><td>0.21</td><td>0.2</td><td>109.0</td><td>16.746</td><td>16.293</td><td>15.534</td><td>0.138</td><td>0.199</td><td>--</td><td>BCU</td><td>220</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005247-2609231</td><td>105.218641</td><td>-26.156427</td><td>0.08</td><td>0.08</td><td>135.0</td><td>15.602</td><td>15.26</td><td>15.049</td><td>0.063</td><td>0.077</td><td>0.147</td><td>AAB</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005211-2609189</td><td>105.217137</td><td>-26.155258</td><td>0.06</td><td>0.06</td><td>90.0</td><td>14.179</td><td>13.935</td><td>13.901</td><td>0.041</td><td>0.043</td><td>0.065</td><td>AAA</td><td>222</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005137-2609029</td><td>105.214075</td><td>-26.150816</td><td>0.19</td><td>0.19</td><td>45.0</td><td>16.608</td><td>16.15</td><td>16.086</td><td>0.131</td><td>0.17</td><td>--</td><td>BCU</td><td>220</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>07005056-2609004</td><td>105.210699</td><td>-26.150122</td><td>0.15</td><td>0.15</td><td>45.0</td><td>16.472</td><td>15.976</td><td>15.562</td><td>0.125</td><td>0.15</td><td>--</td><td>BBU</td><td>220</td><td>0</td><td>2451208.5657</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>12404086-5347259</td><td>190.17025</td><td>-53.79055</td><td>0.08</td><td>0.07</td><td>5.0</td><td>15.313</td><td>14.878</td><td>14.915</td><td>0.056</td><td>0.067</td><td>0.144</td><td>AAB</td><td>222</td><td>0</td><td>2451312.531</td></tr>
+<tr><td>12404683-5347492</td><td>190.195133</td><td>-53.797001</td><td>0.08</td><td>0.07</td><td>5.0</td><td>15.064</td><td>14.632</td><td>14.569</td><td>0.052</td><td>0.073</td><td>0.099</td><td>AAA</td><td>222</td><td>0</td><td>2451312.531</td></tr>
+<tr><td>12404640-5347396</td><td>190.193372</td><td>-53.794361</td><td>0.07</td><td>0.06</td><td>0.0</td><td>13.27</td><td>12.911</td><td>12.881</td><td>0.023</td><td>0.031</td><td>0.031</td><td>AAA</td><td>222</td><td>0</td><td>2451312.531</td></tr>
+<tr><td>12093034-5553408</td><td>182.376454</td><td>-55.894691</td><td>0.23</td><td>0.22</td><td>65.0</td><td>16.436</td><td>15.895</td><td>16.865</td><td>0.131</td><td>0.19</td><td>--</td><td>BCU</td><td>220</td><td>0</td><td>2451384.4889</td></tr>
+<tr><td>12093037-5553252</td><td>182.376575</td><td>-55.89035</td><td>0.27</td><td>0.26</td><td>43.0</td><td>16.389</td><td>16.026</td><td>16.561</td><td>0.127</td><td>0.217</td><td>--</td><td>BDU</td><td>220</td><td>0</td><td>2451384.4889</td></tr>
+<tr><td>12093089-5553446</td><td>182.378724</td><td>-55.895725</td><td>0.17</td><td>0.17</td><td>145.0</td><td>16.26</td><td>15.616</td><td>15.839</td><td>0.117</td><td>0.157</td><td>--</td><td>BCU</td><td>220</td><td>0</td><td>2451384.4889</td></tr>
+<tr><td>12093019-5553333</td><td>182.375829</td><td>-55.892605</td><td>0.07</td><td>0.07</td><td>17.0</td><td>15.282</td><td>14.897</td><td>14.683</td><td>0.051</td><td>0.095</td><td>0.119</td><td>AAB</td><td>222</td><td>0</td><td>2451384.4889</td></tr>
+<tr><td>12093246-5553264</td><td>182.385279</td><td>-55.890694</td><td>0.06</td><td>0.06</td><td>17.0</td><td>13.705</td><td>13.012</td><td>12.816</td><td>0.027</td><td>0.032</td><td>0.035</td><td>AAA</td><td>222</td><td>0</td><td>2451384.4889</td></tr>
+<tr><td>12093324-5553089</td><td>182.388524</td><td>-55.885818</td><td>0.08</td><td>0.07</td><td>3.0</td><td>15.77</td><td>15.261</td><td>14.976</td><td>0.074</td><td>0.111</td><td>0.139</td><td>ABB</td><td>222</td><td>0</td><td>2451384.4889</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gaia</span> <span class="o">=</span> <span class="n">moc_intersection</span><span class="o">.</span><span class="n">query_vizier_table</span><span class="p">(</span><span class="s2">&quot;I/345/gaia2&quot;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">20000</span><span class="p">)</span>
+<span class="n">gaia</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=20000</i>
+<table id="table139993443800816" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ra_epoch2000</th><th>dec_epoch2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>source_id</th><th>ra</th><th>ra_error</th><th>dec</th><th>dec_error</th><th>parallax</th><th>parallax_error</th><th>pmra</th><th>pmra_error</th><th>pmdec</th><th>pmdec_error</th><th>duplicated_source</th><th>phot_g_mean_flux</th><th>phot_g_mean_flux_error</th><th>phot_g_mean_mag</th><th>phot_bp_mean_flux</th><th>phot_bp_mean_flux_error</th><th>phot_bp_mean_mag</th><th>phot_rp_mean_flux</th><th>phot_rp_mean_flux_error</th><th>phot_rp_mean_mag</th><th>bp_rp</th><th>radial_velocity</th><th>radial_velocity_error</th><th>rv_nb_transits</th><th>teff_val</th><th>a_g_val</th><th>e_bp_min_rp_val</th><th>radius_val</th><th>lum_val</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th></th><th>K</th><th>mag</th><th>mag</th><th>Rsun</th><th>Lsun</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>bool</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>105.2066061184302</td><td>-26.1538940663577</td><td>0.004</td><td>0.004</td><td>0.0</td><td>2920762586611045376</td><td>105.20658290054</td><td>0.1161</td><td>-26.15393087599</td><td>0.149</td><td>0.136</td><td>0.1944</td><td>-4.84</td><td>0.253</td><td>-8.549</td><td>0.271</td><td>False</td><td>602.539</td><td>1.1074</td><td>18.738403</td><td>267.377</td><td>5.59862</td><td>19.283577</td><td>535.627</td><td>6.13289</td><td>17.939764</td><td>1.343813</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>105.2052022499317</td><td>-26.1544492445426</td><td>0.001</td><td>0.001</td><td>0.0</td><td>2920762586615338752</td><td>105.20527986473</td><td>0.0267</td><td>-26.15425317585</td><td>0.0358</td><td>15.1333</td><td>0.0454</td><td>16.181</td><td>0.059</td><td>45.539</td><td>0.066</td><td>False</td><td>16217.1</td><td>8.55749</td><td>15.163431</td><td>2736.6</td><td>12.0165</td><td>16.75836</td><td>21463.4</td><td>32.9159</td><td>13.932673</td><td>2.825687</td><td>--</td><td>--</td><td>0</td><td>3928.82</td><td>0.1227</td><td>0.094</td><td>--</td><td>--</td></tr>
+<tr><td>105.2254316259827</td><td>-26.1459685548036</td><td>0.001</td><td>0.001</td><td>0.0</td><td>2920762724054281728</td><td>105.22540767106</td><td>0.0161</td><td>-26.14597192505</td><td>0.0217</td><td>3.0363</td><td>0.0265</td><td>-4.994</td><td>0.034</td><td>-0.783</td><td>0.039</td><td>False</td><td>447474.0</td><td>150.212</td><td>11.561445</td><td>240915.0</td><td>221.395</td><td>11.896729</td><td>295385.0</td><td>244.062</td><td>11.085948</td><td>0.810782</td><td>12.24</td><td>0.54</td><td>10</td><td>5789.0</td><td>0.359</td><td>0.195</td><td>1.38</td><td>1.916</td></tr>
+<tr><td>105.2255476000922</td><td>-26.1406471806866</td><td>0.062</td><td>0.038</td><td>90.0</td><td>2920762724052466816</td><td>105.22555538166</td><td>2.0243</td><td>-26.14064454062</td><td>1.4671</td><td>-4.0178</td><td>1.6818</td><td>1.622</td><td>3.991</td><td>0.613</td><td>2.468</td><td>False</td><td>76.608</td><td>1.20685</td><td>20.97768</td><td>36.0788</td><td>7.86989</td><td>21.458258</td><td>65.0345</td><td>7.80032</td><td>20.229061</td><td>1.229197</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>105.2186311670325</td><td>-26.156438621226</td><td>0.002</td><td>0.001</td><td>0.0</td><td>2920762685395330944</td><td>105.21862542833</td><td>0.0384</td><td>-26.1564233977</td><td>0.0518</td><td>0.4535</td><td>0.0652</td><td>-1.196</td><td>0.088</td><td>3.536</td><td>0.101</td><td>False</td><td>3596.37</td><td>2.41419</td><td>16.798706</td><td>1782.51</td><td>6.52961</td><td>17.223808</td><td>2630.98</td><td>10.0304</td><td>16.211626</td><td>1.012182</td><td>--</td><td>--</td><td>0</td><td>5324.0</td><td>0.2803</td><td>0.14</td><td>--</td><td>--</td></tr>
+<tr><td>105.2119407930607</td><td>-26.148242191244</td><td>0.012</td><td>0.011</td><td>0.0</td><td>2920762689690245120</td><td>105.21193444979</td><td>0.3448</td><td>-26.14822964561</td><td>0.433</td><td>0.6099</td><td>0.6059</td><td>-1.322</td><td>0.699</td><td>2.914</td><td>0.795</td><td>False</td><td>151.185</td><td>0.741582</td><td>20.239592</td><td>58.4888</td><td>5.62295</td><td>20.933706</td><td>147.958</td><td>5.41634</td><td>19.336573</td><td>1.597134</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>105.2101027197529</td><td>-26.1493188643026</td><td>0.003</td><td>0.002</td><td>0.0</td><td>2920762685393857664</td><td>105.21008829533</td><td>0.075</td><td>-26.14929289497</td><td>0.1004</td><td>0.5265</td><td>0.1263</td><td>-3.007</td><td>0.157</td><td>6.032</td><td>0.181</td><td>False</td><td>1089.74</td><td>1.25074</td><td>18.09506</td><td>474.512</td><td>8.77005</td><td>18.66077</td><td>951.979</td><td>11.217</td><td>17.315351</td><td>1.345419</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>105.233577941629</td><td>-26.1487114377012</td><td>0.001</td><td>0.001</td><td>0.0</td><td>2920762655334900352</td><td>105.23358687293</td><td>0.0188</td><td>-26.14871224799</td><td>0.0281</td><td>0.6511</td><td>0.0338</td><td>1.862</td><td>0.039</td><td>-0.188</td><td>0.05</td><td>False</td><td>141155.0</td><td>27.6249</td><td>12.814123</td><td>79733.0</td><td>74.3211</td><td>13.097294</td><td>90552.3</td><td>113.271</td><td>12.369671</td><td>0.727623</td><td>--</td><td>--</td><td>0</td><td>6290.0</td><td>--</td><td>--</td><td>3.03</td><td>12.909</td></tr>
+<tr><td>105.2298314760221</td><td>-26.1384116458451</td><td>0.006</td><td>0.005</td><td>0.0</td><td>2920762719755070720</td><td>105.2298328238</td><td>0.1448</td><td>-26.13840364909</td><td>0.2119</td><td>-0.4599</td><td>0.2489</td><td>0.281</td><td>0.308</td><td>1.857</td><td>0.383</td><td>False</td><td>1198.17</td><td>3.55001</td><td>17.99207</td><td>586.998</td><td>6.56335</td><td>18.429798</td><td>1042.57</td><td>5.6909</td><td>17.216658</td><td>1.213141</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>286.6993829324819</td><td>-16.5821039497348</td><td>0.004</td><td>0.003</td><td>90.0</td><td>4088730216353585920</td><td>286.69937395748</td><td>0.1357</td><td>-16.58213272386</td><td>0.1369</td><td>0.1246</td><td>0.1411</td><td>-1.998</td><td>0.238</td><td>-6.683</td><td>0.215</td><td>False</td><td>1981.79</td><td>3.06034</td><td>17.445724</td><td>844.279</td><td>10.0523</td><td>18.035173</td><td>1643.97</td><td>10.3648</td><td>16.722185</td><td>1.312988</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6963834136197</td><td>-16.5849153146221</td><td>0.002</td><td>0.001</td><td>90.0</td><td>4088730220669538688</td><td>286.69637839819</td><td>0.0527</td><td>-16.58490847684</td><td>0.0491</td><td>0.0708</td><td>0.055</td><td>-1.116</td><td>0.102</td><td>1.588</td><td>0.089</td><td>False</td><td>9283.59</td><td>7.20664</td><td>15.769075</td><td>3756.87</td><td>14.4613</td><td>16.414322</td><td>7967.53</td><td>26.8564</td><td>15.008611</td><td>1.405711</td><td>--</td><td>--</td><td>0</td><td>4809.62</td><td>0.348</td><td>0.1653</td><td>--</td><td>--</td></tr>
+<tr><td>286.6938297521173</td><td>-16.5806976451671</td><td>0.037</td><td>0.033</td><td>0.0</td><td>4088730220650841472</td><td>286.69380780318</td><td>0.8091</td><td>-16.58070500216</td><td>0.7449</td><td>1.6569</td><td>0.9279</td><td>-4.886</td><td>2.144</td><td>-1.709</td><td>2.399</td><td>False</td><td>126.719</td><td>1.9013</td><td>20.431263</td><td>248.985</td><td>155.818</td><td>19.360956</td><td>117.25</td><td>48.3755</td><td>19.589136</td><td>-0.22818</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6937302999216</td><td>-16.586352116054</td><td>0.017</td><td>0.015</td><td>90.0</td><td>4088730186289924096</td><td>286.6937419687</td><td>0.5747</td><td>-16.58637019079</td><td>0.5313</td><td>0.6284</td><td>0.5059</td><td>2.597</td><td>1.078</td><td>-4.198</td><td>0.941</td><td>False</td><td>242.495</td><td>1.42055</td><td>19.726606</td><td>187.615</td><td>8.71396</td><td>19.668219</td><td>258.771</td><td>12.5838</td><td>18.729631</td><td>0.938587</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6923263914704</td><td>-16.5950076068847</td><td>0.016</td><td>0.014</td><td>90.0</td><td>4088730117570391680</td><td>286.69228689634</td><td>0.5148</td><td>-16.59503562694</td><td>0.486</td><td>0.0273</td><td>0.4912</td><td>-8.791</td><td>1.005</td><td>-6.508</td><td>0.919</td><td>False</td><td>254.175</td><td>1.17755</td><td>19.675533</td><td>166.733</td><td>7.80453</td><td>19.796333</td><td>186.025</td><td>13.988</td><td>19.087994</td><td>0.70834</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6990751669917</td><td>-16.5854870711225</td><td>0.031</td><td>0.03</td><td>0.0</td><td>4088730220650832384</td><td>286.69907017979</td><td>0.8828</td><td>-16.58550441555</td><td>0.8566</td><td>0.4562</td><td>0.795</td><td>-1.11</td><td>1.964</td><td>-4.028</td><td>1.977</td><td>False</td><td>127.25</td><td>1.32415</td><td>20.426722</td><td>93.6008</td><td>14.2788</td><td>20.42319</td><td>101.515</td><td>14.6011</td><td>19.745594</td><td>0.677595</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.699727987182</td><td>-16.5849042116214</td><td>0.003</td><td>0.003</td><td>90.0</td><td>4088730216353575936</td><td>286.69972717633</td><td>0.1016</td><td>-16.58492114919</td><td>0.0954</td><td>0.1231</td><td>0.1025</td><td>-0.18</td><td>0.191</td><td>-3.934</td><td>0.172</td><td>False</td><td>2902.42</td><td>3.65924</td><td>17.031467</td><td>1430.36</td><td>11.801</td><td>17.462772</td><td>2171.63</td><td>25.1919</td><td>16.419954</td><td>1.042818</td><td>--</td><td>--</td><td>0</td><td>5063.84</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6915147248319</td><td>-16.5880323030601</td><td>0.012</td><td>0.011</td><td>90.0</td><td>4088730186289926528</td><td>286.69151218666</td><td>0.4126</td><td>-16.58806439493</td><td>0.3824</td><td>0.2903</td><td>0.4003</td><td>-0.565</td><td>0.793</td><td>-7.454</td><td>0.721</td><td>False</td><td>311.3</td><td>1.37999</td><td>19.455416</td><td>147.821</td><td>8.99601</td><td>19.92705</td><td>232.117</td><td>9.25892</td><td>18.847652</td><td>1.079397</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+<tr><td>286.6980906584381</td><td>-16.589175455702</td><td>0.003</td><td>0.003</td><td>90.0</td><td>4088730117570395264</td><td>286.69809065844</td><td>3.096</td><td>-16.5891754557</td><td>2.5481</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>False</td><td>115.568</td><td>1.27166</td><td>20.531275</td><td>91.317</td><td>15.7204</td><td>20.450008</td><td>100.718</td><td>11.8582</td><td>19.754148</td><td>0.69586</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+</div>
+<div class="section" id="step-6-cross-match-gaia-and-wise-sources-in-all-fields">
+<h2>Step 6: Cross-match Gaia and WISE sources in all fields<a class="headerlink" href="#step-6-cross-match-gaia-and-wise-sources-in-all-fields" title="Permalink to this headline">#</a></h2>
+<p>We now want to find sources in the selected region (observed in the MASH regions of interest and at low extinction) that are common to the Wide Infrared Survey Explorer (<a class="reference external" href="https://irsa.ipac.caltech.edu/Missions/wise.html">WISE</a>) and Gaia catalogs. To do so, we will perform a cross-match of the Gaia and WISE catalogs. Alternatively, we could use the CDS XMatch service via the corresponding <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> module.</p>
+<p>To do so, let’s first inspect the <code class="docutils literal notranslate"><span class="pre">match_coordinates_sky</span></code> function from <code class="docutils literal notranslate"><span class="pre">astropy.coordinates</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">match_coordinates_sky</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function match_coordinates_sky in module astropy.coordinates.matching:
+
+match_coordinates_sky(matchcoord, catalogcoord, nthneighbor=1, storekdtree=&#39;kdtree_sky&#39;)
+    Finds the nearest on-sky matches of a coordinate or coordinates in
+    a set of catalog coordinates.
+    
+    This finds the on-sky closest neighbor, which is only different from the
+    3-dimensional match if ``distance`` is set in either ``matchcoord``
+    or ``catalogcoord``.
+    
+    Parameters
+    ----------
+    matchcoord : `~astropy.coordinates.BaseCoordinateFrame` or `~astropy.coordinates.SkyCoord`
+        The coordinate(s) to match to the catalog.
+    catalogcoord : `~astropy.coordinates.BaseCoordinateFrame` or `~astropy.coordinates.SkyCoord`
+        The base catalog in which to search for matches. Typically this will
+        be a coordinate object that is an array (i.e.,
+        ``catalogcoord.isscalar == False``)
+    nthneighbor : int, optional
+        Which closest neighbor to search for.  Typically ``1`` is desired here,
+        as that is correct for matching one set of coordinates to another.
+        The next likely use case is ``2``, for matching a coordinate catalog
+        against *itself* (``1`` is inappropriate because each point will find
+        itself as the closest match).
+    storekdtree : bool or str, optional
+        If a string, will store the KD-Tree used for the computation
+        in the ``catalogcoord`` in ``catalogcoord.cache`` with the
+        provided name.  This dramatically speeds up subsequent calls with the
+        same catalog. If False, the KD-Tree is discarded after use.
+    
+    Returns
+    -------
+    idx : int array
+        Indices into ``catalogcoord`` to get the matched points for each
+        ``matchcoord``. Shape matches ``matchcoord``.
+    sep2d : `~astropy.coordinates.Angle`
+        The on-sky separation between the closest match for each
+        ``matchcoord`` and the ``matchcoord``. Shape matches ``matchcoord``.
+    dist3d : `~astropy.units.Quantity` [&#39;length&#39;]
+        The 3D distance between the closest match for each ``matchcoord`` and
+        the ``matchcoord``. Shape matches ``matchcoord``.  If either
+        ``matchcoord`` or ``catalogcoord`` don&#39;t have a distance, this is the 3D
+        distance on the unit sphere, rather than a true distance.
+    
+    Notes
+    -----
+    This function requires `SciPy &lt;https://www.scipy.org/&gt;`_ to be installed
+    or it will fail.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We generate the coordinates in the appropriate format</span>
+<span class="n">twomass_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">twomass</span><span class="p">[</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">],</span> <span class="n">dec</span><span class="o">=</span><span class="n">twomass</span><span class="p">[</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<span class="n">gaia_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">gaia</span><span class="p">[</span><span class="s2">&quot;ra_epoch2000&quot;</span><span class="p">],</span> <span class="n">dec</span><span class="o">=</span><span class="n">gaia</span><span class="p">[</span><span class="s2">&quot;dec_epoch2000&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+
+<span class="n">index</span><span class="p">,</span> <span class="n">separation_2d</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">match_coordinates_sky</span><span class="p">(</span><span class="n">twomass_coord</span><span class="p">,</span> <span class="n">gaia_coord</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Decide the maximum separation between objects to be considered acceptable matches</span>
+<span class="n">max_separation</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span>
+<span class="c1"># Apply constraint on the two catalogs</span>
+<span class="n">sep_constraint</span> <span class="o">=</span> <span class="n">separation_2d</span> <span class="o">&lt;</span> <span class="n">max_separation</span>
+<span class="n">twomass_matches</span> <span class="o">=</span> <span class="n">twomass</span><span class="p">[</span><span class="n">sep_constraint</span><span class="p">]</span>
+<span class="n">gaia_matches</span> <span class="o">=</span> <span class="n">gaia</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">sep_constraint</span><span class="p">]]</span>
+<span class="c1"># Select only interesting columns from twomass_matches</span>
+<span class="n">match_catalog</span> <span class="o">=</span> <span class="n">twomass_matches</span><span class="p">[</span><span class="s2">&quot;_2MASS&quot;</span><span class="p">,</span> <span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span> <span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span> <span class="s2">&quot;Hmag&quot;</span><span class="p">,</span> <span class="s2">&quot;Kmag&quot;</span><span class="p">]</span>
+<span class="c1"># Add column G magnitude from gaia</span>
+<span class="n">match_catalog</span><span class="p">[</span><span class="s2">&quot;Gmag&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gaia_matches</span><span class="p">[</span><span class="s2">&quot;phot_g_mean_mag&quot;</span><span class="p">]</span>
+<span class="n">match_catalog</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2461</i>
+<table id="table139993443365792" class="table-striped table-bordered table-condensed">
+<thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>Hmag</th><th>Kmag</th><th>Gmag</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th></tr></thead>
+<thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>07004924-2609161</td><td>105.205199</td><td>-26.154478</td><td>11.679</td><td>11.401</td><td>15.163431</td></tr>
+<tr><td>07005553-2609080</td><td>105.231379</td><td>-26.152241</td><td>14.916</td><td>14.773</td><td>17.04277</td></tr>
+<tr><td>07005410-2608455</td><td>105.225439</td><td>-26.145973</td><td>10.259</td><td>10.203</td><td>11.561445</td></tr>
+<tr><td>07005605-2608553</td><td>105.233576</td><td>-26.14872</td><td>11.6</td><td>11.596</td><td>12.814123</td></tr>
+<tr><td>07005809-2608512</td><td>105.242043</td><td>-26.147581</td><td>16.293</td><td>15.534</td><td>18.124905</td></tr>
+<tr><td>07005247-2609231</td><td>105.218641</td><td>-26.156427</td><td>15.26</td><td>15.049</td><td>16.798706</td></tr>
+<tr><td>07005211-2609189</td><td>105.217137</td><td>-26.155258</td><td>13.935</td><td>13.901</td><td>15.073216</td></tr>
+<tr><td>07005137-2609029</td><td>105.214075</td><td>-26.150816</td><td>16.15</td><td>16.086</td><td>18.203348</td></tr>
+<tr><td>07005056-2609004</td><td>105.210699</td><td>-26.150122</td><td>15.976</td><td>15.562</td><td>18.129118</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>19064594-1635515</td><td>286.691417</td><td>-16.597643</td><td>15.619</td><td>15.301</td><td>20.496124</td></tr>
+<tr><td>19064668-1634538</td><td>286.694521</td><td>-16.581614</td><td>15.432</td><td>14.542</td><td>17.792925</td></tr>
+<tr><td>19064720-1635472</td><td>286.696689</td><td>-16.596464</td><td>15.485</td><td>15.537</td><td>17.76891</td></tr>
+<tr><td>19064817-1634479</td><td>286.700747</td><td>-16.579975</td><td>15.088</td><td>14.954</td><td>16.522064</td></tr>
+<tr><td>19064785-1634555</td><td>286.699402</td><td>-16.582111</td><td>15.25</td><td>14.904</td><td>17.445724</td></tr>
+<tr><td>19064793-1635057</td><td>286.699732</td><td>-16.584917</td><td>15.312</td><td>15.112</td><td>17.031467</td></tr>
+<tr><td>19065153-1635084</td><td>286.714737</td><td>-16.58567</td><td>15.863</td><td>14.698</td><td>18.407427</td></tr>
+<tr><td>19065170-1635040</td><td>286.715418</td><td>-16.584455</td><td>13.256</td><td>13.168</td><td>15.601813</td></tr>
+<tr><td>19065195-1635199</td><td>286.716468</td><td>-16.588884</td><td>15.119</td><td>15.102</td><td>16.665237</td></tr>
+</table></div></div></div>
+</div>
+</div>
+<div class="section" id="step-7-build-a-color-color-diagram">
+<h2>Step 7: Build a color-color diagram<a class="headerlink" href="#step-7-build-a-color-color-diagram" title="Permalink to this headline">#</a></h2>
+<p>We now use the data we got from the cross-match to get a WISE/Gaia color-color diagram for all the sources in the low extinction sky regions covered by the MASH survey:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">match_catalog</span><span class="p">[</span><span class="s2">&quot;Hmag&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">match_catalog</span><span class="p">[</span><span class="s2">&quot;Kmag&quot;</span><span class="p">],</span>
+    <span class="n">match_catalog</span><span class="p">[</span><span class="s2">&quot;Gmag&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">match_catalog</span><span class="p">[</span><span class="s2">&quot;Hmag&quot;</span><span class="p">],</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;H - Ks [mag]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;G - H [mag]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_55_0.png" src="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_55_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cds-astro/tutorials",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="5_Brown_Dwarf_Search_via_Cross-matching_Catalogs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Discovery of brown dwarfs mining the 2MASS and SDSS database</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Strasbourg astronomical Data Center (CDS)<br/>
+  
+    <div class="extra_footer">
+      This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

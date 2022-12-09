@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from pathlib import Path
+import plotly.express as px
+
+
+from astroquery.simbad import Simbad
+from astroquery.vizier import Vizier
+
+import ipyaladin.aladin_widget as ipyal
+
+from astropy import units as u
+from astropy.table import Table, join, unique, hstack, vstack
+from astropy.coordinates import SkyCoord
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn [1], line 2[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpathlib[39;00m [38;5;28;01mimport[39;00m Path
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mexpress[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpx[39;00m
+[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mastroquery[39;00m[38;5;21;01m.[39;00m[38;5;21;01msimbad[39;00m [38;5;28;01mimport[39;00m Simbad
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mastroquery[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvizier[39;00m [38;5;28;01mimport[39;00m Vizier
+
+File [0;32m~/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/plotly/express/__init__.py:10[0m
+[1;32m      8[0m pd [38;5;241m=[39m optional_imports[38;5;241m.[39mget_module([38;5;124m"[39m[38;5;124mpandas[39m[38;5;124m"[39m)
+[1;32m      9[0m [38;5;28;01mif[39;00m pd [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m---> 10[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[1;32m     11[0m         [38;5;124;03m"""\[39;00m
+[1;32m     12[0m [38;5;124;03mPlotly express requires pandas to be installed."""[39;00m
+[1;32m     13[0m     )
+[1;32m     15[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_imshow[39;00m [38;5;28;01mimport[39;00m imshow
+[1;32m     16[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_chart_types[39;00m [38;5;28;01mimport[39;00m (  [38;5;66;03m# noqa: F401[39;00m
+[1;32m     17[0m     scatter,
+[1;32m     18[0m     scatter_3d,
+[0;32m   (...)[0m
+[1;32m     51[0m     density_mapbox,
+[1;32m     52[0m )
+
+[0;31mImportError[0m: Plotly express requires pandas to be installed.
+ImportError: Plotly express requires pandas to be installed.
+
