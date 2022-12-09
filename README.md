@@ -40,9 +40,10 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ### Online
 
+- To have an interactive look at these tutorials in your browser click on the Binder button here 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 
-To have an interactive look at these tutorials in your browser click on the Binder button here.
+- You can also explore the notebooks in a website here [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cds-astro.github.io/tutorials/intro.html "https://cds-astro.github.io/tutorials/intro.html")
 
 ### On your machine
 
