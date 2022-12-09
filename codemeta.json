@@ -8,8 +8,8 @@
     "dateModified": "2022-11-24",
     "issueTracker": "https://github.com/cds-astro/tutorials/issues",
     "name": "cds-escape-tutorials",
-    "version": "1.0.1",
-    "softwareVersion": "1.0.1"
+    "version": "1.0.2",
+    "softwareVersion": "1.0.2"
     "description": "Jupyter Notebook tutorials using astronomical databases and Virtual Observatory tools",
     "identifier": "Euro-VO/ESCAPE tutorials"
     "applicationCategory": "Astronomy",
