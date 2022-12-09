@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 
-# CDS/ESCAPE Tutorials
+# CDS/ESCAPE/Euro-VO Tutorials
 
 [![DOI](https://zenodo.org/badge/224865065.svg)](https://zenodo.org/badge/latestdoi/224865065)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
