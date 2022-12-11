@@ -1,7 +1,7 @@
 astroplan==0.8
 astropy==5.1.1
 astroquery==0.4.*
-ipyaladin==0.1.*
+ipyaladin==0.2.*
 MOCpy==0.11.*
 plotly==5.11.*
 pyvo==1.4
