@@ -1,15 +1,15 @@
 <!-- markdownlint-disable MD033 -->
 
-# CDS/ESCAPE/Euro-VO Tutorials
+# Accessing and using astronomical data: a series of Jupyter notebooks tutorials
 
 [![DOI](https://zenodo.org/badge/224865065.svg)](https://zenodo.org/badge/latestdoi/224865065)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Welcome to the repository of [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/") jupyter notebooks.
+Welcome to the repository of Strasbourg astronomical Data Center [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/") jupyter notebooks.
 
 <img align="right" width="20%" alt="CDS logo" src="Notebooks/Data/images/cds.png">
 
-All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on data hosted at the Strasbourg astronomical Data Center (CDS) and on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/ "https://www.ivoa.net/")).
+All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/ "https://www.ivoa.net/")).
 
 Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/ "https://www.euro-vo.org/scientific-tutorials/") usually with the same or a similar name.
 
@@ -17,8 +17,6 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ## Table of contents
 
-- [CDS/ESCAPE Tutorials](#cdsescape-tutorials)
-  - [Table of contents](#table-of-contents)
   - [How to use the tutorials](#how-to-use-the-tutorials)
     - [Online](#online)
     - [On your machine](#on-your-machine)
@@ -35,6 +33,8 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
   - [Glossary](#glossary)
     - [IVOA Standards](#ivoa-standards)
     - [CDS Services](#cds-services)
+  
+***
 
 ## How to use the tutorials
 
