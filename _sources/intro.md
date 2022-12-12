@@ -1,14 +1,16 @@
-# Welcome to the ESCAPE/Euro-VO tutorials
+# Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
 
-This website hosts an interactive version of the Jupyter-notebook tutorials hosted by the [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/").
+This website contains the Jupyter-notebook tutorials hosted by the Strasbourg Astronomical Data center [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/").
 
-All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on data hosted at the Strasbourg astronomical Data Center (CDS) and on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/ "https://www.ivoa.net/")).
+All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance ([IVOA](https://www.ivoa.net/ "https://www.ivoa.net/")).
 
-Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/ "https://www.euro-vo.org/scientific-tutorials/") usually with the same or a similar name.
+Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.org/scientific-tutorials/ "https://www.euro-vo.org/scientific-tutorials/") and were translated into python tutorials. The original version usually has the same or a similar name.
+
+***
 
 ## List of tutorials
 
-The tutorials come in a recommended order ranging from basic usage of the CDS tools to more advanced examples.
+The tutorials come in a recommended order ranging from basic usage to more advanced examples.
 
 ```{tableofcontents}
 ```
@@ -38,7 +40,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 :::{note}
 You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 
-To execute them on you own machine, note that you'll need to install the dependencies in the [`requirements.txt`](https://github.com/cds-astro/requirements.txt "https://github.com/cds-astro/requirements.txt")) of the GitHub repository.
+To execute them on you own machine, note that you'll need to install the dependencies in the [`requirements.txt`](https://github.com/cds-astro/requirements.txt "https://github.com/cds-astro/requirements.txt") of the GitHub repository.
 All the tutorials are currently tested with python versions [![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the following operating systems [![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml).

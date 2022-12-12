@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced usage of HiPS and MOCs to explore complex regions of interest &#8212; ESCAPE/Euro-VO Notebooks Tutorials</title>
+    <title>Advanced usage of HiPS and MOCs to explore complex regions of interest &#8212; Astronomy with Python: Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://cds-astro.github.io/tutorials/intro.html/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC.html" />
@@ -99,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/Tutorials_front_logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">ESCAPE/Euro-VO Notebooks Tutorials</h1>
+      <h1 class="site-logo" id="site-title">Astronomy with Python: Tutorials</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -111,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to the ESCAPE/Euro-VO tutorials
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
                 </a>
             </li>
         </ul>
@@ -578,7 +580,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table139994461549184" class="table-striped table-bordered table-condensed">
+<table id="table140579704745088" class="table-striped table-bordered table-condensed">
 <thead><tr><th>schema_name</th><th>table_name</th><th>table_type</th><th>description</th><th>utype</th><th>nrows</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>J_MNRAS</td><td>J/MNRAS/412/223/table4</td><td>table</td><td>The nine MASH PNe detected and possibly detected in the PMN survey ( Bojicic I.S., Parker Q.A., Filipovic M.D., Frew D.J.)</td><td></td><td>9</td></tr>
@@ -601,7 +603,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table139993545123408" class="table-striped table-bordered table-condensed">
+<table id="table140580621320048" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>n_PNG</th><th>PNG</th><th>Name</th><th>RAJ2000</th><th>DEJ2000</th><th>GLon</th><th>GLat</th><th>MajDiam</th><th>MinDiam</th><th>CS</th><th>Morph</th><th>Tel</th><th>ObsDate</th><th>HaExp</th><th>HaFld</th><th>Comments</th><th>img</th><th>ImageHa</th><th>ImageSr</th><th>AssocData</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th>&apos;Y:M:D&apos;</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int32</th><th>str1</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -629,15 +631,15 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table139993542555632" class="table-striped table-bordered table-condensed">
+<table id="table140579700145264" class="table-striped table-bordered table-condensed">
 <thead><tr><th>access_estsize</th><th>access_format</th><th>access_url</th><th>bib_reference</th><th>calib_level</th><th>dataproduct_type</th><th>em_band</th><th>em_max</th><th>em_min</th><th>extension</th><th>facility_name</th><th>has_wcs</th><th>instrument_name</th><th>obs_collection</th><th>obs_id</th><th>obs_publisher_did</th><th>oidsaada</th><th>o_ucd</th><th>pol_states</th><th>s_dec</th><th>s_fov</th><th>s_ra</th><th>s_region</th><th>s_resolution</th><th>target_name</th><th>t_exptime</th><th>t_max</th><th>t_min</th><th>t_resolution</th></tr></thead>
 <thead><tr><th>kbyte</th><th></th><th></th><th></th><th></th><th></th><th>spect</th><th></th><th></th><th>meta.code</th><th></th><th>meta.code</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th></th><th>arcsec</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>717120</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411706</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1392_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1392_sr.fits</td><td>864975549779411706</td><td>obs.image</td><td>NotSet</td><td>-29.96079070460861</td><td>0.0675097107632931</td><td>258.3952176302173</td><td>Polygon ICRS  258.43389666051115 -29.99363154450191  258.35733068673926 -29.994281796755693  258.35656415539984 -29.9279385747428  258.4330790466094 -29.92728878007427</td><td>0.9485530546667195</td><td></td><td>--</td><td>--</td><td>51365.0</td><td>--</td></tr>
-<tr><td>722880</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411716</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1397_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1397_sr.fits</td><td>864975549779411716</td><td>obs.image</td><td>NotSet</td><td>-29.084391747538362</td><td>0.06704013527503769</td><td>258.9418985464765</td><td>Polygon ICRS  258.9804131644544 -29.117082701522246  258.90450824510754 -29.11803099317544  258.9034083716892 -29.051689802622487  258.9792644306722 -29.05074214328098</td><td>0.9485391926179025</td><td></td><td>--</td><td>--</td><td>51365.0</td><td>--</td></tr>
-<tr><td>858240</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411721</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1400_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1400_ha.fits</td><td>864975549779411721</td><td>obs.image</td><td>NotSet</td><td>-30.03775079140411</td><td>0.06701371700007362</td><td>259.01701185146936</td><td>Polygon ICRS  259.0559285779006 -30.070421874567092  258.9793074155726 -30.071408712689465  258.9781207841269 -30.00506826123683  259.05469067743377 -30.004082125310934</td><td>0.9485058646616864</td><td></td><td>--</td><td>--</td><td>51392.0</td><td>--</td></tr>
-<tr><td>855360</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411727</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1403_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1403_ha.fits</td><td>864975549779411727</td><td>obs.image</td><td>NotSet</td><td>-28.76575081361883</td><td>0.06661209788390857</td><td>259.452903168679</td><td>Polygon ICRS  259.4914503704496 -28.798295912617736  259.41578550424515 -28.799526227485106  259.41438000380487 -28.733194781578792  259.48999681338677 -28.731965262818385</td><td>0.9484262388609991</td><td></td><td>--</td><td>--</td><td>51392.0</td><td>--</td></tr>
-<tr><td>619200</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779411732</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1405_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1405_sr.fits</td><td>864975549779411732</td><td>obs.image</td><td>NotSet</td><td>-33.8239887608685</td><td>0.06852297022186309</td><td>259.4840358191052</td><td>Polygon ICRS  259.5236167591695 -33.85747431646607  259.4437649808735 -33.8568385959148  259.44448587264424 -33.79049057097747  259.52427572180346 -33.791125846905814</td><td>0.9485844141195813</td><td></td><td>--</td><td>--</td><td>52051.0</td><td>--</td></tr>
+<tr><td>610560</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779410945</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1032_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1032_sr.fits</td><td>864975549779410945</td><td>obs.image</td><td>NotSet</td><td>-13.784389854801203</td><td>0.0713021682865721</td><td>111.43275777455307</td><td>Polygon ICRS  111.46664940645094 -13.81781914701963  111.39832407190251 -13.817324215795937  111.3988758446347 -13.750955924906409  111.46718176614709 -13.751450706358609</td><td>0.948991575097523</td><td></td><td>--</td><td>--</td><td>51226.0</td><td>--</td></tr>
+<tr><td>740160</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779410951</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1034_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1034_ha.fits</td><td>864975549779410951</td><td>obs.image</td><td>NotSet</td><td>-17.12049297622673</td><td>0.07123944496920925</td><td>111.78451610217952</td><td>Polygon ICRS  111.8191479048229 -17.153711083791936  111.74974303867411 -17.15359964722061  111.74989666803143 -17.087268981666405  111.8192767884711 -17.087380370020252</td><td>0.9485038734315203</td><td></td><td>--</td><td>--</td><td>52338.0</td><td>--</td></tr>
+<tr><td>596160</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779410955</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1034_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1034_sr.fits</td><td>864975549779410955</td><td>obs.image</td><td>NotSet</td><td>-17.120533969278245</td><td>0.07124314880377468</td><td>111.7845314034197</td><td>Polygon ICRS  111.8191637002453 -17.153753988164176  111.74975722819107 -17.153640656320004  111.7499114759699 -17.08730806317958  111.81929320101966 -17.087421346614327</td><td>0.9485285228101485</td><td></td><td>--</td><td>--</td><td>50871.0</td><td>--</td></tr>
+<tr><td>731520</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779410959</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1036_ha.fits</td><td>ivo://CDS.VizieR/V/127A?res=1036_ha.fits</td><td>864975549779410959</td><td>obs.image</td><td>NotSet</td><td>-21.862099427980556</td><td>0.07130134708963763</td><td>112.69528726569132</td><td>Polygon ICRS  112.73146814532774 -21.89490077932626  112.65997554014551 -21.895645624610193  112.659123005937 -21.829290184523508  112.73058240266795 -21.828545713789918</td><td>0.9488088411876365</td><td></td><td>--</td><td>--</td><td>51163.0</td><td>--</td></tr>
+<tr><td>590400</td><td>application/fits</td><td>https://cdsarc.cds.unistra.fr/saadavizier/download?oid=864975549779410960</td><td>2006MNRAS.373...79P</td><td>-1</td><td>image</td><td>Optical</td><td>1e-06</td><td>3e-07</td><td>--</td><td>UKST</td><td>5</td><td>SuperCOSMOS I</td><td>V/127A</td><td>1005_sr.fits</td><td>ivo://CDS.VizieR/V/127A?res=1005_sr.fits</td><td>864975549779410960</td><td>obs.image</td><td>NotSet</td><td>-12.59878194718445</td><td>0.06695119600443825</td><td>101.605805625331</td><td>Polygon ICRS  101.64022494465036 -12.631531553985315  101.57226287333897 -12.63235954506209  101.57139509987323 -12.56602794013158  101.63933959085792 -12.565200170324758</td><td>0.9485060738987898</td><td></td><td>--</td><td>--</td><td>51156.0</td><td>--</td></tr>
 </table></div></div></div>
 </div>
 <p>As you can see, the result from this query provides information on the fits files associated with the MASH catalogs. In particular, the column <code class="docutils literal notranslate"><span class="pre">access_url</span></code> provides the location of the data. To get the first image we could do:</p>
@@ -1142,7 +1144,13 @@ WARNING: UnitsWarning: Unit &#39;kau&#39; not supported by the VOUnit standard. 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;Mgeo&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
-WARNING: UnitsWarning: Unit &#39;ppm&#39; not supported by the VOUnit standard. Did you mean Pm or pm? [astropy.units.format.vounit]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;ppm&#39; not supported by the VOUnit standard. Did you mean Pm or pm? [astropy.units.format.vounit]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;uas&#39; not supported by the VOUnit standard. Did you mean 1e-06a, uA or ua (deprecated)? [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Did you mean K? [astropy.units.format.vounit]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I/345 :  Gaia DR2 (Gaia Collaboration, 2018)
@@ -1319,10 +1327,6 @@ J/other/RAA/21.93 :  74 new open clusters found in Gaia DR2 (He+, 2021)
 J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;uas&#39; not supported by the VOUnit standard. Did you mean 1e-06a, uA or ua (deprecated)? [astropy.units.format.vounit]
-WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Did you mean K? [astropy.units.format.vounit]
-</pre></div>
-</div>
 </div>
 </div>
 <p>For 2MASS we will want to use <code class="docutils literal notranslate"><span class="pre">II/246</span> <span class="pre">:</span>&#160; <span class="pre">2MASS</span> <span class="pre">All-Sky</span> <span class="pre">Catalog</span> <span class="pre">of</span> <span class="pre">Point</span> <span class="pre">Sources</span> <span class="pre">(Cutri+</span> <span class="pre">2003)</span></code> and for Gaia <code class="docutils literal notranslate"><span class="pre">I/345</span> <span class="pre">:</span>&#160; <span class="pre">Gaia</span> <span class="pre">DR2</span> <span class="pre">(Gaia</span> <span class="pre">Collaboration,</span> <span class="pre">2018)</span></code>. Before we query the full two tables we only look at a few sources for each table to understand which columns are available. The query below will give us 50 sources each – the default for the <code class="docutils literal notranslate"><span class="pre">get_catalogs</span></code> method.</p>
@@ -1340,7 +1344,7 @@ WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Di
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=50</i>
-<table id="table139993293832688" class="table-striped table-bordered table-condensed">
+<table id="table140579668745072" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>_2MASS</th><th>Jmag</th><th>e_Jmag</th><th>Hmag</th><th>e_Hmag</th><th>Kmag</th><th>e_Kmag</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Xflg</th><th>Aflg</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>str17</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>str3</th><th>str3</th><th>str3</th><th>uint8</th><th>uint8</th></tr></thead>
@@ -1398,7 +1402,7 @@ WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Di
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=50</i>
-<table id="table139993293836384" class="table-striped table-bordered table-condensed">
+<table id="table140579116717136" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RA_ICRS</th><th>e_RA_ICRS</th><th>DE_ICRS</th><th>e_DE_ICRS</th><th>Source</th><th>Plx</th><th>e_Plx</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>Dup</th><th>FG</th><th>e_FG</th><th>Gmag</th><th>e_Gmag</th><th>FBP</th><th>e_FBP</th><th>BPmag</th><th>e_BPmag</th><th>FRP</th><th>e_FRP</th><th>RPmag</th><th>e_RPmag</th><th>BP-RP</th><th>RV</th><th>e_RV</th><th>Teff</th><th>AG</th><th>E_BP-RP_</th><th>Rad</th><th>Lum</th></tr></thead>
 <thead><tr><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th></th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th>K</th><th>mag</th><th>mag</th><th>solRad</th><th>solLum</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>uint8</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
@@ -1433,7 +1437,7 @@ WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Di
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=19784</i>
-<table id="table139993293832640" class="table-striped table-bordered table-condensed">
+<table id="table140579668748432" class="table-striped table-bordered table-condensed">
 <thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>e_Jmag</th><th>e_Hmag</th><th>e_Kmag</th><th>Qfl</th><th>Rfl</th><th>X</th><th>MeasureJD</th></tr></thead>
 <thead><tr><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th>d</th></tr></thead>
 <thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>int16</th><th>uint8</th><th>float64</th></tr></thead>
@@ -1467,7 +1471,7 @@ WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Di
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=20000</i>
-<table id="table139993443800816" class="table-striped table-bordered table-condensed">
+<table id="table140579114598560" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra_epoch2000</th><th>dec_epoch2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>source_id</th><th>ra</th><th>ra_error</th><th>dec</th><th>dec_error</th><th>parallax</th><th>parallax_error</th><th>pmra</th><th>pmra_error</th><th>pmdec</th><th>pmdec_error</th><th>duplicated_source</th><th>phot_g_mean_flux</th><th>phot_g_mean_flux_error</th><th>phot_g_mean_mag</th><th>phot_bp_mean_flux</th><th>phot_bp_mean_flux_error</th><th>phot_bp_mean_mag</th><th>phot_rp_mean_flux</th><th>phot_rp_mean_flux_error</th><th>phot_rp_mean_mag</th><th>bp_rp</th><th>radial_velocity</th><th>radial_velocity_error</th><th>rv_nb_transits</th><th>teff_val</th><th>a_g_val</th><th>e_bp_min_rp_val</th><th>radius_val</th><th>lum_val</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th></th><th>K</th><th>mag</th><th>mag</th><th>Rsun</th><th>Lsun</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>bool</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th></tr></thead>
@@ -1585,7 +1589,7 @@ match_coordinates_sky(matchcoord, catalogcoord, nthneighbor=1, storekdtree=&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2461</i>
-<table id="table139993443365792" class="table-striped table-bordered table-condensed">
+<table id="table140579114608784" class="table-striped table-bordered table-condensed">
 <thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>Hmag</th><th>Kmag</th><th>Gmag</th></tr></thead>
 <thead><tr><th></th><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th></tr></thead>
 <thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to the ESCAPE/Euro-VO tutorials &#8212; ESCAPE/Euro-VO Notebooks Tutorials</title>
+    <title>Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials &#8212; Astronomy with Python: Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://cds-astro.github.io/tutorials/intro.html/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -97,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/Tutorials_front_logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">ESCAPE/Euro-VO Notebooks Tutorials</h1>
+      <h1 class="site-logo" id="site-title">Astronomy with Python: Tutorials</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -109,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to the ESCAPE/Euro-VO tutorials
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
                 </a>
             </li>
         </ul>
@@ -357,7 +359,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome to the ESCAPE/Euro-VO tutorials</h1>
+                <h1>Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -404,14 +406,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-the-escape-euro-vo-tutorials">
-<h1>Welcome to the ESCAPE/Euro-VO tutorials<a class="headerlink" href="#welcome-to-the-escape-euro-vo-tutorials" title="Permalink to this headline">#</a></h1>
-<p>This website hosts an interactive version of the Jupyter-notebook tutorials hosted by the <a class="reference external" href="https://cds.u-strasbg.fr/">CDS</a>.</p>
-<p>All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on data hosted at the Strasbourg astronomical Data Center (CDS) and on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance (<a class="reference external" href="https://www.ivoa.net/">IVOA</a>).</p>
-<p>Some tutorials hosted here are based on <a class="reference external" href="https://www.euro-vo.org/scientific-tutorials/">EURO-VO tutorials</a> usually with the same or a similar name.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="accessing-and-using-astronomical-data-from-python-a-series-of-jupyter-notebooks-tutorials">
+<h1>Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials<a class="headerlink" href="#accessing-and-using-astronomical-data-from-python-a-series-of-jupyter-notebooks-tutorials" title="Permalink to this headline">#</a></h1>
+<p>This website contains the Jupyter-notebook tutorials hosted by the Strasbourg Astronomical Data center <a class="reference external" href="https://cds.u-strasbg.fr/">CDS</a>.</p>
+<p>All tutorials here illustrate how astronomers can search, find, and access data they need from archives across the world. We offer a focus on archives compliant with Virtual Observatory (VO) protocols and standards, as defined by the International Virtual Observatory Alliance (<a class="reference external" href="https://www.ivoa.net/">IVOA</a>).</p>
+<p>Some tutorials hosted here are based on <a class="reference external" href="https://www.euro-vo.org/scientific-tutorials/">EURO-VO tutorials</a> and were translated into python tutorials. The original version usually has the same or a similar name.</p>
+<hr class="docutils" />
 <div class="section" id="list-of-tutorials">
 <h2>List of tutorials<a class="headerlink" href="#list-of-tutorials" title="Permalink to this headline">#</a></h2>
-<p>The tutorials come in a recommended order ranging from basic usage of the CDS tools to more advanced examples.</p>
+<p>The tutorials come in a recommended order ranging from basic usage to more advanced examples.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">Introduction to the CDS services</a></li>
@@ -451,7 +454,7 @@ title="Print to PDF"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link <a class="reference external" href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>To execute them on you own machine, note that you’ll need to install the dependencies in the <a class="reference external" href="https://github.com/cds-astro/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a>) of the GitHub repository.
+<p>To execute them on you own machine, note that you’ll need to install the dependencies in the <a class="reference external" href="https://github.com/cds-astro/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a> of the GitHub repository.
 All the tutorials are currently tested with python versions <a class="reference external" href="https://www.python.org/downloads/"><img alt="python" src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational" /></a> on the following operating systems <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml"><img alt="ubuntu" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml"><img alt="windows" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml"><img alt="mac-os" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg" /></a>.</p>
