@@ -3,8 +3,8 @@
 .ipynb*
 build_and_publish.sh
 intro.md
-references.bib 
-_config.yml 
+references.bib
+_config.yml
 _toc.yml
 _build*
 .pytest_cache*

@@ -3,7 +3,7 @@
 version: 2
 updates:
   # for pip
-  #-------- 
+  #--------
   - package-ecosystem: "pip" # See documentation for possible values
     directory: "/" # in root repository
     schedule:
@@ -11,7 +11,7 @@ updates:
       day: "sunday"
     reviewers:
       - "ManonMarchand"
-      
+
   # for github actions
   #-------------------
   - package-ecosystem: "github-actions" # See documentation for possible values
