@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Discovery of brown dwarfs mining the 2MASS and SDSS database &#8212; Astronomy with Python: Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -474,7 +475,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-database">
+  <section class="tex2jax_ignore mathjax_ignore" id="discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-database">
 <h1>Discovery of brown dwarfs mining the 2MASS and SDSS database<a class="headerlink" href="#discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-database" title="Permalink to this headline">#</a></h1>
 <p>F. Jiménez-Esteban¹, K. A. Lutz², E. Solano¹</p>
 <ol class="simple">
@@ -483,7 +484,7 @@ title="Print to PDF"
 </ol>
 <p>This tutorial is based on the EURO-VO tutorial of the same name: <a class="reference external" href="http://www.euro-vo.org/sites/default/files/documents/tutorial-brown-dwarfs_2019Apr.pdf">http://www.euro-vo.org/sites/default/files/documents/tutorial-brown-dwarfs_2019Apr.pdf</a> .</p>
 <hr class="docutils" />
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Brown dwarfs are objects occupying the gap between the least massive stars and the most massive planets. They are intrinsically faint objects. Hence, heir detection is not straightforward and, in fact, was almost impossible until the advent of global surveys at deep optical and near-infrared bands like SDSS, 2MASS or DENIS. We propose here to mine the 2MASS point source catalogue (2MASS-PSC) and SDSS-DR9 databases to identify T-type brown dwarfs through an appropriate combination of colors in the optical and the infrared, an approach that perfectly fits into the Virtual Observatory.</p>
 <p>In this use case, we explore different ways to do the same tasks with different VO tools. These tasks
@@ -497,24 +498,29 @@ include:</p>
 <p>Software packages needed for this tutorial are Aladin, TOPCAT, STILTS and Python (or you may just use the Binder in your web browser).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard Library</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 
+<span class="c1"># Astronomy tools</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+
+<span class="c1"># Access astronomical databases</span>
+<span class="kn">import</span> <span class="nn">pyvo</span>
+<span class="kn">from</span> <span class="nn">astroquery.simbad</span> <span class="kn">import</span> <span class="n">Simbad</span>
 <span class="kn">from</span> <span class="nn">astroquery.vizier</span> <span class="kn">import</span> <span class="n">Vizier</span>
 <span class="kn">from</span> <span class="nn">astroquery.xmatch</span> <span class="kn">import</span> <span class="n">XMatch</span>
-<span class="kn">from</span> <span class="nn">astroquery.simbad</span> <span class="kn">import</span> <span class="n">Simbad</span>
-<span class="kn">import</span> <span class="nn">ipyaladin</span> <span class="k">as</span> <span class="nn">ipyal</span>
-<span class="kn">import</span> <span class="nn">pyvo</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="c1"># Sky visualization</span>
+<span class="kn">import</span> <span class="nn">ipyaladin</span> <span class="k">as</span> <span class="nn">ipyal</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-1-discovery">
+</section>
+<section id="step-1-discovery">
 <h2>Step #1: Discovery<a class="headerlink" href="#step-1-discovery" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
 <p>We start by searching for the 2MASS point source catalogue (2MASS-PSC) and the SDSS data release 9 catalogue (SDSS DR9). To find and query catalogues, there are two packages we can use: pyVO and astroquery. We will show pyVO for searching the 2MASS-PSC and astroquery for SDSS DR9.</p>
@@ -536,7 +542,7 @@ include:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=13</i>
-<table id="table140608936418064" class="table-striped table-bordered table-condensed">
+<table id="table140401574496432" class="table-striped table-bordered table-condensed">
 <thead><tr><th>table_name</th><th>description</th></tr></thead>
 <thead><tr><th>object</th><th>object</th></tr></thead>
 <tr><td>J/ApJ/569/23/table1</td><td>Optical polarimetry of 2MASS Red QSOs ( Smith P.S., Schmidt G.D., Hines D.C., Cutri R.M., Nelson B.O.)</td></tr>
@@ -565,7 +571,7 @@ include:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140609840395552" class="table-striped table-bordered table-condensed">
+<table id="table140402481074320" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>d</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float32</th><th>int16</th><th>int64</th><th>int16</th><th>int16</th><th>int64</th><th>str1</th><th>object</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>int16</th><th>object</th><th>int16</th><th>int16</th><th>str1</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>int32</th><th>int32</th><th>int32</th><th>int16</th></tr></thead>
@@ -597,7 +603,7 @@ include:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=683</i>
-<table id="table140608933137376" class="table-striped table-bordered table-condensed">
+<table id="table140402480740432" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>d</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float32</th><th>int16</th><th>int64</th><th>int16</th><th>int16</th><th>int64</th><th>str1</th><th>object</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>int16</th><th>object</th><th>int16</th><th>int16</th><th>str1</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>int32</th><th>int32</th><th>int32</th><th>int16</th></tr></thead>
@@ -661,7 +667,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=50</i>
-<table id="table140608928105952" class="table-striped table-bordered table-condensed">
+<table id="table140402481071104" class="table-striped table-bordered table-condensed">
 <thead><tr><th>mode</th><th>q_mode</th><th>cl</th><th>SDSS9</th><th>m_SDSS9</th><th>Im</th><th>RA_ICRS</th><th>DE_ICRS</th><th>ObsDate</th><th>Q</th><th>umag</th><th>e_umag</th><th>gmag</th><th>e_gmag</th><th>rmag</th><th>e_rmag</th><th>imag</th><th>e_imag</th><th>zmag</th><th>e_zmag</th><th>zsp</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>yr</th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th></tr></thead>
 <thead><tr><th>uint8</th><th>str1</th><th>uint8</th><th>str19</th><th>str1</th><th>str2</th><th>float64</th><th>float64</th><th>float64</th><th>uint8</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
@@ -715,7 +721,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=12405</i>
-<table id="table140608933147024" class="table-striped table-bordered table-condensed">
+<table id="table140401569759920" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>cl</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>uint8</th></tr></thead>
@@ -740,8 +746,8 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 <tr><td>127.722672</td><td>1.455765</td><td>22.961</td><td>25.752</td><td>22.950</td><td>22.003</td><td>23.070</td><td>6</td></tr>
 </table></div></div></div>
 </div>
-</div>
-<div class="section" id="step-2-cross-matching">
+</section>
+<section id="step-2-cross-matching">
 <h2>Step #2: Cross-matching<a class="headerlink" href="#step-2-cross-matching" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="http://cdsxmatch.u-strasbg.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a></p>
 <p>In this next step, we find common sources in the 2MASS-PSC and SDSS-DR9 catalogues. One simple way to do this using the CDS XMatch service, which can also be reached with <code class="docutils literal notranslate"><span class="pre">astroquery</span></code>. The most reliable way to quuery XMatch is by uploading one of the tables (which will also make sure we stay in our region of interest) and crossmatching it to a table available in VizieR.</p>
@@ -768,7 +774,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=717</i>
-<table id="table140608933200800" class="table-striped table-bordered table-condensed">
+<table id="table140402481072592" class="table-striped table-bordered table-condensed">
 <thead><tr><th>angDist</th><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th><th>SDSS9</th><th>RAdeg</th><th>DEdeg</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>e_umag</th><th>e_gmag</th><th>e_rmag</th><th>e_imag</th><th>e_zmag</th><th>objID</th><th>cl</th><th>q_mode</th><th>flags</th><th>Q</th><th>ObsDate</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>SpObjID</th><th>zsp</th><th>e_zsp</th><th>f_zsp</th><th>spType</th><th>spCl</th><th>subClass</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>str3</th><th>int64</th><th>int64</th><th>str3</th><th>int64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>str1</th><th>str10</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>str2</th><th>int64</th><th>int64</th><th>str1</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>str19</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>str16</th><th>int64</th><th>float64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th></tr></thead>
 <tr><td>0.352101</td><td>127.509154</td><td>1.269173</td><td>0.2</td><td>0.15</td><td>87</td><td>08300219+0116090</td><td>15.963</td><td>0.095</td><td>0.096</td><td>12.5</td><td>15.546</td><td>0.121</td><td>0.122</td><td>9.0</td><td>14.93</td><td>0.144</td><td>0.144</td><td>8.1</td><td>ABB</td><td>222</td><td>111</td><td>000</td><td>160606</td><td>14.2</td><td>340</td><td>804040589</td><td>0</td><td>0</td><td>804040599</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.554</td><td>22.408</td><td>178.5</td><td>2451573.6815</td><td>0.89</td><td>1.01</td><td>0.92</td><td>15.939</td><td>0.235</td><td>15.899</td><td>0.319</td><td>14.69</td><td>0.124</td><td>4589</td><td>74</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43956</td><td>1010984</td><td>221</td><td>J083002.21+011608.9</td><td>127.509248</td><td>1.269146</td><td>0.01</td><td>0.009</td><td>90</td><td>23.712</td><td>20.876</td><td>19.402</td><td>18.068</td><td>17.338</td><td>0.67</td><td>0.034</td><td>0.015</td><td>0.009</td><td>0.015</td><td>1237653664712163908</td><td>6</td><td>1</td><td>0000201010000110</td><td>3</td><td>2000.9155</td><td>-53</td><td>5</td><td>-43</td><td>5</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
@@ -824,8 +830,8 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-3-filtering">
+</section>
+<section id="step-3-filtering">
 <h2>Step #3: Filtering<a class="headerlink" href="#step-3-filtering" title="Permalink to this headline">#</a></h2>
 <p>In this step we select all those sources from our cross-matched catalogue that have colours and fluxes as expected for brown dwarfs.</p>
 <p>The selection cirteria for Brown Dwarfs are:</p>
@@ -867,7 +873,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140608927034496" class="table-striped table-bordered table-condensed">
+<table id="table140401567314464" class="table-striped table-bordered table-condensed">
 <thead><tr><th>2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>SDSS9</th><th>RAdeg</th><th>DEdeg</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>cl</th><th>J-H</th><th>H-K</th></tr></thead>
 <thead><tr><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>str19</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float64</th></tr></thead>
 <tr><td>08304878+0128311</td><td>127.703265</td><td>1.47532</td><td>16.289</td><td>16.14</td><td>16.358</td><td>J083048.81+012831.0</td><td>127.703377</td><td>1.475293</td><td>25.322</td><td>24.514</td><td>25.492</td><td>25.878</td><td>19.401</td><td>3</td><td>0.1490000000000009</td><td>-0.21799999999999997</td></tr>
@@ -875,10 +881,10 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </table></div></div></div>
 </div>
 <p>Note that we are using slightly different selection criteria here in the notebook than in the original tutorial. The reason is the following. The CDS XMatch service uses VizieR tables with their default filtering. For the SDSS DR 9 table, VizieR will filter to only use primary sources and disregard secondary sources, which is not the case when downloading the VizieR table with e.g. TOPCAT. Now the primary SDSS source for this brown dwarf is classified as an extended source by the automated SDSS pipeline, probably because it is hardly detected and very faint. So if we remove all extended sources we also throw away the target of our studies. Hence, the filtering in this notebook is less strict to allow</p>
-</div>
-<div class="section" id="step-4-verification-of-the-brown-dwarf-candidates">
+</section>
+<section id="step-4-verification-of-the-brown-dwarf-candidates">
 <h2>Step #4: Verification of the Brown Dwarf candidates<a class="headerlink" href="#step-4-verification-of-the-brown-dwarf-candidates" title="Permalink to this headline">#</a></h2>
-<div class="section" id="visualization">
+<section id="visualization">
 <h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
 <p>The ipyaladin package allows to run an instance of Aladin Lite in your Jupyter notebook.</p>
@@ -895,7 +901,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "f4004956cf084b768039b9a1413d2a09", "version_major": 2, "version_minor": 0}
+{"version_major": 2, "version_minor": 0, "model_id": "175b68bd52ec40329d727a823038409e"}
 </script></div>
 </div>
 <p>As with any instance of Aladin Lite you can zoom in and out by scrolling your mouse. In the top left corner of the widget, you may chose which survey to look at, add layers, search for sources, …</p>
@@ -909,8 +915,8 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <p>If you now click on the small square indicating the location of the source, the widget will show the corresponding table values in the lower part of the widget.</p>
 <p>As you can see at one of the locations hardly anything is visible and at the location of the other brown dwarf candidate, there is a bright star. To further investigate these two sources, we now query Simbad for them.</p>
-</div>
-<div class="section" id="check-in-simbad">
+</section>
+<section id="check-in-simbad">
 <h3>Check in Simbad<a class="headerlink" href="#check-in-simbad" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a></p>
 <p>In the Simbad database, an object type is assigned to every entry. So if this Brown Dwarf candidate is in the Simbad database, we might learn more about the object type:</p>
@@ -931,7 +937,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140608928937872" class="table-striped table-bordered table-condensed">
+<table id="table140401567501424" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MAIN_ID</th><th>RA_2_A_ICRS_J2000_2000</th><th>DEC_2_D_ICRS_J2000_2000</th><th>OTYPE</th><th>SCRIPT_NUMBER_ID</th></tr></thead>
 <thead><tr><th></th><th>&quot;h:m:s&quot;</th><th>&quot;d:m:s&quot;</th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>str13</th><th>str13</th><th>object</th><th>int32</th></tr></thead>
@@ -976,7 +982,7 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=20</i>
-<table id="table140608933150384" class="table-striped table-bordered table-condensed">
+<table id="table140401571589344" class="table-striped table-bordered table-condensed">
 <thead><tr><th>bibcode</th><th>journal</th><th>title</th><th>year</th><th>volume</th><th>Pages</th><th>doi</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>int16</th><th>int32</th><th>object</th><th>object</th></tr></thead>
 <tr><td>2020AJ....159..257B</td><td>AJ</td><td>The Hawaii infrared parallax program. IV. A comprehensive parallax survey of L0-T8 dwarfs with UKIRT.</td><td>2020</td><td>159</td><td>257-257</td><td>10.3847/1538-3881/ab84f4</td></tr>
@@ -1002,13 +1008,13 @@ J/other/RAA/17.62 :  Candidate members of 4 stellar streams (Li+, 2017)
 </table></div></div></div>
 </div>
 <p>For further reading you could now go to ADS (<a class="reference external" href="https://ui.adsabs.harvard.edu/">https://ui.adsabs.harvard.edu/</a>) and search for the publications via their bibcode (enter in the search field <code class="docutils literal notranslate"><span class="pre">bibcode:...</span></code>) or their doi (<code class="docutils literal notranslate"><span class="pre">doi:...</span></code>).</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"0326c7ceaba74a5c846bf6aeef88a28c": {"model_module": "ipyaladin", "model_module_version": "^0.2.1", "model_name": "AladinModel", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.03, "full_screen": false, "layout": "IPY_MODEL_c93a162aa5c24b3692af9b6a2632be8f", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/SDSS9/color", "table_columns": [], "table_flag": true, "table_keys": [], "target": "127.7033 1.4753", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}, "165588f2c4ea41c38899bea776d407bf": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c93a162aa5c24b3692af9b6a2632be8f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f4004956cf084b768039b9a1413d2a09": {"model_module": "ipyaladin", "model_module_version": "^0.2.1", "model_name": "AladinModel", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.03, "full_screen": false, "layout": "IPY_MODEL_c93a162aa5c24b3692af9b6a2632be8f", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/SDSS9/color", "table_columns": [["08304878+0128311", 127.703265, 1.47532, 16.289, 16.14, 16.358, "J083048.81+012831.0", 127.703377, 1.475293, 25.322, 24.514, 25.492, 25.878, 19.401, 3, 0.1490000000000009, -0.21799999999999997], ["08304512+0134404", 127.688007, 1.577901, 16.18, 16.021, 15.769, "J083045.23+013443.5", 127.688491, 1.578759, 24.004, 22.299, 21.03, 20.478, 20.53, 6, 0.15899999999999892, 0.25200000000000067]], "table_flag": false, "table_keys": ["2MASS", "RAJ2000", "DEJ2000", "Jmag", "Hmag", "Kmag", "SDSS9", "RAdeg", "DEdeg", "umag", "gmag", "rmag", "imag", "zmag", "cl", "J-H", "H-K"], "target": "127.7033 1.4753", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}}, "version_major": 2, "version_minor": 0}
+{"state": {"132e4dc0ccff497c9153ffb529d5db5e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "31f6c18a1027466d95adca5201497ed6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "829996f8e7d14088af4fb5dfb8a76322": {"model_name": "AladinModel", "model_module": "ipyaladin", "model_module_version": "^0.2.1", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.03, "full_screen": false, "layout": "IPY_MODEL_31f6c18a1027466d95adca5201497ed6", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/SDSS9/color", "table_columns": [], "table_flag": true, "table_keys": [], "target": "127.7033 1.4753", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}, "175b68bd52ec40329d727a823038409e": {"model_name": "AladinModel", "model_module": "ipyaladin", "model_module_version": "^0.2.1", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.03, "full_screen": false, "layout": "IPY_MODEL_31f6c18a1027466d95adca5201497ed6", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/SDSS9/color", "table_columns": [["08304878+0128311", 127.703265, 1.47532, 16.289, 16.14, 16.358, "J083048.81+012831.0", 127.703377, 1.475293, 25.322, 24.514, 25.492, 25.878, 19.401, 3, 0.1490000000000009, -0.21799999999999997], ["08304512+0134404", 127.688007, 1.577901, 16.18, 16.021, 15.769, "J083045.23+013443.5", 127.688491, 1.578759, 24.004, 22.299, 21.03, 20.478, 20.53, 6, 0.15899999999999892, 0.25200000000000067]], "table_flag": false, "table_keys": ["2MASS", "RAJ2000", "DEJ2000", "Jmag", "Hmag", "Kmag", "SDSS9", "RAdeg", "DEdeg", "umag", "gmag", "rmag", "imag", "zmag", "cl", "J-H", "H-K"], "target": "127.7033 1.4753", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

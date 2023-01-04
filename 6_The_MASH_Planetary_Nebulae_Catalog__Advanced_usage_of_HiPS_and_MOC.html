@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Advanced usage of HiPS and MOCs to explore complex regions of interest &#8212; Astronomy with Python: Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -515,7 +516,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="advanced-usage-of-hips-and-mocs-to-explore-complex-regions-of-interest">
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-usage-of-hips-and-mocs-to-explore-complex-regions-of-interest">
 <h1>Advanced usage of HiPS and MOCs to explore complex regions of interest<a class="headerlink" href="#advanced-usage-of-hips-and-mocs-to-explore-complex-regions-of-interest" title="Permalink to this headline">#</a></h1>
 <p>Stefania Amodea¹, Matthieu Baumann¹, Thomas Boch¹, Caroline Bot¹, Katarina A. Lutz¹.</p>
 <ol class="simple">
@@ -523,7 +524,7 @@ title="Print to PDF"
 </ol>
 <p>Thomas Boch and Caroline Bot wrote the original version of this tutorial, available on the <a class="reference external" href="http://www.euro-vo.org/?q=science/scientific-tutorials">EURO-VO tutorials page</a>. It was presented at the workshop “<a class="reference external" href="https://www.lsstcorporation.org/node/107">Detecting the unexpected, Discovery in the Era of Astronomically Big Data</a>”. The version here is an adaptation to jupyter notebooks by the Strasbourg astronomical Data Center (<a class="reference external" href="https://cdsweb.u-strasbg.fr/">CDS</a>) team.</p>
 <hr class="docutils" />
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>This tutorial demonstrates an advanced usage of Hierarchical Progressive Surveys (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2017ivoa.spec.0519F/abstract">HiPS</a>) and Multi-Order Coverage (<a class="reference external" href="https://www.ivoa.net/documents/MOC/">MOC</a>) maps. Wis this tutorial, you will:</p>
 <ol class="simple">
@@ -535,27 +536,33 @@ title="Print to PDF"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General python packages</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard Library</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># For vizualization</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Packages specific to astronomy tasks</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span><span class="p">,</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">match_coordinates_sky</span>
+<span class="c1"># Astronomy tools</span>
 <span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
-<span class="kn">import</span> <span class="nn">mocpy</span>
-<span class="kn">import</span> <span class="nn">cdshealpix</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">SkyCoord</span><span class="p">,</span> <span class="n">match_coordinates_sky</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+
+<span class="c1"># Access astronomical databases</span>
 <span class="kn">import</span> <span class="nn">pyvo</span>
 <span class="kn">from</span> <span class="nn">astroquery.vizier</span> <span class="kn">import</span> <span class="n">Vizier</span>
+
+<span class="c1"># Moc and HEALPix tools</span>
+<span class="kn">import</span> <span class="nn">cdshealpix</span>
+<span class="kn">import</span> <span class="nn">mocpy</span>
+
+<span class="c1"># For plots</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Data handling</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-1-finding-the-images">
+</section>
+<section id="step-1-finding-the-images">
 <h2>Step 1: Finding the images<a class="headerlink" href="#step-1-finding-the-images" title="Permalink to this headline">#</a></h2>
 <p>We want to find all Short-Red images in the Macquarie/AAO/Strasbourg Hα Planetary Galactic catalog (<a class="reference external" href="https://vizier.cfa.harvard.edu/vizier/MASH/index.htx">MASH</a>) using the VizieR associated data service.</p>
 <p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
@@ -580,7 +587,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140579704745088" class="table-striped table-bordered table-condensed">
+<table id="table139898345415360" class="table-striped table-bordered table-condensed">
 <thead><tr><th>schema_name</th><th>table_name</th><th>table_type</th><th>description</th><th>utype</th><th>nrows</th></tr></thead>
 <thead><tr><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
 <tr><td>J_MNRAS</td><td>J/MNRAS/412/223/table4</td><td>table</td><td>The nine MASH PNe detected and possibly detected in the PMN survey ( Bojicic I.S., Parker Q.A., Filipovic M.D., Frew D.J.)</td><td></td><td>9</td></tr>
@@ -603,7 +610,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140580621320048" class="table-striped table-bordered table-condensed">
+<table id="table139899265645488" class="table-striped table-bordered table-condensed">
 <thead><tr><th>recno</th><th>n_PNG</th><th>PNG</th><th>Name</th><th>RAJ2000</th><th>DEJ2000</th><th>GLon</th><th>GLat</th><th>MajDiam</th><th>MinDiam</th><th>CS</th><th>Morph</th><th>Tel</th><th>ObsDate</th><th>HaExp</th><th>HaFld</th><th>Comments</th><th>img</th><th>ImageHa</th><th>ImageSr</th><th>AssocData</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th>&apos;Y:M:D&apos;</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int32</th><th>str1</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -631,7 +638,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=5</i>
-<table id="table140579700145264" class="table-striped table-bordered table-condensed">
+<table id="table139898342401424" class="table-striped table-bordered table-condensed">
 <thead><tr><th>access_estsize</th><th>access_format</th><th>access_url</th><th>bib_reference</th><th>calib_level</th><th>dataproduct_type</th><th>em_band</th><th>em_max</th><th>em_min</th><th>extension</th><th>facility_name</th><th>has_wcs</th><th>instrument_name</th><th>obs_collection</th><th>obs_id</th><th>obs_publisher_did</th><th>oidsaada</th><th>o_ucd</th><th>pol_states</th><th>s_dec</th><th>s_fov</th><th>s_ra</th><th>s_region</th><th>s_resolution</th><th>target_name</th><th>t_exptime</th><th>t_max</th><th>t_min</th><th>t_resolution</th></tr></thead>
 <thead><tr><th>kbyte</th><th></th><th></th><th></th><th></th><th></th><th>spect</th><th></th><th></th><th>meta.code</th><th></th><th>meta.code</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>deg</th><th></th><th>arcsec</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>int64</th><th>object</th><th>object</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>int32</th><th>object</th><th>int32</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
@@ -645,12 +652,12 @@ title="Print to PDF"
 <p>As you can see, the result from this query provides information on the fits files associated with the MASH catalogs. In particular, the column <code class="docutils literal notranslate"><span class="pre">access_url</span></code> provides the location of the data. To get the first image we could do:</p>
 <p><code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">fits.open(mash_fits['access_url'][0])</span></code></p>
 <p>and then work on the image, plot it or save it to our machine. However, downloading all the data takes quite some time. For this tutorial, <strong>we prepared a subsample of 335 of these Short Red images that will run promptly</strong> but we encourage you to try accessing the full Short Red sample on your own later. The subsample is available either at <a class="reference external" href="http://astro.u-strasbg.fr/~bot/BochBot.tar.gz">http://astro.u-strasbg.fr/~bot/BochBot.tar.gz</a> or in the Data Folder of this repository. If you run this tutorial on Binder, you do not need to download anything.</p>
-</div>
-<div class="section" id="step-2-create-a-moc-of-the-mash-images">
+</section>
+<section id="step-2-create-a-moc-of-the-mash-images">
 <h2>Step 2: Create a MOC of the MASH images<a class="headerlink" href="#step-2-create-a-moc-of-the-mash-images" title="Permalink to this headline">#</a></h2>
 <p>The multi-order coverage (MOC) map of a set of images represents their sky coverage. MOCs can describe arbitrary zones in the sky which do not need to be connected. You’ll see that the union or intersection of two MOCs requires few time and computational effort. Catalogs can also be filtered by MOCs.</p>
 <p>Here we want to use the fits files just downloaded to create a MOC map corresponding to the coverage of the MASH images.</p>
-<div class="section" id="organising-data">
+<section id="organising-data">
 <h3>Organising data<a class="headerlink" href="#organising-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,8 +727,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="create-the-moc">
+</section>
+<section id="create-the-moc">
 <h3>Create the MOC<a class="headerlink" href="#create-the-moc" title="Permalink to this headline">#</a></h3>
 <p>Here we can create the MOC of the MASH images with the <code class="docutils literal notranslate"><span class="pre">MOCPy</span></code> module. This can take a few seconds.</p>
 <div class="cell docutils container">
@@ -740,8 +747,8 @@ the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-the-moc">
+</section>
+<section id="plot-the-moc">
 <h3>Plot the MOC<a class="headerlink" href="#plot-the-moc" title="Permalink to this headline">#</a></h3>
 <p>We’ll use the MOCpy <code class="docutils literal notranslate"><span class="pre">World2ScreenMPL</span></code> class.</p>
 <div class="cell docutils container">
@@ -776,9 +783,9 @@ the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
 </div>
 </div>
 <p>This figure only shows a small region on the Sky, but you can see how the MOC has arbitrary shapes and not all regions are connected.</p>
-</div>
-</div>
-<div class="section" id="step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions">
+</section>
+</section>
+<section id="step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions">
 <h2>Step 3: Load an archival extinction map and create the MOC of the low extinction regions<a class="headerlink" href="#step-3-load-an-archival-extinction-map-and-create-the-moc-of-the-low-extinction-regions" title="Permalink to this headline">#</a></h2>
 <p>Different works (e.g. <a class="reference external" href="https://iopscience.iop.org/article/10.1086/305772">Schlegel et al. 1998</a>, <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2011AAS...21831803S/abstract">Schlafly  &amp; Finkbeiner 2011</a>, <a class="reference external" href="https://iopscience.iop.org/article/10.1088/0004-637X/810/1/25">Green et al. 2015</a>…) have created extinction maps of the sky that are publicly available. Some of these maps are all-sky maps, while others have higher resolutions, or come from different methods… They can be found in HEALPix format (among others) on the Legacy Archive for Microwave Background Data Analysis (<a class="reference external" href="https://lambda.gsfc.nasa.gov/">LAMBDA</a>) website or on the Analysis Center for Extended Data (<a class="reference external" href="http://cade.irap.omp.eu/dokuwiki/doku.php?id=start">CADE</a>) website.</p>
 <p>For this tutorial, we will download the well-known all-sky extinction map from Schlegel <em>et al.</em> from the LAMBDA  website and define the low extinction area for which <span class="math notranslate nohighlight">\(0 &lt; E(B-V) &lt; 0.5\)</span> as a MOC. It has an <a class="reference external" href="https://lambda.gsfc.nasa.gov/product/foreground/fg_sfd_info.html">information page</a>.</p>
@@ -988,8 +995,8 @@ LASTPIX =              3145727 / Last pixel (0 based)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above">
+</section>
+<section id="step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above">
 <h2>Step 4:  Find out which regions are covered by the MASH short-red images in the low extinction regions defined above<a class="headerlink" href="#step-4-find-out-which-regions-are-covered-by-the-mash-short-red-images-in-the-low-extinction-regions-defined-above" title="Permalink to this headline">#</a></h2>
 <p>To find out the sky regions of the MASH sample that are at low extinction, we build the intersection of the two MOCs.</p>
 <div class="cell docutils container">
@@ -1054,8 +1061,8 @@ LASTPIX =              3145727 / Last pixel (0 based)
 <img alt="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_40_0.png" src="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_40_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="step-5-query-the-2mass-and-gaia-catalogues-by-moc">
+</section>
+<section id="step-5-query-the-2mass-and-gaia-catalogues-by-moc">
 <h2>Step 5: Query the 2MASS and Gaia Catalogues by MOC<a class="headerlink" href="#step-5-query-the-2mass-and-gaia-catalogues-by-moc" title="Permalink to this headline">#</a></h2>
 <p>Without the usage of MOC, querying for sources in the low extinction regions covered by the MASH subsample would be tedious or even impossible. Indeed, one would need to load the whole catalog and make selections which would not be possible given the size of some catalogs. Alternatively, one would need to query the catalog field by field, which would take time and several queries. Instead, here we will use the power of MOC files to query large catalogs directly in the covered regions only. We will use coverages of the low extinction and MASH regions to query for sources from the Gaia and 2MASS surveys in these highly non-continuous and non-trivial shape areas.</p>
 <p>First, let’s see which Gaia and 2MASS catalogs are available on VizieR. We could, as above, use the TAP endpoint of VizieR. But we show below the <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> module in the <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> package.</p>
@@ -1144,12 +1151,8 @@ WARNING: UnitsWarning: Unit &#39;kau&#39; not supported by the VOUnit standard. 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;Mgeo&#39; not supported by the VOUnit standard.  [astropy.units.format.vounit]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;ppm&#39; not supported by the VOUnit standard. Did you mean Pm or pm? [astropy.units.format.vounit]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: Unit &#39;uas&#39; not supported by the VOUnit standard. Did you mean 1e-06a, uA or ua (deprecated)? [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;ppm&#39; not supported by the VOUnit standard. Did you mean Pm or pm? [astropy.units.format.vounit]
+WARNING: UnitsWarning: Unit &#39;uas&#39; not supported by the VOUnit standard. Did you mean 1e-06a, uA or ua (deprecated)? [astropy.units.format.vounit]
 WARNING: UnitsWarning: Unit &#39;k&#39; not supported by the VOUnit standard. Did you mean K? [astropy.units.format.vounit]
 </pre></div>
 </div>
@@ -1344,7 +1347,7 @@ J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=50</i>
-<table id="table140579668745072" class="table-striped table-bordered table-condensed">
+<table id="table139898303601856" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>_2MASS</th><th>Jmag</th><th>e_Jmag</th><th>Hmag</th><th>e_Hmag</th><th>Kmag</th><th>e_Kmag</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Xflg</th><th>Aflg</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>str17</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>str3</th><th>str3</th><th>str3</th><th>uint8</th><th>uint8</th></tr></thead>
@@ -1402,7 +1405,7 @@ J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 </pre></div>
 </div>
 <div class="output text_html"><div><i>Table length=50</i>
-<table id="table140579116717136" class="table-striped table-bordered table-condensed">
+<table id="table139897953956288" class="table-striped table-bordered table-condensed">
 <thead><tr><th>RA_ICRS</th><th>e_RA_ICRS</th><th>DE_ICRS</th><th>e_DE_ICRS</th><th>Source</th><th>Plx</th><th>e_Plx</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>Dup</th><th>FG</th><th>e_FG</th><th>Gmag</th><th>e_Gmag</th><th>FBP</th><th>e_FBP</th><th>BPmag</th><th>e_BPmag</th><th>FRP</th><th>e_FRP</th><th>RPmag</th><th>e_RPmag</th><th>BP-RP</th><th>RV</th><th>e_RV</th><th>Teff</th><th>AG</th><th>E_BP-RP_</th><th>Rad</th><th>Lum</th></tr></thead>
 <thead><tr><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th></th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th>K</th><th>mag</th><th>mag</th><th>solRad</th><th>solLum</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>uint8</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
@@ -1437,7 +1440,7 @@ J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=19784</i>
-<table id="table140579668748432" class="table-striped table-bordered table-condensed">
+<table id="table139898305295120" class="table-striped table-bordered table-condensed">
 <thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>e_Jmag</th><th>e_Hmag</th><th>e_Kmag</th><th>Qfl</th><th>Rfl</th><th>X</th><th>MeasureJD</th></tr></thead>
 <thead><tr><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th>d</th></tr></thead>
 <thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str3</th><th>int16</th><th>uint8</th><th>float64</th></tr></thead>
@@ -1471,7 +1474,7 @@ J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=20000</i>
-<table id="table140579114598560" class="table-striped table-bordered table-condensed">
+<table id="table139898342693216" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra_epoch2000</th><th>dec_epoch2000</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>source_id</th><th>ra</th><th>ra_error</th><th>dec</th><th>dec_error</th><th>parallax</th><th>parallax_error</th><th>pmra</th><th>pmra_error</th><th>pmdec</th><th>pmdec_error</th><th>duplicated_source</th><th>phot_g_mean_flux</th><th>phot_g_mean_flux_error</th><th>phot_g_mean_mag</th><th>phot_bp_mean_flux</th><th>phot_bp_mean_flux_error</th><th>phot_bp_mean_mag</th><th>phot_rp_mean_flux</th><th>phot_rp_mean_flux_error</th><th>phot_rp_mean_mag</th><th>bp_rp</th><th>radial_velocity</th><th>radial_velocity_error</th><th>rv_nb_transits</th><th>teff_val</th><th>a_g_val</th><th>e_bp_min_rp_val</th><th>radius_val</th><th>lum_val</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>deg</th><th>mas</th><th>deg</th><th>mas</th><th>mas</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>e-/s</th><th>e-/s</th><th>mag</th><th>mag</th><th>km / s</th><th>km / s</th><th></th><th>K</th><th>mag</th><th>mag</th><th>Rsun</th><th>Lsun</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>int64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>bool</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>int16</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th></tr></thead>
@@ -1496,8 +1499,8 @@ J/other/JDSO/15.434 :  New Binary Systems from Data of Gaia DR2 (Romanov, 2019)
 <tr><td>286.6980906584381</td><td>-16.589175455702</td><td>0.003</td><td>0.003</td><td>90.0</td><td>4088730117570395264</td><td>286.69809065844</td><td>3.096</td><td>-16.5891754557</td><td>2.5481</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>False</td><td>115.568</td><td>1.27166</td><td>20.531275</td><td>91.317</td><td>15.7204</td><td>20.450008</td><td>100.718</td><td>11.8582</td><td>19.754148</td><td>0.69586</td><td>--</td><td>--</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
 </table></div></div></div>
 </div>
-</div>
-<div class="section" id="step-6-cross-match-gaia-and-wise-sources-in-all-fields">
+</section>
+<section id="step-6-cross-match-gaia-and-wise-sources-in-all-fields">
 <h2>Step 6: Cross-match Gaia and WISE sources in all fields<a class="headerlink" href="#step-6-cross-match-gaia-and-wise-sources-in-all-fields" title="Permalink to this headline">#</a></h2>
 <p>We now want to find sources in the selected region (observed in the MASH regions of interest and at low extinction) that are common to the Wide Infrared Survey Explorer (<a class="reference external" href="https://irsa.ipac.caltech.edu/Missions/wise.html">WISE</a>) and Gaia catalogs. To do so, we will perform a cross-match of the Gaia and WISE catalogs. Alternatively, we could use the CDS XMatch service via the corresponding <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> module.</p>
 <p>To do so, let’s first inspect the <code class="docutils literal notranslate"><span class="pre">match_coordinates_sky</span></code> function from <code class="docutils literal notranslate"><span class="pre">astropy.coordinates</span></code>.</p>
@@ -1589,7 +1592,7 @@ match_coordinates_sky(matchcoord, catalogcoord, nthneighbor=1, storekdtree=&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2461</i>
-<table id="table140579114608784" class="table-striped table-bordered table-condensed">
+<table id="table139898303608288" class="table-striped table-bordered table-condensed">
 <thead><tr><th>_2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>Hmag</th><th>Kmag</th><th>Gmag</th></tr></thead>
 <thead><tr><th></th><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th></tr></thead>
 <thead><tr><th>str17</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
@@ -1614,8 +1617,8 @@ match_coordinates_sky(matchcoord, catalogcoord, nthneighbor=1, storekdtree=&#39;
 <tr><td>19065195-1635199</td><td>286.716468</td><td>-16.588884</td><td>15.119</td><td>15.102</td><td>16.665237</td></tr>
 </table></div></div></div>
 </div>
-</div>
-<div class="section" id="step-7-build-a-color-color-diagram">
+</section>
+<section id="step-7-build-a-color-color-diagram">
 <h2>Step 7: Build a color-color diagram<a class="headerlink" href="#step-7-build-a-color-color-diagram" title="Permalink to this headline">#</a></h2>
 <p>We now use the data we got from the cross-match to get a WISE/Gaia color-color diagram for all the sources in the low extinction sky regions covered by the MASH survey:</p>
 <div class="cell docutils container">
@@ -1637,8 +1640,8 @@ match_coordinates_sky(matchcoord, catalogcoord, nthneighbor=1, storekdtree=&#39;
 <img alt="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_55_0.png" src="_images/6_The_MASH_Planetary_Nebulae_Catalog__Advanced_usage_of_HiPS_and_MOC_55_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

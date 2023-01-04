@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>CDS services in Jupyter notebooks &#8212; Astronomy with Python: Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -452,14 +453,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cds-services-in-jupyter-notebooks">
+  <section class="tex2jax_ignore mathjax_ignore" id="cds-services-in-jupyter-notebooks">
 <h1>CDS services in Jupyter notebooks<a class="headerlink" href="#cds-services-in-jupyter-notebooks" title="Permalink to this headline">#</a></h1>
 <p>Katarina A. Lutz¹</p>
 <ol class="simple">
 <li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
 </ol>
 <hr class="docutils" />
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Welcome to a Jupyter notebook demonstrating how to access some of the services provided by the Strasbourg astronomical Data Center (<a class="reference external" href="https://cdsweb.u-strasbg.fr/">CDS</a>) with Python.</p>
 <p>In this tutorial, we will:</p>
@@ -472,22 +473,22 @@ title="Print to PDF"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For visualization</span>
-<span class="kn">import</span> <span class="nn">ipyaladin.aladin_widget</span> <span class="k">as</span> <span class="nn">ipyal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Astronomy tools</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
 
-<span class="c1"># Import access to CDS tools</span>
+<span class="c1"># Access astronomical databases</span>
 <span class="kn">from</span> <span class="nn">astroquery.simbad</span> <span class="kn">import</span> <span class="n">Simbad</span>
 <span class="kn">from</span> <span class="nn">astroquery.vizier</span> <span class="kn">import</span> <span class="n">Vizier</span>
 <span class="kn">from</span> <span class="nn">astroquery.xmatch</span> <span class="kn">import</span> <span class="n">XMatch</span>
 
-<span class="c1"># General astronomy module</span>
-<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="c1"># Sky visualization</span>
+<span class="kn">import</span> <span class="nn">ipyaladin.aladin_widget</span> <span class="k">as</span> <span class="nn">ipyal</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-1-gather-information-on-ngc4038">
+</section>
+<section id="step-1-gather-information-on-ngc4038">
 <h2>Step #1: Gather information on NGC4038<a class="headerlink" href="#step-1-gather-information-on-ngc4038" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a></p>
 <p>As a first step, we check what information is directly available from the <ins>Simbad</ins> python module. We can look at the methods available for the <code class="docutils literal notranslate"><span class="pre">Simbad</span></code> class with the <code class="docutils literal notranslate"><span class="pre">help()</span></code> command:</p>
@@ -1095,7 +1096,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=1</i>
-<table id="table140258986358000" class="table-striped table-bordered table-condensed">
+<table id="table140130052555104" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MAIN_ID</th><th>RA</th><th>DEC</th><th>RA_PREC</th><th>DEC_PREC</th><th>COO_ERR_MAJA</th><th>COO_ERR_MINA</th><th>COO_ERR_ANGLE</th><th>COO_QUAL</th><th>COO_WAVELENGTH</th><th>COO_BIBCODE</th><th>OTYPE</th><th>GALDIM_MAJAXIS</th><th>GALDIM_MINAXIS</th><th>GALDIM_ANGLE</th><th>GALDIM_BIBCODE</th><th>BIBLIO</th><th>SCRIPT_NUMBER_ID</th></tr></thead>
 <thead><tr><th></th><th>&quot;h:m:s&quot;</th><th>&quot;d:m:s&quot;</th><th></th><th></th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th><th>arcmin</th><th>arcmin</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>str13</th><th>str13</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>str1</th><th>object</th><th>object</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>object</th><th>int32</th></tr></thead>
@@ -1113,7 +1114,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=2</i>
-<table id="table140258082968224" class="table-striped table-bordered table-condensed">
+<table id="table140130106118816" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MAIN_ID</th><th>RA</th><th>DEC</th><th>RA_PREC</th><th>DEC_PREC</th><th>COO_ERR_MAJA</th><th>COO_ERR_MINA</th><th>COO_ERR_ANGLE</th><th>COO_QUAL</th><th>COO_WAVELENGTH</th><th>COO_BIBCODE</th><th>OTYPE</th><th>GALDIM_MAJAXIS</th><th>GALDIM_MINAXIS</th><th>GALDIM_ANGLE</th><th>GALDIM_BIBCODE</th><th>BIBLIO</th><th>SCRIPT_NUMBER_ID</th></tr></thead>
 <thead><tr><th></th><th>&quot;h:m:s&quot;</th><th>&quot;d:m:s&quot;</th><th></th><th></th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th><th>arcmin</th><th>arcmin</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>str13</th><th>str13</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>str1</th><th>object</th><th>object</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>object</th><th>int32</th></tr></thead>
@@ -1130,7 +1131,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div><i>Table length=4</i>
-<table id="table140258986529680" class="table-striped table-bordered table-condensed">
+<table id="table140130956932960" class="table-striped table-bordered table-condensed">
 <thead><tr><th>MAIN_ID</th><th>RA</th><th>DEC</th><th>RA_PREC</th><th>DEC_PREC</th><th>COO_ERR_MAJA</th><th>COO_ERR_MINA</th><th>COO_ERR_ANGLE</th><th>COO_QUAL</th><th>COO_WAVELENGTH</th><th>COO_BIBCODE</th><th>OTYPE</th><th>GALDIM_MAJAXIS</th><th>GALDIM_MINAXIS</th><th>GALDIM_ANGLE</th><th>GALDIM_BIBCODE</th><th>BIBLIO</th><th>SCRIPT_NUMBER_ID</th></tr></thead>
 <thead><tr><th></th><th>&quot;h:m:s&quot;</th><th>&quot;d:m:s&quot;</th><th></th><th></th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th><th>arcmin</th><th>arcmin</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <thead><tr><th>object</th><th>str13</th><th>str13</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>str1</th><th>object</th><th>object</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>object</th><th>int32</th></tr></thead>
@@ -1142,8 +1143,8 @@ None
 </div>
 <p>You can learn more on the features of the Simbad python module here: <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/simbad/simbad.html">https://astroquery.readthedocs.io/en/latest/simbad/simbad.html</a></p>
 <p>and on the Simbad query criteria: <a class="reference external" href="http://simbad.cds.unistra.fr/simbad/sim-fsam">http://simbad.cds.unistra.fr/simbad/sim-fsam</a></p>
-</div>
-<div class="section" id="step-2-visualise-the-source-on-a-sky-map">
+</section>
+<section id="step-2-visualise-the-source-on-a-sky-map">
 <h2>Step #2: Visualise the source on a sky map<a class="headerlink" href="#step-2-visualise-the-source-on-a-sky-map" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
 <p>We now open the <a class="reference external" href="https://github.com/cds-astro/ipyaladin">Aladin Lite widget</a>. We set it first to <strong>center</strong> on the Antennae galaxies, have a <strong>field of view</strong> of 0.5 <span class="math notranslate nohighlight">\(^\circ\)</span> and show colour images from the Digitized Sky Survey (<a class="reference external" href="https://archive.stsci.edu/cgi-bin/dss_form">DSS</a>). Typing <code class="docutils literal notranslate"><span class="pre">aladin</span></code> in the second line of code tells the notebook to display the widget.</p>
@@ -1156,7 +1157,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ecbd2df003614c5ca479b20356be4f50", "version_major": 2, "version_minor": 0}
+{"version_major": 2, "version_minor": 0, "model_id": "9a7805b44daf4b08afd93f828985b43e"}
 </script></div>
 </div>
 <p>As with any Aladin Lite implementation, you can interact with this widget. Try to:</p>
@@ -1174,8 +1175,8 @@ None
 </div>
 </div>
 <p>Feel free to explore other targets and methods available for the Aladin widget.</p>
-</div>
-<div class="section" id="step-3-find-and-visualize-additional-data">
+</section>
+<section id="step-3-find-and-visualize-additional-data">
 <h2>Step #3: Find and visualize additional data<a class="headerlink" href="#step-3-find-and-visualize-additional-data" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a>
 <a class="reference external" href="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a>
@@ -1190,7 +1191,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=317</i>
-<table id="table140258986529920-12988" class="table-striped table-bordered table-condensed">
+<table id="table140130048097056-761027" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>MAIN_ID</th><th>RA</th><th>DEC</th><th>RA_PREC</th><th>DEC_PREC</th><th>COO_ERR_MAJA</th><th>COO_ERR_MINA</th><th>COO_ERR_ANGLE</th><th>COO_QUAL</th><th>COO_WAVELENGTH</th><th>COO_BIBCODE</th><th>OTYPE</th><th>GALDIM_MAJAXIS</th><th>GALDIM_MINAXIS</th><th>GALDIM_ANGLE</th><th>GALDIM_BIBCODE</th><th>BIBLIO</th><th>SCRIPT_NUMBER_ID</th></tr></thead>
 <thead><tr><th></th><th></th><th>&quot;h:m:s&quot;</th><th>&quot;d:m:s&quot;</th><th></th><th></th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th><th>arcmin</th><th>arcmin</th><th>deg</th><th></th><th></th><th></th></tr></thead>
 <tr><td>0</td><td>RX J120155.4-185209</td><td>12 01 55.4</td><td>-18 52 09</td><td>5</td><td>5</td><td>--</td><td>--</td><td>0</td><td>D</td><td></td><td></td><td>HIIReg</td><td>--</td><td>--</td><td>0</td><td></td><td>1997ApJ...478..542F|1995MNRAS.277..397R</td><td>0</td></tr>
@@ -1533,14 +1534,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140258986529920-12988').dataTable()");
+    console.log("$('#table140130048097056-761027').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140258986529920-12988').dataTable({
+    $('#table140130048097056-761027').dataTable({
         order: [],
         pageLength: 15,
         lengthMenu: [[15, 10, 25, 50, 100, 500, 1000, -1], [15, 10, 25, 50, 100, 500, 1000, 'All']],
@@ -1587,7 +1588,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </pre></div>
 </div>
 <div class="output text_html"><i>Table length=10</i>
-<table id="table140258079949392-822314" class="table-striped table-bordered table-condensed">
+<table id="table140130048299248-911665" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>Seq</th><th>n_Name</th><th>Name</th><th>Nf</th><th>RAJ2000</th><th>DEJ2000</th><th>logLHa</th><th>R</th><th>logMHII</th><th>rhoHII</th><th>sigma</th><th>alpVir</th><th>EWHa</th><th>logAge</th><th>Simbad</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th></th><th></th><th>&apos;h:m:s&apos;</th><th>&apos;d:m:s&apos;</th><th>log(1e-07W)</th><th>pc</th><th>log(solMass)</th><th>solMass / pc3</th><th>km / s</th><th></th><th>0.1 nm</th><th>log(yr)</th><th></th></tr></thead>
 <tr><td>0</td><td>1</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 39.4</td><td>+78 21 18.2</td><td>39.040</td><td>114</td><td>5.90</td><td>0.1270</td><td>15.0</td><td>40.0</td><td>159.79</td><td>6.770</td><td>Simbad</td></tr>
@@ -1623,14 +1624,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140258079949392-822314').dataTable()");
+    console.log("$('#table140130048299248-911665').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140258079949392-822314').dataTable({
+    $('#table140130048299248-911665').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -2051,7 +2052,7 @@ class VizierClass(astroquery.query.BaseQuery)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=12</i>
-<table id="table140257986588304-356803" class="table-striped table-bordered table-condensed">
+<table id="table140130048310336-637110" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>Name</th><th>RAJ2000</th><th>DEJ2000</th><th>logLHa</th><th>R</th><th>sigma</th></tr></thead>
 <thead><tr><th></th><th></th><th>&apos;h:m:s&apos;</th><th>&apos;d:m:s&apos;</th><th>log(1e-07W)</th><th>pc</th><th>km / s</th></tr></thead>
 <tr><td>0</td><td>NGC2146</td><td>06 18 39.4</td><td>+78 21 18.2</td><td>39.040</td><td>114</td><td>15.0</td></tr>
@@ -2089,14 +2090,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140257986588304-356803').dataTable()");
+    console.log("$('#table140130048310336-637110').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140257986588304-356803').dataTable({
+    $('#table140130048310336-637110').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -2146,8 +2147,8 @@ you can just send the name and coordinates to Aladin:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-5-cross-match-tables">
+</section>
+<section id="step-5-cross-match-tables">
 <h2>Step #5: Cross-match tables<a class="headerlink" href="#step-5-cross-match-tables" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a>
 <a class="reference external" href="http://cdsxmatch.u-strasbg.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a></p>
@@ -2186,7 +2187,7 @@ you can just send the name and coordinates to Aladin:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><i>Table length=1314</i>
-<table id="table140258079956928-963909" class="table-striped table-bordered table-condensed">
+<table id="table140130048306352-8194" class="table-striped table-bordered table-condensed">
 <thead><tr><th>idx</th><th>angDist</th><th>_RAJ2000</th><th>_DEJ2000</th><th>recno</th><th>Seq</th><th>n_Name</th><th>Name</th><th>Nf</th><th>RAJ2000_1</th><th>DEJ2000_1</th><th>logLHa</th><th>R</th><th>logMHII</th><th>rhoHII</th><th>sigma</th><th>alpVir</th><th>EWHa</th><th>logAge</th><th>Simbad</th><th>AllWISE</th><th>RAJ2000_2</th><th>DEJ2000_2</th><th>eeMaj</th><th>eeMin</th><th>eePA</th><th>W1mag</th><th>W2mag</th><th>W3mag</th><th>W4mag</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>e_W1mag</th><th>e_W2mag</th><th>e_W3mag</th><th>e_W4mag</th><th>e_Jmag</th><th>e_Hmag</th><th>e_Kmag</th><th>ID</th><th>ccf</th><th>ex</th><th>var</th><th>qph</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>d2M</th></tr></thead>
 <tr><td>0</td><td>9.439952</td><td>250.775</td><td>36.839056</td><td>1820</td><td>27</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 06.0</td><td>+36 50 20.6</td><td>37.69</td><td>66</td><td>4.9</td><td>0.06</td><td>4.0</td><td>--</td><td>134.26</td><td>6.78</td><td>Simbad</td><td>J164305.83+365029.8</td><td>250.7743217</td><td>36.8416214</td><td>0.0374</td><td>0.0369</td><td>67.0</td><td>12.87</td><td>12.918</td><td>8.29</td><td>5.588</td><td>--</td><td>--</td><td>--</td><td>0.073</td><td>0.025</td><td>0.022</td><td>0.037</td><td>--</td><td>--</td><td>--</td><td>2499136301351044678</td><td>0000</td><td>3</td><td>3000</td><td>AAAA</td><td>10</td><td>40</td><td>359</td><td>42</td><td>--</td></tr>
 <tr><td>1</td><td>6.754932</td><td>250.767917</td><td>36.834944</td><td>1821</td><td>28</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.3</td><td>+36 50 05.8</td><td>37.66</td><td>101</td><td>5.1</td><td>0.031</td><td>4.0</td><td>--</td><td>22.27</td><td>6.91</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
@@ -3525,14 +3526,14 @@ require.config({paths: {
     datatables: 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min'
 }});
 require(["datatables"], function(){
-    console.log("$('#table140258079956928-963909').dataTable()");
+    console.log("$('#table140130048306352-8194').dataTable()");
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "optionalnum-asc": astropy_sort_num,
     "optionalnum-desc": function (a,b) { return -astropy_sort_num(a, b); }
 });
 
-    $('#table140258079956928-963909').dataTable({
+    $('#table140130048306352-8194').dataTable({
         order: [],
         pageLength: 50,
         lengthMenu: [[10, 25, 50, 100, 500, 1000, -1], [10, 25, 50, 100, 500, 1000, 'All']],
@@ -3544,12 +3545,12 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 </div></div>
 </div>
 <h4 align="center">This is the end of the tutorial.</h4> 
-<h4 align="center">Try to apply what you have learned here to your data sets and science cases! </h4></div>
-</div>
+<h4 align="center">Try to apply what you have learned here to your data sets and science cases! </h4></section>
+</section>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"47e44e2065cf47a2a2bb8f982efeb2fc": {"model_module": "ipyaladin", "model_module_version": "^0.2.1", "model_name": "AladinModel", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.5, "full_screen": false, "layout": "IPY_MODEL_cad63c4bca5043bfbf10ff3b91eb0dad", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/DSS2/color", "table_columns": [], "table_flag": true, "table_keys": [], "target": "Antennae", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}, "a6402819d70142dfa66b00b5e8e9a4d8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cad63c4bca5043bfbf10ff3b91eb0dad": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ecbd2df003614c5ca479b20356be4f50": {"model_module": "ipyaladin", "model_module_version": "^0.2.1", "model_name": "AladinModel", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.5, "full_screen": false, "layout": "IPY_MODEL_cad63c4bca5043bfbf10ff3b91eb0dad", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/allWISE/color", "table_columns": [["NGC2146", "06 18 39.4", "+78 21 18.2"], ["Arp244", "12 01 54.6", "-18 53 03.1"], ["NGC520", "01 24 33.3", "+03 48 04.6"], ["UGC3995", "07 44 09.2", "+29 14 51.3"], ["NGC3788", "11 39 41.4", "+31 54 23.3"], ["NGC3786", "11 39 45.1", "+31 55 46.3"], ["NGC2782", "09 14 05.3", "+40 06 50.4"], ["NGC2993", "09 45 48.3", "-14 22 05.9"], ["NGC2992", "09 45 41.9", "-14 19 33.4"], ["NGC3991", "11 57 31.7", "+32 20 29.6"], ["Arp270", "10 49 55.8", "+32 59 28.0"], ["NGC3769", "11 37 43.7", "+47 53 24.4"]], "table_flag": false, "table_keys": ["Name", "RAJ2000", "DEJ2000"], "target": "M101", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}}, "version_major": 2, "version_minor": 0}
+{"state": {"54bef09e19e44c18962b7a56be51f35a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5b44cc0649f640d6b300e88dd8cf2c63": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8b5d9b1130e64acaa7a97f5557089fa4": {"model_name": "AladinModel", "model_module": "ipyaladin", "model_module_version": "^0.2.1", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.5, "full_screen": false, "layout": "IPY_MODEL_5b44cc0649f640d6b300e88dd8cf2c63", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/DSS2/color", "table_columns": [], "table_flag": true, "table_keys": [], "target": "Antennae", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}, "9a7805b44daf4b08afd93f828985b43e": {"model_name": "AladinModel", "model_module": "ipyaladin", "model_module_version": "^0.2.1", "state": {"_dom_classes": [], "_model_module": "ipyaladin", "_model_module_version": "^0.2.1", "_model_name": "AladinModel", "_view_count": null, "_view_module": "ipyaladin", "_view_module_version": "^0.2.1", "_view_name": "AladinView", "allow_full_zoomout": false, "color_map_flag": true, "color_map_name": "", "coo_frame": "J2000", "fov": 0.5, "full_screen": false, "layout": "IPY_MODEL_5b44cc0649f640d6b300e88dd8cf2c63", "listener_flag": true, "listener_type": "", "log": true, "moc_URL": "", "moc_dict": {}, "moc_from_URL_flag": true, "moc_from_dict_flag": true, "moc_options": {}, "options": ["allow_full_zoomout", "coo_frame", "fov", "full_screen", "log", "overlay_survey", "overlay_survey_opacity", "reticle_color", "reticle_size", "show_catalog", "show_coo_grid", "show_frame", "show_fullscreen_control", "show_goto_control", "show_layers_control", "show_reticle", "show_share_control", "show_zoom_control", "survey", "target"], "overlay_from_stcs_flag": true, "overlay_options": {}, "overlay_survey": "", "overlay_survey_opacity": 0.0, "rectangular_selection_flag": true, "reticle_color": "rgb(178, 50, 178)", "reticle_size": 22.0, "show_catalog": true, "show_coo_grid": false, "show_frame": true, "show_fullscreen_control": false, "show_goto_control": true, "show_layers_control": true, "show_reticle": true, "show_share_control": false, "show_zoom_control": true, "stc_string": "", "survey": "P/allWISE/color", "table_columns": [["NGC2146", "06 18 39.4", "+78 21 18.2"], ["Arp244", "12 01 54.6", "-18 53 03.1"], ["NGC520", "01 24 33.3", "+03 48 04.6"], ["UGC3995", "07 44 09.2", "+29 14 51.3"], ["NGC3788", "11 39 41.4", "+31 54 23.3"], ["NGC3786", "11 39 45.1", "+31 55 46.3"], ["NGC2782", "09 14 05.3", "+40 06 50.4"], ["NGC2993", "09 45 48.3", "-14 22 05.9"], ["NGC2992", "09 45 41.9", "-14 19 33.4"], ["NGC3991", "11 57 31.7", "+32 20 29.6"], ["Arp270", "10 49 55.8", "+32 59 28.0"], ["NGC3769", "11 37 43.7", "+47 53 24.4"]], "table_flag": false, "table_keys": ["Name", "RAJ2000", "DEJ2000"], "target": "M101", "thumbnail_flag": true, "votable_URL": "", "votable_from_URL_flag": true, "votable_options": {}}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
