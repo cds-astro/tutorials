@@ -12,8 +12,14 @@ repos:
             "--disable=MD013",
             "--disable=MD047"
           ]
+- repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
+  rev: v1.1.2
+  hooks:
+  - id: markdown-toc
+
+
 -   repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.5.3
+    rev: 1.6.0
     hooks:
     -   id: nbqa-black
         name: nbqa-black
@@ -28,7 +34,7 @@ repos:
         description: "Run flake8 on a Jupyter notebook"
         args: ['--max-line-length=89', '--ignore=W503,W291,E501']
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.4.0
     hooks:
     -   id: requirements-txt-fixer
     
