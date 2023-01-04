@@ -16,6 +16,7 @@ repos:
   rev: v1.1.2
   hooks:
   - id: markdown-toc
+    name: markdown-toc
 
 
 -   repo: https://github.com/nbQA-dev/nbQA
