@@ -17,6 +17,8 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ## Table of contents
 
+- [Accessing and using astronomical data: a series of Jupyter notebooks tutorials](#accessing-and-using-astronomical-data-a-series-of-jupyter-notebooks-tutorials)
+  - [Table of contents](#table-of-contents)
   - [How to use the tutorials](#how-to-use-the-tutorials)
     - [Online](#online)
     - [On your machine](#on-your-machine)
@@ -33,14 +35,14 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
   - [Glossary](#glossary)
     - [IVOA Standards](#ivoa-standards)
     - [CDS Services](#cds-services)
-  
+
 ***
 
 ## How to use the tutorials
 
 ### Online
 
-- To have an interactive look at these tutorials in your browser click on the Binder button here 
+- To have an interactive look at these tutorials in your browser click on the Binder button here
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 
 - You can also explore the notebooks in a website here [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cds-astro.github.io/tutorials/intro.html "https://cds-astro.github.io/tutorials/intro.html")
