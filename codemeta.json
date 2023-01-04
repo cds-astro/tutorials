@@ -9,9 +9,9 @@
     "issueTracker": "https://github.com/cds-astro/tutorials/issues",
     "name": "cds-escape-tutorials",
     "version": "1.0.2",
-    "softwareVersion": "1.0.2"
+    "softwareVersion": "1.0.2",
     "description": "Jupyter Notebook tutorials using astronomical databases and Virtual Observatory tools",
-    "identifier": "Euro-VO/ESCAPE tutorials"
+    "identifier": "Euro-VO/ESCAPE tutorials",
     "applicationCategory": "Astronomy",
     "funding": [
         "European Union Horizon Program call INFRAEOSC-03-2020 - Grant Agreement Number 101017536",
