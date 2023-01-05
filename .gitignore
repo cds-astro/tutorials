@@ -1,7 +1,6 @@
 *~
 .DS_Store
 .ipynb*
-build_and_publish.sh
 intro.md
 references.bib
 _config.yml
