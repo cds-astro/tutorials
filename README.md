@@ -4,6 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/224865065.svg)](https://zenodo.org/badge/latestdoi/224865065)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json)](https://github.com/charliermarsh/ruff "https://github.com/charliermarsh/ruff")
 
 Welcome to the repository of Strasbourg astronomical Data Center [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/") jupyter notebooks.
 
