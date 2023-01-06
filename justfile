@@ -3,7 +3,7 @@ set shell := ["bash", "-c"]
 setup-env:
     #!/usr/bin/env bash
     conda create -n "cds-tutos" python=3.10.*
-    source activate cds-tutos-dev
+    source activate cds-tutos
     python -m pip install -r requirements.txt
     echo "conda environnement 'cds-tutos' created"
     echo "activate it with: 'conda activate cds-tutos'"
