@@ -157,4 +157,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 - ![MOCpy](https://img.shields.io/badge/MOCpy-gray "https://img.shields.io/badge/MOCpy-gray"): a python library allowing MOC manipulation
 
 ***
-This work has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+| <img src="https://projectescape.eu/sites/default/files/logo-Escape_0.png" alt="escape-logo" width="500"/> | <img src="https://projectescape.eu/sites/all/themes/escape/images/eu-flag.png" alt="eu-flag" width="500"/> | _This work has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC (European Open Science Cloud) Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477._ |
+| --- | --- | --- |
+
+
