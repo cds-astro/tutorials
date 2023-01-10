@@ -5,6 +5,8 @@ setup-env:
     conda create -n "cds-tutos" python=3.10.*
     source activate cds-tutos
     python -m pip install -r requirements.txt
+    jupyter nbextension enable --py widgetsnbextension
+    jupyter nbextension enable --py --sys-prefix ipyaladin
     echo "conda environnement 'cds-tutos' created"
     echo "activate it with: 'conda activate cds-tutos'"
 setup-dev-env:
@@ -13,6 +15,8 @@ setup-dev-env:
     source activate cds-tutos-dev
     python -m pip install -r requirements.txt
     python -m pip install -r requirements-dev.txt
+    jupyter nbextension enable --py widgetsnbextension
+    jupyter nbextension enable --py --sys-prefix ipyaladin
     echo "conda environnement 'cds-tutos-dev' created"
     echo "activate it with: 'conda activate cds-tutos-dev'"
 setup-doc-env:
@@ -22,6 +26,8 @@ setup-doc-env:
     python -m pip install -r requirements.txt
     python -m pip install -r requirements-dev.txt
     python -m pip install -r requirements-docs.txt
+    jupyter nbextension enable --py widgetsnbextension
+    jupyter nbextension enable --py --sys-prefix ipyaladin
     echo "conda environnement 'build-jupybook' created"
     echo "activate it with: 'conda activate build-jupybook'"
 build-jupybook:
