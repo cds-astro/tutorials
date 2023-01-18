@@ -5,7 +5,7 @@
     "codeRepository": "git+https://github.com/cds-astro/tutorials",
     "contIntegration": "https://github.com/cds-astro/tutorials/actions",
     "datePublished": "2022-11-24",
-    "dateModified": "2022-11-24",
+    "dateModified": "2023-01-18",
     "issueTracker": "https://github.com/cds-astro/tutorials/issues",
     "name": "cds-escape-tutorials",
     "version": "1.0.2",
