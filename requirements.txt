@@ -1,5 +1,5 @@
 astroplan==0.8
-astropy==5.2
+astropy==5.2.1
 astroquery==0.4.*
 ipyaladin==0.2.*
 MOCpy==0.11.*
