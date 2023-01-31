@@ -24,7 +24,6 @@ setup-doc-env:
     conda create -n "build-jupybook" python=3.10.*
     source activate build-jupybook
     python -m pip install -r requirements.txt
-    python -m pip install -r requirements-dev.txt
     python -m pip install -r requirements-docs.txt
     jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable --py --sys-prefix ipyaladin
