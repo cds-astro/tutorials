@@ -21,7 +21,11 @@ ignore-init-module-imports = true
 target-version = "py37"
 # Allow lines to be as long as 120 characters.
 line-length = 120
-extend-select = ["SIM", "FBT", "D", "UP", "N", "S", "B", "A", "C4", "EM", "ICN", "RET", "ARG", "PD", "PGH", "RUF"]
+extend-select = ["SIM", "FBT", "D", "UP", "N", "S", "B", "A",
+                 "C4", "EM", "ICN", "RET", "ARG", "PD", "PGH",
+                 "RUF", "YTT", "BLE", "COM", "DTZ", "EXE",
+                 "ISC", "ICN001", "PIE", "PTH"
+                ]
 extend-ignore = ["E501", "D203", "D213", "D100", "N816"]
 # E501: line length (done by black in our case)
 # D203: 1 blank line required before class docstring
