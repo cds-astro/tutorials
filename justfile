@@ -13,6 +13,7 @@ setup-dev-env:
     #!/usr/bin/env bash
     conda create -n "cds-tutos-dev" python=3.10.*
     source activate cds-tutos-dev
+    python -m pip install https://gitlab.in2p3.fr/escape2020/wp3/eossr
     python -m pip install -r requirements.txt
     python -m pip install -r requirements-dev.txt
     jupyter nbextension enable --py widgetsnbextension
@@ -47,4 +48,9 @@ pre-commit-all:
 docker-push:
     #!/usr/bin/env bash
     source activate repo2docker
-    jupyter-repo2docker .
+    docker login gitlab.cds.unistra.fr:5050
+    git clone https://github.com/cds-astro/tutorials /tmp/tutos
+    jupyter-repo2docker /tmp/tutos
+    docker tag $(docker images | awk '{print $1}' | awk 'NR==2'):latest gitlab.cds.unistra.fr:5050/manon.marchand/dockers-for-notebooks/cds-tutorials:cds-tutorials
+    docker push gitlab.cds.unistra.fr:5050/manon.marchand/dockers-for-notebooks/cds-tutorials:cds-tutorials
+
