@@ -44,3 +44,7 @@ pre-commit-all:
     pre-commit install
     pre-commit autoupdate
     pre-commit run -a
+docker-push:
+    #!/usr/bin/env bash
+    source activate repo2docker
+    jupyter-repo2docker .
