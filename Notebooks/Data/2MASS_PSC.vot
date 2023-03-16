@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Produced with astropy.io.votable version 5.1.1
+<!-- Produced with astropy.io.votable version 5.2.1
      http://www.astropy.org/ -->
 <VOTABLE version="1.4" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/VOTable-1.4.xsd">
  <RESOURCE type="results">
-  <TABLE ID="result_S1670601198307" name="result_S1670601198307">
+  <TABLE ID="result_S1678092608401" name="result_S1678092608401">
    <FIELD ID="RAJ2000" datatype="double" name="RAJ2000" ucd="pos.eq.ra;meta.main" unit="deg">
     <DESCRIPTION>
      (ra) Right ascension (J2000)
