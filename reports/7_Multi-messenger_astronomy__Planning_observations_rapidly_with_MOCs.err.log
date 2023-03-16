@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ipix = np.array([50], dtype="uint64")  # the index of the HEALPix cell
+depth = np.array([2], dtype="uint8")  # its depth
+
+moc_test = MOC.from_healpix_cells(
+    ipix,
+    depth,
+    4,
+)  # here we set it's order to 4, it can be more precise than the most precise cell. No issues there.
+print(type(moc_test))
+moc_test
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [0;32mIn[3], line 4[0m
+[1;32m      1[0m ipix [38;5;241m=[39m np[38;5;241m.[39marray([[38;5;241m50[39m], dtype[38;5;241m=[39m[38;5;124m"[39m[38;5;124muint64[39m[38;5;124m"[39m)  [38;5;66;03m# the index of the HEALPix cell[39;00m
+[1;32m      2[0m depth [38;5;241m=[39m np[38;5;241m.[39marray([[38;5;241m2[39m], dtype[38;5;241m=[39m[38;5;124m"[39m[38;5;124muint8[39m[38;5;124m"[39m)  [38;5;66;03m# its depth[39;00m
+[0;32m----> 4[0m moc_test [38;5;241m=[39m [43mMOC[49m[38;5;241;43m.[39;49m[43mfrom_healpix_cells[49m[43m([49m
+[1;32m      5[0m [43m    [49m[43mipix[49m[43m,[49m
+[1;32m      6[0m [43m    [49m[43mdepth[49m[43m,[49m
+[1;32m      7[0m [43m    [49m[38;5;241;43m4[39;49m[43m,[49m
+[1;32m      8[0m [43m)[49m  [38;5;66;03m# here we set it's order to 4, it can be more precise than the most precise cell. No issues there.[39;00m
+[1;32m      9[0m [38;5;28mprint[39m([38;5;28mtype[39m(moc_test))
+[1;32m     10[0m moc_test
+
+File [0;32m~/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/mocpy/moc/moc.py:983[0m, in [0;36mMOC.from_healpix_cells[0;34m(cls, ipix, depth, fully_covered)[0m
+[1;32m    980[0m [38;5;28;01mif[39;00m ipix[38;5;241m.[39mshape [38;5;241m!=[39m depth[38;5;241m.[39mshape:
+[1;32m    981[0m     [38;5;28;01mraise[39;00m [38;5;167;01mIndexError[39;00m([38;5;124m"[39m[38;5;124mpixels and depth arrays must have the same shape[39m[38;5;124m"[39m)
+[0;32m--> 983[0m [38;5;28;01mif[39;00m fully_covered [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [43mfully_covered[49m[38;5;241;43m.[39;49m[43mshape[49m [38;5;241m!=[39m ipix[38;5;241m.[39mshape:
+[1;32m    984[0m     [38;5;28;01mraise[39;00m [38;5;167;01mIndexError[39;00m([38;5;124m"[39m[38;5;124mfully covered and depth arrays must have the same shape[39m[38;5;124m"[39m)
+[1;32m    986[0m intervals [38;5;241m=[39m mocpy[38;5;241m.[39mfrom_healpix_cells(ipix[38;5;241m.[39mastype(np[38;5;241m.[39muint64), depth[38;5;241m.[39mastype(np[38;5;241m.[39muint8))
+
+[0;31mAttributeError[0m: 'int' object has no attribute 'shape'
+AttributeError: 'int' object has no attribute 'shape'
+
