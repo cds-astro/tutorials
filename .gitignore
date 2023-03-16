@@ -7,3 +7,6 @@ _config.yml
 _toc.yml
 _build*
 .pytest_cache*
+.add-glue/*
+test.ipynb
+.gitignore
