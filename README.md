@@ -51,7 +51,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ### On your machine
 
-[![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/")
+[![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/")
 [![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
@@ -59,12 +59,6 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 You can also download the notebooks to your personal machine and use them there.
 
 Note the currently supported python versions and the list of dependencies in the file [`requirements.txt`](requirements.txt).
-
-:rotating_light: Known issues :rotating_light:
-
-- with python 3.11: installation of MOCpy returns "module frozen" error
-
-Additionnaly, to be able to see the [`ipyaladin`](https://github.com/cds-astro/ipyaladin "https://github.com/cds-astro/ipyaladin") widget you will need to enable the extensions by running the two lines in the file [`postBuild`](https://github.com/cds-astro/postBuild "https://github.com/cds-astro/postBuild"). This widget is currently supported in Jupyter Notebooks but not in JupyterLab.
 
 ## Flight plan
 
