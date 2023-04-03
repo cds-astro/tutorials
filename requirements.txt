@@ -1,10 +1,10 @@
 astroplan==0.8
-astropy==5.2.1
+astropy==5.2.*
 astroquery==0.4.*
 ipyaladin==0.2.*
 MOCpy >= 0.12.3, ==0.12.*
 plotly==5.14.*
-pyvo==1.4
+pyvo==1.4.1
 regions==0.7
 seaborn==0.12.*
 specutils==1.9.*
