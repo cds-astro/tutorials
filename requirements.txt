@@ -7,4 +7,4 @@ plotly==5.14.*
 pyvo==1.4.1
 regions==0.7
 seaborn==0.12.*
-specutils==1.9.*
+specutils==1.10.*
