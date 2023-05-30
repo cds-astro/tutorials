@@ -1,7 +1,7 @@
 [project]
 name = "cds-escape-tutorials"
-# 3.6 is no longer maintained
-requires-python = ">=3.7"
+# 3.8 has been dropped by astropy
+requires-python = ">=3.9"
 
 [project.urls]
 repository = "https://github.com/cds-astro/tutorials"
@@ -10,7 +10,10 @@ repository = "https://github.com/cds-astro/tutorials"
 # D104: Missing docstring in public package
 # D100: Missing docstring in public module
 "__init__.py" = ["D104"]
-"Notebooks/*.ipynb" = ["D100"]
+"Notebooks/*.ipynb" = ["D100", "B018"]
+
+[tool.nbqa.addopts]
+ruff = ["--ignore=B018,S608"]
 
 [tool.ruff]
 fix = true
@@ -18,7 +21,7 @@ force-exclude = true
 format = "grouped"
 show-source = true
 ignore-init-module-imports = true
-target-version = "py37"
+target-version = "py39"
 # Allow lines to be as long as 120 characters.
 line-length = 120
 extend-select = ["SIM", "FBT", "D", "UP", "N", "S", "B", "A",

@@ -1,6 +1,3 @@
-default_language_version:
-  # force all unspecified python hooks to run python3
-  python: python3.8
 exclude: 'Past_Conferences_and_Schools/' # ignores the unmaintained notebooks
 
 repos:
@@ -9,8 +6,6 @@ repos:
   hooks:
     - id: detect-private-key
       description: "Check accidental private keys in code"
-    - id: requirements-txt-fixer
-      description: "Sort requirements alphabetically"
     - id: trailing-whitespace
       exclude_types:
         - "svg"
@@ -21,7 +16,7 @@ repos:
   - id: markdown-toc
     name: markdown-toc
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: 1.6.1
+  rev: 1.7.0
   hooks:
     - id: nbqa-black
       name: nbqa-black
