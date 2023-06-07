@@ -1,0 +1,17 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // onCreateCommand pip install the required packages for the IPython kernel from requirements.txt
+  "onCreateCommand": "python3 -m pip install --user -r requirements.txt",
+  "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        },
+        "codespaces": {
+            // "openFiles": [""]
+        },
+  "features": {
+  }
+}
