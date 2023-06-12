@@ -1,0 +1,3 @@
+# For documentation
+ghp-import==2.1.*
+jupyter-book==0.15.*
