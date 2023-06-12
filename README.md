@@ -21,8 +21,9 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 - [Accessing and using astronomical data: a series of Jupyter notebooks tutorials](#accessing-and-using-astronomical-data-a-series-of-jupyter-notebooks-tutorials)
   - [Table of contents](#table-of-contents)
   - [How to use the tutorials](#how-to-use-the-tutorials)
-    - [Online](#online)
     - [On your machine](#on-your-machine)
+    - [In github codespaces](#in-github-codespaces)
+    - [On mybinder.org](#on-mybinder)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
     - [2. Arp peculiar galaxies catalog \_\_ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-__-first-steps-with-mocs)
@@ -42,13 +43,6 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ## How to use the tutorials
 
-### Online
-
-- To have an interactive look at these tutorials in your browser click on the Binder button here
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
-
-- You can also explore the notebooks in a website here [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cds-astro.github.io/tutorials/intro.html "https://cds-astro.github.io/tutorials/intro.html")
-
 ### On your machine
 
 [![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/")
@@ -56,9 +50,34 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
 
-You can also download the notebooks to your personal machine and use them there.
+You can download the notebooks to your personal machine and use them there.
 
 Note the currently supported python versions and the list of dependencies in the file [`requirements.txt`](requirements.txt).
+
+This can be done with the following commands:
+
+```
+  git clone git@github.com:cds-astro/tutorials.git
+  cd tutorials
+  pip install -r requirements.txt
+  jupyter lab
+```
+  
+Note: the file `justfile` contains the instructions to create an environnement with `conda`.
+
+### In github codespaces
+
+- In Github, you can open a JupyterLab instance. To do so, go in your [`Settings`](https://github.com/settings/profile), then `Codespaces` and in `Editor Preference` choose `Jupyter Lab`. And voilà, you can now launch the tutorials, execute and modify them without any installation! 
+
+![codespace](https://github.com/cds-astro/tutorials/assets/16650466/1e969477-2230-4a39-920c-3a1ee2c9d9e4)
+
+
+### On mybinder
+
+- To have an interactive look at these tutorials in your browser click on the Binder button here
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
+
+- You can also explore the notebooks in a website here [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cds-astro.github.io/tutorials/intro.html "https://cds-astro.github.io/tutorials/intro.html")
 
 ## Flight plan
 
