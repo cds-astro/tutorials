@@ -24,6 +24,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
     - [On your machine](#on-your-machine)
     - [In github codespaces](#in-github-codespaces)
     - [On mybinder.org](#on-mybinder)
+    - [As a book](#as-a-book)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
     - [2. Arp peculiar galaxies catalog \_\_ First steps with MOCs](#2-arp-peculiar-galaxies-catalog-__-first-steps-with-mocs)
@@ -74,8 +75,10 @@ Note: the file `justfile` contains the instructions to create an environnement w
 
 ### On mybinder
 
-- To have an interactive look at these tutorials in your browser click on the Binder button here
+- You can click on the Binder button here
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
+
+### As a book
 
 - You can also explore the notebooks in a website here [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cds-astro.github.io/tutorials/intro.html "https://cds-astro.github.io/tutorials/intro.html")
 
@@ -89,6 +92,8 @@ The tutorials come in a recommended order ranging from basic usage of the CDS to
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![units](https://custom-icon-badges.demolab.com/badge/units-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 
 We show how to call Simbad, Aladin Lite, Vizier and X-match in a Jupyter Notebook.
 
@@ -96,7 +101,9 @@ We show how to call Simbad, Aladin Lite, Vizier and X-match in a Jupyter Noteboo
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
-[![MOCpy](https://img.shields.io/badge/MOCpy-gray)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![MOCpy](https://custom-icon-badges.demolab.com/badge/MOCpy-gray.svg?logo=mocpy&logoWidth=20&)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 
 We explore Arp's Catalog of peculiar Galaxies and extract the galaxies explored both in the SDSS and GALEX surveys by using MOCs.
 This tutorial highlights two python modules for querying data : [astroquery](https://astroquery.readthedocs.io/en/latest/index.html "https://astroquery.readthedocs.io/en/latest/index.html") and [pyvo](https://pyvo.readthedocs.io/en/latest/index.html "https://pyvo.readthedocs.io/en/latest/index.html").
@@ -108,6 +115,10 @@ This tutorial highlights two python modules for querying data : [astroquery](htt
 [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/)
 [![SSA](https://img.shields.io/badge/SSA-gray)](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA")
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20io%20%7C%20tables-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
+[![specutils](https://custom-icon-badges.demolab.com/badge/specutils-gray.svg?logo=specutils)](https://github.com/astropy/specutils "https://github.com/astropy/specutils")
+[![pyvo](https://custom-icon-badges.demolab.com/badge/pyvo-gray.svg?logo=astropy)](https://github.com/astropy/pyvo "https://github.com/astropy/pyvo")
 
 This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search for redshift information of galaxies in the spatial vicinity of the cluster centre. To get this information we get catalogues with measured redshifts and a spectrum, from which we measure a redshift. It uses the Simple Spectral Access (SSA) protocol of the virtual observatory.
 
@@ -117,6 +128,8 @@ This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search 
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
 [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20tables-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 
 For this tutorial we focus on gamma-ray and high energy spectral bands and start by querying suitable catalogues using VO tools. After that we cross-correlate catalogues to find entries for objects in different photon energy bands. We then apply selection criteria to extract sources from a catalogue and use the resulting observational measures of the selected objects to explore possible correlations. We close by displaying spectral energy distributions obtained from different photometric data sets.
 
@@ -126,21 +139,28 @@ For this tutorial we focus on gamma-ray and high energy spectral bands and start
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
 [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
+[![pyvo](https://custom-icon-badges.demolab.com/badge/pyvo-gray.svg?logo=astropy)](https://github.com/astropy/pyvo "https://github.com/astropy/pyvo")
 
 Brown dwarfs are objects occupying the gap between the least massive stars and the most massive planets. They are intrinsically faint objects. Hence, heir detection is not straightforward and, in fact, was almost impossible until the advent of global surveys at deep optical and near-infrared bands like SDSS, 2MASS or DENIS. We propose here to mine the 2MASS point source catalogue (2MASS-PSC) and SDSS-DR9 databases to identify T-type brown dwarfs through an appropriate combination of colors in the optical and the infrared, an approach that perfectly fits into the Virtual Observatory.
 
 ### [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC to explore complex regions of interrest](Notebooks/6_Planetary_Nebulae__Advanced_usage_of_HiPS_and_MOCs.ipynb)
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
-[![MOCpy](https://img.shields.io/badge/MOCpy-gray)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![MOCpy](https://custom-icon-badges.demolab.com/badge/MOCpy-gray.svg?logo=mocpy&logoWidth=20&)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![astroquery](https://custom-icon-badges.demolab.com/badge/astroquery-gray.svg?logo=astropy)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20io-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
+[![pyvo](https://custom-icon-badges.demolab.com/badge/pyvo-gray.svg?logo=astropy)](https://github.com/astropy/pyvo "https://github.com/astropy/pyvo")
 
 This tutorial is centred on using HiPS and MOC to efficiently reach your science goals. In particular it will help you answer questions such as: What is the footprint of my imaging survey? Where on the sky do we have low foreground extinction? Where do these two regions overlap? How can I get interesting catalogue entries within these regions? This questions are answered by building MOCs from a set of images. We also build a MOC from the pixel values of an all-sky survey. We then move on to query catalogues in an intersection of these MOCs.
 
 ### [7. Multi Messenger Astronomy __ Generation of an observation plan with MOCs](Notebooks/7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.ipynb)
 
-[![MOCpy](https://img.shields.io/badge/MOCpy-gray)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
-[![SAMP](https://img.shields.io/badge/SAMP-gray)](https://www.ivoa.net/documents/SAMP/ "https://www.ivoa.net/documents/SAMP/")
-[![Aladin Desktop](https://img.shields.io/badge/Aladin-gray)](https://aladin.cds.unistra.fr/AladinDesktop/ "https://aladin.cds.unistra.fr/AladinDesktop/")
+[![MOCpy](https://custom-icon-badges.demolab.com/badge/MOCpy-gray.svg?logo=mocpy&logoWidth=20&)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
+[![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
+[![pyvo](https://custom-icon-badges.demolab.com/badge/pyvo-gray.svg?logo=astropy)](https://github.com/astropy/pyvo "https://github.com/astropy/pyvo")
+[![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20io-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 
 We will first explore Multi-Order Coverage (MOC) data structure manipultation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined to plan observation according to a MOC. The final step is a concrete example illustrating how STMOCs can be built in a few seconds to plan observations from three ground observatories, with the aim to cover of the sky localisation produced after detection of a gravitational wave.
 
