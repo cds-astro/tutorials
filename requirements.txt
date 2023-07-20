@@ -8,4 +8,4 @@ pyvo==1.4.1
 regions==0.7
 requests>=2.4.3
 seaborn==0.12.*
-specutils==1.9.*
+specutils<=1.12.*, >=1.9.*
