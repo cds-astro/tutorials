@@ -1,4 +1,4 @@
-astroplan==0.8
+astroplan==0.9
 astropy>=5.2.*, <5.4
 astroquery==0.4.*
 ipyaladin>=0.2.2
