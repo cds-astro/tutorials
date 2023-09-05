@@ -1,0 +1,152 @@
+Traceback (most recent call last):
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+catalog_list_sdss = Vizier.find_catalogs("SDSS DR9")
+for catalog_ID, catalog in catalog_list_sdss.items():
+    print(catalog_ID, ": ", catalog.description)
+------------------
+
+----- stderr -----
+/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:769: UserWarning: VOTABLE parsing raised exception: 1092:32: not well-formed (invalid token)
+  warnings.warn("VOTABLE parsing raised exception: {0}".format(ex))
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:767[0m, in [0;36mparse_vizier_votable[0;34m(data, verbose, invalid, get_catalog_names)[0m
+[1;32m    766[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 767[0m     vo_tree [38;5;241m=[39m [43mvotable[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[43mtf[49m[43m,[49m[43m [49m[43mverify[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mwarn[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43minvalid[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mexception[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m    768[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/utils/decorators.py:604[0m, in [0;36mdeprecated_renamed_argument.<locals>.decorator.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    602[0m         warnings[38;5;241m.[39mwarn(msg, warning_type, stacklevel[38;5;241m=[39m[38;5;241m2[39m)
+[0;32m--> 604[0m [38;5;28;01mreturn[39;00m [43mfunction[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/table.py:177[0m, in [0;36mparse[0;34m(source, columns, invalid, verify, chunk_size, table_number, table_id, filename, unit_format, datatype_mapping, _debug_python_based_parser)[0m
+[1;32m    174[0m [38;5;28;01mwith[39;00m iterparser[38;5;241m.[39mget_xml_iterator(
+[1;32m    175[0m     source, _debug_python_based_parser[38;5;241m=[39m_debug_python_based_parser
+[1;32m    176[0m ) [38;5;28;01mas[39;00m iterator:
+[0;32m--> 177[0m     [38;5;28;01mreturn[39;00m [43mtree[49m[38;5;241;43m.[39;49m[43mVOTableFile[49m[43m([49m[43mconfig[49m[38;5;241;43m=[39;49m[43mconfig[49m[43m,[49m[43m [49m[43mpos[49m[38;5;241;43m=[39;49m[43m([49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m)[49m[43m)[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[43miterator[49m[43m,[49m[43m [49m[43mconfig[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3900[0m, in [0;36mVOTableFile.parse[0;34m(self, iterator, config)[0m
+[1;32m   3899[0m [38;5;28;01mif[39;00m start:
+[0;32m-> 3900[0m     [43mtag_mapping[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[43mtag[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_add_unknown_tag[49m[43m)[49m[43m([49m
+[1;32m   3901[0m [43m        [49m[43miterator[49m[43m,[49m[43m [49m[43mtag[49m[43m,[49m[43m [49m[43mdata[49m[43m,[49m[43m [49m[43mconfig[49m[43m,[49m[43m [49m[43mpos[49m
+[1;32m   3902[0m [43m    [49m[43m)[49m
+[1;32m   3903[0m [38;5;28;01melif[39;00m tag [38;5;241m==[39m [38;5;124m"[39m[38;5;124mDESCRIPTION[39m[38;5;124m"[39m:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3780[0m, in [0;36mVOTableFile._add_resource[0;34m(self, iterator, tag, data, config, pos)[0m
+[1;32m   3779[0m [38;5;28mself[39m[38;5;241m.[39mresources[38;5;241m.[39mappend(resource)
+[0;32m-> 3780[0m [43mresource[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43miterator[49m[43m,[49m[43m [49m[43mconfig[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3576[0m, in [0;36mResource.parse[0;34m(self, votable, iterator, config)[0m
+[1;32m   3564[0m tag_mapping [38;5;241m=[39m {
+[1;32m   3565[0m     [38;5;124m"[39m[38;5;124mTABLE[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_add_table,
+[1;32m   3566[0m     [38;5;124m"[39m[38;5;124mINFO[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_add_info,
+[0;32m   (...)[0m
+[1;32m   3573[0m     [38;5;124m"[39m[38;5;124mDESCRIPTION[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_ignore_add,
+[1;32m   3574[0m }
+[0;32m-> 3576[0m [38;5;28;01mfor[39;00m start, tag, data, pos [38;5;129;01min[39;00m iterator:
+[1;32m   3577[0m     [38;5;28;01mif[39;00m start:
+
+[0;31mValueError[0m: 1092:32: not well-formed (invalid token)
+
+During handling of the above exception, another exception occurred:
+
+[0;31mValueError[0m                                Traceback (most recent call last)
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:699[0m, in [0;36mVizierClass._parse_result[0;34m(self, response, get_catalog_names, verbose, invalid)[0m
+[1;32m    698[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 699[0m     [38;5;28;01mreturn[39;00m [43mparse_vizier_votable[49m[43m([49m
+[1;32m    700[0m [43m        [49m[43mresponse[49m[38;5;241;43m.[39;49m[43mcontent[49m[43m,[49m[43m [49m[43mverbose[49m[38;5;241;43m=[39;49m[43mverbose[49m[43m,[49m[43m [49m[43minvalid[49m[38;5;241;43m=[39;49m[43minvalid[49m[43m,[49m
+[1;32m    701[0m [43m        [49m[43mget_catalog_names[49m[38;5;241;43m=[39;49m[43mget_catalog_names[49m[43m)[49m
+[1;32m    702[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:770[0m, in [0;36mparse_vizier_votable[0;34m(data, verbose, invalid, get_catalog_names)[0m
+[1;32m    769[0m         warnings[38;5;241m.[39mwarn([38;5;124m"[39m[38;5;124mVOTABLE parsing raised exception: [39m[38;5;132;01m{0}[39;00m[38;5;124m"[39m[38;5;241m.[39mformat(ex))
+[0;32m--> 770[0m         vo_tree [38;5;241m=[39m [43mvotable[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[43mtf[49m[43m,[49m[43m [49m[43mverify[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mwarn[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43minvalid[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mmask[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m    771[0m [38;5;28;01melif[39;00m invalid [38;5;241m==[39m [38;5;124m'[39m[38;5;124mexception[39m[38;5;124m'[39m:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/utils/decorators.py:604[0m, in [0;36mdeprecated_renamed_argument.<locals>.decorator.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    602[0m         warnings[38;5;241m.[39mwarn(msg, warning_type, stacklevel[38;5;241m=[39m[38;5;241m2[39m)
+[0;32m--> 604[0m [38;5;28;01mreturn[39;00m [43mfunction[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/table.py:177[0m, in [0;36mparse[0;34m(source, columns, invalid, verify, chunk_size, table_number, table_id, filename, unit_format, datatype_mapping, _debug_python_based_parser)[0m
+[1;32m    174[0m [38;5;28;01mwith[39;00m iterparser[38;5;241m.[39mget_xml_iterator(
+[1;32m    175[0m     source, _debug_python_based_parser[38;5;241m=[39m_debug_python_based_parser
+[1;32m    176[0m ) [38;5;28;01mas[39;00m iterator:
+[0;32m--> 177[0m     [38;5;28;01mreturn[39;00m [43mtree[49m[38;5;241;43m.[39;49m[43mVOTableFile[49m[43m([49m[43mconfig[49m[38;5;241;43m=[39;49m[43mconfig[49m[43m,[49m[43m [49m[43mpos[49m[38;5;241;43m=[39;49m[43m([49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m)[49m[43m)[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[43miterator[49m[43m,[49m[43m [49m[43mconfig[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3900[0m, in [0;36mVOTableFile.parse[0;34m(self, iterator, config)[0m
+[1;32m   3899[0m [38;5;28;01mif[39;00m start:
+[0;32m-> 3900[0m     [43mtag_mapping[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[43mtag[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_add_unknown_tag[49m[43m)[49m[43m([49m
+[1;32m   3901[0m [43m        [49m[43miterator[49m[43m,[49m[43m [49m[43mtag[49m[43m,[49m[43m [49m[43mdata[49m[43m,[49m[43m [49m[43mconfig[49m[43m,[49m[43m [49m[43mpos[49m
+[1;32m   3902[0m [43m    [49m[43m)[49m
+[1;32m   3903[0m [38;5;28;01melif[39;00m tag [38;5;241m==[39m [38;5;124m"[39m[38;5;124mDESCRIPTION[39m[38;5;124m"[39m:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3780[0m, in [0;36mVOTableFile._add_resource[0;34m(self, iterator, tag, data, config, pos)[0m
+[1;32m   3779[0m [38;5;28mself[39m[38;5;241m.[39mresources[38;5;241m.[39mappend(resource)
+[0;32m-> 3780[0m [43mresource[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43miterator[49m[43m,[49m[43m [49m[43mconfig[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astropy/io/votable/tree.py:3576[0m, in [0;36mResource.parse[0;34m(self, votable, iterator, config)[0m
+[1;32m   3564[0m tag_mapping [38;5;241m=[39m {
+[1;32m   3565[0m     [38;5;124m"[39m[38;5;124mTABLE[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_add_table,
+[1;32m   3566[0m     [38;5;124m"[39m[38;5;124mINFO[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_add_info,
+[0;32m   (...)[0m
+[1;32m   3573[0m     [38;5;124m"[39m[38;5;124mDESCRIPTION[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_ignore_add,
+[1;32m   3574[0m }
+[0;32m-> 3576[0m [38;5;28;01mfor[39;00m start, tag, data, pos [38;5;129;01min[39;00m iterator:
+[1;32m   3577[0m     [38;5;28;01mif[39;00m start:
+
+[0;31mValueError[0m: 1092:32: not well-formed (invalid token)
+
+During handling of the above exception, another exception occurred:
+
+[0;31mTableParseError[0m                           Traceback (most recent call last)
+Cell [0;32mIn[5], line 1[0m
+[0;32m----> 1[0m catalog_list_sdss [38;5;241m=[39m [43mVizier[49m[38;5;241;43m.[39;49m[43mfind_catalogs[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mSDSS DR9[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m      2[0m [38;5;28;01mfor[39;00m catalog_ID, catalog [38;5;129;01min[39;00m catalog_list_sdss[38;5;241m.[39mitems():
+[1;32m      3[0m     [38;5;28mprint[39m(catalog_ID, [38;5;124m"[39m[38;5;124m: [39m[38;5;124m"[39m, catalog[38;5;241m.[39mdescription)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:235[0m, in [0;36mVizierClass.find_catalogs[0;34m(self, keywords, include_obsolete, verbose, max_catalogs, return_type)[0m
+[1;32m    231[0m [38;5;28;01mif[39;00m [38;5;124m'[39m[38;5;124mSTOP, Max. number of RESOURCE reached[39m[38;5;124m'[39m [38;5;129;01min[39;00m response[38;5;241m.[39mtext:
+[1;32m    232[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mMaximum number of catalogs exceeded.  Try [39m[38;5;124m"[39m
+[1;32m    233[0m                      [38;5;124m"[39m[38;5;124msetting max_catalogs to a large number and[39m[38;5;124m"[39m
+[1;32m    234[0m                      [38;5;124m"[39m[38;5;124m try again[39m[38;5;124m"[39m)
+[0;32m--> 235[0m result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_parse_result[49m[43m([49m[43mresponse[49m[43m,[49m[43m [49m[43mverbose[49m[38;5;241;43m=[39;49m[43mverbose[49m[43m,[49m
+[1;32m    236[0m [43m                            [49m[43mget_catalog_names[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m    238[0m [38;5;66;03m# Filter out the obsolete catalogs, unless requested[39;00m
+[1;32m    239[0m [38;5;28;01mif[39;00m include_obsolete [38;5;129;01mis[39;00m [38;5;28;01mFalse[39;00m:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/vizier/core.py:705[0m, in [0;36mVizierClass._parse_result[0;34m(self, response, get_catalog_names, verbose, invalid)[0m
+[1;32m    703[0m         [38;5;28mself[39m[38;5;241m.[39mresponse [38;5;241m=[39m response
+[1;32m    704[0m         [38;5;28mself[39m[38;5;241m.[39mtable_parse_error [38;5;241m=[39m ex
+[0;32m--> 705[0m         [38;5;28;01mraise[39;00m TableParseError([38;5;124m"[39m[38;5;124mFailed to parse VIZIER result! The [39m[38;5;124m"[39m
+[1;32m    706[0m                               [38;5;124m"[39m[38;5;124mraw response can be found in [39m[38;5;124m"[39m
+[1;32m    707[0m                               [38;5;124m"[39m[38;5;124mself.response, and the error in [39m[38;5;124m"[39m
+[1;32m    708[0m                               [38;5;124m"[39m[38;5;124mself.table_parse_error. The attempted [39m[38;5;124m"[39m
+[1;32m    709[0m                               [38;5;124m"[39m[38;5;124mparsed result is in [39m[38;5;124m"[39m
+[1;32m    710[0m                               [38;5;124m"[39m[38;5;124mself.parsed_result.[39m[38;5;130;01m\n[39;00m[38;5;124m Exception: [39m[38;5;124m"[39m [38;5;241m+[39m
+[1;32m    711[0m                               [38;5;28mstr[39m([38;5;28mself[39m[38;5;241m.[39mtable_parse_error))
+[1;32m    712[0m [38;5;28;01melif[39;00m response[38;5;241m.[39mcontent[:[38;5;241m5[39m] [38;5;241m==[39m [38;5;124mb[39m[38;5;124m'[39m[38;5;124m#[39m[38;5;130;01m\n[39;00m[38;5;124m#  [39m[38;5;124m'[39m:
+[1;32m    713[0m     [38;5;28;01mreturn[39;00m parse_vizier_tsvfile(response[38;5;241m.[39mcontent, verbose[38;5;241m=[39mverbose)
+
+[0;31mTableParseError[0m: Failed to parse VIZIER result! The raw response can be found in self.response, and the error in self.table_parse_error. The attempted parsed result is in self.parsed_result.
+ Exception: 1092:32: not well-formed (invalid token)
+

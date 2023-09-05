@@ -1,0 +1,202 @@
+Traceback (most recent call last):
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+fig, axes = plt.subplots(2, 1)
+
+# First plot is the data and models
+sns.lineplot(x=wavelengths_Milky_Way, y=flux_Milky_Way, ax=axes[0])
+sns.lineplot(
+    x=wavelengths_Milky_Way,
+    y=gauss(wavelengths_Milky_Way, *popt_Milky_Way_line),
+    ls="-",
+    color="k",
+    ax=axes[0],
+)
+sns.lineplot(x=wavelengths_second_peak, y=flux_second_peak, ax=axes[0])
+sns.lineplot(
+    x=wavelengths_second_peak,
+    y=gauss(wavelengths_second_peak, *popt_second_line),
+    ls="-",
+    color="k",
+    ax=axes[0],
+    label="gaussian fits",
+)
+axes[0].legend()
+axes[0].set_ylabel(r"Flux [erg cm$^{-2}$ s$^{-1}$ $\AA^{-1}$]")
+
+
+# Second plot is the residuals = data - model
+sns.lineplot(
+    x=wavelengths_Milky_Way,
+    y=flux_Milky_Way - gauss(wavelengths_Milky_Way, *popt_Milky_Way_line),
+    ax=axes[1],
+)
+sns.lineplot(
+    x=wavelengths_second_peak,
+    y=flux_second_peak - gauss(wavelengths_second_peak, *popt_second_line),
+    ax=axes[1],
+)
+axes[1].axhline(0, ls="--", c="k")
+axes[1].set_xlabel(r"Wavelength [$\mathrm{\AA}$]")
+axes[1].set_ylabel("Residual")
+------------------
+
+----- stderr -----
+/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[50], line 4[0m
+[1;32m      1[0m fig, axes [38;5;241m=[39m plt[38;5;241m.[39msubplots([38;5;241m2[39m, [38;5;241m1[39m)
+[1;32m      3[0m [38;5;66;03m# First plot is the data and models[39;00m
+[0;32m----> 4[0m [43msns[49m[38;5;241;43m.[39;49m[43mlineplot[49m[43m([49m[43mx[49m[38;5;241;43m=[39;49m[43mwavelengths_Milky_Way[49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[43mflux_Milky_Way[49m[43m,[49m[43m [49m[43max[49m[38;5;241;43m=[39;49m[43maxes[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m)[49m
+[1;32m      5[0m sns[38;5;241m.[39mlineplot(
+[1;32m      6[0m     x[38;5;241m=[39mwavelengths_Milky_Way,
+[1;32m      7[0m     y[38;5;241m=[39mgauss(wavelengths_Milky_Way, [38;5;241m*[39mpopt_Milky_Way_line),
+[0;32m   (...)[0m
+[1;32m     10[0m     ax[38;5;241m=[39maxes[[38;5;241m0[39m],
+[1;32m     11[0m )
+[1;32m     12[0m sns[38;5;241m.[39mlineplot(x[38;5;241m=[39mwavelengths_second_peak, y[38;5;241m=[39mflux_second_peak, ax[38;5;241m=[39maxes[[38;5;241m0[39m])
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/seaborn/relational.py:638[0m, in [0;36mlineplot[0;34m(data, x, y, hue, size, style, units, palette, hue_order, hue_norm, sizes, size_order, size_norm, dashes, markers, style_order, estimator, errorbar, n_boot, seed, orient, sort, err_style, err_kws, legend, ci, ax, **kwargs)[0m
+[1;32m    635[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m p[38;5;241m.[39mhas_xy_data:
+[1;32m    636[0m     [38;5;28;01mreturn[39;00m ax
+[0;32m--> 638[0m [43mp[49m[38;5;241;43m.[39;49m[43m_attach[49m[43m([49m[43max[49m[43m)[49m
+[1;32m    640[0m [38;5;66;03m# Other functions have color as an explicit param,[39;00m
+[1;32m    641[0m [38;5;66;03m# and we should probably do that here too[39;00m
+[1;32m    642[0m color [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mcolor[39m[38;5;124m"[39m, kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mc[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/seaborn/_oldcore.py:1255[0m, in [0;36mVectorPlotter._attach[0;34m(self, obj, allowed_types, log_scale)[0m
+[1;32m   1253[0m [38;5;66;03m# Now actually update the matplotlib objects to do the conversion we want[39;00m
+[1;32m   1254[0m grouped [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mplot_data[var][38;5;241m.[39mgroupby([38;5;28mself[39m[38;5;241m.[39mconverters[var], sort[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[0;32m-> 1255[0m [38;5;28;01mfor[39;00m converter, seed_data [38;5;129;01min[39;00m grouped:
+[1;32m   1256[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mvar_types[var] [38;5;241m==[39m [38;5;124m"[39m[38;5;124mcategorical[39m[38;5;124m"[39m:
+[1;32m   1257[0m         [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_var_ordered[var]:
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/groupby/ops.py:604[0m, in [0;36mBaseGrouper.get_iterator[0;34m(self, data, axis)[0m
+[1;32m    602[0m splitter [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_get_splitter(data, axis[38;5;241m=[39maxis)
+[1;32m    603[0m keys [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mgroup_keys_seq
+[0;32m--> 604[0m [38;5;28;01myield from[39;00m [38;5;28mzip[39m(keys, splitter)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/groupby/ops.py:1139[0m, in [0;36mDataSplitter.__iter__[0;34m(self)[0m
+[1;32m   1138[0m [38;5;28;01mdef[39;00m [38;5;21m__iter__[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m Iterator:
+[0;32m-> 1139[0m     sdata [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sorted_data[49m
+[1;32m   1141[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mngroups [38;5;241m==[39m [38;5;241m0[39m:
+[1;32m   1142[0m         [38;5;66;03m# we are inside a generator, rather than raise StopIteration[39;00m
+[1;32m   1143[0m         [38;5;66;03m# we merely return signal the end[39;00m
+[1;32m   1144[0m         [38;5;28;01mreturn[39;00m
+
+File [0;32mproperties.pyx:36[0m, in [0;36mpandas._libs.properties.CachedProperty.__get__[0;34m()[0m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/groupby/ops.py:1153[0m, in [0;36mDataSplitter._sorted_data[0;34m(self)[0m
+[1;32m   1151[0m [38;5;129m@cache_readonly[39m
+[1;32m   1152[0m [38;5;28;01mdef[39;00m [38;5;21m_sorted_data[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m NDFrameT:
+[0;32m-> 1153[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdata[49m[38;5;241;43m.[39;49m[43mtake[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sort_idx[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43maxis[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/generic.py:4068[0m, in [0;36mNDFrame.take[0;34m(self, indices, axis, **kwargs)[0m
+[1;32m   4063[0m     [38;5;66;03m# We can get here with a slice via DataFrame.__getitem__[39;00m
+[1;32m   4064[0m     indices [38;5;241m=[39m np[38;5;241m.[39marange(
+[1;32m   4065[0m         indices[38;5;241m.[39mstart, indices[38;5;241m.[39mstop, indices[38;5;241m.[39mstep, dtype[38;5;241m=[39mnp[38;5;241m.[39mintp
+[1;32m   4066[0m     )
+[0;32m-> 4068[0m new_data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_mgr[49m[38;5;241;43m.[39;49m[43mtake[49m[43m([49m
+[1;32m   4069[0m [43m    [49m[43mindices[49m[43m,[49m
+[1;32m   4070[0m [43m    [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_get_block_manager_axis[49m[43m([49m[43maxis[49m[43m)[49m[43m,[49m
+[1;32m   4071[0m [43m    [49m[43mverify[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[1;32m   4072[0m [43m[49m[43m)[49m
+[1;32m   4073[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_constructor_from_mgr(new_data, axes[38;5;241m=[39mnew_data[38;5;241m.[39maxes)[38;5;241m.[39m__finalize__(
+[1;32m   4074[0m     [38;5;28mself[39m, method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mtake[39m[38;5;124m"[39m
+[1;32m   4075[0m )
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/internals/managers.py:877[0m, in [0;36mBaseBlockManager.take[0;34m(self, indexer, axis, verify)[0m
+[1;32m    874[0m indexer [38;5;241m=[39m maybe_convert_indices(indexer, n, verify[38;5;241m=[39mverify)
+[1;32m    876[0m new_labels [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39maxes[axis][38;5;241m.[39mtake(indexer)
+[0;32m--> 877[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mreindex_indexer[49m[43m([49m
+[1;32m    878[0m [43m    [49m[43mnew_axis[49m[38;5;241;43m=[39;49m[43mnew_labels[49m[43m,[49m
+[1;32m    879[0m [43m    [49m[43mindexer[49m[38;5;241;43m=[39;49m[43mindexer[49m[43m,[49m
+[1;32m    880[0m [43m    [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m
+[1;32m    881[0m [43m    [49m[43mallow_dups[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[1;32m    882[0m [43m    [49m[43mcopy[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
+[1;32m    883[0m [43m[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/internals/managers.py:663[0m, in [0;36mBaseBlockManager.reindex_indexer[0;34m(self, new_axis, indexer, axis, fill_value, allow_dups, copy, only_slice, use_na_proxy)[0m
+[1;32m    660[0m     [38;5;28;01mraise[39;00m [38;5;167;01mIndexError[39;00m([38;5;124m"[39m[38;5;124mRequested axis not found in manager[39m[38;5;124m"[39m)
+[1;32m    662[0m [38;5;28;01mif[39;00m axis [38;5;241m==[39m [38;5;241m0[39m:
+[0;32m--> 663[0m     new_blocks [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_slice_take_blocks_ax0[49m[43m([49m
+[1;32m    664[0m [43m        [49m[43mindexer[49m[43m,[49m
+[1;32m    665[0m [43m        [49m[43mfill_value[49m[38;5;241;43m=[39;49m[43mfill_value[49m[43m,[49m
+[1;32m    666[0m [43m        [49m[43monly_slice[49m[38;5;241;43m=[39;49m[43monly_slice[49m[43m,[49m
+[1;32m    667[0m [43m        [49m[43muse_na_proxy[49m[38;5;241;43m=[39;49m[43muse_na_proxy[49m[43m,[49m
+[1;32m    668[0m [43m    [49m[43m)[49m
+[1;32m    669[0m [38;5;28;01melse[39;00m:
+[1;32m    670[0m     new_blocks [38;5;241m=[39m [
+[1;32m    671[0m         blk[38;5;241m.[39mtake_nd(
+[1;32m    672[0m             indexer,
+[0;32m   (...)[0m
+[1;32m    678[0m         [38;5;28;01mfor[39;00m blk [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mblocks
+[1;32m    679[0m     ]
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/internals/managers.py:756[0m, in [0;36mBaseBlockManager._slice_take_blocks_ax0[0;34m(self, slice_or_indexer, fill_value, only_slice, use_na_proxy, ref_inplace_op)[0m
+[1;32m    753[0m         [38;5;28;01melse[39;00m:
+[1;32m    754[0m             bp [38;5;241m=[39m BlockPlacement([38;5;28mslice[39m([38;5;241m0[39m, sllen))
+[1;32m    755[0m             [38;5;28;01mreturn[39;00m [
+[0;32m--> 756[0m                 [43mblk[49m[38;5;241;43m.[39;49m[43mtake_nd[49m[43m([49m
+[1;32m    757[0m [43m                    [49m[43mslobj[49m[43m,[49m
+[1;32m    758[0m [43m                    [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m,[49m
+[1;32m    759[0m [43m                    [49m[43mnew_mgr_locs[49m[38;5;241;43m=[39;49m[43mbp[49m[43m,[49m
+[1;32m    760[0m [43m                    [49m[43mfill_value[49m[38;5;241;43m=[39;49m[43mfill_value[49m[43m,[49m
+[1;32m    761[0m [43m                [49m[43m)[49m
+[1;32m    762[0m             ]
+[1;32m    764[0m [38;5;28;01mif[39;00m sl_type [38;5;241m==[39m [38;5;124m"[39m[38;5;124mslice[39m[38;5;124m"[39m:
+[1;32m    765[0m     blknos [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mblknos[slobj]
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/internals/blocks.py:1061[0m, in [0;36mBlock.take_nd[0;34m(self, indexer, axis, new_mgr_locs, fill_value)[0m
+[1;32m   1058[0m     allow_fill [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m   1060[0m [38;5;66;03m# Note: algos.take_nd has upcast logic similar to coerce_to_target_dtype[39;00m
+[0;32m-> 1061[0m new_values [38;5;241m=[39m [43malgos[49m[38;5;241;43m.[39;49m[43mtake_nd[49m[43m([49m
+[1;32m   1062[0m [43m    [49m[43mvalues[49m[43m,[49m[43m [49m[43mindexer[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m[43m [49m[43mallow_fill[49m[38;5;241;43m=[39;49m[43mallow_fill[49m[43m,[49m[43m [49m[43mfill_value[49m[38;5;241;43m=[39;49m[43mfill_value[49m
+[1;32m   1063[0m [43m[49m[43m)[49m
+[1;32m   1065[0m [38;5;66;03m# Called from three places in managers, all of which satisfy[39;00m
+[1;32m   1066[0m [38;5;66;03m#  these assertions[39;00m
+[1;32m   1067[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m([38;5;28mself[39m, ExtensionBlock):
+[1;32m   1068[0m     [38;5;66;03m# NB: in this case, the 'axis' kwarg will be ignored in the[39;00m
+[1;32m   1069[0m     [38;5;66;03m#  algos.take_nd call above.[39;00m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/array_algos/take.py:118[0m, in [0;36mtake_nd[0;34m(arr, indexer, axis, fill_value, allow_fill)[0m
+[1;32m    115[0m     [38;5;28;01mreturn[39;00m arr[38;5;241m.[39mtake(indexer, fill_value[38;5;241m=[39mfill_value, allow_fill[38;5;241m=[39mallow_fill)
+[1;32m    117[0m arr [38;5;241m=[39m np[38;5;241m.[39masarray(arr)
+[0;32m--> 118[0m [38;5;28;01mreturn[39;00m [43m_take_nd_ndarray[49m[43m([49m[43marr[49m[43m,[49m[43m [49m[43mindexer[49m[43m,[49m[43m [49m[43maxis[49m[43m,[49m[43m [49m[43mfill_value[49m[43m,[49m[43m [49m[43mallow_fill[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/pandas/core/array_algos/take.py:163[0m, in [0;36m_take_nd_ndarray[0;34m(arr, indexer, axis, fill_value, allow_fill)[0m
+[1;32m    158[0m     out [38;5;241m=[39m np[38;5;241m.[39mempty(out_shape, dtype[38;5;241m=[39mdtype)
+[1;32m    160[0m func [38;5;241m=[39m _get_take_nd_function(
+[1;32m    161[0m     arr[38;5;241m.[39mndim, arr[38;5;241m.[39mdtype, out[38;5;241m.[39mdtype, axis[38;5;241m=[39maxis, mask_info[38;5;241m=[39mmask_info
+[1;32m    162[0m )
+[0;32m--> 163[0m [43mfunc[49m[43m([49m[43marr[49m[43m,[49m[43m [49m[43mindexer[49m[43m,[49m[43m [49m[43mout[49m[43m,[49m[43m [49m[43mfill_value[49m[43m)[49m
+[1;32m    165[0m [38;5;28;01mif[39;00m flip_order:
+[1;32m    166[0m     out [38;5;241m=[39m out[38;5;241m.[39mT
+
+File [0;32mpandas/_libs/algos_take_helper.pxi:1705[0m, in [0;36mpandas._libs.algos.take_1d_float32_float32[0;34m()[0m
+
+[0;31mValueError[0m: Big-endian buffer not supported on little-endian compiler
+
