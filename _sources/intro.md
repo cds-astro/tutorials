@@ -38,10 +38,28 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 - ![MOCpy](https://img.shields.io/badge/MOCpy-gray "https://img.shields.io/badge/MOCpy-gray"): a python library allowing MOC manipulation
 
 :::{note}
-You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
-
-To execute them on you own machine, note that you'll need to install the dependencies in the [`requirements.txt`](https://github.com/cds-astro/requirements.txt "https://github.com/cds-astro/requirements.txt") of the GitHub repository.
+To execute the tutorials on you own machine, you'll need to install the dependencies in the [`requirements.txt`](https://github.com/cds-astro/requirements.txt "https://github.com/cds-astro/requirements.txt") of the GitHub repository.
 All the tutorials are currently tested with python versions [![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the following operating systems [![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml).
+
+This can be done from the command line like so:
+
+1. In the desired location, copy (a.k.a. clone) the tutorials from GitHub
+
+```
+> git clone https://github.com/cds-astro/tutorials.git
+```
+
+2. Install the required dependencies
+
+```
+> pip install -r requirements.txt
+```
+
+This will ask pip to retrieve each of the packages listed in the `requirements.txt` file. 
+
+3. You're ready!
+
+You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 :::

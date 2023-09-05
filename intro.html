@@ -425,11 +425,28 @@ document.write(`
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link <a class="reference external" href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>To execute them on you own machine, note that you’ll need to install the dependencies in the <a class="reference external" href="https://github.com/cds-astro/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a> of the GitHub repository.
+<p>To execute the tutorials on you own machine, you’ll need to install the dependencies in the <a class="reference external" href="https://github.com/cds-astro/requirements.txt"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a> of the GitHub repository.
 All the tutorials are currently tested with python versions <a class="reference external" href="https://www.python.org/downloads/"><img alt="python" src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-informational" /></a> on the following operating systems <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml"><img alt="ubuntu" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml"><img alt="windows" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml"><img alt="mac-os" src="https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg" /></a>.</p>
+<p>This can be done from the command line like so:</p>
+<ol class="arabic simple">
+<li><p>In the desired location, copy (a.k.a. clone) the tutorials from GitHub</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cds</span><span class="o">-</span><span class="n">astro</span><span class="o">/</span><span class="n">tutorials</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install the required dependencies</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This will ask pip to retrieve each of the packages listed in the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
+<ol class="arabic simple" start="3">
+<li><p>You’re ready!</p></li>
+</ol>
+<p>You can also explore the tutorials in an interactive environnement where the code can be executed and modified following this link <a class="reference external" href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </div>
 </section>
 </section>
