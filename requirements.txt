@@ -4,7 +4,7 @@ astroquery==0.4.*
 ipyaladin>=0.2.2
 MOCpy >=0.13.*, < 0.14.0
 pandas==2.0.0
-plotly>=5.14.0.a, <=5.17.0
+plotly>=5.14.0.a, <=5.18.0
 pyvo>=1.4.1, <=1.4.2
 regions==0.7
 requests>=2.4.3
