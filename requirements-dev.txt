@@ -1,2 +1,2 @@
 # Developpement requirements
-pre-commit>=3.1.0.a, <3.5
+pre-commit>=3.1.0.a
