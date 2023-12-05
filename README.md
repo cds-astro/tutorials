@@ -58,7 +58,7 @@ Note the currently supported python versions and the list of dependencies in the
 This can be done with the following commands:
 
 ```
-  git clone git@github.com:cds-astro/tutorials.git
+  git clone https://github.com/cds-astro/tutorials.git
   cd tutorials
   pip install -r requirements.txt
   jupyter lab
