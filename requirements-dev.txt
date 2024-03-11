@@ -1,5 +1,5 @@
 # Developpement requirements
 pre-commit>=3.1.0.a
-pytest==8.1.1
+pytest>=8.1.1, <9.0.0
 nbmake
 pytest-xdist
