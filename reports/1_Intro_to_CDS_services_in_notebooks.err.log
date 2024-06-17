@@ -1,32 +1,179 @@
 Traceback (most recent call last):
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+  File "/home/manon.marchand/.local/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.local/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/home/manon.marchand/.local/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/home/manon.marchand/.local/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/manon.marchand/miniconda3/envs/build-jupybook/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/home/manon.marchand/.local/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# What is the AllWISE catalogue reference in VizieR?
-cat_allwise
+table_simbad = Simbad.query_criteria("region(circle, Antennae, 14m)", maintype="HII")
+table_simbad
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[19], line 2[0m
-[1;32m      1[0m [38;5;66;03m# What is the AllWISE catalogue reference in VizieR?[39;00m
-[0;32m----> 2[0m [43mcat_allwise[49m
 
-[0;31mNameError[0m: name 'cat_allwise' is not defined
-NameError: name 'cat_allwise' is not defined
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyboardInterrupt[0m                         Traceback (most recent call last)
+Cell [0;32mIn[10], line 1[0m
+[0;32m----> 1[0m table_simbad [38;5;241m=[39m [43mSimbad[49m[38;5;241;43m.[39;49m[43mquery_criteria[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mregion(circle, Antennae, 14m)[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mmaintype[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mHII[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m      2[0m table_simbad
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/simbad/core.py:489[0m, in [0;36mSimbadClass.query_criteria[0;34m(self, *args, **kwargs)[0m
+[1;32m    471[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m    472[0m [38;5;124;03mQuery SIMBAD based on any criteria.[39;00m
+[1;32m    473[0m 
+[0;32m   (...)[0m
+[1;32m    486[0m [38;5;124;03m    Query results table[39;00m
+[1;32m    487[0m [38;5;124;03m"""[39;00m
+[1;32m    488[0m verbose [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mverbose[39m[38;5;124m'[39m, [38;5;28;01mFalse[39;00m)
+[0;32m--> 489[0m result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mquery_criteria_async[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    490[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_parse_result(result, SimbadVOTableResult, verbose[38;5;241m=[39mverbose)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/simbad/core.py:516[0m, in [0;36mSimbadClass.query_criteria_async[0;34m(self, *args, **kwargs)[0m
+[1;32m    512[0m cache [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mcache[39m[38;5;124m'[39m, [38;5;28;01mTrue[39;00m)
+[1;32m    514[0m request_payload [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_args_to_payload(caller[38;5;241m=[39m[38;5;124m'[39m[38;5;124mquery_criteria_async[39m[38;5;124m'[39m,
+[1;32m    515[0m                                         [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m--> 516[0m response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_request[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mPOST[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mSIMBAD_URL[49m[43m,[49m[43m [49m[43mdata[49m[38;5;241;43m=[39;49m[43mrequest_payload[49m[43m,[49m
+[1;32m    517[0m [43m                         [49m[43mtimeout[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mTIMEOUT[49m[43m,[49m[43m [49m[43mcache[49m[38;5;241;43m=[39;49m[43mcache[49m[43m)[49m
+[1;32m    518[0m [38;5;28;01mreturn[39;00m response
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/simbad/core.py:235[0m, in [0;36mSimbadBaseQuery._request[0;34m(self, *args, **kwargs)[0m
+[1;32m    233[0m [38;5;28;01mdef[39;00m [38;5;21m_request[39m([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    234[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 235[0m         response [38;5;241m=[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43m_request[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    236[0m     [38;5;28;01mexcept[39;00m requests[38;5;241m.[39mexceptions[38;5;241m.[39mConnectionError [38;5;28;01mas[39;00m ex:
+[1;32m    237[0m         [38;5;28;01mif[39;00m [38;5;124m'[39m[38;5;124mErrno 61[39m[38;5;124m'[39m [38;5;129;01min[39;00m [38;5;28mstr[39m(ex):
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/query.py:317[0m, in [0;36mBaseQuery._request[0;34m(self, method, url, params, data, headers, files, save, savedir, timeout, cache, stream, auth, continuation, verify, allow_redirects, json, return_response_on_save)[0m
+[1;32m    315[0m     response [38;5;241m=[39m query[38;5;241m.[39mfrom_cache([38;5;28mself[39m[38;5;241m.[39mcache_location)
+[1;32m    316[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m response:
+[0;32m--> 317[0m         response [38;5;241m=[39m [43mquery[49m[38;5;241;43m.[39;49m[43mrequest[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_session[49m[43m,[49m
+[1;32m    318[0m [43m                                 [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcache_location[49m[43m,[49m
+[1;32m    319[0m [43m                                 [49m[43mstream[49m[38;5;241;43m=[39;49m[43mstream[49m[43m,[49m
+[1;32m    320[0m [43m                                 [49m[43mauth[49m[38;5;241;43m=[39;49m[43mauth[49m[43m,[49m
+[1;32m    321[0m [43m                                 [49m[43mallow_redirects[49m[38;5;241;43m=[39;49m[43mallow_redirects[49m[43m,[49m
+[1;32m    322[0m [43m                                 [49m[43mverify[49m[38;5;241;43m=[39;49m[43mverify[49m[43m,[49m
+[1;32m    323[0m [43m                                 [49m[43mjson[49m[38;5;241;43m=[39;49m[43mjson[49m[43m)[49m
+[1;32m    324[0m         to_cache(response, query[38;5;241m.[39mrequest_file([38;5;28mself[39m[38;5;241m.[39mcache_location))
+[1;32m    325[0m [38;5;28mself[39m[38;5;241m.[39m_last_query [38;5;241m=[39m query
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/astroquery/query.py:71[0m, in [0;36mAstroQuery.request[0;34m(self, session, cache_location, stream, auth, verify, allow_redirects, json)[0m
+[1;32m     68[0m [38;5;28;01mdef[39;00m [38;5;21mrequest[39m([38;5;28mself[39m, session, cache_location[38;5;241m=[39m[38;5;28;01mNone[39;00m, stream[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m     69[0m             auth[38;5;241m=[39m[38;5;28;01mNone[39;00m, verify[38;5;241m=[39m[38;5;28;01mTrue[39;00m, allow_redirects[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[1;32m     70[0m             json[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[0;32m---> 71[0m     [38;5;28;01mreturn[39;00m [43msession[49m[38;5;241;43m.[39;49m[43mrequest[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43murl[49m[43m,[49m[43m [49m[43mparams[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mparams[49m[43m,[49m
+[1;32m     72[0m [43m                           [49m[43mdata[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdata[49m[43m,[49m[43m [49m[43mheaders[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m
+[1;32m     73[0m [43m                           [49m[43mfiles[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfiles[49m[43m,[49m[43m [49m[43mtimeout[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtimeout[49m[43m,[49m
+[1;32m     74[0m [43m                           [49m[43mstream[49m[38;5;241;43m=[39;49m[43mstream[49m[43m,[49m[43m [49m[43mauth[49m[38;5;241;43m=[39;49m[43mauth[49m[43m,[49m[43m [49m[43mverify[49m[38;5;241;43m=[39;49m[43mverify[49m[43m,[49m
+[1;32m     75[0m [43m                           [49m[43mallow_redirects[49m[38;5;241;43m=[39;49m[43mallow_redirects[49m[43m,[49m
+[1;32m     76[0m [43m                           [49m[43mjson[49m[38;5;241;43m=[39;49m[43mjson[49m[43m)[49m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/requests/sessions.py:589[0m, in [0;36mSession.request[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    584[0m send_kwargs [38;5;241m=[39m {
+[1;32m    585[0m     [38;5;124m"[39m[38;5;124mtimeout[39m[38;5;124m"[39m: timeout,
+[1;32m    586[0m     [38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m: allow_redirects,
+[1;32m    587[0m }
+[1;32m    588[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[0;32m--> 589[0m resp [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msend[49m[43m([49m[43mprep[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43msend_kwargs[49m[43m)[49m
+[1;32m    591[0m [38;5;28;01mreturn[39;00m resp
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/requests/sessions.py:703[0m, in [0;36mSession.send[0;34m(self, request, **kwargs)[0m
+[1;32m    700[0m start [38;5;241m=[39m preferred_clock()
+[1;32m    702[0m [38;5;66;03m# Send the request[39;00m
+[0;32m--> 703[0m r [38;5;241m=[39m [43madapter[49m[38;5;241;43m.[39;49m[43msend[49m[43m([49m[43mrequest[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    705[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[1;32m    706[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/requests/adapters.py:486[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    483[0m     timeout [38;5;241m=[39m TimeoutSauce(connect[38;5;241m=[39mtimeout, read[38;5;241m=[39mtimeout)
+[1;32m    485[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 486[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
+[1;32m    487[0m [43m        [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m
+[1;32m    488[0m [43m        [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m
+[1;32m    489[0m [43m        [49m[43mbody[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mbody[49m[43m,[49m
+[1;32m    490[0m [43m        [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m
+[1;32m    491[0m [43m        [49m[43mredirect[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    492[0m [43m        [49m[43massert_same_host[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    493[0m [43m        [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    494[0m [43m        [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    495[0m [43m        [49m[43mretries[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmax_retries[49m[43m,[49m
+[1;32m    496[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout[49m[43m,[49m
+[1;32m    497[0m [43m        [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[1;32m    498[0m [43m    [49m[43m)[49m
+[1;32m    500[0m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+[1;32m    501[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(err, request[38;5;241m=[39mrequest)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/urllib3/connectionpool.py:790[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[1;32m    787[0m response_conn [38;5;241m=[39m conn [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m release_conn [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[1;32m    789[0m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[0;32m--> 790[0m response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_request[49m[43m([49m
+[1;32m    791[0m [43m    [49m[43mconn[49m[43m,[49m
+[1;32m    792[0m [43m    [49m[43mmethod[49m[43m,[49m
+[1;32m    793[0m [43m    [49m[43murl[49m[43m,[49m
+[1;32m    794[0m [43m    [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout_obj[49m[43m,[49m
+[1;32m    795[0m [43m    [49m[43mbody[49m[38;5;241;43m=[39;49m[43mbody[49m[43m,[49m
+[1;32m    796[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mheaders[49m[43m,[49m
+[1;32m    797[0m [43m    [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[1;32m    798[0m [43m    [49m[43mretries[49m[38;5;241;43m=[39;49m[43mretries[49m[43m,[49m
+[1;32m    799[0m [43m    [49m[43mresponse_conn[49m[38;5;241;43m=[39;49m[43mresponse_conn[49m[43m,[49m
+[1;32m    800[0m [43m    [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[43mpreload_content[49m[43m,[49m
+[1;32m    801[0m [43m    [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[43mdecode_content[49m[43m,[49m
+[1;32m    802[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mresponse_kw[49m[43m,[49m
+[1;32m    803[0m [43m[49m[43m)[49m
+[1;32m    805[0m [38;5;66;03m# Everything went great![39;00m
+[1;32m    806[0m clean_exit [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/urllib3/connectionpool.py:536[0m, in [0;36mHTTPConnectionPool._make_request[0;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[1;32m    534[0m [38;5;66;03m# Receive the response from the server[39;00m
+[1;32m    535[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 536[0m     response [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43mgetresponse[49m[43m([49m[43m)[49m
+[1;32m    537[0m [38;5;28;01mexcept[39;00m (BaseSSLError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m e:
+[1;32m    538[0m     [38;5;28mself[39m[38;5;241m.[39m_raise_timeout(err[38;5;241m=[39me, url[38;5;241m=[39murl, timeout_value[38;5;241m=[39mread_timeout)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/site-packages/urllib3/connection.py:461[0m, in [0;36mHTTPConnection.getresponse[0;34m(self)[0m
+[1;32m    458[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mresponse[39;00m [38;5;28;01mimport[39;00m HTTPResponse
+[1;32m    460[0m [38;5;66;03m# Get the response from http.client.HTTPConnection[39;00m
+[0;32m--> 461[0m httplib_response [38;5;241m=[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mgetresponse[49m[43m([49m[43m)[49m
+[1;32m    463[0m [38;5;28;01mtry[39;00m:
+[1;32m    464[0m     assert_header_parsing(httplib_response[38;5;241m.[39mmsg)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/http/client.py:1374[0m, in [0;36mHTTPConnection.getresponse[0;34m(self)[0m
+[1;32m   1372[0m [38;5;28;01mtry[39;00m:
+[1;32m   1373[0m     [38;5;28;01mtry[39;00m:
+[0;32m-> 1374[0m         [43mresponse[49m[38;5;241;43m.[39;49m[43mbegin[49m[43m([49m[43m)[49m
+[1;32m   1375[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mConnectionError[39;00m:
+[1;32m   1376[0m         [38;5;28mself[39m[38;5;241m.[39mclose()
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/http/client.py:318[0m, in [0;36mHTTPResponse.begin[0;34m(self)[0m
+[1;32m    316[0m [38;5;66;03m# read until we get a non-100 response[39;00m
+[1;32m    317[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[0;32m--> 318[0m     version, status, reason [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_read_status[49m[43m([49m[43m)[49m
+[1;32m    319[0m     [38;5;28;01mif[39;00m status [38;5;241m!=[39m CONTINUE:
+[1;32m    320[0m         [38;5;28;01mbreak[39;00m
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/http/client.py:279[0m, in [0;36mHTTPResponse._read_status[0;34m(self)[0m
+[1;32m    278[0m [38;5;28;01mdef[39;00m [38;5;21m_read_status[39m([38;5;28mself[39m):
+[0;32m--> 279[0m     line [38;5;241m=[39m [38;5;28mstr[39m([38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfp[49m[38;5;241;43m.[39;49m[43mreadline[49m[43m([49m[43m_MAXLINE[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[38;5;241;43m1[39;49m[43m)[49m, [38;5;124m"[39m[38;5;124miso-8859-1[39m[38;5;124m"[39m)
+[1;32m    280[0m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(line) [38;5;241m>[39m _MAXLINE:
+[1;32m    281[0m         [38;5;28;01mraise[39;00m LineTooLong([38;5;124m"[39m[38;5;124mstatus line[39m[38;5;124m"[39m)
+
+File [0;32m~/.conda/envs/build-jupybook/lib/python3.11/socket.py:706[0m, in [0;36mSocketIO.readinto[0;34m(self, b)[0m
+[1;32m    704[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m    705[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 706[0m         [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sock[49m[38;5;241;43m.[39;49m[43mrecv_into[49m[43m([49m[43mb[49m[43m)[49m
+[1;32m    707[0m     [38;5;28;01mexcept[39;00m timeout:
+[1;32m    708[0m         [38;5;28mself[39m[38;5;241m.[39m_timeout_occurred [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+
+[0;31mKeyboardInterrupt[0m: 
 
