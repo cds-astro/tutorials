@@ -163,7 +163,7 @@ This tutorial is centred on using HiPS and MOC to efficiently reach your science
 [![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20io-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
 
-We will first explore Multi-Order Coverage (MOC) data structure manipultation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined to plan observation according to a MOC. The final step is a concrete example illustrating how STMOCs can be built in a few seconds to plan observations from three ground observatories, with the aim to cover of the sky localisation produced after detection of a gravitational wave.
+We will first explore Multi-Order Coverage (MOC) data structure manipulation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined to plan observation according to a MOC. The final step is a concrete example illustrating how STMOCs can be built in a few seconds to plan observations from three ground observatories, with the aim to cover of the sky localization produced after detection of a gravitational wave.
 
 ## Additional tutorials used in past conferences and schools
 
