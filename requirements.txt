@@ -1,7 +1,7 @@
 astroplan>=0.8, <=0.10
 astropy>=5.2.0.a, <6.1
 astroquery==0.4.*
-ipyaladin>=0.2.2
+ipyaladin>=0.3.0
 MOCpy >= 0.13.0.a, < 0.15.0
 pandas >= 2.0.3, < 2.3.0
 plotly>=5.14.0.a, <=5.22.0
