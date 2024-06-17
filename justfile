@@ -39,7 +39,7 @@ publish-jupybook:
     #!/usr/bin/env bash
     source activate build-jupybook
     cd Notebooks/
-    ghp-import -n -p -f _build/html
+    ghp-import -n -p -f -o _build/html
     cd ..
 pre-commit-all:
     pre-commit install
