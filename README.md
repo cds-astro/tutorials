@@ -23,7 +23,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
   - [How to use the tutorials](#how-to-use-the-tutorials)
     - [On your machine](#on-your-machine)
     - [In github codespaces](#in-github-codespaces)
-    - [On mybinder.org](#on-mybinder)
+    - [On mybinder](#on-mybinder)
     - [As a book](#as-a-book)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
@@ -31,7 +31,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
     - [3. Abel1656, The Coma Cluster of Galaxies \_\_ The Simple Spectral Access Protocol](#3-abel1656-the-coma-cluster-of-galaxies-__-the-simple-spectral-access-protocol)
     - [4. High Energy sources \_\_ advanced use of CDS services](#4-high-energy-sources-__-advanced-use-of-cds-services)
     - [5. Brown Dwarf search \_\_ cross-matching catalogs](#5-brown-dwarf-search-__-cross-matching-catalogs)
-    - [6. The MASH Planetary Nebulae Catalog \_\_ Advanced usage of HiPS and MOC to explore complex regions of interrest](#6-the-mash-planetary-nebulae-catalog-__-advanced-usage-of-hips-and-moc-to-explore-complex-regions-of-interrest)
+    - [6. Advanced usage of MOC to explore complex regions of interest](#6-advanced-usage-of-moc-to-explore-complex-regions-of-interest)
     - [7. Multi Messenger Astronomy \_\_ Generation of an observation plan with MOCs](#7-multi-messenger-astronomy-__-generation-of-an-observation-plan-with-mocs)
   - [Additional tutorials used in past conferences and schools](#additional-tutorials-used-in-past-conferences-and-schools)
   - [Need help?](#need-help)
@@ -63,12 +63,12 @@ This can be done with the following commands:
   pip install -r requirements.txt
   jupyter lab
 ```
-  
+
 Note: the file `justfile` contains the instructions to create an environnement with `conda`.
 
 ### In github codespaces
 
-- In Github, you can open a JupyterLab instance. To do so, go in your [`Settings`](https://github.com/settings/profile), then `Codespaces` and in `Editor Preference` choose `Jupyter Lab`. And voilà, you can now launch the tutorials, execute and modify them without any installation! 
+- In Github, you can open a JupyterLab instance. To do so, go in your [`Settings`](https://github.com/settings/profile), then `Codespaces` and in `Editor Preference` choose `Jupyter Lab`. And voilà, you can now launch the tutorials, execute and modify them without any installation!
 
 ![codespace](https://github.com/cds-astro/tutorials/assets/16650466/1e969477-2230-4a39-920c-3a1ee2c9d9e4)
 
@@ -145,7 +145,7 @@ For this tutorial we focus on gamma-ray and high energy spectral bands and start
 
 Brown dwarfs are objects occupying the gap between the least massive stars and the most massive planets. They are intrinsically faint objects. Hence, heir detection is not straightforward and, in fact, was almost impossible until the advent of global surveys at deep optical and near-infrared bands like SDSS, 2MASS or DENIS. We propose here to mine the 2MASS point source catalogue (2MASS-PSC) and SDSS-DR9 databases to identify T-type brown dwarfs through an appropriate combination of colors in the optical and the infrared, an approach that perfectly fits into the Virtual Observatory.
 
-### [6. The MASH Planetary Nebulae Catalog __ Advanced usage of HiPS and MOC to explore complex regions of interrest](Notebooks/6_Planetary_Nebulae__Advanced_usage_of_HiPS_and_MOCs.ipynb)
+### [6. Advanced usage of MOC to explore complex regions of interest](Notebooks/6_Advanced_usage_of_MOCs.ipynb)
 
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![MOCpy](https://custom-icon-badges.demolab.com/badge/MOCpy-gray.svg?logo=mocpy&logoWidth=20&)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy")
@@ -163,7 +163,7 @@ This tutorial is centred on using HiPS and MOC to efficiently reach your science
 [![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20io-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
 
-We will first explore Multi-Order Coverage (MOC) data structure manipultation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined to plan observation according to a MOC. The final step is a concrete example illustrating how STMOCs can be built in a few seconds to plan observations from three ground observatories, with the aim to cover of the sky localisation produced after detection of a gravitational wave.
+We will first explore Multi-Order Coverage (MOC) data structure manipulation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined to plan observation according to a MOC. The final step is a concrete example illustrating how STMOCs can be built in a few seconds to plan observations from three ground observatories, with the aim to cover of the sky localization produced after detection of a gravitational wave.
 
 ## Additional tutorials used in past conferences and schools
 
