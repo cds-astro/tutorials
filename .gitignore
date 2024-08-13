@@ -10,3 +10,4 @@ _build*
 .add-glue/*
 test.ipynb
 .jupyter_ystore.db
+*.zip
