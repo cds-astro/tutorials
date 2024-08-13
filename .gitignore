@@ -9,4 +9,5 @@ _build*
 .pytest_cache*
 .add-glue/*
 test.ipynb
-.gitignore
+.jupyter_ystore.db
+*.zip
