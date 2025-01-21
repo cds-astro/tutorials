@@ -1,11 +1,13 @@
-astroplan>=0.8, ==0.10.*
-astropy>=5.2.0.a, <6.1
-astroquery==0.4.*
+astroplan>=0.8
+astropy>=5.2.0.a
+pyyaml>=6.0.2
+astroquery>=0.4.8
 ipyaladin>=0.3.0
-MOCpy >= 0.15.0, < 0.18.0
-pandas >= 2.0.3, < 2.3.0
-plotly>=5.14.0.a, <=6.0.0rc0
-pyvo>=1.4.1, <=1.6
-regions>=0.7, <=0.8
+MOCpy>=0.15.0
+matplotlib>=3.6
+pandas>=2.0.3
+plotly>=5.14.0.a
+pyvo>=1.4.1
+regions>=0.7
 requests>=2.4.3
-specutils>=1.9.0.a, <=1.16.0
+specutils>=1.9.0.a

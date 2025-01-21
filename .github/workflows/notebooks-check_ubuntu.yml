@@ -21,28 +21,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
       - name: Setup python 3.9
         uses: actions/setup-python@v5
         with:
           python-version: 3.9
-      - name: Install dependencies
+      - name: Install the project
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
-          pip install astroplan==0.8
-          pip install astropy==5.2.0.5
-          pip install astroquery==0.4.8.dev9474
-          pip install ipyaladin==0.5.0
-          pip install mocpy==0.15.0
-          pip install pandas==2.0.3
-          pip install plotly==5.14.0.a
-          pip install pyvo==1.4.1
-          pip install regions==0.7
-          pip install requests==2.4.3
-          pip install specutils==1.9.0.a
+          uv pip install -r requirements.txt --resolution lowest
+          uv pip install -r requirements-dev.txt
       - name: Test
         run: |
-          pytest --nbmake -n=auto "./Notebooks"
+          python -m pytest --nbmake -n=auto "./Notebooks"
 
   test-linux-newest-versions:
     runs-on: ubuntu-latest
