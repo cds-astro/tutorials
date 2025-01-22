@@ -1,0 +1,92 @@
+{
+    "license": "BSD-3-Clause",
+    "access_right": "open",
+    "description": "Jupyter Notebook tutorials using astronomical databases and Virtual Observatory tools",
+    "keywords": ["astronomy", "database", "tutorials", "python", "jupyter"],
+    "language": "eng",
+    "title": "Accessing and using astronomical data: a series of Jupyter notebooks tutorials",
+    "grants": [
+        {
+            "id": "European Union Horizon Program call INFRAEOSC-03-2020 - Grant Agreement Number 101017536"
+        },
+        {
+            "id": "European Union’s Horizon 2020 research and innovation program under the Grant Agreement n. 824064"
+        },
+        {
+            "id": "European Union’s Horizon 2020 Programme under the AHEAD2020 project - Grant agreement Number 871158"
+        }
+    ],
+    "creators": [
+        {
+            "type": "ContactPerson",
+            "orcid": "0000-0001-5713-0998",
+            "name": "Marchand, Manon",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0002-6616-7554",
+            "name": "Lutz, Katharina",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0002-4200-9965",
+            "name": "Amodeo, Stefania",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0001-5818-2781",
+            "name": "Boch, Thomas",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0001-6118-2985",
+            "name": "Bot, Caroline",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0002-6185-8292",
+            "name": "Iafrate, Giulia",
+            "affiliation": "INAF - Italian National Institute for Astrophysics"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0002-2307-2432",
+            "name": "Sorce, Jenny",
+            "affiliation": "Univ. Lille, CNRS, Centrale Lille, UMR 9189 CRIStAL, F-59000 Lille, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0003-2373-451X",
+            "name": "Nebot Gómez-Morán, Ada",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": " 0000-0002-6985-9476",
+            "name": "Jiménez-Esteban, Francisco",
+            "affiliation": "Centro de Astrobiología (CAB), CSIC-INTA, Camino Bajo del Castillo s/n, E-28692, Villanueva de la Cañada, Madrid, Spain"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0003-1885-5130",
+            "name": "Solano Marquez, Enrique",
+            "affiliation": "Centro de Astrobiología (CAB), CSIC-INTA, Camino Bajo del Castillo s/n, E-28692, Villanueva de la Cañada, Madrid, Spain"
+        },
+        {
+            "type": "ProjectMember",
+            "name": "Baumann, Matthieu",
+            "affiliation": "Université de Strasbourg, CNRS, Observatoire astronomique de Strasbourg, UMR 7550, F-67000 Strasbourg, France"
+        },
+        {
+            "type": "ProjectMember",
+            "orcid": "0000-0002-2353-6604",
+            "name": "Greco, Giuseppe",
+            "affiliation": " INFN, Sezione di Perugia, I-06123 Perugia, Italy"
+        }
+    ]
+}
