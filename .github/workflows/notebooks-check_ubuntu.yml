@@ -29,8 +29,8 @@ jobs:
           python-version: 3.9
       - name: Install the project
         run: |
-          uv pip install -r requirements.txt --resolution lowest
-          uv pip install -r requirements-dev.txt
+          uv pip install -r requirements.txt --resolution lowest --system
+          uv pip install -r requirements-dev.txt --system
       - name: Test
         run: |
           python -m pytest --nbmake -n=auto "./Notebooks"
