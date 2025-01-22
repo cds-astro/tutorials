@@ -1,0 +1,1326 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multi Order Coverage data structure to plan multi-messenger observations &#8212; Astronomy with Python: Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"7788883d54644a12ae81fa471598e637": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0f3f6fca86794e219ddefe93129b5df1": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.Aladin", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}\n", "_dom_classes": [], "_esm": "import o from\"https://esm.sh/aladin-lite@3.3.3-beta\";var v=0;function b(e){let c=e.split(\"_\");for(let r=1;r<c.length;r++)c[r]=c[r].charAt(0).toUpperCase()+c[r].slice(1);return c.join(\"\")}async function k({model:e}){await o.init}function C({model:e,el:c}){let r={};e.get(\"init_options\").forEach(t=>{r[b(t)]=e.get(t)});let s=document.createElement(\"div\");s.classList.add(\"aladin-widget\"),s.style.height=`${r.height}px`,s.id=`aladin-lite-div-${v}`;let a=new o.aladin(s,r);v+=1,c.appendChild(s);let g=!1,l=!1;a.on(\"positionChanged\",t=>{l?l=!1:(g=!0,e.set(\"target\",`${t.ra} ${t.dec}`),e.save_changes())}),e.on(\"change:target\",()=>{if(g)g=!1;else{l=!0;let t=e.get(\"target\");a.gotoObject(t)}});let d=!1,_=!1;return a.on(\"zoomChanged\",t=>{d?d=!1:(_=!0,e.set(\"fov\",parseFloat(t.toFixed(5))),e.save_changes())}),e.on(\"change:fov\",()=>{if(_)_=!1;else{d=!0;let t=e.get(\"fov\");a.setFoV(t)}}),e.on(\"change:height\",()=>{let t=e.get(\"height\");s.style.height=`${t}px`}),a.on(\"objectHovered\",t=>{t.data!=null&&e.send({event_type:\"object_hovered\",content:{ra:t.ra,dec:t.dec}})}),a.on(\"objectClicked\",t=>{let n={ra:t.ra,dec:t.dec};t.data!==void 0&&(n.data=t.data),e.set(\"clicked\",n),e.send({event_type:\"object_clicked\",content:n}),e.save_changes()}),a.on(\"click\",t=>{e.send({event_type:\"click\",content:t})}),a.on(\"select\",t=>{let n=[];t.forEach(f=>{f.forEach(i=>{n.push({ra:i.ra,dec:i.dec,data:i.data,x:i.x,y:i.y})})}),e.send({event_type:\"select\",content:n})}),e.on(\"change:coo_frame\",()=>{a.setFrame(e.get(\"coo_frame\"))}),e.on(\"change:survey\",()=>{a.setImageSurvey(e.get(\"survey\"))}),e.on(\"change:overlay_survey\",()=>{a.setOverlayImageLayer(e.get(\"overlay_survey\"))}),e.on(\"change:overlay_survey_opacity\",()=>{a.getOverlayImageLayer().setAlpha(e.get(\"overlay_survey_opacity\"))}),e.on(\"msg:custom\",t=>{let n={};switch(t.event_name){case\"add_catalog_from_URL\":a.addCatalog(o.catalogFromURL(t.votable_URL,t.options));break;case\"add_MOC_from_URL\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromURL(t.moc_URL,n));break;case\"add_MOC_from_dict\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromJSON(t.moc_dict,n));break;case\"add_overlay_from_stcs\":let f=o.graphicOverlay(t.overlay_options);a.addOverlay(f),f.addFootprints(o.footprintsFromSTCS(t.stc_string));break;case\"change_colormap\":a.getBaseImageLayer().setColormap(t.colormap);break;case\"get_JPG_thumbnail\":a.exportAsPNG();break;case\"trigger_rectangular_selection\":a.select();break;case\"add_table\":let i=e.get(\"_table\"),p=new TextDecoder(\"utf-8\"),u=new Blob([p.decode(i)]),h=URL.createObjectURL(u);o.catalogFromURL(h,Object.assign(t.options,{onClick:\"showTable\"}),y=>{a.addCatalog(y)},!1),URL.revokeObjectURL(h);break}}),()=>{e.off(\"change:target\"),e.off(\"change:fov\"),e.off(\"change:height\"),e.off(\"change:coo_frame\"),e.off(\"change:survey\"),e.off(\"change:overlay_survey\"),e.off(\"change:overlay_survey_opacity\"),e.off(\"change:trigger_event\"),e.off(\"change:_table\"),e.off(\"msg:custom\"),a.off(\"positionChanged\"),a.off(\"zoomChanged\"),a.off(\"objectHovered\"),a.off(\"objectClicked\"),a.off(\"click\"),a.off(\"select\")}}var x={initialize:k,render:C};export{x as default};\n", "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "background_color": "rgb(60, 60, 60)", "clicked_object": {}, "coo_frame": "J2000", "fov": 150.0, "full_screen": false, "grid_color": "rgb(178, 50, 178)", "grid_opacity": 0.5, "grid_options": {}, "height": 600, "init_options": ["background_color", "coo_frame", "fov", "full_screen", "grid_color", "grid_opacity", "grid_options", "height", "overlay_survey", "overlay_survey_opacity", "projection", "reticle_color", "reticle_size", "samp", "show_catalog", "show_context_menu", "show_coo_grid", "show_coo_grid_control", "show_coo_location", "show_fov", "show_frame", "show_fullscreen_control", "show_layers_control", "show_overlay_stack_control", "show_projection_control", "show_reticle", "show_settings_control", "show_share_control", "show_simbad_pointer_control", "show_status_bar", "show_zoom_control", "survey", "target"], "layout": "IPY_MODEL_7788883d54644a12ae81fa471598e637", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "reticle_color": "rgb(178, 50, 178)", "reticle_size": 20, "samp": false, "show_catalog": true, "show_context_menu": true, "show_coo_grid": false, "show_coo_grid_control": true, "show_coo_location": true, "show_fov": true, "show_frame": true, "show_fullscreen_control": true, "show_layers_control": true, "show_overlay_stack_control": true, "show_projection_control": true, "show_reticle": true, "show_settings_control": true, "show_share_control": false, "show_simbad_pointer_control": true, "show_status_bar": true, "show_zoom_control": false, "survey": "https://alaskybis.unistra.fr/DSS/DSSColor", "tabbable": null, "target": "20:15:0, +19:15:0", "tooltip": null}, "buffers": [{"data": "", "encoding": "base64", "path": ["_table"]}]}, "6c4ae38156e449aa86be5fd282d0d288": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "786079091cba45cc80ca00fdbdeb99ea": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.Aladin", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}\n", "_dom_classes": [], "_esm": "import o from\"https://esm.sh/aladin-lite@3.3.3-beta\";var v=0;function b(e){let c=e.split(\"_\");for(let r=1;r<c.length;r++)c[r]=c[r].charAt(0).toUpperCase()+c[r].slice(1);return c.join(\"\")}async function k({model:e}){await o.init}function C({model:e,el:c}){let r={};e.get(\"init_options\").forEach(t=>{r[b(t)]=e.get(t)});let s=document.createElement(\"div\");s.classList.add(\"aladin-widget\"),s.style.height=`${r.height}px`,s.id=`aladin-lite-div-${v}`;let a=new o.aladin(s,r);v+=1,c.appendChild(s);let g=!1,l=!1;a.on(\"positionChanged\",t=>{l?l=!1:(g=!0,e.set(\"target\",`${t.ra} ${t.dec}`),e.save_changes())}),e.on(\"change:target\",()=>{if(g)g=!1;else{l=!0;let t=e.get(\"target\");a.gotoObject(t)}});let d=!1,_=!1;return a.on(\"zoomChanged\",t=>{d?d=!1:(_=!0,e.set(\"fov\",parseFloat(t.toFixed(5))),e.save_changes())}),e.on(\"change:fov\",()=>{if(_)_=!1;else{d=!0;let t=e.get(\"fov\");a.setFoV(t)}}),e.on(\"change:height\",()=>{let t=e.get(\"height\");s.style.height=`${t}px`}),a.on(\"objectHovered\",t=>{t.data!=null&&e.send({event_type:\"object_hovered\",content:{ra:t.ra,dec:t.dec}})}),a.on(\"objectClicked\",t=>{let n={ra:t.ra,dec:t.dec};t.data!==void 0&&(n.data=t.data),e.set(\"clicked\",n),e.send({event_type:\"object_clicked\",content:n}),e.save_changes()}),a.on(\"click\",t=>{e.send({event_type:\"click\",content:t})}),a.on(\"select\",t=>{let n=[];t.forEach(f=>{f.forEach(i=>{n.push({ra:i.ra,dec:i.dec,data:i.data,x:i.x,y:i.y})})}),e.send({event_type:\"select\",content:n})}),e.on(\"change:coo_frame\",()=>{a.setFrame(e.get(\"coo_frame\"))}),e.on(\"change:survey\",()=>{a.setImageSurvey(e.get(\"survey\"))}),e.on(\"change:overlay_survey\",()=>{a.setOverlayImageLayer(e.get(\"overlay_survey\"))}),e.on(\"change:overlay_survey_opacity\",()=>{a.getOverlayImageLayer().setAlpha(e.get(\"overlay_survey_opacity\"))}),e.on(\"msg:custom\",t=>{let n={};switch(t.event_name){case\"add_catalog_from_URL\":a.addCatalog(o.catalogFromURL(t.votable_URL,t.options));break;case\"add_MOC_from_URL\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromURL(t.moc_URL,n));break;case\"add_MOC_from_dict\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromJSON(t.moc_dict,n));break;case\"add_overlay_from_stcs\":let f=o.graphicOverlay(t.overlay_options);a.addOverlay(f),f.addFootprints(o.footprintsFromSTCS(t.stc_string));break;case\"change_colormap\":a.getBaseImageLayer().setColormap(t.colormap);break;case\"get_JPG_thumbnail\":a.exportAsPNG();break;case\"trigger_rectangular_selection\":a.select();break;case\"add_table\":let i=e.get(\"_table\"),p=new TextDecoder(\"utf-8\"),u=new Blob([p.decode(i)]),h=URL.createObjectURL(u);o.catalogFromURL(h,Object.assign(t.options,{onClick:\"showTable\"}),y=>{a.addCatalog(y)},!1),URL.revokeObjectURL(h);break}}),()=>{e.off(\"change:target\"),e.off(\"change:fov\"),e.off(\"change:height\"),e.off(\"change:coo_frame\"),e.off(\"change:survey\"),e.off(\"change:overlay_survey\"),e.off(\"change:overlay_survey_opacity\"),e.off(\"change:trigger_event\"),e.off(\"change:_table\"),e.off(\"msg:custom\"),a.off(\"positionChanged\"),a.off(\"zoomChanged\"),a.off(\"objectHovered\"),a.off(\"objectClicked\"),a.off(\"click\"),a.off(\"select\")}}var x={initialize:k,render:C};export{x as default};\n", "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "background_color": "rgb(60, 60, 60)", "clicked_object": {}, "coo_frame": "J2000", "fov": 150.0, "full_screen": false, "grid_color": "rgb(178, 50, 178)", "grid_opacity": 0.5, "grid_options": {}, "height": 600, "init_options": ["background_color", "coo_frame", "fov", "full_screen", "grid_color", "grid_opacity", "grid_options", "height", "overlay_survey", "overlay_survey_opacity", "projection", "reticle_color", "reticle_size", "samp", "show_catalog", "show_context_menu", "show_coo_grid", "show_coo_grid_control", "show_coo_location", "show_fov", "show_frame", "show_fullscreen_control", "show_layers_control", "show_overlay_stack_control", "show_projection_control", "show_reticle", "show_settings_control", "show_share_control", "show_simbad_pointer_control", "show_status_bar", "show_zoom_control", "survey", "target"], "layout": "IPY_MODEL_6c4ae38156e449aa86be5fd282d0d288", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "reticle_color": "rgb(178, 50, 178)", "reticle_size": 20, "samp": false, "show_catalog": true, "show_context_menu": true, "show_coo_grid": false, "show_coo_grid_control": true, "show_coo_location": true, "show_fov": true, "show_frame": true, "show_fullscreen_control": true, "show_layers_control": true, "show_overlay_stack_control": true, "show_projection_control": true, "show_reticle": true, "show_settings_control": true, "show_share_control": false, "show_simbad_pointer_control": true, "show_status_bar": true, "show_zoom_control": false, "survey": "https://alaskybis.unistra.fr/DSS/DSSColor", "tabbable": null, "target": "13:30:0 +32:50:0", "tooltip": null}, "buffers": [{"data": "", "encoding": "base64", "path": ["_table"]}]}, "db4dd17d260f4343a3667172a856b276": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cf6b087413e847428c254b11d541815e": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.Aladin", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}\n", "_dom_classes": [], "_esm": "import o from\"https://esm.sh/aladin-lite@3.3.3-beta\";var v=0;function b(e){let c=e.split(\"_\");for(let r=1;r<c.length;r++)c[r]=c[r].charAt(0).toUpperCase()+c[r].slice(1);return c.join(\"\")}async function k({model:e}){await o.init}function C({model:e,el:c}){let r={};e.get(\"init_options\").forEach(t=>{r[b(t)]=e.get(t)});let s=document.createElement(\"div\");s.classList.add(\"aladin-widget\"),s.style.height=`${r.height}px`,s.id=`aladin-lite-div-${v}`;let a=new o.aladin(s,r);v+=1,c.appendChild(s);let g=!1,l=!1;a.on(\"positionChanged\",t=>{l?l=!1:(g=!0,e.set(\"target\",`${t.ra} ${t.dec}`),e.save_changes())}),e.on(\"change:target\",()=>{if(g)g=!1;else{l=!0;let t=e.get(\"target\");a.gotoObject(t)}});let d=!1,_=!1;return a.on(\"zoomChanged\",t=>{d?d=!1:(_=!0,e.set(\"fov\",parseFloat(t.toFixed(5))),e.save_changes())}),e.on(\"change:fov\",()=>{if(_)_=!1;else{d=!0;let t=e.get(\"fov\");a.setFoV(t)}}),e.on(\"change:height\",()=>{let t=e.get(\"height\");s.style.height=`${t}px`}),a.on(\"objectHovered\",t=>{t.data!=null&&e.send({event_type:\"object_hovered\",content:{ra:t.ra,dec:t.dec}})}),a.on(\"objectClicked\",t=>{let n={ra:t.ra,dec:t.dec};t.data!==void 0&&(n.data=t.data),e.set(\"clicked\",n),e.send({event_type:\"object_clicked\",content:n}),e.save_changes()}),a.on(\"click\",t=>{e.send({event_type:\"click\",content:t})}),a.on(\"select\",t=>{let n=[];t.forEach(f=>{f.forEach(i=>{n.push({ra:i.ra,dec:i.dec,data:i.data,x:i.x,y:i.y})})}),e.send({event_type:\"select\",content:n})}),e.on(\"change:coo_frame\",()=>{a.setFrame(e.get(\"coo_frame\"))}),e.on(\"change:survey\",()=>{a.setImageSurvey(e.get(\"survey\"))}),e.on(\"change:overlay_survey\",()=>{a.setOverlayImageLayer(e.get(\"overlay_survey\"))}),e.on(\"change:overlay_survey_opacity\",()=>{a.getOverlayImageLayer().setAlpha(e.get(\"overlay_survey_opacity\"))}),e.on(\"msg:custom\",t=>{let n={};switch(t.event_name){case\"add_catalog_from_URL\":a.addCatalog(o.catalogFromURL(t.votable_URL,t.options));break;case\"add_MOC_from_URL\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromURL(t.moc_URL,n));break;case\"add_MOC_from_dict\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromJSON(t.moc_dict,n));break;case\"add_overlay_from_stcs\":let f=o.graphicOverlay(t.overlay_options);a.addOverlay(f),f.addFootprints(o.footprintsFromSTCS(t.stc_string));break;case\"change_colormap\":a.getBaseImageLayer().setColormap(t.colormap);break;case\"get_JPG_thumbnail\":a.exportAsPNG();break;case\"trigger_rectangular_selection\":a.select();break;case\"add_table\":let i=e.get(\"_table\"),p=new TextDecoder(\"utf-8\"),u=new Blob([p.decode(i)]),h=URL.createObjectURL(u);o.catalogFromURL(h,Object.assign(t.options,{onClick:\"showTable\"}),y=>{a.addCatalog(y)},!1),URL.revokeObjectURL(h);break}}),()=>{e.off(\"change:target\"),e.off(\"change:fov\"),e.off(\"change:height\"),e.off(\"change:coo_frame\"),e.off(\"change:survey\"),e.off(\"change:overlay_survey\"),e.off(\"change:overlay_survey_opacity\"),e.off(\"change:trigger_event\"),e.off(\"change:_table\"),e.off(\"msg:custom\"),a.off(\"positionChanged\"),a.off(\"zoomChanged\"),a.off(\"objectHovered\"),a.off(\"objectClicked\"),a.off(\"click\"),a.off(\"select\")}}var x={initialize:k,render:C};export{x as default};\n", "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "background_color": "rgb(60, 60, 60)", "clicked_object": {}, "coo_frame": "J2000", "fov": 200.0, "full_screen": false, "grid_color": "rgb(178, 50, 178)", "grid_opacity": 0.5, "grid_options": {}, "height": 600, "init_options": ["background_color", "coo_frame", "fov", "full_screen", "grid_color", "grid_opacity", "grid_options", "height", "overlay_survey", "overlay_survey_opacity", "projection", "reticle_color", "reticle_size", "samp", "show_catalog", "show_context_menu", "show_coo_grid", "show_coo_grid_control", "show_coo_location", "show_fov", "show_frame", "show_fullscreen_control", "show_layers_control", "show_overlay_stack_control", "show_projection_control", "show_reticle", "show_settings_control", "show_share_control", "show_simbad_pointer_control", "show_status_bar", "show_zoom_control", "survey", "target"], "layout": "IPY_MODEL_db4dd17d260f4343a3667172a856b276", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "reticle_color": "rgb(178, 50, 178)", "reticle_size": 20, "samp": false, "show_catalog": true, "show_context_menu": true, "show_coo_grid": false, "show_coo_grid_control": true, "show_coo_location": true, "show_fov": true, "show_frame": true, "show_fullscreen_control": true, "show_layers_control": true, "show_overlay_stack_control": true, "show_projection_control": true, "show_reticle": true, "show_settings_control": true, "show_share_control": false, "show_simbad_pointer_control": true, "show_status_bar": true, "show_zoom_control": false, "survey": "https://alaskybis.unistra.fr/DSS/DSSColor", "tabbable": null, "target": "20:00:0, +20:00:0", "tooltip": null}, "buffers": [{"data": "", "encoding": "base64", "path": ["_table"]}]}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://cds-astro.github.io/tutorials/intro.html/7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Advanced usage of MOCs to explore complex regions of interest" href="6_Advanced_usage_of_MOCs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-light" alt="Astronomy with Python: Tutorials - Home"/>
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-dark pst-js-only" alt="Astronomy with Python: Tutorials - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">Introduction to the CDS services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Peculiar_galaxies__first_steps_with_MOCs.html">First steps with Multi-Order Coverage data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html">The Simple Spectral Access Protocol to explore Abel 1656</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html">Combining the CDS services to study gamma-ray and high energy spectral bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Brown_Dwarf_Search__Cross-matching_Catalogs.html">Cross matching catalogs to discover potential brown dwarfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Advanced_usage_of_MOCs.html">Advanced usage of MOCs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Planning multi-messenger observations rapidly with MOCs</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?urlpath=tree/7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multi Order Coverage data structure to plan multi-messenger observations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-notebook">Setting the notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-mocs">Manipulating MOCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astroplan">Astroplan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-astroplan-and-stmoc">Combining astroplan and STMOC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-temporal-information-to-an-observability-moc">Adding temporal information to an (Observability) MOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concrete-example-planning-observations-for-a-gw-follow-up">Concrete example : planning observations for a GW follow up</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-order-coverage-data-structure-to-plan-multi-messenger-observations">
+<h1>Multi Order Coverage data structure to plan multi-messenger observations<a class="headerlink" href="#multi-order-coverage-data-structure-to-plan-multi-messenger-observations" title="Link to this heading">#</a></h1>
+<p>Giuseppe Greco¹, Manon Marchand²</p>
+<ol class="arabic simple">
+<li><p>INFN, Sezione de Perugia, 1-06123 Perugia, Italy</p></li>
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+</ol>
+<p>This notebook is a tutorial associated to the article <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2213133722000026?via%3Dihub">Multi Order Coverage data structure to plan
+multi-messenger observations</a>.</p>
+<hr class="docutils" />
+<p>We will first explore Multi-Order Coverage (MOC) data structure manipultation, then we will see how astroplan and Space-Time Multi Order Coverage (STMOC) can be combined. The final step is a concrete example illustrating how STMOCS can be build in a few seconds to plan observations from three ground observatories of the full sky localisation produced after detection of a gravitational wave.</p>
+<section id="setting-the-notebook">
+<h2>Setting the notebook<a class="headerlink" href="#setting-the-notebook" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard Library</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Astronomy tools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroplan</span><span class="w"> </span><span class="kn">import</span> <span class="n">Observer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">QTable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.time</span><span class="w"> </span><span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_file</span>
+
+<span class="c1"># Moc and HEALPix tools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cdshealpix</span><span class="w"> </span><span class="kn">import</span> <span class="n">healpix_to_skycoord</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mocpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">MOC</span><span class="p">,</span> <span class="n">STMOC</span>
+
+<span class="c1"># Sky visualization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyaladin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aladin</span>
+
+<span class="c1"># For plots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Data handling</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a path to store data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;Data/Multi-order-coverage-to-plan-MMA/&quot;</span>
+<span class="n">path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="manipulating-mocs">
+<h2>Manipulating MOCs<a class="headerlink" href="#manipulating-mocs" title="Link to this heading">#</a></h2>
+<p>In this first section, we build an elementary MOC, describe essential algorithms and perform basic tests.</p>
+<p>First, we create a MOC region with the HEALPix index = 652 at order = 4 applying the method <a class="reference external" href="https://cds-astro.github.io/mocpy/stubs/mocpy.MOC.html#mocpy.MOC.from_healpix_cells">from_healpix_cells</a> from mocpy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint64&quot;</span><span class="p">)</span>  <span class="c1"># the index of the HEALPix cell</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>  <span class="c1"># its depth</span>
+
+<span class="n">moc_test</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_healpix_cells</span><span class="p">(</span>
+    <span class="n">ipix</span><span class="p">,</span>
+    <span class="n">depth</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># here we set it&#39;s order to 4, it can be more precise than the most precise cell. No issues there.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">moc_test</span><span class="p">))</span>
+<span class="n">moc_test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;mocpy.moc.moc.MOC&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/50 
+4/
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a good practice, always try to know the type of the objects you’re manipulating. Here we created a <code class="docutils literal notranslate"><span class="pre">mocpy.moc.moc.MOC</span></code>.</p>
+<p>Printing this <code class="docutils literal notranslate"><span class="pre">moc_test</span></code> alows to find again the <code class="docutils literal notranslate"><span class="pre">order/cell_indices</span></code> for all cells that are in the MOC. Try creating a MOC with more cells to explore this representation!</p>
+<p>Let’s look at it in the very handy <code class="docutils literal notranslate"><span class="pre">display_preview</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_test</span><span class="o">.</span><span class="n">display_preview</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bc0cf4f3ec495d248241aef75ac89e4e59a880ff1a010ed7d474557bf4d03c55.png" src="_images/bc0cf4f3ec495d248241aef75ac89e4e59a880ff1a010ed7d474557bf4d03c55.png" />
+</div>
+</div>
+<p>Then, we write the MOC region in an external file named <strong>TEST.fits</strong> serialized in a FITS format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_test</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;TEST.fits&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;fits&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Figure 1.</strong> HEALPix grid at order = 4. In red, the MOC region with HEALPix index = 652. This represents the MOC we created.</p>
+<p>Now, we read the MOC file <code class="docutils literal notranslate"><span class="pre">TEST.fits</span></code> and we find the MOC order: the depth of the smallest HEALPix cells. Of course, we will find an order = 4 as set when we created the MOC.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read  MOC map.</span>
+<span class="n">moc_test_from_file</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_fits</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;TEST.fits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Find MOC order</span>
+<span class="n">moc_order</span> <span class="o">=</span> <span class="n">moc_test_from_file</span><span class="o">.</span><span class="n">max_order</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;moc_order =&quot;</span><span class="p">,</span> <span class="n">moc_order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>moc_order = 4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_test_from_file</span><span class="o">.</span><span class="n">display_preview</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bc0cf4f3ec495d248241aef75ac89e4e59a880ff1a010ed7d474557bf4d03c55.png" src="_images/bc0cf4f3ec495d248241aef75ac89e4e59a880ff1a010ed7d474557bf4d03c55.png" />
+</div>
+</div>
+<p>Here, we serialize the MOC from fits to json/dictionary with the keys and values representing the orders and the pixel indices, respectively. Of course, we find here the values used in the original MOC creation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serialize the MOC from fits to json/dict.</span>
+<span class="n">moc_json</span> <span class="o">=</span> <span class="n">moc_test</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+<span class="n">moc_json</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;2&#39;: [50], &#39;4&#39;: []}
+</pre></div>
+</div>
+</div>
+</div>
+<p>By definition, for the <a class="reference external" href="https://healpix.jpl.nasa.gov/html/intronode4.htm">nested</a> numbering scheme used in MOcs, the HEALPix cells of higher order contained in a cell are comprised between:</p>
+<p><span class="math notranslate nohighlight">\([npix \times 4^{(max\_order - order)}]\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\([(npix+1) \times 4^{(max\_order - order)}-1] \)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ipix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">last_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">ipix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;For our cell </span><span class="si">{</span><span class="n">ipix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> at order </span><span class="si">{</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, the cells at &quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;order </span><span class="si">{</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> are comprised between the indices </span><span class="si">{</span><span class="n">first_index</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">last_index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">moc_order_3</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_healpix_cells</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint64&quot;</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">),</span>
+    <span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For our cell 50 at order 2, the cells at order 3 are comprised between the indices 200 and 203
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">wcs</span> <span class="o">=</span> <span class="n">moc_order_3</span><span class="o">.</span><span class="n">wcs</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
+<span class="c1"># Represent the moc at order 3 with its four cells, 200, 201, 202, and 203</span>
+<span class="n">moc_order_3</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">moc_order_3</span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+<span class="c1"># Represent the cell 50 at order 2</span>
+<span class="n">moc_test</span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b26a67f5ab2297370ba5ef1f57fcba0c91013a32aee475ec1caa1502b73aea3e.png" src="_images/b26a67f5ab2297370ba5ef1f57fcba0c91013a32aee475ec1caa1502b73aea3e.png" />
+</div>
+</div>
+<p>You can interactively visualize the results with the following Aladin widget. To see the HealPix grid, select it in the <code class="docutils literal notranslate"><span class="pre">manage</span> <span class="pre">layers</span></code> <img src="https://github.com/ggreco77/Tutotest/blob/main/images/ipyaladin_layer.png?raw=true" alt="the Layer Button" style="width:30px; display: inline-block;"/> menu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s2">&quot;20:15:0, +19:15:0&quot;</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "0f3f6fca86794e219ddefe93129b5df1"}</script></div>
+</div>
+<p>A MOC map can also be added to the Aladin widget by adding it to the variable <code class="docutils literal notranslate"><span class="pre">aladin</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_moc</span><span class="p">(</span><span class="n">moc_order_3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;moc_order_3&quot;</span><span class="p">)</span>
+<span class="c1"># if the MOC does not appear right away in the ipyaladin widwet, unzoom and zoom again to actualize the view</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="astroplan">
+<h2>Astroplan<a class="headerlink" href="#astroplan" title="Link to this heading">#</a></h2>
+<p>In this second section, we cover the use of <a class="reference external" href="https://astroplan.readthedocs.io/en/latest/index.html">astroplan</a> a python library useful for observation planning and scheduling.</p>
+<p>First, we want to define the airmass in each HEALPix index using the astroplan module. In particular, we define the airmass in the Haleakala site  at 2019-04-25 14:18:05.018 UTC.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s define a MOC with four cells and extract the coordinates of the centers of these cells</span>
+<span class="n">healpix_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2608</span><span class="p">,</span> <span class="mi">2609</span><span class="p">,</span> <span class="mi">2610</span><span class="p">,</span> <span class="mi">2611</span><span class="p">]</span>
+<span class="n">observation_MOC</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_json</span><span class="p">({</span><span class="mi">5</span><span class="p">:</span> <span class="n">healpix_indices</span><span class="p">})</span>
+<span class="n">skycoords</span> <span class="o">=</span> <span class="n">healpix_to_skycoord</span><span class="p">(</span><span class="n">healpix_indices</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># The Observer module has pre-defined observations sites. Here we chose Haleakala.</span>
+<span class="n">haleakala</span> <span class="o">=</span> <span class="n">Observer</span><span class="o">.</span><span class="n">at_site</span><span class="p">(</span><span class="s2">&quot;haleakala&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set observational time.</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="s2">&quot;2019-04-25 12:30:00&quot;</span><span class="p">)</span>
+
+<span class="n">haleakala</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Observer: name=&#39;haleakala&#39;,
+    location (lon, lat, el)=(-156.169 deg, 20.71552 deg, 3047.9999999999245 m),
+    timezone=&lt;UTC&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Haleakala info from Observer class in astroplan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;We could apply any of the methods listed here</span>
+<span class="s2"> to the object haleakea </span><span class="si">{</span><span class="nb">dir</span><span class="p">(</span><span class="n">haleakala</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We could apply any of the methods listed here
+ to the object haleakea [&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;_altitude_trig&#39;, &#39;_calc_riseset&#39;, &#39;_calc_transit&#39;, &#39;_determine_which_event&#39;, &#39;_horiz_cross&#39;, &#39;_is_broadcastable&#39;, &#39;_preprocess_inputs&#39;, &#39;_two_point_interp&#39;, &#39;altaz&#39;, &#39;astropy_time_to_datetime&#39;, &#39;at_site&#39;, &#39;datetime_to_astropy_time&#39;, &#39;is_night&#39;, &#39;local_sidereal_time&#39;, &#39;location&#39;, &#39;midnight&#39;, &#39;moon_altaz&#39;, &#39;moon_illumination&#39;, &#39;moon_phase&#39;, &#39;moon_rise_time&#39;, &#39;moon_set_time&#39;, &#39;name&#39;, &#39;noon&#39;, &#39;parallactic_angle&#39;, &#39;pressure&#39;, &#39;relative_humidity&#39;, &#39;sun_altaz&#39;, &#39;sun_rise_time&#39;, &#39;sun_set_time&#39;, &#39;target_hour_angle&#39;, &#39;target_is_up&#39;, &#39;target_meridian_antitransit_time&#39;, &#39;target_meridian_transit_time&#39;, &#39;target_rise_time&#39;, &#39;target_set_time&#39;, &#39;temperature&#39;, &#39;timezone&#39;, &#39;tonight&#39;, &#39;twilight_evening_astronomical&#39;, &#39;twilight_evening_civil&#39;, &#39;twilight_evening_nautical&#39;, &#39;twilight_morning_astronomical&#39;, &#39;twilight_morning_civil&#39;, &#39;twilight_morning_nautical&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does the time we set correspond to night time at Haleakala? You can answer it using <a class="reference external" href="https://astroplan.readthedocs.io/en/latest/api/astroplan.Observer.html#astroplan.Observer.is_night">is_night</a> method and setting the astronomical twilight.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if it is night in Haleakala at the defined time:</span>
+<span class="c1"># -18 degree horizon (evening astronomical twilight).</span>
+<span class="n">night</span> <span class="o">=</span> <span class="n">haleakala</span><span class="o">.</span><span class="n">is_night</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=-</span><span class="mi">18</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is it night?&quot;</span><span class="p">,</span> <span class="n">night</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Is it night? True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have all needed information to calculate the airmass at the sky coordinates determined in the first section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Airmass calculation</span>
+<span class="n">airmass_values</span> <span class="o">=</span> <span class="n">haleakala</span><span class="o">.</span><span class="n">altaz</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">skycoords</span><span class="p">)</span><span class="o">.</span><span class="n">secz</span>
+
+<span class="k">for</span> <span class="n">airmass_value</span><span class="p">,</span> <span class="n">skycoord</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">airmass_values</span><span class="p">,</span> <span class="n">skycoords</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;airmass: </span><span class="si">{</span><span class="n">airmass_value</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">skycoord</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>airmass: 1.28 &lt;SkyCoord (ICRS): (ra, dec) in deg
+    (202.5, 31.38816646)&gt; 
+airmass: 1.27 &lt;SkyCoord (ICRS): (ra, dec) in deg
+    (203.90625, 32.7971683)&gt; 
+airmass: 1.31 &lt;SkyCoord (ICRS): (ra, dec) in deg
+    (201.09375, 32.7971683)&gt; 
+airmass: 1.29 &lt;SkyCoord (ICRS): (ra, dec) in deg
+    (202.5, 34.22886633)&gt; 
+</pre></div>
+</div>
+</div>
+</div>
+<p>To only select sky area with airmass &lt; 1.30, we create a new MOC with those sky coordinates. We will call it <code class="docutils literal notranslate"><span class="pre">MOC_observability_haleakala</span></code>.</p>
+<p>It can be useful to create an astropy table with skycoords and airmass_values as columns. Then we filter the airmass_values column from 1.00 to 1.30.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">([</span><span class="n">skycoords</span><span class="p">,</span> <span class="n">airmass_values</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;skycoords&quot;</span><span class="p">,</span> <span class="s2">&quot;airmass_value&quot;</span><span class="p">])</span>
+
+<span class="c1"># Mask table with selected airmass values.</span>
+<span class="n">observability_table</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;airmass_value&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;airmass_value&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">1.3</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">observability_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>QTable length=3</i>
+<table id="table139902326168448" class="table-striped table-bordered table-condensed">
+<thead><tr><th>skycoords</th><th>airmass_value</th></tr></thead>
+<thead><tr><th>deg,deg</th><th></th></tr></thead>
+<thead><tr><th>SkyCoord</th><th>float64</th></tr></thead>
+<tr><td>202.5,31.388166464348547</td><td>1.2833562535594876</td></tr>
+<tr><td>203.90625,32.797168295823646</td><td>1.265523827316121</td></tr>
+<tr><td>202.5,34.22886632781258</td><td>1.2898750955356977</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="combining-astroplan-and-stmoc">
+<h2>Combining astroplan and STMOC<a class="headerlink" href="#combining-astroplan-and-stmoc" title="Link to this heading">#</a></h2>
+<p>We use the <a class="reference external" href="https://cds-astro.github.io/mocpy/stubs/mocpy.MOC.html#mocpy.MOC.from_skycoords">from_skycoords</a> method of MOCpy to create an observability MOC from the sky coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MOC from  sky coordinates</span>
+<span class="n">moc_observability_haleakala</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_skycoords</span><span class="p">(</span><span class="n">observability_table</span><span class="p">[</span><span class="s2">&quot;skycoords&quot;</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">moc_observability_haleakala</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5/2608-2609 2611 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The MOC observability is shown in green in <strong>Figure 3</strong> over the original MOC. The HEALPix index = 2610 at order = 5 is not considered in the MOC visibility at the coordinates RA = 201.09375 <span class="math notranslate nohighlight">\(^\circ\)</span>, DEC = 32.7971683 <span class="math notranslate nohighlight">\(^\circ\)</span>. This is because its associated airmass value = 1.31 is outside the airmass range we selected to create the MOC visibility from Haleakala.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin2</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s2">&quot;13:30:0 +32:50:0&quot;</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="n">aladin2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "786079091cba45cc80ca00fdbdeb99ea"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin2</span><span class="o">.</span><span class="n">add_moc</span><span class="p">(</span><span class="n">observation_MOC</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;obs_MOC&quot;</span><span class="p">)</span>
+<span class="n">aladin2</span><span class="o">.</span><span class="n">add_moc</span><span class="p">(</span>
+    <span class="n">moc_observability_haleakala</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;haleakala&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In green, the MOC visibility from the Haleakala site with airmass ranges from 1.00 to 1.30 over the original MOC area in blue.</p>
+<section id="adding-temporal-information-to-an-observability-moc">
+<h3>Adding temporal information to an (Observability) MOC<a class="headerlink" href="#adding-temporal-information-to-an-observability-moc" title="Link to this heading">#</a></h3>
+<p>The ability to transform any spatial MOC generated from telescope footprints, image surveys, catalogues, gravitational-wave sky localizations, MOC visibility <em>etc.</em> into spatial and temporal MOC (STMOC) offers several interoperable approaches. In the next sections, we will discuss how to filter candidate transients.</p>
+<p>To encode temporal information in a space (observability) MOC, we apply the method <a class="reference external" href="https://cds-astro.github.io/mocpy/stubs/mocpy.STMOC.html#mocpy.STMOC.from_spatial_coverages">from_spatial_coverages</a> from mocpy. We assume an exposure time of 10 minutes: from 2019-04-25 12:30:00 to 2019-04-25 12:40:00.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Space and Time MOC from a space MOC.</span>
+<span class="n">space_time_moc_obs</span> <span class="o">=</span> <span class="n">STMOC</span><span class="o">.</span><span class="n">from_spatial_coverages</span><span class="p">(</span>
+    <span class="n">Time</span><span class="p">([</span><span class="s2">&quot;2019-04-25 12:30:00&quot;</span><span class="p">]),</span>
+    <span class="n">Time</span><span class="p">([</span><span class="s2">&quot;2019-04-25 12:40:00&quot;</span><span class="p">]),</span>
+    <span class="p">[</span><span class="n">moc_observability_haleakala</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Filtering transient candidates</strong></p>
+<p>To filter transient candidates <em>in space and in time</em> simultaneously, we use the <a class="reference external" href="https://cds-astro.github.io/mocpy/stubs/mocpy.MOC.html#mocpy.MOC.contains">contains</a> method in mocpy. It returns a boolean mask array of the positions lying inside (or outside) the MOC instance. Good performances are obtained thanks to the core functions written in Rust programming language.</p>
+<p>We consider two transients at sky positions of</p>
+<ul class="simple">
+<li><p>transient1: (RA = 202.49997 <span class="math notranslate nohighlight">\(^\circ\)</span>, DEC = 32.79846 <span class="math notranslate nohighlight">\(^\circ\)</span>) observed at UTC time 2019-04-25T12:33:00</p></li>
+<li><p>transient2: (RA = 202.69392 <span class="math notranslate nohighlight">\(^\circ\)</span>, DEC = 34.02011 <span class="math notranslate nohighlight">\(^\circ\)</span>) observed at UTC time 2019-04-25T12:50:00</p></li>
+</ul>
+<p>Both candidate transients fall inside our MOC region but only the first one is consistent with the exposure time of that region, see next cells:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An astropy table with the 2 transients is created.</span>
+<span class="n">transient_tb</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">()</span>
+
+<span class="c1"># ID candidate transients</span>
+<span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;transient1&quot;</span><span class="p">,</span> <span class="s2">&quot;transient2&quot;</span><span class="p">]</span>
+
+<span class="c1"># Transient positions</span>
+<span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;ra&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">202.49997</span><span class="p">,</span> <span class="mf">202.69392</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span>
+<span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;dec&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">32.79846</span><span class="p">,</span> <span class="mf">34.02011</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span>
+
+<span class="c1"># Transient time observations</span>
+<span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Time</span><span class="p">([</span><span class="s2">&quot;2019-04-25T12:33:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2019-04-25T13:45:00&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transient_tb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    ID         ra      dec              time         
+              deg      deg                           
+---------- --------- -------- -----------------------
+transient1 202.49997 32.79846 2019-04-25T12:33:00.000
+transient2 202.69392 34.02011 2019-04-25T13:45:00.000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtering transients in space and time.</span>
+<span class="n">space_time_moc_obs</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span>
+    <span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">],</span>
+    <span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;ra&quot;</span><span class="p">],</span>
+    <span class="n">transient_tb</span><span class="p">[</span><span class="s2">&quot;dec&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected,  the boolean mask returns <strong>True</strong> only for the transient1.</p>
+</section>
+</section>
+<section id="concrete-example-planning-observations-for-a-gw-follow-up">
+<h2>Concrete example : planning observations for a GW follow up<a class="headerlink" href="#concrete-example-planning-observations-for-a-gw-follow-up" title="Link to this heading">#</a></h2>
+<p>Here we describe the essential steps to delimit portions of a MOC coverage that are observable from a specific astronomical site within a fixed time interval and a defined range of airmass values. We start with the 90% credible region of the gravitational-wave event GW190425. The credible region is encoded in a MOC data structure. In order to show the potential of MOCs to manage complex and irregular sky areas, the 90% credible region of GW190425 is prepocessed as discussed in <strong>Sections 4.2 and 4.3</strong>.
+The MOC region is accessible from the link <a class="reference external" href="https://github.com/ggreco77/MOC-to-plan-MMA/blob/main/data/processed_moc_skymap.fits?raw=true">here</a>.
+All steps are shown in the <a class="reference external" href="https://virgo.pg.infn.it/sites/virgo.pg.infn.it/files/mm/tuto_A_C_mid.mp4">video tutorial</a> focusing in the main Aladin graphical user interface.</p>
+<p>For running the code, we consider the merger time of GW190425 from the image’s header.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the initial (BAYESTAR)sky map of GW190425 from GraceDB.</span>
+
+<span class="n">bayesian</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span>
+    <span class="s2">&quot;https://gracedb.ligo.org/api/superevents/S190425z/files/bayestar.fits.gz,0&quot;</span><span class="p">,</span>
+    <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get merger time from image&#39;s header.</span>
+<span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bayesian</span><span class="p">)</span>
+<span class="n">merger_time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">hdul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;DATE-OBS&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The merger time is&quot;</span><span class="p">,</span> <span class="n">merger_time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The merger time is 2019-04-25T08:18:05.018
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an observatory from the astroplan list</span>
+<span class="n">observatory_name</span> <span class="o">=</span> <span class="s2">&quot;haleakala&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define observatory in the astroplan Observer class</span>
+<span class="n">observatory_astroplan_observer</span> <span class="o">=</span> <span class="n">Observer</span><span class="o">.</span><span class="n">at_site</span><span class="p">(</span><span class="n">observatory_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">observatory_astroplan_observer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Observer: name=&#39;haleakala&#39;,
+    location (lon, lat, el)=(-156.169 deg, 20.71552 deg, 3047.9999999999245 m),
+    timezone=&lt;UTC&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if it is night in your Observatory at the merger time:</span>
+<span class="c1"># -18 degree horizon (evening astronomical twilight).</span>
+<span class="n">night</span> <span class="o">=</span> <span class="n">observatory_astroplan_observer</span><span class="o">.</span><span class="n">is_night</span><span class="p">(</span><span class="n">merger_time</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=-</span><span class="mi">18</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is nightime in </span><span class="si">{</span><span class="n">observatory_name</span><span class="si">}</span><span class="s2"> ?&quot;</span><span class="p">,</span> <span class="n">night</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Is nightime in haleakala ? True
+</pre></div>
+</div>
+</div>
+</div>
+<p>If it is night in your observatory, we set as start time the merger time of the event, otherwise, we find the nearest twilight astronomical evening.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">night</span><span class="p">:</span>  <span class="c1"># starts as soon as the merger if it is nightime at the observatory</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">merger_time</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># else, wait for the nearest twilight astronomical evening</span>
+    <span class="n">twilight_evening_astronomical</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">observatory_astroplan_observer</span><span class="o">.</span><span class="n">twilight_evening_astronomical</span><span class="p">(</span>
+            <span class="n">merger_time</span><span class="p">,</span>
+            <span class="n">which</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">twilight_evening_astronomical</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start time for the first observation:&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start time for the first observation: 2019-04-25T08:18:05.018
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Init. list for schedule observation</span>
+<span class="n">observatory_time_obs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Set the airmass range to create the MOC visibility</span>
+<span class="n">airmass_max</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">airmass_min</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># Read the MOC map.</span>
+<span class="n">moc</span> <span class="o">=</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_fits</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;processed_moc_skymap.fits&quot;</span><span class="p">)</span>
+<span class="c1"># Find MOC Order</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">moc</span><span class="o">.</span><span class="n">max_order</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOC order:&quot;</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MOC order: 11
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we want to calculate the visibility area within the previous MOC from the specific observatory site, at a given time and setting the airmass values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serialize the MOC from fits to json/dict.</span>
+<span class="n">moc_json</span> <span class="o">=</span> <span class="n">moc</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span>
+<span class="c1"># Init. a list of HEALPix indices.</span>
+<span class="n">healpix_indices</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Set a MOC order. MOC order &gt;= max order in the original MOC.</span>
+<span class="n">input_order</span> <span class="o">=</span> <span class="n">order</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;input_order: &quot;</span><span class="p">,</span> <span class="n">input_order</span><span class="p">)</span>
+<span class="c1"># Read MOC JSON file.</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">moc_json</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="c1"># Flatten cells.</span>
+    <span class="k">for</span> <span class="n">npix</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="n">first_index</span> <span class="o">=</span> <span class="n">npix</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">**</span> <span class="p">(</span><span class="n">input_order</span> <span class="o">-</span> <span class="n">order</span><span class="p">)</span>
+        <span class="n">last_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">npix</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">**</span> <span class="p">(</span><span class="n">input_order</span> <span class="o">-</span> <span class="n">order</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># Resulting list of flatten cells.</span>
+        <span class="k">for</span> <span class="n">healpix_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">first_index</span><span class="p">,</span> <span class="n">last_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">healpix_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">healpix_index</span><span class="p">)</span>
+<span class="n">healpix_indices</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input_order:  11
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8388608,
+ 8388609,
+ 8388610,
+ 8388611,
+ 8388612,
+ 8388613,
+ 8388614,
+ 8388615,
+ 8388616,
+ 8388617]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert HEALPix indices to celestial coordinates.</span>
+<span class="n">healpix_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">healpix_indices</span><span class="p">)</span>
+<span class="n">skycoord</span> <span class="o">=</span> <span class="n">healpix_to_skycoord</span><span class="p">(</span><span class="n">healpix_indices</span><span class="p">,</span> <span class="n">input_order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next cell, we open a samp instance with the function defined at the beginning of this notebook. This protocol will try to send information to the Aladin desktop application to vizualize the observation plan. Be sure that the application is open.</p>
+<p>To install the aladin desktop software, follow the instructions below.</p>
+<p>Download the Aladin.jar from the Aladin download page. Execute it from a terminal by typing:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">java</span> <span class="pre">-Xmx2g</span> <span class="pre">-jar</span> <span class="pre">Aladin.jar</span></code></p>
+<p>The flag -Xmx specifies the maximum memory allocation pool for a JVM. Here 2GB of memory is allocated. For GW sky localizations with nside=2048, increase the memory allocated up to 3GB, -Xmx3g.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_observation_moc</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">after_n_hours</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">observer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get an observation MOC from observer point of view n-hours after start-time.</span>
+
+<span class="sd">    This MOC corresponds to a sky area above the horizon (above 18°) and with an</span>
+<span class="sd">    airmass comprised between 1 and 2.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    start_time : `astropy.time.core.Time`</span>
+<span class="sd">        Time at which the observation starts</span>
+<span class="sd">    after_n_hours : int</span>
+<span class="sd">        Increment for the time, in hours</span>
+<span class="sd">    observer : `astroplan.observer.Observer`</span>
+<span class="sd">        An observatory, as defined in astroplan</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `mocpy.moc.moc.MOC`</span>
+<span class="sd">        The corresponding MOC</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">time_step</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">after_n_hours</span><span class="p">)</span>
+    <span class="n">night</span> <span class="o">=</span> <span class="n">observer</span><span class="o">.</span><span class="n">is_night</span><span class="p">(</span><span class="n">time_step</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=-</span><span class="mi">18</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Was it nightime in </span><span class="si">{</span><span class="n">observatory_name</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">time_step</span><span class="o">.</span><span class="n">iso</span><span class="si">}</span><span class="s2">? &quot;</span><span class="p">,</span> <span class="n">night</span><span class="p">)</span>
+
+    <span class="c1"># Airmass calculation</span>
+    <span class="n">airmass</span> <span class="o">=</span> <span class="n">observatory_astroplan_observer</span><span class="o">.</span><span class="n">altaz</span><span class="p">(</span><span class="n">time_step</span><span class="p">,</span> <span class="n">skycoord</span><span class="p">)</span><span class="o">.</span><span class="n">secz</span>
+
+    <span class="c1"># Create an Astropy table.</span>
+    <span class="n">tb</span> <span class="o">=</span> <span class="n">QTable</span><span class="p">([</span><span class="n">skycoord</span><span class="p">,</span> <span class="n">airmass</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;skycoord&quot;</span><span class="p">,</span> <span class="s2">&quot;airmass&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Mask table with selected airmass values.</span>
+    <span class="n">tb</span> <span class="o">=</span> <span class="n">tb</span><span class="p">[(</span><span class="n">tb</span><span class="p">[</span><span class="s2">&quot;airmass&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">airmass_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tb</span><span class="p">[</span><span class="s2">&quot;airmass&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">airmass_max</span><span class="p">)]</span>
+
+    <span class="c1"># Create an observability MOC.</span>
+    <span class="k">return</span> <span class="n">MOC</span><span class="o">.</span><span class="n">from_skycoords</span><span class="p">(</span><span class="n">tb</span><span class="p">[</span><span class="s2">&quot;skycoord&quot;</span><span class="p">],</span> <span class="n">input_order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">observation_aladin</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">fov</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;20:00:0, +20:00:0&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">observation_aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "cf6b087413e847428c254b11d541815e"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_moc</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">increment_hour</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">spacial_moc</span> <span class="o">=</span> <span class="n">get_observation_moc</span><span class="p">(</span>
+        <span class="n">start_time</span><span class="p">,</span>
+        <span class="n">increment_hour</span><span class="p">,</span>
+        <span class="n">observatory_astroplan_observer</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># we add the MOCs here</span>
+    <span class="n">observation_aladin</span><span class="o">.</span><span class="n">add_moc</span><span class="p">(</span>
+        <span class="n">spacial_moc</span><span class="p">,</span>
+        <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;observation_after_</span><span class="si">{</span><span class="n">increment_hour</span><span class="si">}</span><span class="s2">_hours&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">list_moc</span> <span class="o">+=</span> <span class="p">[</span><span class="n">spacial_moc</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Was it nightime in haleakala at 2019-04-25 08:18:05.018?  True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Was it nightime in haleakala at 2019-04-25 10:18:05.018?  True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Was it nightime in haleakala at 2019-04-25 12:18:05.018?  True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Was it nightime in haleakala at 2019-04-25 14:18:05.018?  True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Explote the aladin view to see the mocs, or plot them directly with matplotlib. The list of MOCs behaves like every other list, and you could for example retrieve the first MOC we created with <code class="docutils literal notranslate"><span class="pre">list_moc[0]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;teal&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">moc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_moc</span><span class="p">):</span>
+    <span class="n">wcs</span> <span class="o">=</span> <span class="n">moc</span><span class="o">.</span><span class="n">wcs</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">projection</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span>
+    <span class="p">)</span>  <span class="c1"># a 2*2 grid of subplots</span>
+    <span class="n">moc</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">wcs</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># noqa: FBT003</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/43a7915bf14273ad54f54995aa6c4403b79807e3cd30fc438d87e1f24adf1910.png" src="_images/43a7915bf14273ad54f54995aa6c4403b79807e3cd30fc438d87e1f24adf1910.png" />
+</div>
+</div>
+<p>Both the visualisations in aladin and with the display_preview allow to see the evolution of the observation area with time. Feel free to check and uncheck the coverages display in the aladin widget in the <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Layers</span></code> menu.
+Then, we repeat the same steps for Paranal and SSO observatories fixing the same starting time than for the Haleakala site.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set Observers: Paranal and SSO</span>
+<span class="n">paranal</span> <span class="o">=</span> <span class="n">Observer</span><span class="o">.</span><span class="n">at_site</span><span class="p">(</span><span class="s2">&quot;paranal&quot;</span><span class="p">)</span>
+<span class="n">sso</span> <span class="o">=</span> <span class="n">Observer</span><span class="o">.</span><span class="n">at_site</span><span class="p">(</span><span class="s2">&quot;sso&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paranal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sso</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Observer: name=&#39;paranal&#39;,
+    location (lon, lat, el)=(-70.40498688000002 deg, -24.627439409999997 deg, 2668.999999999649 m),
+    timezone=&lt;UTC&gt;&gt;
+&lt;Observer: name=&#39;sso&#39;,
+    location (lon, lat, el)=(149.06119444444445 deg, -31.273361111111104 deg, 1149.0000000015516 m),
+    timezone=&lt;UTC&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>An updated list of built-in observatories can be found in <a class="reference external" href="https://github.com/astropy/astropy-data/blob/162e724509fd18b8bc3fc29f766b716ce4657d20/coordinates/sites.json">astropy-data/coordinates/sites.json</a></strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cds-astro/tutorials",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="6_Advanced_usage_of_MOCs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Advanced usage of MOCs to explore complex regions of interest</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-notebook">Setting the notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-mocs">Manipulating MOCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astroplan">Astroplan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-astroplan-and-stmoc">Combining astroplan and STMOC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-temporal-information-to-an-observability-moc">Adding temporal information to an (Observability) MOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concrete-example-planning-observations-for-a-gw-follow-up">Concrete example : planning observations for a GW follow up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Strasbourg astronomical Data Center (CDS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

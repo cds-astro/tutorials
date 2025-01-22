@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Discovery of brown dwarfs mining the 2MASS and SDSS databases &#8212; Astronomy with Python: Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"487617ababe44ea9adf1156de6b1882f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c1dba7991c13402d8118d24f0a74dcf7": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.Aladin", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}\n", "_dom_classes": [], "_esm": "import o from\"https://esm.sh/aladin-lite@3.3.3-beta\";var v=0;function b(e){let c=e.split(\"_\");for(let r=1;r<c.length;r++)c[r]=c[r].charAt(0).toUpperCase()+c[r].slice(1);return c.join(\"\")}async function k({model:e}){await o.init}function C({model:e,el:c}){let r={};e.get(\"init_options\").forEach(t=>{r[b(t)]=e.get(t)});let s=document.createElement(\"div\");s.classList.add(\"aladin-widget\"),s.style.height=`${r.height}px`,s.id=`aladin-lite-div-${v}`;let a=new o.aladin(s,r);v+=1,c.appendChild(s);let g=!1,l=!1;a.on(\"positionChanged\",t=>{l?l=!1:(g=!0,e.set(\"target\",`${t.ra} ${t.dec}`),e.save_changes())}),e.on(\"change:target\",()=>{if(g)g=!1;else{l=!0;let t=e.get(\"target\");a.gotoObject(t)}});let d=!1,_=!1;return a.on(\"zoomChanged\",t=>{d?d=!1:(_=!0,e.set(\"fov\",parseFloat(t.toFixed(5))),e.save_changes())}),e.on(\"change:fov\",()=>{if(_)_=!1;else{d=!0;let t=e.get(\"fov\");a.setFoV(t)}}),e.on(\"change:height\",()=>{let t=e.get(\"height\");s.style.height=`${t}px`}),a.on(\"objectHovered\",t=>{t.data!=null&&e.send({event_type:\"object_hovered\",content:{ra:t.ra,dec:t.dec}})}),a.on(\"objectClicked\",t=>{let n={ra:t.ra,dec:t.dec};t.data!==void 0&&(n.data=t.data),e.set(\"clicked\",n),e.send({event_type:\"object_clicked\",content:n}),e.save_changes()}),a.on(\"click\",t=>{e.send({event_type:\"click\",content:t})}),a.on(\"select\",t=>{let n=[];t.forEach(f=>{f.forEach(i=>{n.push({ra:i.ra,dec:i.dec,data:i.data,x:i.x,y:i.y})})}),e.send({event_type:\"select\",content:n})}),e.on(\"change:coo_frame\",()=>{a.setFrame(e.get(\"coo_frame\"))}),e.on(\"change:survey\",()=>{a.setImageSurvey(e.get(\"survey\"))}),e.on(\"change:overlay_survey\",()=>{a.setOverlayImageLayer(e.get(\"overlay_survey\"))}),e.on(\"change:overlay_survey_opacity\",()=>{a.getOverlayImageLayer().setAlpha(e.get(\"overlay_survey_opacity\"))}),e.on(\"msg:custom\",t=>{let n={};switch(t.event_name){case\"add_catalog_from_URL\":a.addCatalog(o.catalogFromURL(t.votable_URL,t.options));break;case\"add_MOC_from_URL\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromURL(t.moc_URL,n));break;case\"add_MOC_from_dict\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromJSON(t.moc_dict,n));break;case\"add_overlay_from_stcs\":let f=o.graphicOverlay(t.overlay_options);a.addOverlay(f),f.addFootprints(o.footprintsFromSTCS(t.stc_string));break;case\"change_colormap\":a.getBaseImageLayer().setColormap(t.colormap);break;case\"get_JPG_thumbnail\":a.exportAsPNG();break;case\"trigger_rectangular_selection\":a.select();break;case\"add_table\":let i=e.get(\"_table\"),p=new TextDecoder(\"utf-8\"),u=new Blob([p.decode(i)]),h=URL.createObjectURL(u);o.catalogFromURL(h,Object.assign(t.options,{onClick:\"showTable\"}),y=>{a.addCatalog(y)},!1),URL.revokeObjectURL(h);break}}),()=>{e.off(\"change:target\"),e.off(\"change:fov\"),e.off(\"change:height\"),e.off(\"change:coo_frame\"),e.off(\"change:survey\"),e.off(\"change:overlay_survey\"),e.off(\"change:overlay_survey_opacity\"),e.off(\"change:trigger_event\"),e.off(\"change:_table\"),e.off(\"msg:custom\"),a.off(\"positionChanged\"),a.off(\"zoomChanged\"),a.off(\"objectHovered\"),a.off(\"objectClicked\"),a.off(\"click\"),a.off(\"select\")}}var x={initialize:k,render:C};export{x as default};\n", "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "background_color": "rgb(60, 60, 60)", "clicked_object": {}, "coo_frame": "J2000", "fov": 0.03, "full_screen": false, "grid_color": "rgb(178, 50, 178)", "grid_opacity": 0.5, "grid_options": {}, "height": 400, "init_options": ["background_color", "coo_frame", "fov", "full_screen", "grid_color", "grid_opacity", "grid_options", "height", "overlay_survey", "overlay_survey_opacity", "projection", "reticle_color", "reticle_size", "samp", "show_catalog", "show_context_menu", "show_coo_grid", "show_coo_grid_control", "show_coo_location", "show_fov", "show_frame", "show_fullscreen_control", "show_layers_control", "show_overlay_stack_control", "show_projection_control", "show_reticle", "show_settings_control", "show_share_control", "show_simbad_pointer_control", "show_status_bar", "show_zoom_control", "survey", "target"], "layout": "IPY_MODEL_487617ababe44ea9adf1156de6b1882f", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "reticle_color": "rgb(178, 50, 178)", "reticle_size": 20, "samp": false, "show_catalog": true, "show_context_menu": true, "show_coo_grid": false, "show_coo_grid_control": true, "show_coo_location": true, "show_fov": true, "show_frame": true, "show_fullscreen_control": true, "show_layers_control": true, "show_overlay_stack_control": true, "show_projection_control": true, "show_reticle": true, "show_settings_control": true, "show_share_control": false, "show_simbad_pointer_control": true, "show_status_bar": true, "show_zoom_control": false, "survey": "P/SDSS9/color", "tabbable": null, "target": "127.7033 1.4753", "tooltip": null}, "buffers": [{"data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBQcm9kdWNlZCB3aXRoIGFzdHJvcHkuaW8udm90YWJsZSB2ZXJzaW9uIDUuMnJjMQogICAgIGh0dHA6Ly93d3cuYXN0cm9weS5vcmcvIC0tPgo8Vk9UQUJMRSB2ZXJzaW9uPSIxLjQiIHhtbG5zPSJodHRwOi8vd3d3Lml2b2EubmV0L3htbC9WT1RhYmxlL3YxLjMiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5pdm9hLm5ldC94bWwvVk9UYWJsZS92MS4zIGh0dHA6Ly93d3cuaXZvYS5uZXQveG1sL1ZPVGFibGUvVk9UYWJsZS0xLjQueHNkIj4KIDxSRVNPVVJDRSB0eXBlPSJyZXN1bHRzIj4KICA8VEFCTEUgSUQ9InhtYXRjaFJlc3VsdCIgbmFtZT0ieG1hdGNoUmVzdWx0Ij4KICAgPEZJRUxEIElEPSJfMk1BU1MiIGFycmF5c2l6ZT0iKiIgZGF0YXR5cGU9ImNoYXIiIG5hbWU9IjJNQVNTIiB1Y2Q9Im1ldGEuaWQ7bWV0YS5tYWluIj4KICAgIDxERVNDUklQVElPTj4KICAgICAoZGVzaWduYXRpb24pIFNvdXJjZSBkZXNpZ25hdGlvbiAoMSkKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iUkFKMjAwMCIgZGF0YXR5cGU9ImRvdWJsZSIgbmFtZT0iUkFKMjAwMCIgdWNkPSJwb3MuZXEucmE7bWV0YS5tYWluIiB1bml0PSJkZWciPgogICAgPERFU0NSSVBUSU9OPgogICAgIChyYSkgUmlnaHQgYXNjZW5zaW9uIChKMjAwMCkKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iREVKMjAwMCIgZGF0YXR5cGU9ImRvdWJsZSIgbmFtZT0iREVKMjAwMCIgdWNkPSJwb3MuZXEuZGVjO21ldGEubWFpbiIgdW5pdD0iZGVnIj4KICAgIDxERVNDUklQVElPTj4KICAgICAoZGVjKSBEZWNsaW5hdGlvbiAoSjIwMDApIChkZWMpCiAgICA8L0RFU0NSSVBUSU9OPgogICA8L0ZJRUxEPgogICA8RklFTEQgSUQ9IkptYWciIGRhdGF0eXBlPSJmbG9hdCIgbmFtZT0iSm1hZyIgdWNkPSJwaG90Lm1hZztlbS5JUi5KIiB1bml0PSJtYWciPgogICAgPERFU0NSSVBUSU9OPgogICAgID8oal9tKSBKIHNlbGVjdGVkIGRlZmF1bHQgbWFnbml0dWRlICgyKQogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJIbWFnIiBkYXRhdHlwZT0iZmxvYXQiIG5hbWU9IkhtYWciIHVjZD0icGhvdC5tYWc7ZW0uSVIuSCIgdW5pdD0ibWFnIj4KICAgIDxERVNDUklQVElPTj4KICAgICA/KGhfbSkgSCBzZWxlY3RlZCBkZWZhdWx0IG1hZ25pdHVkZSAoMikKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iS21hZyIgZGF0YXR5cGU9ImZsb2F0IiBuYW1lPSJLbWFnIiB1Y2Q9InBob3QubWFnO2VtLklSLksiIHVuaXQ9Im1hZyI+CiAgICA8REVTQ1JJUFRJT04+CiAgICAgPyhrX20pIEsgc2VsZWN0ZWQgZGVmYXVsdCBtYWduaXR1ZGUgKDIpCiAgICA8L0RFU0NSSVBUSU9OPgogICA8L0ZJRUxEPgogICA8RklFTEQgSUQ9IlNEU1M5IiBhcnJheXNpemU9IjE5IiBkYXRhdHlwZT0iY2hhciIgbmFtZT0iU0RTUzkiIHVjZD0ibWV0YS5pZCIvPgogICA8RklFTEQgSUQ9IlJBZGVnIiBkYXRhdHlwZT0iZG91YmxlIiBuYW1lPSJSQWRlZyIgdWNkPSJwb3MuZXEucmE7bWV0YS5tYWluIiB1bml0PSJkZWciLz4KICAgPEZJRUxEIElEPSJERWRlZyIgZGF0YXR5cGU9ImRvdWJsZSIgbmFtZT0iREVkZWciIHVjZD0icG9zLmVxLmRlYzttZXRhLm1haW4iIHVuaXQ9ImRlZyIvPgogICA8RklFTEQgSUQ9InVtYWciIGRhdGF0eXBlPSJmbG9hdCIgbmFtZT0idW1hZyIgdWNkPSJwaG90Lm1hZztlbS5vcHQuVSIgdW5pdD0ibWFnIj4KICAgIDxERVNDUklQVElPTj4KICAgICBNYWduaXR1ZGUgdW1hZwogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJnbWFnIiBkYXRhdHlwZT0iZmxvYXQiIG5hbWU9ImdtYWciIHVjZD0icGhvdC5tYWc7ZW0ub3B0LkIiIHVuaXQ9Im1hZyI+CiAgICA8REVTQ1JJUFRJT04+CiAgICAgTWFnbml0dWRlIGdtYWcKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0icm1hZyIgZGF0YXR5cGU9ImZsb2F0IiBuYW1lPSJybWFnIiB1Y2Q9InBob3QubWFnO2VtLm9wdC5SIiB1bml0PSJtYWciPgogICAgPERFU0NSSVBUSU9OPgogICAgIE1hZ25pdHVkZSBybWFnCiAgICA8L0RFU0NSSVBUSU9OPgogICA8L0ZJRUxEPgogICA8RklFTEQgSUQ9ImltYWciIGRhdGF0eXBlPSJmbG9hdCIgbmFtZT0iaW1hZyIgdWNkPSJwaG90Lm1hZztlbS5vcHQuSSIgdW5pdD0ibWFnIj4KICAgIDxERVNDUklQVElPTj4KICAgICBNYWduaXR1ZGUgaW1hZwogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJ6bWFnIiBkYXRhdHlwZT0iZmxvYXQiIG5hbWU9InptYWciIHVjZD0icGhvdC5tYWc7ZW0ub3B0LkkiIHVuaXQ9Im1hZyI+CiAgICA8REVTQ1JJUFRJT04+CiAgICAgTWFnbml0dWRlIHptYWcKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iY2wiIGRhdGF0eXBlPSJ1bnNpZ25lZEJ5dGUiIG5hbWU9ImNsIiB1Y2Q9InNyYy5jbGFzcyIvPgogICA8RklFTEQgSUQ9IkotSCIgZGF0YXR5cGU9ImZsb2F0IiBuYW1lPSJKLUgiIHVjZD0icGhvdC5tYWc7ZW0uSVIuSiIgdW5pdD0ibWFnIj4KICAgIDxERVNDUklQVElPTj4KICAgICA/KGpfbSkgSiBzZWxlY3RlZCBkZWZhdWx0IG1hZ25pdHVkZSAoMikKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iSC1LIiBkYXRhdHlwZT0iZmxvYXQiIG5hbWU9IkgtSyIgdWNkPSJwaG90Lm1hZztlbS5JUi5IIiB1bml0PSJtYWciPgogICAgPERFU0NSSVBUSU9OPgogICAgID8oaF9tKSBIIHNlbGVjdGVkIGRlZmF1bHQgbWFnbml0dWRlICgyKQogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPERBVEE+CiAgICA8VEFCTEVEQVRBPgogICAgIDxUUj4KICAgICAgPFREPjA4MzA0ODc4KzAxMjgzMTE8L1REPgogICAgICA8VEQ+MTI3LjcwMzI2NTwvVEQ+CiAgICAgIDxURD4xLjQ3NTMyPC9URD4KICAgICAgPFREPjE2LjI4OTwvVEQ+CiAgICAgIDxURD4xNi4xNDwvVEQ+CiAgICAgIDxURD4xNi4zNTg8L1REPgogICAgICA8VEQ+SjA4MzA0OC44MSswMTI4MzEuMDwvVEQ+CiAgICAgIDxURD4xMjcuNzAzMzc3PC9URD4KICAgICAgPFREPjEuNDc1MjkzPC9URD4KICAgICAgPFREPjI1LjMyMjwvVEQ+CiAgICAgIDxURD4yNC41MTQ8L1REPgogICAgICA8VEQ+MjUuNDkyPC9URD4KICAgICAgPFREPjI1Ljg3ODwvVEQ+CiAgICAgIDxURD4xOS40MDE8L1REPgogICAgICA8VEQ+MzwvVEQ+CiAgICAgIDxURD4wLjE0OTAwMDE3PC9URD4KICAgICAgPFREPi0wLjIxODAwMDQxPC9URD4KICAgICA8L1RSPgogICAgIDxUUj4KICAgICAgPFREPjA4MzA0NTEyKzAxMzQ0MDQ8L1REPgogICAgICA8VEQ+MTI3LjY4ODAwNzwvVEQ+CiAgICAgIDxURD4xLjU3NzkwMTwvVEQ+CiAgICAgIDxURD4xNi4xODwvVEQ+CiAgICAgIDxURD4xNi4wMjE8L1REPgogICAgICA8VEQ+MTUuNzY5PC9URD4KICAgICAgPFREPkowODMwNDUuMjMrMDEzNDQzLjU8L1REPgogICAgICA8VEQ+MTI3LjY4ODQ5MTwvVEQ+CiAgICAgIDxURD4xLjU3ODc1OTwvVEQ+CiAgICAgIDxURD4yNC4wMDQ8L1REPgogICAgICA8VEQ+MjIuMjk5PC9URD4KICAgICAgPFREPjIxLjAzPC9URD4KICAgICAgPFREPjIwLjQ3ODwvVEQ+CiAgICAgIDxURD4yMC41MzwvVEQ+CiAgICAgIDxURD42PC9URD4KICAgICAgPFREPjAuMTU5MDAwNDwvVEQ+CiAgICAgIDxURD4wLjI1MTk5OTg2PC9URD4KICAgICA8L1RSPgogICAgPC9UQUJMRURBVEE+CiAgIDwvREFUQT4KICA8L1RBQkxFPgogPC9SRVNPVVJDRT4KPC9WT1RBQkxFPgo=", "encoding": "base64", "path": ["_table"]}]}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_Brown_Dwarf_Search__Cross-matching_Catalogs';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://cds-astro.github.io/tutorials/intro.html/5_Brown_Dwarf_Search__Cross-matching_Catalogs.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced usage of MOCs to explore complex regions of interest" href="6_Advanced_usage_of_MOCs.html" />
+    <link rel="prev" title="Multi-instrument, multi-wavelength study of high energy sources with the Virtual Observatory" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-light" alt="Astronomy with Python: Tutorials - Home"/>
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-dark pst-js-only" alt="Astronomy with Python: Tutorials - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">Introduction to the CDS services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Peculiar_galaxies__first_steps_with_MOCs.html">First steps with Multi-Order Coverage data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html">The Simple Spectral Access Protocol to explore Abel 1656</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html">Combining the CDS services to study gamma-ray and high energy spectral bands</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cross matching catalogs to discover potential brown dwarfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Advanced_usage_of_MOCs.html">Advanced usage of MOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html">Planning multi-messenger observations rapidly with MOCs</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?urlpath=tree/5_Brown_Dwarf_Search__Cross-matching_Catalogs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F5_Brown_Dwarf_Search__Cross-matching_Catalogs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/5_Brown_Dwarf_Search__Cross-matching_Catalogs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discovery of brown dwarfs mining the 2MASS and SDSS databases</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-discovery">Step #1: Discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-cross-matching">Step #2: Cross-matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-filtering">Step #3: Filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-verification-of-the-brown-dwarf-candidates">Step #4: Verification of the Brown Dwarf candidates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-in-simbad">Check in Simbad</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases">
+<h1>Discovery of brown dwarfs mining the 2MASS and SDSS databases<a class="headerlink" href="#discovery-of-brown-dwarfs-mining-the-2mass-and-sdss-databases" title="Link to this heading">#</a></h1>
+<p>F. Jiménez-Esteban¹, K. A. Lutz², E. Solano¹</p>
+<ol class="arabic simple">
+<li><p>Spanish Virtual Observatory</p></li>
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+</ol>
+<p>This tutorial is based on the EURO-VO tutorial of the same name: <a class="reference external" href="http://www.euro-vo.org/sites/default/files/documents/tutorial-brown-dwarfs_2019Apr.pdf">http://www.euro-vo.org/sites/default/files/documents/tutorial-brown-dwarfs_2019Apr.pdf</a> .</p>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Brown dwarfs are objects occupying the gap between the least massive stars and the most massive planets. They are intrinsically faint objects. Hence, heir detection is not straightforward and, in fact, was almost impossible until the advent of global surveys at deep optical and near-infrared bands like SDSS, 2MASS or DENIS. We propose here to mine the 2MASS point source catalogue (2MASS-PSC) and SDSS-DR9 databases to identify T-type brown dwarfs through an appropriate combination of colors in the optical and the infrared, an approach that perfectly fits into the Virtual Observatory.</p>
+<p>In this use case, we explore different ways to do the same tasks with different VO tools. These tasks
+include:</p>
+<ol class="arabic simple">
+<li><p>obtaining data from the SDSS and 2MASS catalogues in a given sky region,</p></li>
+<li><p>crossmatching the results of these searches,</p></li>
+<li><p>filtering the resulting table for brown dwarfs, and</p></li>
+<li><p>verifying our sample of brown dwarfs.</p></li>
+</ol>
+<p>Software packages needed for this tutorial are Aladin, TOPCAT, STILTS and Python (or you may just use the Binder in your web browser).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard Library</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Astronomy tools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.coordinates</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkyCoord</span>
+
+<span class="c1"># Access astronomical databases</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.simbad</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simbad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.vizier</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vizier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.xmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">XMatch</span>
+
+<span class="c1"># Sky visualization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyaladin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aladin</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-discovery">
+<h2>Step #1: Discovery<a class="headerlink" href="#step-1-discovery" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>We start by searching for the 2MASS point source catalogue (2MASS-PSC) and the SDSS data release 9 catalogue (SDSS DR9). To find and query catalogues, there are two packages we can use: pyVO and astroquery. We will show pyVO for searching the 2MASS-PSC and astroquery for SDSS DR9.</p>
+<p>With the pyVo package we are using the TAP service of VizieR. TAP is a Virtual Observatory protocol to query databases of tables. The language we use to compile the query is called ADQL and is similar to SQL. For more details on ADQL see also the dedicated VO tutorial (<a class="reference external" href="http://docs.g-vo.org/adql-gaia/html/">http://docs.g-vo.org/adql-gaia/html/</a>).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_vizier</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span><span class="s2">&quot;https://tapvizier.cds.unistra.fr/TAPVizieR/tap&quot;</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT  * </span>
+<span class="s2">FROM tables</span>
+<span class="s2">WHERE description LIKE &#39;%2MASS%Cutri%&#39;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">mass_psc_set</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mass_psc_set</span><span class="p">[</span><span class="s2">&quot;table_name&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=13</i>
+<table id="table139796441960352" class="table-striped table-bordered table-condensed">
+<thead><tr><th>table_name</th><th>description</th></tr></thead>
+<thead><tr><th>object</th><th>object</th></tr></thead>
+<tr><td>J/ApJ/569/23/table1</td><td>Optical polarimetry of 2MASS Red QSOs ( Smith P.S., Schmidt G.D., Hines D.C., Cutri R.M., Nelson B.O.)</td></tr>
+<tr><td>II/281/2mass6x</td><td>2MASS-6X catalog ( Cutri R.M., Skrutskie M.F., Van Dyk S., et al.)</td></tr>
+<tr><td>J/ApJ/780/92/2mass</td><td>2MASS JHKs photometry (table5) ( Szabo R., Ivezic Z., Kiss L.L., Kollath Z., Jones L., Sesar B., Becker A.C., Davenport J.R.A., Cutri R.M.)</td></tr>
+<tr><td>II/246/out</td><td>2MASS Point Source Catalogue, output (on a total of 470,992,970 sources) ( Cutri R.M., Skrutskie M.F., Van Dyk S., et al.)</td></tr>
+<tr><td>J/ApJ/564/421/table3</td><td>2MASS IDR2 Sources Unconfirmed in Second Epoch Imaging ( Burgasser A.J., Kirkpatrick J.D., Brown M.E., Reid I.N., Burrows A., Liebert J., Matthews K., Gizis J.E., Dahn C.C., Monet D.G., Cutri R.M., Skrutskie M.F.)</td></tr>
+<tr><td>II/241/out</td><td>2MASS Point Source Catalogue, 2MASS 2000 Second Incremental Release ( Skrutskie M.F., Schneider S.E., Stiening R., Strom S.E., Weinberg M.D., Beichman C., Chester T., Cutri R., Lonsdale C., Elias J., Elston R., Capps R., Carpenter J., Huchra J., Liebert J., Monet D., Price S., Seitzer P.)</td></tr>
+<tr><td>VII/233/xsc</td><td>*The 2MASS Extended Catalog (2MASX) ( Skrutskie M.F., Cutri R.M., Stiening R., et al.)</td></tr>
+<tr><td>J/ApJ/569/23/table3</td><td>Galactic interstellar polarization detected in the fields of 2MASS AGNs ( Smith P.S., Schmidt G.D., Hines D.C., Cutri R.M., Nelson B.O.)</td></tr>
+<tr><td>J/ApJ/569/23/table2</td><td>Optical polarimetry of other AGN found by 2MASS ( Smith P.S., Schmidt G.D., Hines D.C., Cutri R.M., Nelson B.O.)</td></tr>
+<tr><td>J/AJ/126/63/table1</td><td>2MASS sample and measurements ( Hutchings J.B., Maddox N., Cutri R.M., Nelson B.O.)</td></tr>
+<tr><td>J/ApJS/190/100/table1</td><td>List of 2MASS proper motion candidates ( Kirkpatrick J.D., Looper D.L., Burgasser A.J., Schurr S.D., Cutri R.M., Cushing M.C., Cruz K.L., Sweet A.C., Knapp G.R., Barman T.S., Bochanski J.J., Roellig T.L., McLean I.S., McGovern M.R., Rice E.L.)</td></tr>
+<tr><td>J/ApJ/564/421/table5</td><td>Comparison of NIRC Spectrophotometric colors to 2MASS photometry ( Burgasser A.J., Kirkpatrick J.D., Brown M.E., Reid I.N., Burrows A., Liebert J., Matthews K., Gizis J.E., Dahn C.C., Monet D.G., Cutri R.M., Skrutskie M.F.)</td></tr>
+<tr><td>J/ApJ/564/421/table6</td><td>New T Dwarfs Identified in the 2MASS Catalog ( Burgasser A.J., Kirkpatrick J.D., Brown M.E., Reid I.N., Burrows A., Liebert J., Matthews K., Gizis J.E., Dahn C.C., Monet D.G., Cutri R.M., Skrutskie M.F.)</td></tr>
+</table></div></div></div>
+</div>
+<p>As mentioned above we are interested in the 2MASS-pSC, which has the table_name <code class="docutils literal notranslate"><span class="pre">II/246/out</span></code> in VizieR. Before we move on to construct a more complicated query, we have a quick look at the 2MASS-PSC table and all the available columns. We do so by downloading the first 5 rows:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT TOP 5 * FROM &quot;II/246/out&quot; &#39;</span>
+<span class="n">mass_psc_head</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mass_psc_head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table139795679862736" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>d</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>int32</th><th>float32</th><th>int16</th><th>int64</th><th>int16</th><th>int16</th><th>int64</th><th>str1</th><th>object</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>int16</th><th>object</th><th>int16</th><th>int16</th><th>str1</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>int32</th><th>int32</th><th>int32</th><th>int16</th></tr></thead>
+<tr><td>29.885839</td><td>56.739094</td><td>0.12</td><td>0.11</td><td>7</td><td>01593260+5644207</td><td>16.074</td><td>0.11</td><td>0.111</td><td>14.4</td><td>15.612</td><td>0.141</td><td>0.141</td><td>8.5</td><td>15.603</td><td>0.185</td><td>0.185</td><td>5.8</td><td>BBC</td><td>360606</td><td>360606</td><td>ccc</td><td>360606</td><td>9.9</td><td>193</td><td>956613429</td><td>0</td><td>0</td><td>956613443</td><td>n</td><td>2000-01-13</td><td>45</td><td>132.207</td><td>-4.901</td><td>-175.7</td><td>2451556.6762</td><td>0.99</td><td>1.23</td><td>1.03</td><td>15.89</td><td>0.085</td><td>15.586</td><td>0.261</td><td>15.685</td><td>0.391</td><td>10382</td><td>79</td><td>se</td><td>1</td><td>1</td><td>U</td><td>0.6</td><td>355</td><td>18.8</td><td>17.7</td><td>1</td><td>--</td><td>51266</td><td>1179106</td><td>126</td></tr>
+<tr><td>29.889511</td><td>56.741344</td><td>0.08</td><td>0.07</td><td>173</td><td>01593348+5644288</td><td>15.504</td><td>0.057</td><td>0.059</td><td>24.3</td><td>14.87</td><td>0.072</td><td>0.072</td><td>16.8</td><td>14.846</td><td>0.084</td><td>0.084</td><td>11.6</td><td>AAA</td><td>661516</td><td>661516</td><td>000</td><td>661516</td><td>10.9</td><td>222</td><td>956613443</td><td>0</td><td>0</td><td>956613455</td><td>n</td><td>2000-01-13</td><td>45</td><td>132.209</td><td>-4.898</td><td>-183.0</td><td>2451556.6762</td><td>0.89</td><td>0.94</td><td>1.25</td><td>15.535</td><td>0.045</td><td>14.898</td><td>0.122</td><td>14.863</td><td>0.189</td><td>10390</td><td>72</td><td>se</td><td>1</td><td>1</td><td>U</td><td>0.9</td><td>305</td><td>17.7</td><td>16.6</td><td>1</td><td>--</td><td>51266</td><td>1179106</td><td>126</td></tr>
+<tr><td>29.89582</td><td>56.744549</td><td>0.26</td><td>0.25</td><td>77</td><td>01593499+5644403</td><td>17.312</td><td>0.205</td><td>0.206</td><td>4.8</td><td>16.163</td><td>0.201</td><td>0.202</td><td>5.3</td><td>15.963</td><td>0.235</td><td>0.235</td><td>4.3</td><td>DCD</td><td>60606</td><td>60606</td><td>000</td><td>60606</td><td>17.0</td><td>227</td><td>956613455</td><td>0</td><td>0</td><td>956647370</td><td>n</td><td>2000-01-13</td><td>46</td><td>132.211</td><td>-4.894</td><td>220.6</td><td>2451556.6813</td><td>1.04</td><td>0.93</td><td>0.93</td><td>17.433</td><td>0.311</td><td>16.007</td><td>0.318</td><td>16.839</td><td>1.239</td><td>10405</td><td>33</td><td>sw</td><td>0</td><td>0</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>51267</td><td>1179131</td><td>150</td></tr>
+<tr><td>29.888912</td><td>56.748875</td><td>0.26</td><td>0.21</td><td>176</td><td>01593333+5644559</td><td>16.748</td><td>0.141</td><td>0.142</td><td>7.7</td><td>16.217</td><td>0.204</td><td>0.205</td><td>4.9</td><td>16.2</td><td>--</td><td>--</td><td>--</td><td>BDU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>20.7</td><td>139</td><td>956647370</td><td>0</td><td>0</td><td>956613489</td><td>n</td><td>2000-01-13</td><td>45</td><td>132.207</td><td>-4.891</td><td>-181.8</td><td>2451556.6762</td><td>1.17</td><td>1.27</td><td>--</td><td>16.699</td><td>0.278</td><td>15.95</td><td>0.182</td><td>--</td><td>--</td><td>10418</td><td>73</td><td>se</td><td>1</td><td>1</td><td>U</td><td>0.3</td><td>298</td><td>18.0</td><td>18.2</td><td>1</td><td>--</td><td>51266</td><td>1179106</td><td>126</td></tr>
+<tr><td>29.905339</td><td>56.747322</td><td>0.07</td><td>0.06</td><td>0</td><td>01593728+5644503</td><td>14.288</td><td>0.028</td><td>0.03</td><td>77.1</td><td>13.96</td><td>0.044</td><td>0.045</td><td>40.3</td><td>13.98</td><td>0.041</td><td>0.042</td><td>26.6</td><td>AAA</td><td>666666</td><td>666666</td><td>000</td><td>666666</td><td>21.3</td><td>242</td><td>956647370</td><td>0</td><td>0</td><td>956647360</td><td>n</td><td>2000-01-13</td><td>46</td><td>132.216</td><td>-4.89</td><td>201.8</td><td>2451556.6813</td><td>1.17</td><td>1.01</td><td>1.06</td><td>14.322</td><td>0.045</td><td>13.969</td><td>0.054</td><td>13.917</td><td>0.084</td><td>10414</td><td>51</td><td>sw</td><td>1</td><td>1</td><td>U</td><td>0.3</td><td>291</td><td>16.2</td><td>15.7</td><td>1</td><td>--</td><td>51267</td><td>1179131</td><td>150</td></tr>
+</table></div></div></div>
+</div>
+<p>As in the original tutorial, we only want to get data within a 14arcmin radius of RA=08h30m00s, Dec=01d30m00s. ADQL has a function, which allows to run an astronomical cone search query. From the quick inital inspection of the table we now know that we will need the columns <code class="docutils literal notranslate"><span class="pre">RAJ2000</span></code> and <code class="docutils literal notranslate"><span class="pre">DEJ2000</span></code> to only get sources at a certain location. Since we want to get colours for our Brown Dwarf candidates, we will also want to get the <code class="docutils literal notranslate"><span class="pre">Jmag</span></code>, <code class="docutils literal notranslate"><span class="pre">Hmag</span></code> and <code class="docutils literal notranslate"><span class="pre">Kmag</span></code> columns. For a different analysis you might want to choose other columns.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="s2">&quot;08:30:00&quot;</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="s2">&quot;01:30:00&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT * </span>
+<span class="s2">FROM </span><span class="se">\&quot;</span><span class="s2">II/246/out</span><span class="se">\&quot;</span><span class="s2"> as tm_psc </span>
+<span class="s2">WHERE 1=CONTAINS(POINT(</span><span class="se">\&#39;</span><span class="s2">ICRS</span><span class="se">\&#39;</span><span class="s2">, tm_psc.RAJ2000, tm_psc.DEJ2000),</span>
+<span class="s2">                 CIRCLE(</span><span class="se">\&#39;</span><span class="s2">ICRS</span><span class="se">\&#39;</span><span class="s2">, </span><span class="si">{:.3f}</span><span class="s2">, </span><span class="si">{:.3f}</span><span class="s2">, 14/60))</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">coord</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+    <span class="n">coord</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">mass_psc</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">mass_psc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=683</i>
+<table id="table139795676167280" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>d</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>int32</th><th>float32</th><th>int16</th><th>int64</th><th>int16</th><th>int16</th><th>int64</th><th>str1</th><th>object</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>int16</th><th>object</th><th>int16</th><th>int16</th><th>str1</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>int32</th><th>int32</th><th>int32</th><th>int16</th></tr></thead>
+<tr><td>127.509154</td><td>1.269173</td><td>0.2</td><td>0.15</td><td>87</td><td>08300219+0116090</td><td>15.963</td><td>0.095</td><td>0.096</td><td>12.5</td><td>15.546</td><td>0.121</td><td>0.122</td><td>9.0</td><td>14.93</td><td>0.144</td><td>0.144</td><td>8.1</td><td>ABB</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>14.2</td><td>340</td><td>804040589</td><td>0</td><td>0</td><td>804040599</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.554</td><td>22.408</td><td>178.5</td><td>2451573.6815</td><td>0.89</td><td>1.01</td><td>0.92</td><td>15.939</td><td>0.235</td><td>15.899</td><td>0.319</td><td>14.69</td><td>0.124</td><td>4589</td><td>74</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43956</td><td>1010984</td><td>221</td></tr>
+<tr><td>127.507779</td><td>1.272875</td><td>0.12</td><td>0.11</td><td>86</td><td>08300186+0116223</td><td>15.594</td><td>0.083</td><td>0.084</td><td>17.6</td><td>15.563</td><td>0.117</td><td>0.117</td><td>8.9</td><td>15.272</td><td>0.181</td><td>0.182</td><td>5.9</td><td>ABC</td><td>360606</td><td>360606</td><td>000</td><td>360606</td><td>14.2</td><td>160</td><td>804040599</td><td>0</td><td>0</td><td>804040589</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.55</td><td>22.408</td><td>183.4</td><td>2451573.6814</td><td>1.64</td><td>0.82</td><td>1.47</td><td>15.432</td><td>0.153</td><td>15.81</td><td>0.424</td><td>14.992</td><td>0.114</td><td>4602</td><td>69</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>270</td><td>17.1</td><td>16.5</td><td>1</td><td>--</td><td>43956</td><td>1010984</td><td>221</td></tr>
+<tr><td>127.514167</td><td>1.277495</td><td>0.23</td><td>0.21</td><td>51</td><td>08300340+0116389</td><td>16.553</td><td>0.17</td><td>0.171</td><td>7.3</td><td>16.179</td><td>0.194</td><td>0.194</td><td>5.0</td><td>15.894</td><td>--</td><td>--</td><td>--</td><td>CCU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>28.4</td><td>234</td><td>804040589</td><td>0</td><td>0</td><td>804040577</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.549</td><td>22.416</td><td>160.4</td><td>2451573.6814</td><td>0.69</td><td>1.58</td><td>--</td><td>16.335</td><td>0.139</td><td>18.014</td><td>3.36</td><td>--</td><td>--</td><td>4619</td><td>92</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.0</td><td>13</td><td>18.0</td><td>17.3</td><td>1</td><td>--</td><td>43956</td><td>1010984</td><td>221</td></tr>
+<tr><td>127.463251</td><td>1.271903</td><td>0.07</td><td>0.07</td><td>0</td><td>08295118+0116188</td><td>15.844</td><td>0.076</td><td>0.077</td><td>14.0</td><td>15.11</td><td>0.095</td><td>0.096</td><td>13.5</td><td>15.029</td><td>0.138</td><td>0.138</td><td>7.4</td><td>AAB</td><td>260606</td><td>260606</td><td>000</td><td>260606</td><td>41.0</td><td>160</td><td>804019559</td><td>0</td><td>0</td><td>804019587</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.528</td><td>22.369</td><td>-87.9</td><td>2451573.6739</td><td>1.78</td><td>0.8</td><td>1.14</td><td>15.935</td><td>0.238</td><td>15.077</td><td>0.164</td><td>15.197</td><td>0.438</td><td>4593</td><td>164</td><td>se</td><td>0</td><td>1</td><td>U</td><td>1.0</td><td>281</td><td>20.0</td><td>18.4</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.463023</td><td>1.2864</td><td>0.06</td><td>0.06</td><td>0</td><td>08295112+0117110</td><td>14.093</td><td>0.029</td><td>0.032</td><td>70.0</td><td>13.652</td><td>0.033</td><td>0.035</td><td>51.7</td><td>13.553</td><td>0.042</td><td>0.043</td><td>28.9</td><td>AAA</td><td>666635</td><td>666635</td><td>000</td><td>666635</td><td>52.2</td><td>179</td><td>804019587</td><td>0</td><td>0</td><td>804019616</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.514</td><td>22.376</td><td>-87.0</td><td>2451573.674</td><td>0.75</td><td>0.97</td><td>0.91</td><td>14.077</td><td>0.023</td><td>13.576</td><td>0.05</td><td>13.692</td><td>0.14</td><td>4646</td><td>165</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>160</td><td>16.3</td><td>14.6</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.48465</td><td>1.271192</td><td>0.06</td><td>0.06</td><td>0</td><td>08295631+0116162</td><td>13.848</td><td>0.026</td><td>0.029</td><td>87.8</td><td>13.177</td><td>0.02</td><td>0.022</td><td>80.0</td><td>12.932</td><td>0.023</td><td>0.024</td><td>51.1</td><td>AAA</td><td>666655</td><td>666655</td><td>000</td><td>666655</td><td>15.7</td><td>12</td><td>804019600</td><td>0</td><td>0</td><td>804019585</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.54</td><td>22.387</td><td>-164.9</td><td>2451573.6739</td><td>0.88</td><td>0.87</td><td>0.95</td><td>13.813</td><td>0.042</td><td>13.143</td><td>0.051</td><td>13.009</td><td>0.056</td><td>4591</td><td>87</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>244</td><td>18.8</td><td>16.7</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.485565</td><td>1.275456</td><td>0.2</td><td>0.17</td><td>4</td><td>08295653+0116316</td><td>16.26</td><td>0.112</td><td>0.112</td><td>9.5</td><td>15.908</td><td>0.172</td><td>0.172</td><td>6.5</td><td>15.264</td><td>0.184</td><td>0.184</td><td>6.0</td><td>BCC</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>15.7</td><td>192</td><td>804019585</td><td>0</td><td>0</td><td>804019600</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.536</td><td>22.39</td><td>-168.2</td><td>2451573.674</td><td>0.84</td><td>1.3</td><td>0.8</td><td>16.125</td><td>0.291</td><td>15.529</td><td>0.253</td><td>15.21</td><td>0.246</td><td>4606</td><td>84</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>232</td><td>18.1</td><td>17.4</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.494339</td><td>1.280734</td><td>0.15</td><td>0.15</td><td>145</td><td>08295864+0116506</td><td>16.317</td><td>0.119</td><td>0.12</td><td>9.0</td><td>15.818</td><td>0.141</td><td>0.141</td><td>7.0</td><td>15.099</td><td>--</td><td>--</td><td>--</td><td>BBU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>36.9</td><td>239</td><td>804019600</td><td>0</td><td>0</td><td>804019605</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.536</td><td>22.4</td><td>-199.8</td><td>2451573.674</td><td>0.96</td><td>1.62</td><td>--</td><td>16.264</td><td>0.088</td><td>16.219</td><td>0.553</td><td>--</td><td>--</td><td>4625</td><td>52</td><td>se</td><td>1</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.494645</td><td>1.296204</td><td>0.07</td><td>0.07</td><td>17</td><td>08295871+0117463</td><td>15.25</td><td>0.05</td><td>0.051</td><td>24.1</td><td>15.062</td><td>0.077</td><td>0.078</td><td>14.1</td><td>14.87</td><td>0.114</td><td>0.114</td><td>8.6</td><td>AAB</td><td>660506</td><td>660506</td><td>000</td><td>660506</td><td>47.1</td><td>299</td><td>804019652</td><td>0</td><td>0</td><td>804019639</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.521</td><td>22.408</td><td>-200.9</td><td>2451573.674</td><td>0.98</td><td>0.89</td><td>1.01</td><td>15.178</td><td>0.064</td><td>15.195</td><td>0.302</td><td>14.779</td><td>0.326</td><td>4681</td><td>51</td><td>se</td><td>1</td><td>1</td><td>U</td><td>0.4</td><td>185</td><td>16.8</td><td>16.1</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.483247</td><td>1.302628</td><td>0.06</td><td>0.06</td><td>0</td><td>08295597+0118094</td><td>13.484</td><td>0.025</td><td>0.027</td><td>122.7</td><td>12.862</td><td>0.02</td><td>0.022</td><td>106.9</td><td>12.807</td><td>0.033</td><td>0.034</td><td>57.4</td><td>AAA</td><td>665555</td><td>665555</td><td>000</td><td>665555</td><td>27.9</td><td>314</td><td>804019667</td><td>0</td><td>0</td><td>804019652</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.509</td><td>22.401</td><td>-159.8</td><td>2451573.674</td><td>1.06</td><td>0.7</td><td>1.1</td><td>13.457</td><td>0.027</td><td>12.875</td><td>0.06</td><td>12.777</td><td>0.069</td><td>4704</td><td>92</td><td>se</td><td>0</td><td>1</td><td>U</td><td>2.0</td><td>195</td><td>16.3</td><td>14.5</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.40852</td><td>1.286066</td><td>0.06</td><td>0.06</td><td>0</td><td>08293804+0117098</td><td>13.936</td><td>0.031</td><td>0.033</td><td>80.9</td><td>13.296</td><td>0.032</td><td>0.033</td><td>71.7</td><td>13.117</td><td>0.029</td><td>0.03</td><td>43.1</td><td>AAA</td><td>666666</td><td>666666</td><td>000</td><td>666666</td><td>25.9</td><td>57</td><td>804019624</td><td>0</td><td>0</td><td>804019615</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.486</td><td>22.328</td><td>109.1</td><td>2451573.674</td><td>1.01</td><td>0.95</td><td>1.1</td><td>13.927</td><td>0.03</td><td>13.241</td><td>0.045</td><td>13.122</td><td>0.059</td><td>4645</td><td>144</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.6</td><td>234</td><td>17.2</td><td>15.7</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.414546</td><td>1.289993</td><td>0.06</td><td>0.06</td><td>0</td><td>08293949+0117239</td><td>14.666</td><td>0.032</td><td>0.034</td><td>41.3</td><td>14.264</td><td>0.043</td><td>0.044</td><td>29.4</td><td>14.223</td><td>0.065</td><td>0.066</td><td>15.6</td><td>AAA</td><td>664616</td><td>664616</td><td>000</td><td>664616</td><td>23.6</td><td>13</td><td>804019640</td><td>0</td><td>0</td><td>804019624</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.485</td><td>22.335</td><td>87.4</td><td>2451573.674</td><td>1.4</td><td>0.77</td><td>1.15</td><td>14.729</td><td>0.04</td><td>14.389</td><td>0.118</td><td>14.418</td><td>0.225</td><td>4659</td><td>165</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>205</td><td>16.3</td><td>15.3</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>127.398036</td><td>1.299818</td><td>0.21</td><td>0.18</td><td>86</td><td>08293552+0117593</td><td>16.006</td><td>0.091</td><td>0.092</td><td>12.0</td><td>15.514</td><td>0.124</td><td>0.124</td><td>9.3</td><td>15.203</td><td>0.145</td><td>0.145</td><td>6.3</td><td>ABC</td><td>61606</td><td>61606</td><td>000</td><td>61606</td><td>45.2</td><td>1</td><td>804019675</td><td>0</td><td>0</td><td>804019645</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.467</td><td>22.325</td><td>146.9</td><td>2451573.674</td><td>0.76</td><td>1.57</td><td>1.08</td><td>16.174</td><td>0.093</td><td>15.085</td><td>0.291</td><td>15.687</td><td>0.376</td><td>4695</td><td>106</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.8</td><td>255</td><td>18.0</td><td>17.1</td><td>1</td><td>--</td><td>43955</td><td>1010947</td><td>56</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>127.492406</td><td>1.685115</td><td>0.31</td><td>0.3</td><td>70</td><td>08295817+0141064</td><td>16.237</td><td>0.106</td><td>0.106</td><td>9.7</td><td>15.647</td><td>0.136</td><td>0.136</td><td>8.2</td><td>15.683</td><td>0.239</td><td>0.239</td><td>4.1</td><td>BBD</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>24.3</td><td>194</td><td>804020509</td><td>0</td><td>0</td><td>804020518</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.151</td><td>22.594</td><td>-192.8</td><td>2451573.6743</td><td>1.09</td><td>0.75</td><td>1.03</td><td>16.086</td><td>0.16</td><td>15.514</td><td>0.191</td><td>15.639</td><td>0.359</td><td>6081</td><td>59</td><td>se</td><td>1</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.503105</td><td>1.700905</td><td>0.06</td><td>0.06</td><td>90</td><td>08300074+0142032</td><td>14.571</td><td>0.039</td><td>0.041</td><td>45.1</td><td>14.218</td><td>0.031</td><td>0.032</td><td>30.7</td><td>14.104</td><td>0.064</td><td>0.065</td><td>17.4</td><td>AAA</td><td>665606</td><td>665606</td><td>000</td><td>665606</td><td>24.1</td><td>353</td><td>804039583</td><td>0</td><td>0</td><td>804039600</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.142</td><td>22.611</td><td>200.2</td><td>2451573.6811</td><td>1.34</td><td>0.99</td><td>0.87</td><td>14.543</td><td>0.027</td><td>14.287</td><td>0.153</td><td>14.297</td><td>0.141</td><td>6143</td><td>53</td><td>sw</td><td>1</td><td>1</td><td>U</td><td>0.5</td><td>268</td><td>16.2</td><td>15.2</td><td>1</td><td>--</td><td>43956</td><td>1010982</td><td>198</td></tr>
+<tr><td>127.477304</td><td>1.697812</td><td>0.23</td><td>0.23</td><td>42</td><td>08295455+0141521</td><td>16.685</td><td>0.154</td><td>0.155</td><td>6.4</td><td>15.942</td><td>0.16</td><td>0.161</td><td>6.3</td><td>15.42</td><td>0.22</td><td>0.22</td><td>5.2</td><td>CCD</td><td>60606</td><td>60606</td><td>000</td><td>60606</td><td>21.5</td><td>291</td><td>804020539</td><td>0</td><td>0</td><td>804020536</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.131</td><td>22.587</td><td>-138.5</td><td>2451573.6743</td><td>0.9</td><td>0.94</td><td>1.0</td><td>16.455</td><td>0.262</td><td>16.252</td><td>0.612</td><td>15.216</td><td>0.483</td><td>6127</td><td>114</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.3</td><td>155</td><td>19.1</td><td>18.1</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.471749</td><td>1.699981</td><td>0.15</td><td>0.15</td><td>145</td><td>08295321+0141599</td><td>16.278</td><td>0.12</td><td>0.121</td><td>9.4</td><td>15.646</td><td>0.138</td><td>0.138</td><td>8.2</td><td>15.792</td><td>--</td><td>--</td><td>--</td><td>BBU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>21.5</td><td>111</td><td>804020536</td><td>0</td><td>0</td><td>804020539</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.127</td><td>22.583</td><td>-118.5</td><td>2451573.6743</td><td>0.82</td><td>0.93</td><td>--</td><td>16.158</td><td>0.12</td><td>15.666</td><td>0.136</td><td>--</td><td>--</td><td>6134</td><td>134</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.5</td><td>178</td><td>18.2</td><td>17.1</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.485472</td><td>1.701631</td><td>0.07</td><td>0.07</td><td>17</td><td>08295651+0142058</td><td>15.286</td><td>0.047</td><td>0.049</td><td>23.3</td><td>14.805</td><td>0.069</td><td>0.069</td><td>17.9</td><td>14.59</td><td>0.102</td><td>0.102</td><td>11.1</td><td>AAA</td><td>361506</td><td>361506</td><td>000</td><td>361506</td><td>32.4</td><td>245</td><td>804020536</td><td>0</td><td>0</td><td>804020544</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.132</td><td>22.596</td><td>-167.8</td><td>2451573.6743</td><td>1.03</td><td>1.1</td><td>1.02</td><td>15.41</td><td>0.107</td><td>14.79</td><td>0.127</td><td>14.331</td><td>0.225</td><td>6140</td><td>84</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.5</td><td>227</td><td>17.9</td><td>16.6</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.50233</td><td>1.707568</td><td>0.06</td><td>0.06</td><td>90</td><td>08300055+0142272</td><td>13.442</td><td>0.023</td><td>0.026</td><td>127.5</td><td>12.837</td><td>0.024</td><td>0.026</td><td>109.4</td><td>12.652</td><td>0.029</td><td>0.03</td><td>66.2</td><td>AAA</td><td>666655</td><td>666655</td><td>000</td><td>666655</td><td>24.1</td><td>173</td><td>804039600</td><td>0</td><td>0</td><td>804039583</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.135</td><td>22.614</td><td>203.0</td><td>2451573.6811</td><td>1.13</td><td>0.79</td><td>1.5</td><td>13.483</td><td>0.018</td><td>12.913</td><td>0.029</td><td>12.71</td><td>0.045</td><td>6167</td><td>50</td><td>sw</td><td>1</td><td>1</td><td>U</td><td>1.1</td><td>262</td><td>17.2</td><td>15.1</td><td>1</td><td>--</td><td>43956</td><td>1010982</td><td>198</td></tr>
+<tr><td>127.469423</td><td>1.71372</td><td>0.12</td><td>0.11</td><td>101</td><td>08295266+0142493</td><td>16.124</td><td>0.097</td><td>0.098</td><td>10.8</td><td>15.408</td><td>0.101</td><td>0.102</td><td>10.3</td><td>15.34</td><td>0.186</td><td>0.186</td><td>5.6</td><td>AAC</td><td>60606</td><td>60606</td><td>000</td><td>60606</td><td>50.2</td><td>170</td><td>804020539</td><td>0</td><td>0</td><td>804020569</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.112</td><td>22.588</td><td>-110.1</td><td>2451573.6743</td><td>0.99</td><td>0.99</td><td>0.93</td><td>16.256</td><td>0.269</td><td>15.929</td><td>0.347</td><td>15.574</td><td>0.328</td><td>6184</td><td>142</td><td>se</td><td>0</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.451948</td><td>1.721205</td><td>0.06</td><td>0.06</td><td>0</td><td>08294846+0143163</td><td>12.459</td><td>0.019</td><td>0.023</td><td>315.4</td><td>12.056</td><td>0.024</td><td>0.026</td><td>224.7</td><td>11.969</td><td>0.023</td><td>0.024</td><td>124.1</td><td>AAA</td><td>666666</td><td>666666</td><td>000</td><td>666666</td><td>48.4</td><td>192</td><td>804020559</td><td>0</td><td>0</td><td>804020588</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.096</td><td>22.576</td><td>-47.2</td><td>2451573.6743</td><td>0.74</td><td>0.74</td><td>0.86</td><td>12.47</td><td>0.019</td><td>12.038</td><td>0.046</td><td>11.973</td><td>0.029</td><td>6211</td><td>205</td><td>se</td><td>0</td><td>1</td><td>U</td><td>1.3</td><td>176</td><td>14.8</td><td>13.5</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.395474</td><td>1.69711</td><td>0.34</td><td>0.32</td><td>88</td><td>08293491+0141495</td><td>16.551</td><td>0.164</td><td>0.164</td><td>7.3</td><td>15.907</td><td>0.207</td><td>0.207</td><td>6.5</td><td>15.795</td><td>0.274</td><td>0.275</td><td>3.7</td><td>CED</td><td>60506</td><td>60506</td><td>000</td><td>60506</td><td>53.7</td><td>338</td><td>804020566</td><td>0</td><td>0</td><td>804020535</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.089</td><td>22.515</td><td>156.0</td><td>2451573.6743</td><td>0.85</td><td>10.93</td><td>0.72</td><td>16.461</td><td>0.216</td><td>16.1</td><td>0.268</td><td>16.146</td><td>0.828</td><td>6125</td><td>97</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.432292</td><td>1.717116</td><td>0.07</td><td>0.06</td><td>96</td><td>08294375+0143016</td><td>14.569</td><td>0.032</td><td>0.035</td><td>45.2</td><td>14.299</td><td>0.055</td><td>0.056</td><td>28.5</td><td>14.219</td><td>0.084</td><td>0.084</td><td>15.6</td><td>AAA</td><td>665614</td><td>665614</td><td>000</td><td>665614</td><td>22.8</td><td>14</td><td>804020593</td><td>0</td><td>0</td><td>804020581</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.09</td><td>22.557</td><td>23.5</td><td>2451573.6743</td><td>0.9</td><td>1.15</td><td>0.65</td><td>14.552</td><td>0.05</td><td>14.172</td><td>0.086</td><td>14.225</td><td>0.229</td><td>6197</td><td>229</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.3</td><td>198</td><td>16.4</td><td>15.3</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.433857</td><td>1.723263</td><td>0.07</td><td>0.07</td><td>17</td><td>08294412+0143237</td><td>15.678</td><td>0.08</td><td>0.081</td><td>16.3</td><td>15.207</td><td>0.105</td><td>0.105</td><td>12.3</td><td>14.965</td><td>0.138</td><td>0.138</td><td>7.9</td><td>AAB</td><td>665616</td><td>665616</td><td>ccc</td><td>665616</td><td>4.5</td><td>317</td><td>804020596</td><td>0</td><td>0</td><td>804020593</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.085</td><td>22.561</td><td>17.9</td><td>2451573.6743</td><td>1.14</td><td>0.83</td><td>1.22</td><td>14.517</td><td>0.097</td><td>14.072</td><td>0.112</td><td>14.179</td><td>0.144</td><td>6219</td><td>235</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>4.0</td><td>139</td><td>15.8</td><td>14.4</td><td>1</td><td>--</td><td>43955</td><td>1010949</td><td>80</td></tr>
+<tr><td>127.531902</td><td>1.729757</td><td>0.06</td><td>0.06</td><td>90</td><td>08300765+0143471</td><td>14.155</td><td>0.033</td><td>0.036</td><td>66.1</td><td>13.84</td><td>0.032</td><td>0.033</td><td>43.4</td><td>13.806</td><td>0.048</td><td>0.049</td><td>22.9</td><td>AAA</td><td>666646</td><td>666646</td><td>000</td><td>666646</td><td>14.1</td><td>82</td><td>804039539</td><td>0</td><td>0</td><td>804039541</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.13</td><td>22.65</td><td>96.6</td><td>2451573.6811</td><td>1.03</td><td>0.88</td><td>1.01</td><td>14.136</td><td>0.051</td><td>13.972</td><td>0.048</td><td>13.85</td><td>0.118</td><td>6247</td><td>156</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>230</td><td>15.8</td><td>15.0</td><td>1</td><td>--</td><td>43956</td><td>1010982</td><td>198</td></tr>
+<tr><td>127.53577</td><td>1.730293</td><td>0.37</td><td>0.35</td><td>45</td><td>08300858+0143490</td><td>17.047</td><td>0.231</td><td>0.231</td><td>4.6</td><td>16.123</td><td>0.19</td><td>0.19</td><td>5.3</td><td>15.872</td><td>0.302</td><td>0.303</td><td>3.4</td><td>DCD</td><td>60605</td><td>60605</td><td>000</td><td>60605</td><td>14.1</td><td>262</td><td>804039541</td><td>0</td><td>0</td><td>804039539</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.131</td><td>22.654</td><td>82.7</td><td>2451573.6811</td><td>0.95</td><td>0.74</td><td>0.98</td><td>16.537</td><td>0.399</td><td>17.529</td><td>1.515</td><td>16.04</td><td>0.705</td><td>6249</td><td>170</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>--</td><td>--</td><td>--</td><td>0</td><td>--</td><td>43956</td><td>1010982</td><td>198</td></tr>
+</table></div></div></div>
+</div>
+<p>Now that we have all the data we want from the 2MASS-PSC, we move on to query SDSS DR9 with astroquery. First we want to find out which tables are available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_sdss</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;SDSS DR9&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">catalog_ID</span><span class="p">,</span> <span class="n">catalog</span> <span class="ow">in</span> <span class="n">catalog_list_sdss</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">catalog_ID</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>II/294 :  The SDSS Photometric Catalog, Release 7 (Adelman-McCarthy+, 2009)
+V/139 :  The SDSS Photometric Catalog, Release 9 (Adelman-McCarthy+, 2012)
+V/147 :  The SDSS Photometric Catalogue, Release 12 (Alam+, 2015)
+V/154 :  Sloan Digital Sky Surveys (SDSS), Release 16 (DR16) (Ahumada+, 2020)
+VII/289 :  SDSS quasar catalog, sixteenth data release (DR16Q) (Lyke+, 2020)
+J/other/NewA/58.61 :  SDSS DR9 galaxy clusters optical catalog (Banerjee+, 2018)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to get data from the catalogue called <code class="docutils literal notranslate"><span class="pre">V/139</span></code>. As before let’s have a look at a few rows (per default <code class="docutils literal notranslate"><span class="pre">Vizier.get_catalogs</span></code> gives you 50 rows) of the code to figure out, which ones are most interesting for us.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_sdss</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;V/139&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_sdss</span><span class="p">)</span>
+<span class="n">test_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:V/139/sdss9&#39; with 21 column(s) and 50 row(s) 
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=50</i>
+<table id="table139795679862112" class="table-striped table-bordered table-condensed">
+<thead><tr><th>mode</th><th>q_mode</th><th>cl</th><th>SDSS9</th><th>m_SDSS9</th><th>Im</th><th>RA_ICRS</th><th>DE_ICRS</th><th>ObsDate</th><th>Q</th><th>umag</th><th>e_umag</th><th>gmag</th><th>e_gmag</th><th>rmag</th><th>e_rmag</th><th>imag</th><th>e_imag</th><th>zmag</th><th>e_zmag</th><th>zsp</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>yr</th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th></tr></thead>
+<thead><tr><th>uint8</th><th>str1</th><th>uint8</th><th>str19</th><th>str1</th><th>str2</th><th>float64</th><th>float64</th><th>float64</th><th>uint8</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>2</td><td></td><td>3</td><td>J030000.38+000013.1</td><td></td><td>Im</td><td>45.001596</td><td>0.003649</td><td>2008.0006</td><td>3</td><td>25.902</td><td>0.807</td><td>24.610</td><td>0.947</td><td>22.075</td><td>0.182</td><td>21.593</td><td>0.185</td><td>21.468</td><td>0.474</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.40+000012.7</td><td></td><td>Im</td><td>45.001673</td><td>0.003537</td><td>2003.7410</td><td>3</td><td>25.817</td><td>1.021</td><td>23.538</td><td>0.404</td><td>22.285</td><td>0.193</td><td>21.703</td><td>0.178</td><td>22.310</td><td>0.986</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.36+000012.7</td><td></td><td>Im</td><td>45.001502</td><td>0.003537</td><td>2002.8508</td><td>3</td><td>25.376</td><td>1.060</td><td>23.875</td><td>0.440</td><td>22.219</td><td>0.197</td><td>21.528</td><td>0.180</td><td>21.670</td><td>0.820</td><td>--</td></tr>
+<tr><td>1</td><td></td><td>3</td><td>J030000.39+000013.4</td><td></td><td>Im</td><td>45.001638</td><td>0.003727</td><td>2003.8857</td><td>3</td><td>23.823</td><td>1.041</td><td>23.177</td><td>0.320</td><td>22.802</td><td>0.349</td><td>21.693</td><td>0.208</td><td>20.916</td><td>0.431</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.36+000013.6</td><td></td><td>Im</td><td>45.001516</td><td>0.003778</td><td>2003.9076</td><td>3</td><td>26.023</td><td>0.678</td><td>24.208</td><td>0.687</td><td>22.402</td><td>0.198</td><td>21.967</td><td>0.173</td><td>21.328</td><td>0.420</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.36+000013.2</td><td></td><td>Im</td><td>45.001517</td><td>0.003671</td><td>2002.7581</td><td>3</td><td>23.418</td><td>0.779</td><td>23.402</td><td>0.339</td><td>22.210</td><td>0.201</td><td>22.442</td><td>0.333</td><td>21.105</td><td>0.412</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.36+000013.4</td><td></td><td>Im</td><td>45.001538</td><td>0.003729</td><td>1998.8264</td><td>3</td><td>23.063</td><td>0.864</td><td>22.739</td><td>0.265</td><td>22.043</td><td>0.223</td><td>21.063</td><td>0.148</td><td>20.503</td><td>0.399</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.32+000012.8</td><td></td><td>Im</td><td>45.001365</td><td>0.003560</td><td>1998.7172</td><td>3</td><td>26.314</td><td>0.653</td><td>22.951</td><td>0.335</td><td>21.752</td><td>0.173</td><td>21.951</td><td>0.359</td><td>21.176</td><td>0.772</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>6</td><td>J030000.32+000013.1</td><td></td><td>Im</td><td>45.001368</td><td>0.003654</td><td>2001.7179</td><td>3</td><td>25.021</td><td>0.949</td><td>23.775</td><td>0.351</td><td>22.497</td><td>0.192</td><td>22.290</td><td>0.205</td><td>22.328</td><td>0.673</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.33+000013.4</td><td></td><td>Im</td><td>45.001379</td><td>0.003728</td><td>2003.7464</td><td>3</td><td>22.761</td><td>0.695</td><td>22.264</td><td>0.185</td><td>21.795</td><td>0.176</td><td>22.052</td><td>0.318</td><td>21.433</td><td>0.737</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.33+000013.2</td><td></td><td>Im</td><td>45.001382</td><td>0.003687</td><td>2002.0373</td><td>3</td><td>25.273</td><td>1.237</td><td>23.299</td><td>0.347</td><td>22.249</td><td>0.231</td><td>21.588</td><td>0.175</td><td>22.612</td><td>1.123</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.33+000013.0</td><td></td><td>Im</td><td>45.001394</td><td>0.003611</td><td>1998.8783</td><td>3</td><td>24.991</td><td>1.166</td><td>24.389</td><td>0.791</td><td>21.979</td><td>0.178</td><td>21.416</td><td>0.161</td><td>20.237</td><td>0.229</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J030000.34+000013.2</td><td></td><td>Im</td><td>45.001441</td><td>0.003675</td><td>2002.8318</td><td>3</td><td>22.742</td><td>0.448</td><td>23.691</td><td>0.380</td><td>22.324</td><td>0.181</td><td>22.005</td><td>0.198</td><td>21.891</td><td>0.707</td><td>--</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>2</td><td></td><td>6</td><td>J025959.06+000020.3</td><td>*</td><td>Im</td><td>44.996102</td><td>0.005642</td><td>2001.7179</td><td>3</td><td>19.559</td><td>0.032</td><td>18.206</td><td>0.006</td><td>17.581</td><td>0.006</td><td>17.377</td><td>0.006</td><td>17.256</td><td>0.014</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>6</td><td>J025959.06+000020.3</td><td>*</td><td>Im</td><td>44.996123</td><td>0.005638</td><td>2002.7581</td><td>3</td><td>19.660</td><td>0.033</td><td>18.201</td><td>0.006</td><td>17.580</td><td>0.006</td><td>17.389</td><td>0.006</td><td>17.281</td><td>0.014</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>6</td><td>J025959.06+000020.2</td><td>*</td><td>Im</td><td>44.996122</td><td>0.005628</td><td>2003.9076</td><td>3</td><td>19.557</td><td>0.035</td><td>18.235</td><td>0.007</td><td>17.596</td><td>0.006</td><td>17.385</td><td>0.006</td><td>17.267</td><td>0.015</td><td>--</td></tr>
+<tr><td>1</td><td></td><td>3</td><td>J025959.28+000029.4</td><td></td><td>Im</td><td>44.997024</td><td>0.008192</td><td>2003.8857</td><td>3</td><td>24.030</td><td>0.704</td><td>24.684</td><td>0.556</td><td>23.758</td><td>0.416</td><td>22.369</td><td>0.195</td><td>23.399</td><td>0.630</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.32+000037.4</td><td></td><td>Im</td><td>44.997202</td><td>0.010404</td><td>2002.6788</td><td>1</td><td>25.468</td><td>0.982</td><td>23.386</td><td>0.348</td><td>22.424</td><td>0.202</td><td>21.436</td><td>0.124</td><td>19.823</td><td>0.144</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.33+000037.2</td><td>*</td><td>Im</td><td>44.997211</td><td>0.010349</td><td>2001.7233</td><td>3</td><td>24.728</td><td>1.702</td><td>25.393</td><td>1.024</td><td>22.210</td><td>0.229</td><td>21.114</td><td>0.137</td><td>20.624</td><td>0.394</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.33+000037.4</td><td>*</td><td>Im</td><td>44.997212</td><td>0.010392</td><td>1998.8783</td><td>3</td><td>24.065</td><td>0.779</td><td>23.934</td><td>0.429</td><td>22.666</td><td>0.236</td><td>21.681</td><td>0.148</td><td>21.303</td><td>0.407</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.31+000037.4</td><td></td><td>Im</td><td>44.997155</td><td>0.010414</td><td>1998.8264</td><td>3</td><td>23.408</td><td>1.006</td><td>22.886</td><td>0.277</td><td>22.408</td><td>0.291</td><td>21.058</td><td>0.137</td><td>20.417</td><td>0.340</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.33+000037.4</td><td>*</td><td>Im</td><td>44.997213</td><td>0.010409</td><td>2007.8858</td><td>3</td><td>22.607</td><td>1.054</td><td>23.143</td><td>0.726</td><td>22.509</td><td>0.403</td><td>21.230</td><td>0.146</td><td>20.597</td><td>0.289</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.30+000037.2</td><td></td><td>Im</td><td>44.997082</td><td>0.010345</td><td>1998.8756</td><td>3</td><td>22.344</td><td>0.272</td><td>24.442</td><td>0.746</td><td>23.670</td><td>0.753</td><td>21.439</td><td>0.182</td><td>21.483</td><td>0.725</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.29+000037.2</td><td></td><td>Im</td><td>44.997073</td><td>0.010342</td><td>2000.7542</td><td>3</td><td>24.043</td><td>1.518</td><td>23.896</td><td>0.689</td><td>21.943</td><td>0.193</td><td>21.502</td><td>0.184</td><td>20.549</td><td>0.350</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.33+000037.3</td><td>*</td><td>Im</td><td>44.997218</td><td>0.010363</td><td>2003.7384</td><td>3</td><td>22.808</td><td>0.758</td><td>22.738</td><td>0.292</td><td>22.040</td><td>0.243</td><td>20.733</td><td>0.112</td><td>20.901</td><td>0.568</td><td>--</td></tr>
+<tr><td>2</td><td></td><td>3</td><td>J025959.33+000037.3</td><td>*</td><td>Im</td><td>44.997244</td><td>0.010375</td><td>2000.9068</td><td>3</td><td>23.811</td><td>1.190</td><td>22.790</td><td>0.252</td><td>22.403</td><td>0.277</td><td>21.013</td><td>0.120</td><td>20.353</td><td>0.302</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+<p>Again we want to get the coordinates of the source as well as magnitudes at all five SDSS bands (u, g, r, i  and z), and a classification (cl). Do restrict the query to returning these columns and to get more than 50 rows returned, we create a custom <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> object and then use this object to again query within 14arcmin of RA=08h30m00s, Dec=01d30m00s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">custom_vizier</span> <span class="o">=</span> <span class="n">Vizier</span><span class="p">(</span>
+    <span class="n">row_limit</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RA_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DE_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;umag&quot;</span><span class="p">,</span> <span class="s2">&quot;gmag&quot;</span><span class="p">,</span> <span class="s2">&quot;rmag&quot;</span><span class="p">,</span> <span class="s2">&quot;imag&quot;</span><span class="p">,</span> <span class="s2">&quot;zmag&quot;</span><span class="p">,</span> <span class="s2">&quot;cl&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="s2">&quot;08:30:00&quot;</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="s2">&quot;01:30:00&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+<span class="n">sdss_results</span> <span class="o">=</span> <span class="n">custom_vizier</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">14</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="s2">&quot;V/139&quot;</span><span class="p">)</span>
+<span class="n">sdss_results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:V/139/sdss9&#39; with 8 column(s) and 12405 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we have one table in the resulting lists of tables. It is called <code class="docutils literal notranslate"><span class="pre">V/139/sdss9</span></code>. Let’s have a look at it:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=12405</i>
+<table id="table139795675859264" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>cl</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>uint8</th></tr></thead>
+<tr><td>127.267366</td><td>1.512930</td><td>21.853</td><td>19.732</td><td>18.870</td><td>18.564</td><td>18.379</td><td>6</td></tr>
+<tr><td>127.267372</td><td>1.512928</td><td>22.250</td><td>19.697</td><td>18.855</td><td>18.568</td><td>18.306</td><td>6</td></tr>
+<tr><td>127.267372</td><td>1.512928</td><td>22.047</td><td>19.751</td><td>18.879</td><td>18.549</td><td>18.383</td><td>6</td></tr>
+<tr><td>127.267727</td><td>1.495873</td><td>22.879</td><td>22.223</td><td>21.492</td><td>21.122</td><td>20.872</td><td>3</td></tr>
+<tr><td>127.267754</td><td>1.495933</td><td>22.972</td><td>22.431</td><td>21.465</td><td>21.162</td><td>21.009</td><td>3</td></tr>
+<tr><td>127.267831</td><td>1.500005</td><td>23.816</td><td>24.462</td><td>22.470</td><td>20.754</td><td>20.033</td><td>6</td></tr>
+<tr><td>127.267836</td><td>1.495947</td><td>22.638</td><td>22.051</td><td>21.045</td><td>20.627</td><td>20.785</td><td>3</td></tr>
+<tr><td>127.267853</td><td>1.499961</td><td>24.527</td><td>24.690</td><td>22.381</td><td>20.670</td><td>20.016</td><td>6</td></tr>
+<tr><td>127.267955</td><td>1.499932</td><td>24.332</td><td>24.996</td><td>23.056</td><td>20.649</td><td>19.976</td><td>6</td></tr>
+<tr><td>127.268214</td><td>1.501147</td><td>19.210</td><td>18.034</td><td>17.572</td><td>17.435</td><td>17.414</td><td>6</td></tr>
+<tr><td>127.268221</td><td>1.501147</td><td>19.226</td><td>18.012</td><td>17.584</td><td>17.426</td><td>17.400</td><td>6</td></tr>
+<tr><td>127.268223</td><td>1.501140</td><td>19.180</td><td>18.003</td><td>17.578</td><td>17.440</td><td>17.406</td><td>6</td></tr>
+<tr><td>127.269016</td><td>1.486441</td><td>21.146</td><td>20.253</td><td>19.958</td><td>19.841</td><td>19.841</td><td>6</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>127.717810</td><td>1.430291</td><td>23.693</td><td>23.101</td><td>23.162</td><td>22.646</td><td>22.609</td><td>6</td></tr>
+<tr><td>127.718194</td><td>1.443066</td><td>25.652</td><td>23.399</td><td>22.615</td><td>22.155</td><td>23.692</td><td>6</td></tr>
+<tr><td>127.719353</td><td>1.424758</td><td>29.773</td><td>31.292</td><td>21.664</td><td>16.917</td><td>28.798</td><td>3</td></tr>
+<tr><td>127.721086</td><td>1.454952</td><td>25.206</td><td>22.518</td><td>21.180</td><td>20.003</td><td>19.220</td><td>6</td></tr>
+<tr><td>127.721092</td><td>1.454942</td><td>24.141</td><td>22.402</td><td>21.299</td><td>19.986</td><td>19.388</td><td>6</td></tr>
+<tr><td>127.721106</td><td>1.454915</td><td>25.321</td><td>22.688</td><td>21.179</td><td>20.001</td><td>19.185</td><td>6</td></tr>
+<tr><td>127.721135</td><td>1.433421</td><td>24.965</td><td>23.102</td><td>21.848</td><td>21.408</td><td>20.790</td><td>6</td></tr>
+<tr><td>127.721294</td><td>1.428704</td><td>23.008</td><td>22.731</td><td>22.155</td><td>21.610</td><td>22.793</td><td>3</td></tr>
+<tr><td>127.721770</td><td>1.431717</td><td>24.914</td><td>22.575</td><td>21.113</td><td>20.438</td><td>20.019</td><td>6</td></tr>
+<tr><td>127.721857</td><td>1.451469</td><td>22.933</td><td>22.365</td><td>21.472</td><td>21.923</td><td>20.895</td><td>3</td></tr>
+<tr><td>127.722534</td><td>1.455524</td><td>23.442</td><td>23.378</td><td>22.518</td><td>22.918</td><td>21.866</td><td>3</td></tr>
+<tr><td>127.722635</td><td>1.433612</td><td>24.813</td><td>23.994</td><td>22.453</td><td>21.173</td><td>20.798</td><td>3</td></tr>
+<tr><td>127.722672</td><td>1.455765</td><td>22.961</td><td>25.752</td><td>22.950</td><td>22.003</td><td>23.070</td><td>6</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="step-2-cross-matching">
+<h2>Step #2: Cross-matching<a class="headerlink" href="#step-2-cross-matching" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="http://cdsxmatch.u-strasbg.fr/" title="http://cdsxmatch.u-strasbg.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a></p>
+<p>In this next step, we find common sources in the 2MASS-PSC and SDSS-DR9 catalogues. One simple way to do this using the CDS XMatch service, which can also be reached with <code class="docutils literal notranslate"><span class="pre">astroquery</span></code>. The most reliable way to quuery XMatch is by uploading one of the tables (which will also make sure we stay in our region of interest) and crossmatching it to a table available in VizieR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mass_psc</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Data/2MASS_PSC.vot&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;votable&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sdss_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Data/SDSS_DR9.vot&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;votable&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_mass</span> <span class="o">=</span> <span class="n">XMatch</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="n">cat1</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;Data/2MASS_PSC.vot&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(),</span>
+    <span class="n">cat2</span><span class="o">=</span><span class="s2">&quot;vizier:V/139/sdss9&quot;</span><span class="p">,</span>
+    <span class="n">max_distance</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">,</span>
+    <span class="n">colRA1</span><span class="o">=</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span>
+    <span class="n">colDec1</span><span class="o">=</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">sdss_mass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=717</i>
+<table id="table139795675858352" class="table-striped table-bordered table-condensed">
+<thead><tr><th>angDist</th><th>RAJ2000</th><th>DEJ2000</th><th>errMaj</th><th>errMin</th><th>errPA</th><th>2MASS</th><th>Jmag</th><th>Jcmsig</th><th>e_Jmag</th><th>Jsnr</th><th>Hmag</th><th>Hcmsig</th><th>e_Hmag</th><th>Hsnr</th><th>Kmag</th><th>Kcmsig</th><th>e_Kmag</th><th>Ksnr</th><th>Qflg</th><th>Rflg</th><th>Bflg</th><th>Cflg</th><th>Ndet</th><th>prox</th><th>pxPA</th><th>pxCntr</th><th>Xflg</th><th>Aflg</th><th>Cntr</th><th>Hemis</th><th>Date</th><th>Scan</th><th>GLON</th><th>GLAT</th><th>Xscan</th><th>JD</th><th>Jpsfchi</th><th>Hpsfchi</th><th>Kpsfchi</th><th>Jstdap</th><th>e_Jstdap</th><th>Hstdap</th><th>e_Hstdap</th><th>Kstdap</th><th>e_Kstdap</th><th>edgeNS</th><th>edgeEW</th><th>edge</th><th>dup</th><th>use</th><th>opt</th><th>Dopt</th><th>PAopt</th><th>Bmag</th><th>Rmag</th><th>Nopt</th><th>extKey</th><th>scanKey</th><th>coaddKey</th><th>coadd</th><th>SDSS9</th><th>RAdeg</th><th>DEdeg</th><th>errHalfMaj</th><th>errHalfMin</th><th>errPosAng</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>e_umag</th><th>e_gmag</th><th>e_rmag</th><th>e_imag</th><th>e_zmag</th><th>objID</th><th>cl</th><th>q_mode</th><th>flags</th><th>Q</th><th>ObsDate</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>SpObjID</th><th>zsp</th><th>e_zsp</th><th>f_zsp</th><th>spType</th><th>spCl</th><th>subClass</th></tr></thead>
+<thead><tr><th>arcsec</th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>d</th><th></th><th></th><th></th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>arcsec</th><th>arcsec</th><th></th><th></th><th></th><th></th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th>mas / yr</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>object</th><th>int32</th><th>int32</th><th>object</th><th>int32</th><th>float32</th><th>int16</th><th>int64</th><th>int16</th><th>int16</th><th>int64</th><th>str1</th><th>object</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int32</th><th>int16</th><th>object</th><th>int16</th><th>int16</th><th>str1</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>int16</th><th>int32</th><th>int32</th><th>int32</th><th>int16</th><th>str19</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int64</th><th>uint8</th><th>bool</th><th>str16</th><th>uint8</th><th>float64</th><th>int32</th><th>int16</th><th>int32</th><th>int16</th><th>int64</th><th>float32</th><th>float32</th><th>int16</th><th>str21</th><th>str6</th><th>str22</th></tr></thead>
+<tr><td>0.352101</td><td>127.509154</td><td>1.269173</td><td>0.2</td><td>0.15</td><td>87</td><td>08300219+0116090</td><td>15.963</td><td>0.095</td><td>0.096</td><td>12.5</td><td>15.546</td><td>0.121</td><td>0.122</td><td>9.0</td><td>14.93</td><td>0.144</td><td>0.144</td><td>8.1</td><td>ABB</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>14.2</td><td>340</td><td>804040589</td><td>0</td><td>0</td><td>804040599</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.554</td><td>22.408</td><td>178.5</td><td>2451573.6815</td><td>0.89</td><td>1.01</td><td>0.92</td><td>15.939</td><td>0.235</td><td>15.899</td><td>0.319</td><td>14.69</td><td>0.124</td><td>4589</td><td>74</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43956</td><td>1010984</td><td>221</td><td>J083002.21+011608.9</td><td>127.509248</td><td>1.269146</td><td>0.01</td><td>0.009</td><td>90.0</td><td>23.712</td><td>20.876</td><td>19.402</td><td>18.068</td><td>17.338</td><td>0.67</td><td>0.034</td><td>0.015</td><td>0.009</td><td>0.015</td><td>1237653664712163908</td><td>6</td><td>True</td><td>0000201010000110</td><td>3</td><td>2000.9155</td><td>-53</td><td>5</td><td>-43</td><td>5</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.152435</td><td>127.507779</td><td>1.272875</td><td>0.12</td><td>0.11</td><td>86</td><td>08300186+0116223</td><td>15.594</td><td>0.083</td><td>0.084</td><td>17.6</td><td>15.563</td><td>0.117</td><td>0.117</td><td>8.9</td><td>15.272</td><td>0.181</td><td>0.182</td><td>5.9</td><td>ABC</td><td>360606</td><td>360606</td><td>000</td><td>360606</td><td>14.2</td><td>160</td><td>804040599</td><td>0</td><td>0</td><td>804040589</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.55</td><td>22.408</td><td>183.4</td><td>2451573.6814</td><td>1.64</td><td>0.82</td><td>1.47</td><td>15.432</td><td>0.153</td><td>15.81</td><td>0.424</td><td>14.992</td><td>0.114</td><td>4602</td><td>69</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>270</td><td>17.1</td><td>16.5</td><td>1</td><td>0</td><td>43956</td><td>1010984</td><td>221</td><td>J083001.86+011622.2</td><td>127.507749</td><td>1.272845</td><td>0.002</td><td>0.002</td><td>90.0</td><td>18.394</td><td>17.213</td><td>16.806</td><td>16.674</td><td>16.623</td><td>0.014</td><td>0.004</td><td>0.004</td><td>0.005</td><td>0.01</td><td>1237653664712163358</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>-3</td><td>3</td><td>2</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.217574</td><td>127.514167</td><td>1.277495</td><td>0.23</td><td>0.21</td><td>51</td><td>08300340+0116389</td><td>16.553</td><td>0.17</td><td>0.171</td><td>7.3</td><td>16.179</td><td>0.194</td><td>0.194</td><td>5.0</td><td>15.894</td><td>--</td><td>--</td><td>--</td><td>CCU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>28.4</td><td>234</td><td>804040589</td><td>0</td><td>0</td><td>804040577</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.549</td><td>22.416</td><td>160.4</td><td>2451573.6814</td><td>0.69</td><td>1.58</td><td>--</td><td>16.335</td><td>0.139</td><td>18.014</td><td>3.36</td><td>--</td><td>--</td><td>4619</td><td>92</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.0</td><td>13</td><td>18.0</td><td>17.3</td><td>1</td><td>0</td><td>43956</td><td>1010984</td><td>221</td><td>J083003.39+011638.8</td><td>127.514129</td><td>1.277448</td><td>0.003</td><td>0.003</td><td>90.0</td><td>19.513</td><td>18.189</td><td>17.714</td><td>17.559</td><td>17.485</td><td>0.028</td><td>0.006</td><td>0.006</td><td>0.007</td><td>0.016</td><td>1237653664712163741</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>2</td><td>3</td><td>1</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.048922</td><td>127.463251</td><td>1.271903</td><td>0.07</td><td>0.07</td><td>0</td><td>08295118+0116188</td><td>15.844</td><td>0.076</td><td>0.077</td><td>14.0</td><td>15.11</td><td>0.095</td><td>0.096</td><td>13.5</td><td>15.029</td><td>0.138</td><td>0.138</td><td>7.4</td><td>AAB</td><td>260606</td><td>260606</td><td>000</td><td>260606</td><td>41.0</td><td>160</td><td>804019559</td><td>0</td><td>0</td><td>804019587</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.528</td><td>22.369</td><td>-87.9</td><td>2451573.6739</td><td>1.78</td><td>0.8</td><td>1.14</td><td>15.935</td><td>0.238</td><td>15.077</td><td>0.164</td><td>15.197</td><td>0.438</td><td>4593</td><td>164</td><td>se</td><td>0</td><td>1</td><td>U</td><td>1.0</td><td>281</td><td>20.0</td><td>18.4</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082951.17+011618.8</td><td>127.463238</td><td>1.271907</td><td>0.005</td><td>0.005</td><td>90.0</td><td>21.976</td><td>19.794</td><td>18.386</td><td>17.54</td><td>17.048</td><td>0.176</td><td>0.016</td><td>0.008</td><td>0.007</td><td>0.012</td><td>1237653664712098290</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>-19</td><td>4</td><td>8</td><td>4</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.023156</td><td>127.463023</td><td>1.2864</td><td>0.06</td><td>0.06</td><td>0</td><td>08295112+0117110</td><td>14.093</td><td>0.029</td><td>0.032</td><td>70.0</td><td>13.652</td><td>0.033</td><td>0.035</td><td>51.7</td><td>13.553</td><td>0.042</td><td>0.043</td><td>28.9</td><td>AAA</td><td>666635</td><td>666635</td><td>000</td><td>666635</td><td>52.2</td><td>179</td><td>804019587</td><td>0</td><td>0</td><td>804019616</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.514</td><td>22.376</td><td>-87.0</td><td>2451573.674</td><td>0.75</td><td>0.97</td><td>0.91</td><td>14.077</td><td>0.023</td><td>13.576</td><td>0.05</td><td>13.692</td><td>0.14</td><td>4646</td><td>165</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>160</td><td>16.3</td><td>14.6</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082951.12+011711.0</td><td>127.463018</td><td>1.286396</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.223</td><td>15.796</td><td>15.259</td><td>15.074</td><td>14.993</td><td>0.008</td><td>0.003</td><td>0.003</td><td>0.003</td><td>0.005</td><td>1237653664712098015</td><td>6</td><td>True</td><td>0000201090020010</td><td>3</td><td>2000.9155</td><td>5</td><td>3</td><td>-5</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.102852</td><td>127.48465</td><td>1.271192</td><td>0.06</td><td>0.06</td><td>0</td><td>08295631+0116162</td><td>13.848</td><td>0.026</td><td>0.029</td><td>87.8</td><td>13.177</td><td>0.02</td><td>0.022</td><td>80.0</td><td>12.932</td><td>0.023</td><td>0.024</td><td>51.1</td><td>AAA</td><td>666655</td><td>666655</td><td>000</td><td>666655</td><td>15.7</td><td>12</td><td>804019600</td><td>0</td><td>0</td><td>804019585</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.54</td><td>22.387</td><td>-164.9</td><td>2451573.6739</td><td>0.88</td><td>0.87</td><td>0.95</td><td>13.813</td><td>0.042</td><td>13.143</td><td>0.051</td><td>13.009</td><td>0.056</td><td>4591</td><td>87</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>244</td><td>18.8</td><td>16.7</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082956.31+011616.3</td><td>127.484625</td><td>1.271206</td><td>0.002</td><td>0.002</td><td>90.0</td><td>21.011</td><td>18.359</td><td>16.959</td><td>15.814</td><td>15.169</td><td>0.081</td><td>0.007</td><td>0.004</td><td>0.004</td><td>0.005</td><td>1237653664712098324</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>-3</td><td>3</td><td>4</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.385255</td><td>127.485565</td><td>1.275456</td><td>0.2</td><td>0.17</td><td>4</td><td>08295653+0116316</td><td>16.26</td><td>0.112</td><td>0.112</td><td>9.5</td><td>15.908</td><td>0.172</td><td>0.172</td><td>6.5</td><td>15.264</td><td>0.184</td><td>0.184</td><td>6.0</td><td>BCC</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>15.7</td><td>192</td><td>804019585</td><td>0</td><td>0</td><td>804019600</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.536</td><td>22.39</td><td>-168.2</td><td>2451573.674</td><td>0.84</td><td>1.3</td><td>0.8</td><td>16.125</td><td>0.291</td><td>15.529</td><td>0.253</td><td>15.21</td><td>0.246</td><td>4606</td><td>84</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>232</td><td>18.1</td><td>17.4</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082956.55+011631.7</td><td>127.485664</td><td>1.275497</td><td>0.003</td><td>0.003</td><td>90.0</td><td>20.245</td><td>18.34</td><td>17.584</td><td>17.343</td><td>17.185</td><td>0.046</td><td>0.007</td><td>0.005</td><td>0.006</td><td>0.013</td><td>1237653664712098328</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>5</td><td>3</td><td>2</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.18744</td><td>127.494339</td><td>1.280734</td><td>0.15</td><td>0.15</td><td>145</td><td>08295864+0116506</td><td>16.317</td><td>0.119</td><td>0.12</td><td>9.0</td><td>15.818</td><td>0.141</td><td>0.141</td><td>7.0</td><td>15.099</td><td>--</td><td>--</td><td>--</td><td>BBU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>36.9</td><td>239</td><td>804019600</td><td>0</td><td>0</td><td>804019605</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.536</td><td>22.4</td><td>-199.8</td><td>2451573.674</td><td>0.96</td><td>1.62</td><td>--</td><td>16.264</td><td>0.088</td><td>16.219</td><td>0.553</td><td>--</td><td>--</td><td>4625</td><td>52</td><td>se</td><td>1</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082958.64+011650.4</td><td>127.494341</td><td>1.280682</td><td>0.009</td><td>0.008</td><td>90.0</td><td>22.545</td><td>20.673</td><td>19.202</td><td>18.184</td><td>17.586</td><td>0.275</td><td>0.029</td><td>0.013</td><td>0.009</td><td>0.017</td><td>1237653664712098411</td><td>6</td><td>True</td><td>0000901010020000</td><td>3</td><td>2000.9155</td><td>7</td><td>5</td><td>-6</td><td>5</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.038231</td><td>127.494645</td><td>1.296204</td><td>0.07</td><td>0.07</td><td>17</td><td>08295871+0117463</td><td>15.25</td><td>0.05</td><td>0.051</td><td>24.1</td><td>15.062</td><td>0.077</td><td>0.078</td><td>14.1</td><td>14.87</td><td>0.114</td><td>0.114</td><td>8.6</td><td>AAB</td><td>660506</td><td>660506</td><td>000</td><td>660506</td><td>47.1</td><td>299</td><td>804019652</td><td>0</td><td>0</td><td>804019639</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.521</td><td>22.408</td><td>-200.9</td><td>2451573.674</td><td>0.98</td><td>0.89</td><td>1.01</td><td>15.178</td><td>0.064</td><td>15.195</td><td>0.302</td><td>14.779</td><td>0.326</td><td>4681</td><td>51</td><td>se</td><td>1</td><td>1</td><td>U</td><td>0.4</td><td>185</td><td>16.8</td><td>16.1</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082958.71+011746.3</td><td>127.494638</td><td>1.296212</td><td>0.002</td><td>0.001</td><td>90.0</td><td>17.968</td><td>16.737</td><td>16.304</td><td>16.182</td><td>16.107</td><td>0.012</td><td>0.004</td><td>0.004</td><td>0.004</td><td>0.007</td><td>1237653664712098075</td><td>6</td><td>True</td><td>0000201010021010</td><td>3</td><td>2000.9155</td><td>1</td><td>3</td><td>-6</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.125123</td><td>127.483247</td><td>1.302628</td><td>0.06</td><td>0.06</td><td>0</td><td>08295597+0118094</td><td>13.484</td><td>0.025</td><td>0.027</td><td>122.7</td><td>12.862</td><td>0.02</td><td>0.022</td><td>106.9</td><td>12.807</td><td>0.033</td><td>0.034</td><td>57.4</td><td>AAA</td><td>665555</td><td>665555</td><td>000</td><td>665555</td><td>27.9</td><td>314</td><td>804019667</td><td>0</td><td>0</td><td>804019652</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.509</td><td>22.401</td><td>-159.8</td><td>2451573.674</td><td>1.06</td><td>0.7</td><td>1.1</td><td>13.457</td><td>0.027</td><td>12.875</td><td>0.06</td><td>12.777</td><td>0.069</td><td>4704</td><td>92</td><td>se</td><td>0</td><td>1</td><td>U</td><td>2.0</td><td>195</td><td>16.3</td><td>14.5</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082955.98+011809.3</td><td>127.483254</td><td>1.302594</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.956</td><td>15.896</td><td>15.035</td><td>14.727</td><td>14.511</td><td>0.012</td><td>0.003</td><td>0.003</td><td>0.003</td><td>0.004</td><td>1237653664712098036</td><td>6</td><td>True</td><td>0000201090020010</td><td>3</td><td>2000.9155</td><td>-9</td><td>3</td><td>-41</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.117925</td><td>127.40852</td><td>1.286066</td><td>0.06</td><td>0.06</td><td>0</td><td>08293804+0117098</td><td>13.936</td><td>0.031</td><td>0.033</td><td>80.9</td><td>13.296</td><td>0.032</td><td>0.033</td><td>71.7</td><td>13.117</td><td>0.029</td><td>0.03</td><td>43.1</td><td>AAA</td><td>666666</td><td>666666</td><td>000</td><td>666666</td><td>25.9</td><td>57</td><td>804019624</td><td>0</td><td>0</td><td>804019615</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.486</td><td>22.328</td><td>109.1</td><td>2451573.674</td><td>1.01</td><td>0.95</td><td>1.1</td><td>13.927</td><td>0.03</td><td>13.241</td><td>0.045</td><td>13.122</td><td>0.059</td><td>4645</td><td>144</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.6</td><td>234</td><td>17.2</td><td>15.7</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082938.05+011709.7</td><td>127.408546</td><td>1.286046</td><td>0.001</td><td>0.001</td><td>90.0</td><td>19.627</td><td>16.995</td><td>15.801</td><td>15.324</td><td>15.063</td><td>0.031</td><td>0.004</td><td>0.003</td><td>0.004</td><td>0.005</td><td>1237653664712098194</td><td>6</td><td>True</td><td>0000901010020000</td><td>3</td><td>2000.9155</td><td>-6</td><td>3</td><td>-4</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.121573</td><td>127.414546</td><td>1.289993</td><td>0.06</td><td>0.06</td><td>0</td><td>08293949+0117239</td><td>14.666</td><td>0.032</td><td>0.034</td><td>41.3</td><td>14.264</td><td>0.043</td><td>0.044</td><td>29.4</td><td>14.223</td><td>0.065</td><td>0.066</td><td>15.6</td><td>AAA</td><td>664616</td><td>664616</td><td>000</td><td>664616</td><td>23.6</td><td>13</td><td>804019640</td><td>0</td><td>0</td><td>804019624</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.485</td><td>22.335</td><td>87.4</td><td>2451573.674</td><td>1.4</td><td>0.77</td><td>1.15</td><td>14.729</td><td>0.04</td><td>14.389</td><td>0.118</td><td>14.418</td><td>0.225</td><td>4659</td><td>165</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.4</td><td>205</td><td>16.3</td><td>15.3</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082939.49+011723.9</td><td>127.414574</td><td>1.289974</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.76</td><td>16.329</td><td>15.797</td><td>15.611</td><td>15.537</td><td>0.01</td><td>0.003</td><td>0.003</td><td>0.004</td><td>0.006</td><td>1237653664712097935</td><td>6</td><td>True</td><td>0000201090020010</td><td>3</td><td>2000.9155</td><td>1</td><td>3</td><td>-5</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.136879</td><td>127.398036</td><td>1.299818</td><td>0.21</td><td>0.18</td><td>86</td><td>08293552+0117593</td><td>16.006</td><td>0.091</td><td>0.092</td><td>12.0</td><td>15.514</td><td>0.124</td><td>0.124</td><td>9.3</td><td>15.203</td><td>0.145</td><td>0.145</td><td>6.3</td><td>ABC</td><td>61606</td><td>61606</td><td>000</td><td>61606</td><td>45.2</td><td>1</td><td>804019675</td><td>0</td><td>0</td><td>804019645</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.467</td><td>22.325</td><td>146.9</td><td>2451573.674</td><td>0.76</td><td>1.57</td><td>1.08</td><td>16.174</td><td>0.093</td><td>15.085</td><td>0.291</td><td>15.687</td><td>0.376</td><td>4695</td><td>106</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.8</td><td>255</td><td>18.0</td><td>17.1</td><td>1</td><td>0</td><td>43955</td><td>1010947</td><td>56</td><td>J082935.53+011759.3</td><td>127.398074</td><td>1.299821</td><td>0.003</td><td>0.003</td><td>90.0</td><td>20.175</td><td>18.156</td><td>17.348</td><td>17.067</td><td>16.9</td><td>0.044</td><td>0.006</td><td>0.005</td><td>0.005</td><td>0.011</td><td>1237653664712098178</td><td>6</td><td>True</td><td>0000B01010020010</td><td>3</td><td>2000.9155</td><td>-9</td><td>3</td><td>1</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>0.304171</td><td>127.492406</td><td>1.685115</td><td>0.31</td><td>0.3</td><td>70</td><td>08295817+0141064</td><td>16.237</td><td>0.106</td><td>0.106</td><td>9.7</td><td>15.647</td><td>0.136</td><td>0.136</td><td>8.2</td><td>15.683</td><td>0.239</td><td>0.239</td><td>4.1</td><td>BBD</td><td>160606</td><td>160606</td><td>000</td><td>160606</td><td>24.3</td><td>194</td><td>804020509</td><td>0</td><td>0</td><td>804020518</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.151</td><td>22.594</td><td>-192.8</td><td>2451573.6743</td><td>1.09</td><td>0.75</td><td>1.03</td><td>16.086</td><td>0.16</td><td>15.514</td><td>0.191</td><td>15.639</td><td>0.359</td><td>6081</td><td>59</td><td>se</td><td>1</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082958.15+014106.4</td><td>127.492324</td><td>1.685136</td><td>0.011</td><td>0.01</td><td>90.0</td><td>23.499</td><td>21.018</td><td>19.615</td><td>18.347</td><td>17.631</td><td>0.608</td><td>0.036</td><td>0.017</td><td>0.01</td><td>0.019</td><td>1237653665249034852</td><td>6</td><td>True</td><td>0000001010000100</td><td>3</td><td>2000.9155</td><td>18</td><td>5</td><td>-15</td><td>5</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.133341</td><td>127.503105</td><td>1.700905</td><td>0.06</td><td>0.06</td><td>90</td><td>08300074+0142032</td><td>14.571</td><td>0.039</td><td>0.041</td><td>45.1</td><td>14.218</td><td>0.031</td><td>0.032</td><td>30.7</td><td>14.104</td><td>0.064</td><td>0.065</td><td>17.4</td><td>AAA</td><td>665606</td><td>665606</td><td>000</td><td>665606</td><td>24.1</td><td>353</td><td>804039583</td><td>0</td><td>0</td><td>804039600</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.142</td><td>22.611</td><td>200.2</td><td>2451573.6811</td><td>1.34</td><td>0.99</td><td>0.87</td><td>14.543</td><td>0.027</td><td>14.287</td><td>0.153</td><td>14.297</td><td>0.141</td><td>6143</td><td>53</td><td>sw</td><td>1</td><td>1</td><td>U</td><td>0.5</td><td>268</td><td>16.2</td><td>15.2</td><td>1</td><td>0</td><td>43956</td><td>1010982</td><td>198</td><td>J083000.75+014203.1</td><td>127.503134</td><td>1.700882</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.393</td><td>16.059</td><td>15.603</td><td>15.448</td><td>15.406</td><td>0.009</td><td>0.003</td><td>0.004</td><td>0.004</td><td>0.006</td><td>1237653665249034289</td><td>6</td><td>True</td><td>0000201090020010</td><td>3</td><td>2000.9155</td><td>-5</td><td>3</td><td>4</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.273005</td><td>127.477304</td><td>1.697812</td><td>0.23</td><td>0.23</td><td>42</td><td>08295455+0141521</td><td>16.685</td><td>0.154</td><td>0.155</td><td>6.4</td><td>15.942</td><td>0.16</td><td>0.161</td><td>6.3</td><td>15.42</td><td>0.22</td><td>0.22</td><td>5.2</td><td>CCD</td><td>60606</td><td>60606</td><td>000</td><td>60606</td><td>21.5</td><td>291</td><td>804020539</td><td>0</td><td>0</td><td>804020536</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.131</td><td>22.587</td><td>-138.5</td><td>2451573.6743</td><td>0.9</td><td>0.94</td><td>1.0</td><td>16.455</td><td>0.262</td><td>16.252</td><td>0.612</td><td>15.216</td><td>0.483</td><td>6127</td><td>114</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.3</td><td>155</td><td>19.1</td><td>18.1</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082954.54+014152.3</td><td>127.477259</td><td>1.697873</td><td>0.004</td><td>0.004</td><td>90.0</td><td>21.384</td><td>19.091</td><td>18.127</td><td>17.814</td><td>17.583</td><td>0.11</td><td>0.01</td><td>0.007</td><td>0.007</td><td>0.018</td><td>1237653665248969180</td><td>6</td><td>True</td><td>0000001010000100</td><td>3</td><td>2000.9155</td><td>3</td><td>3</td><td>4</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.231895</td><td>127.471749</td><td>1.699981</td><td>0.15</td><td>0.15</td><td>145</td><td>08295321+0141599</td><td>16.278</td><td>0.12</td><td>0.121</td><td>9.4</td><td>15.646</td><td>0.138</td><td>0.138</td><td>8.2</td><td>15.792</td><td>--</td><td>--</td><td>--</td><td>BBU</td><td>60600</td><td>60600</td><td>000</td><td>60600</td><td>21.5</td><td>111</td><td>804020536</td><td>0</td><td>0</td><td>804020539</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.127</td><td>22.583</td><td>-118.5</td><td>2451573.6743</td><td>0.82</td><td>0.93</td><td>--</td><td>16.158</td><td>0.12</td><td>15.666</td><td>0.136</td><td>--</td><td>--</td><td>6134</td><td>134</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.5</td><td>178</td><td>18.2</td><td>17.1</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082953.20+014159.8</td><td>127.471686</td><td>1.699968</td><td>0.003</td><td>0.003</td><td>90.0</td><td>19.801</td><td>18.25</td><td>17.648</td><td>17.445</td><td>17.292</td><td>0.034</td><td>0.006</td><td>0.006</td><td>0.006</td><td>0.015</td><td>1237653665248969172</td><td>6</td><td>True</td><td>0000001010000000</td><td>3</td><td>2000.9155</td><td>0</td><td>3</td><td>-6</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.108018</td><td>127.485472</td><td>1.701631</td><td>0.07</td><td>0.07</td><td>17</td><td>08295651+0142058</td><td>15.286</td><td>0.047</td><td>0.049</td><td>23.3</td><td>14.805</td><td>0.069</td><td>0.069</td><td>17.9</td><td>14.59</td><td>0.102</td><td>0.102</td><td>11.1</td><td>AAA</td><td>361506</td><td>361506</td><td>000</td><td>361506</td><td>32.4</td><td>245</td><td>804020536</td><td>0</td><td>0</td><td>804020544</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.132</td><td>22.596</td><td>-167.8</td><td>2451573.6743</td><td>1.03</td><td>1.1</td><td>1.02</td><td>15.41</td><td>0.107</td><td>14.79</td><td>0.127</td><td>14.331</td><td>0.225</td><td>6140</td><td>84</td><td>se</td><td>0</td><td>1</td><td>U</td><td>0.5</td><td>227</td><td>17.9</td><td>16.6</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082956.51+014205.7</td><td>127.485483</td><td>1.701603</td><td>0.002</td><td>0.002</td><td>90.0</td><td>19.856</td><td>17.73</td><td>16.86</td><td>16.541</td><td>16.35</td><td>0.036</td><td>0.005</td><td>0.004</td><td>0.004</td><td>0.009</td><td>1237653665249034558</td><td>6</td><td>True</td><td>0000001010020000</td><td>3</td><td>2000.9155</td><td>-4</td><td>3</td><td>-4</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.033205</td><td>127.50233</td><td>1.707568</td><td>0.06</td><td>0.06</td><td>90</td><td>08300055+0142272</td><td>13.442</td><td>0.023</td><td>0.026</td><td>127.5</td><td>12.837</td><td>0.024</td><td>0.026</td><td>109.4</td><td>12.652</td><td>0.029</td><td>0.03</td><td>66.2</td><td>AAA</td><td>666655</td><td>666655</td><td>000</td><td>666655</td><td>24.1</td><td>173</td><td>804039600</td><td>0</td><td>0</td><td>804039583</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.135</td><td>22.614</td><td>203.0</td><td>2451573.6811</td><td>1.13</td><td>0.79</td><td>1.5</td><td>13.483</td><td>0.018</td><td>12.913</td><td>0.029</td><td>12.71</td><td>0.045</td><td>6167</td><td>50</td><td>sw</td><td>1</td><td>1</td><td>U</td><td>1.1</td><td>262</td><td>17.2</td><td>15.1</td><td>1</td><td>0</td><td>43956</td><td>1010982</td><td>198</td><td>J083000.56+014227.2</td><td>127.502332</td><td>1.707559</td><td>0.001</td><td>0.001</td><td>90.0</td><td>19.461</td><td>16.829</td><td>15.524</td><td>14.976</td><td>14.692</td><td>0.027</td><td>0.004</td><td>0.004</td><td>0.003</td><td>0.005</td><td>1237653665249034586</td><td>6</td><td>True</td><td>0000201010020010</td><td>3</td><td>2000.9155</td><td>-22</td><td>3</td><td>1</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.127126</td><td>127.469423</td><td>1.71372</td><td>0.12</td><td>0.11</td><td>101</td><td>08295266+0142493</td><td>16.124</td><td>0.097</td><td>0.098</td><td>10.8</td><td>15.408</td><td>0.101</td><td>0.102</td><td>10.3</td><td>15.34</td><td>0.186</td><td>0.186</td><td>5.6</td><td>AAC</td><td>60606</td><td>60606</td><td>000</td><td>60606</td><td>50.2</td><td>170</td><td>804020539</td><td>0</td><td>0</td><td>804020569</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.112</td><td>22.588</td><td>-110.1</td><td>2451573.6743</td><td>0.99</td><td>0.99</td><td>0.93</td><td>16.256</td><td>0.269</td><td>15.929</td><td>0.347</td><td>15.574</td><td>0.328</td><td>6184</td><td>142</td><td>se</td><td>0</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082952.66+014249.2</td><td>127.469418</td><td>1.713685</td><td>0.009</td><td>0.008</td><td>90.0</td><td>23.472</td><td>20.755</td><td>19.283</td><td>18.181</td><td>17.503</td><td>0.594</td><td>0.029</td><td>0.014</td><td>0.009</td><td>0.017</td><td>1237653665248969263</td><td>6</td><td>True</td><td>0000001010000100</td><td>3</td><td>2000.9155</td><td>-13</td><td>5</td><td>3</td><td>5</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.029366</td><td>127.451948</td><td>1.721205</td><td>0.06</td><td>0.06</td><td>0</td><td>08294846+0143163</td><td>12.459</td><td>0.019</td><td>0.023</td><td>315.4</td><td>12.056</td><td>0.024</td><td>0.026</td><td>224.7</td><td>11.969</td><td>0.023</td><td>0.024</td><td>124.1</td><td>AAA</td><td>666666</td><td>666666</td><td>000</td><td>666666</td><td>48.4</td><td>192</td><td>804020559</td><td>0</td><td>0</td><td>804020588</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.096</td><td>22.576</td><td>-47.2</td><td>2451573.6743</td><td>0.74</td><td>0.74</td><td>0.86</td><td>12.47</td><td>0.019</td><td>12.038</td><td>0.046</td><td>11.973</td><td>0.029</td><td>6211</td><td>205</td><td>se</td><td>0</td><td>1</td><td>U</td><td>1.3</td><td>176</td><td>14.8</td><td>13.5</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082948.46+014316.3</td><td>127.451955</td><td>1.721201</td><td>0.047</td><td>0.042</td><td>90.0</td><td>16.125</td><td>14.47</td><td>13.785</td><td>13.755</td><td>13.493</td><td>0.006</td><td>0.003</td><td>0.006</td><td>0.002</td><td>0.004</td><td>1237653665248968970</td><td>6</td><td>False</td><td>0000B81092061010</td><td>3</td><td>2000.9155</td><td>2</td><td>3</td><td>-24</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.475815</td><td>127.395474</td><td>1.69711</td><td>0.34</td><td>0.32</td><td>88</td><td>08293491+0141495</td><td>16.551</td><td>0.164</td><td>0.164</td><td>7.3</td><td>15.907</td><td>0.207</td><td>0.207</td><td>6.5</td><td>15.795</td><td>0.274</td><td>0.275</td><td>3.7</td><td>CED</td><td>60506</td><td>60506</td><td>000</td><td>60506</td><td>53.7</td><td>338</td><td>804020566</td><td>0</td><td>0</td><td>804020535</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.089</td><td>22.515</td><td>156.0</td><td>2451573.6743</td><td>0.85</td><td>10.93</td><td>0.72</td><td>16.461</td><td>0.216</td><td>16.1</td><td>0.268</td><td>16.146</td><td>0.828</td><td>6125</td><td>97</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082934.93+014149.9</td><td>127.395566</td><td>1.697205</td><td>0.017</td><td>0.016</td><td>90.0</td><td>23.316</td><td>21.506</td><td>20.041</td><td>18.676</td><td>17.902</td><td>0.557</td><td>0.054</td><td>0.024</td><td>0.013</td><td>0.023</td><td>1237653665248969283</td><td>6</td><td>True</td><td>0100F01010021010</td><td>3</td><td>2000.9155</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.063468</td><td>127.432292</td><td>1.717116</td><td>0.07</td><td>0.06</td><td>96</td><td>08294375+0143016</td><td>14.569</td><td>0.032</td><td>0.035</td><td>45.2</td><td>14.299</td><td>0.055</td><td>0.056</td><td>28.5</td><td>14.219</td><td>0.084</td><td>0.084</td><td>15.6</td><td>AAA</td><td>665614</td><td>665614</td><td>000</td><td>665614</td><td>22.8</td><td>14</td><td>804020593</td><td>0</td><td>0</td><td>804020581</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.09</td><td>22.557</td><td>23.5</td><td>2451573.6743</td><td>0.9</td><td>1.15</td><td>0.65</td><td>14.552</td><td>0.05</td><td>14.172</td><td>0.086</td><td>14.225</td><td>0.229</td><td>6197</td><td>229</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.3</td><td>198</td><td>16.4</td><td>15.3</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082943.75+014301.6</td><td>127.432309</td><td>1.717121</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.453</td><td>16.137</td><td>15.683</td><td>15.532</td><td>15.469</td><td>0.009</td><td>0.003</td><td>0.004</td><td>0.004</td><td>0.006</td><td>1237653665248968924</td><td>6</td><td>True</td><td>0000001010020200</td><td>3</td><td>2000.9155</td><td>1</td><td>3</td><td>-1</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.078846</td><td>127.433857</td><td>1.723263</td><td>0.07</td><td>0.07</td><td>17</td><td>08294412+0143237</td><td>15.678</td><td>0.08</td><td>0.081</td><td>16.3</td><td>15.207</td><td>0.105</td><td>0.105</td><td>12.3</td><td>14.965</td><td>0.138</td><td>0.138</td><td>7.9</td><td>AAB</td><td>665616</td><td>665616</td><td>ccc</td><td>665616</td><td>4.5</td><td>317</td><td>804020596</td><td>0</td><td>0</td><td>804020593</td><td>s</td><td>2000-01-30</td><td>57</td><td>223.085</td><td>22.561</td><td>17.9</td><td>2451573.6743</td><td>1.14</td><td>0.83</td><td>1.22</td><td>14.517</td><td>0.097</td><td>14.072</td><td>0.112</td><td>14.179</td><td>0.144</td><td>6219</td><td>235</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>4.0</td><td>139</td><td>15.8</td><td>14.4</td><td>1</td><td>0</td><td>43955</td><td>1010949</td><td>80</td><td>J082944.13+014323.7</td><td>127.433877</td><td>1.723272</td><td>0.007</td><td>0.007</td><td>90.0</td><td>23.802</td><td>20.411</td><td>19.039</td><td>17.728</td><td>17.018</td><td>0.743</td><td>0.024</td><td>0.012</td><td>0.007</td><td>0.013</td><td>1237653665248968930</td><td>6</td><td>True</td><td>0000B01812021010</td><td>3</td><td>2000.9155</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.036173</td><td>127.531902</td><td>1.729757</td><td>0.06</td><td>0.06</td><td>90</td><td>08300765+0143471</td><td>14.155</td><td>0.033</td><td>0.036</td><td>66.1</td><td>13.84</td><td>0.032</td><td>0.033</td><td>43.4</td><td>13.806</td><td>0.048</td><td>0.049</td><td>22.9</td><td>AAA</td><td>666646</td><td>666646</td><td>000</td><td>666646</td><td>14.1</td><td>82</td><td>804039539</td><td>0</td><td>0</td><td>804039541</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.13</td><td>22.65</td><td>96.6</td><td>2451573.6811</td><td>1.03</td><td>0.88</td><td>1.01</td><td>14.136</td><td>0.051</td><td>13.972</td><td>0.048</td><td>13.85</td><td>0.118</td><td>6247</td><td>156</td><td>sw</td><td>0</td><td>1</td><td>U</td><td>0.2</td><td>230</td><td>15.8</td><td>15.0</td><td>1</td><td>0</td><td>43956</td><td>1010982</td><td>198</td><td>J083007.65+014347.1</td><td>127.531908</td><td>1.729749</td><td>0.001</td><td>0.001</td><td>90.0</td><td>17.145</td><td>15.741</td><td>15.246</td><td>15.079</td><td>15.039</td><td>0.008</td><td>0.003</td><td>0.003</td><td>0.003</td><td>0.005</td><td>1237653665249034332</td><td>6</td><td>True</td><td>0000001010020000</td><td>3</td><td>2000.9155</td><td>-3</td><td>3</td><td>1</td><td>3</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>0.676936</td><td>127.53577</td><td>1.730293</td><td>0.37</td><td>0.35</td><td>45</td><td>08300858+0143490</td><td>17.047</td><td>0.231</td><td>0.231</td><td>4.6</td><td>16.123</td><td>0.19</td><td>0.19</td><td>5.3</td><td>15.872</td><td>0.302</td><td>0.303</td><td>3.4</td><td>DCD</td><td>60605</td><td>60605</td><td>000</td><td>60605</td><td>14.1</td><td>262</td><td>804039541</td><td>0</td><td>0</td><td>804039539</td><td>s</td><td>2000-01-30</td><td>58</td><td>223.131</td><td>22.654</td><td>82.7</td><td>2451573.6811</td><td>0.95</td><td>0.74</td><td>0.98</td><td>16.537</td><td>0.399</td><td>17.529</td><td>1.515</td><td>16.04</td><td>0.705</td><td>6249</td><td>170</td><td>sw</td><td>0</td><td>1</td><td>0</td><td>--</td><td>0</td><td>--</td><td>--</td><td>0</td><td>0</td><td>43956</td><td>1010982</td><td>198</td><td>J083008.62+014348.6</td><td>127.535921</td><td>1.730181</td><td>0.023</td><td>0.02</td><td>90.0</td><td>23.847</td><td>21.895</td><td>20.462</td><td>19.034</td><td>18.355</td><td>0.756</td><td>0.075</td><td>0.032</td><td>0.017</td><td>0.032</td><td>1237653665249035083</td><td>6</td><td>True</td><td>0000001010000100</td><td>3</td><td>2000.9155</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>--</td><td>--</td><td>0</td><td></td><td></td><td></td></tr>
+</table></div></div></div>
+</div>
+<p>For the SDSS DR9 table this action has given us all the columns. So before we move on, we restrict the table to the columns, we are actually interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_mass</span> <span class="o">=</span> <span class="n">sdss_mass</span><span class="p">[</span>
+    <span class="s2">&quot;2MASS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Jmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Hmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Kmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SDSS9&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RAdeg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DEdeg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;umag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;imag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zmag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cl&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We are currently working with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sdss_mass</span><span class="p">)</span><span class="si">}</span><span class="s2"> sources&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We are currently working with 717 sources
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-filtering">
+<h2>Step #3: Filtering<a class="headerlink" href="#step-3-filtering" title="Link to this heading">#</a></h2>
+<p>In this step we select all those sources from our cross-matched catalogue that have colours and fluxes as expected for brown dwarfs.</p>
+<p>The selection cirteria for Brown Dwarfs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">umag</span> <span class="pre">&gt;</span> <span class="pre">22.0</span></code> –&gt; magnitude in u-band fainter than 22.0mag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gmag</span> <span class="pre">&gt;</span> <span class="pre">22.2</span></code> –&gt; magnitude in g-band fainter than 22.2mag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jmag</span> <span class="pre">-</span> <span class="pre">Hmag</span> <span class="pre">&lt;</span> <span class="pre">0.3</span></code> –&gt; J-H band colour smaller than 0.3mag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hmag</span> <span class="pre">-</span> <span class="pre">Kmag</span> <span class="pre">&lt;</span> <span class="pre">0.3</span></code> –&gt; H-K band colour smaller than 0.3mag</p></li>
+</ul>
+<p>We now apply these selection criteria to our table of point sources.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add columsn with J-H and H-K colour</span>
+<span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;J-H&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;Jmag&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;Hmag&quot;</span><span class="p">]</span>
+<span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;H-K&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;Hmag&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;Kmag&quot;</span><span class="p">]</span>
+<span class="c1"># Limit sources to those that fulfil the selection criteria</span>
+<span class="n">index_bd</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;umag&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">22.0</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;gmag&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">22.2</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;J-H&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">)</span>
+    <span class="o">&amp;</span> <span class="p">(</span><span class="n">sdss_mass</span><span class="p">[</span><span class="s2">&quot;H-K&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">candidates</span> <span class="o">=</span> <span class="n">sdss_mass</span><span class="p">[</span><span class="n">index_bd</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span><span class="si">}</span><span class="s2"> candidates for Brown Dwarfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have 2 candidates for Brown Dwarfs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table139795674884656" class="table-striped table-bordered table-condensed">
+<thead><tr><th>2MASS</th><th>RAJ2000</th><th>DEJ2000</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>SDSS9</th><th>RAdeg</th><th>DEdeg</th><th>umag</th><th>gmag</th><th>rmag</th><th>imag</th><th>zmag</th><th>cl</th><th>J-H</th><th>H-K</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th></th><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th>mag</th><th>mag</th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>str19</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>uint8</th><th>float32</th><th>float32</th></tr></thead>
+<tr><td>08304878+0128311</td><td>127.703265</td><td>1.47532</td><td>16.289</td><td>16.14</td><td>16.358</td><td>J083048.81+012831.0</td><td>127.703377</td><td>1.475293</td><td>25.322</td><td>24.514</td><td>25.492</td><td>25.878</td><td>19.401</td><td>3</td><td>0.14900017</td><td>-0.21800041</td></tr>
+<tr><td>08304512+0134404</td><td>127.688007</td><td>1.577901</td><td>16.18</td><td>16.021</td><td>15.769</td><td>J083045.23+013443.5</td><td>127.688491</td><td>1.578759</td><td>24.004</td><td>22.299</td><td>21.03</td><td>20.478</td><td>20.53</td><td>6</td><td>0.1590004</td><td>0.25199986</td></tr>
+</table></div></div></div>
+</div>
+<p>Note that we are using slightly different selection criteria here in the notebook than in the original tutorial. The reason is the following. The CDS XMatch service uses VizieR tables with their default filtering. For the SDSS DR 9 table, VizieR will filter to only use primary sources and disregard secondary sources, which is not the case when downloading the VizieR table with e.g. TOPCAT. Now the primary SDSS source for this brown dwarf is classified as an extended source by the automated SDSS pipeline, probably because it is hardly detected and very faint. So if we remove all extended sources we also throw away the target of our studies. Hence, the filtering in this notebook is less strict to allow</p>
+</section>
+<section id="step-4-verification-of-the-brown-dwarf-candidates">
+<h2>Step #4: Verification of the Brown Dwarf candidates<a class="headerlink" href="#step-4-verification-of-the-brown-dwarf-candidates" title="Link to this heading">#</a></h2>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
+<p>The ipyaladin package allows to run an instance of Aladin Lite in your Jupyter notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin1</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span>
+    <span class="n">survey</span><span class="o">=</span><span class="s2">&quot;P/SDSS9/color&quot;</span><span class="p">,</span>
+    <span class="n">fov</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
+    <span class="n">target</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{:.4f}</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span>
+<span class="p">)</span>
+<span class="n">aladin1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "c1dba7991c13402d8118d24f0a74dcf7"}</script></div>
+</div>
+<p>As with any instance of Aladin Lite you can zoom in and out by scrolling your mouse. In the top left corner of the widget, you may chose which survey to look at, add layers, search for sources, …</p>
+<p>You can also add tables to the widget by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin1</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;candidates&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you now click on the small square indicating the location of the source, the widget will show the corresponding table values in the lower part of the widget.</p>
+<p>As you can see at one of the locations hardly anything is visible and at the location of the other brown dwarf candidate, there is a bright star. To further investigate these two sources, we now query Simbad for them.</p>
+</section>
+<section id="check-in-simbad">
+<h3>Check in Simbad<a class="headerlink" href="#check-in-simbad" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://simbad.u-strasbg.fr/simbad/" title="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a></p>
+<p>In the Simbad database, an object type is assigned to every entry. So if this Brown Dwarf candidate is in the Simbad database, we might learn more about the object type:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First candidate has an index 0</span>
+<span class="n">customSimbad</span> <span class="o">=</span> <span class="n">Simbad</span><span class="p">()</span>
+<span class="n">customSimbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;otype&quot;</span><span class="p">)</span>
+<span class="n">candidate_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+    <span class="n">ra</span><span class="o">=</span><span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">dec</span><span class="o">=</span><span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">candidate_simbad</span> <span class="o">=</span> <span class="n">customSimbad</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">candidate_coord</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">)</span>
+<span class="n">candidate_simbad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table139795676151040" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th></tr></thead>
+<tr><td>2MASS J08304878+0128311</td><td>127.70326499999999</td><td>1.4753200000000002</td><td>230.0</td><td>220.0</td><td>4</td><td>N</td><td>2003yCat.2246....0C</td><td>BD*</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First candidate has an index 1</span>
+<span class="n">customSimbad</span> <span class="o">=</span> <span class="n">Simbad</span><span class="p">()</span>
+<span class="n">customSimbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;otype&quot;</span><span class="p">)</span>
+<span class="n">candidate_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+    <span class="n">ra</span><span class="o">=</span><span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">dec</span><span class="o">=</span><span class="n">candidates</span><span class="p">[</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">candidate_simbad</span> <span class="o">=</span> <span class="n">customSimbad</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">candidate_coord</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span><span class="p">)</span>
+<span class="n">candidate_simbad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: NoResultsWarning: The request executed correctly, but there was no data corresponding to these criteria in SIMBAD [astroquery.simbad.core]
+</pre></div>
+</div>
+<div class="output text_html"><div><i>Table length=0</i>
+<table id="table139795675062224" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th></tr></thead>
+</table></div></div></div>
+</div>
+<p>Indeed the first candidate is classified as a brown dwarf. Within 10arcsec of the second source, no entry is found in Simbad although this is the brighter star. The reason for this might be the following: sources in Simbad are sources that have individually been discussed in the literature. If no papers have been published specifcially about this object, it will not appear in Simbad. However, as the object was included in the SDSS tables it is included in VizieR through the table it belongs to.</p>
+<p>If we now want to see, in which papers the Brown Dwarf 2MASS J08304878+0128311 was included, we may use the following query in Simbad.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_simbad</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span><span class="s2">&quot;https://simbad.cds.unistra.fr/simbad/sim-tap&quot;</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT BIBCode, Journal, Title, &quot;year&quot;, Volume,</span>
+<span class="s2">       Page || &#39;-&#39; || Last_Page AS &quot;Pages&quot;, DOI </span>
+<span class="s2">FROM ref JOIN has_ref ON oidbibref = oidbib </span>
+<span class="s2">         JOIN ident ON has_ref.oidref = ident.oidref </span>
+<span class="s2">WHERE id = &#39;2MASS J08304878+0128311&#39;</span>
+<span class="s2">ORDER BY &quot;year&quot; DESC; </span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">tap_simbad</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=23</i>
+<table id="table139795679048416" class="table-striped table-bordered table-condensed">
+<thead><tr><th>bibcode</th><th>journal</th><th>title</th><th>year</th><th>volume</th><th>Pages</th><th>doi</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th><th>int16</th><th>int32</th><th>object</th><th>object</th></tr></thead>
+<tr><td>2023A&amp;A...670A..19G</td><td>A&amp;A</td><td>The Fifth Catalogue of Nearby Stars (CNS5).</td><td>2023</td><td>670</td><td></td><td>10.1051/0004-6361/202244250</td></tr>
+<tr><td>2021AJ....161...42B</td><td>AJ</td><td>A volume-limited sample of ultracool dwarfs. I. Construction, space density, and a gap in the L/T transition.</td><td>2021</td><td>161</td><td>42-42</td><td>10.3847/1538-3881/abc893</td></tr>
+<tr><td>2020AJ....159..257B</td><td>AJ</td><td>The Hawaii infrared parallax program. IV. A comprehensive parallax survey of L0-T8 dwarfs with UKIRT.</td><td>2020</td><td>159</td><td>257-257</td><td>10.3847/1538-3881/ab84f4</td></tr>
+<tr><td>2016A&amp;A...589A..49S</td><td>A&amp;A</td><td>Photometric brown-dwarf classification. II. A homogeneous sample of 1361 L and T dwarfs brighter than J = 17.5 with accurate spectral types.</td><td>2016</td><td>589</td><td>49-49</td><td>10.1051/0004-6361/201527359</td></tr>
+<tr><td>2016ApJ...827...25B</td><td>ApJ</td><td>The orbit of the L dwarf + T dwarf spectral binary SDSS J080531.84+481233.0.</td><td>2016</td><td>827</td><td>25-25</td><td>10.3847/0004-637X/827/1/25</td></tr>
+<tr><td>2016ApJ...817..112S</td><td>ApJ</td><td>A proper motion survey using the first sky pass of NEOWISE-reactivation data.</td><td>2016</td><td>817</td><td></td><td>10.3847/0004-637X/817/2/112</td></tr>
+<tr><td>2015ApJ...810..158F</td><td>ApJ</td><td>Fundamental parameters and spectral energy distributions of young and field age objects with masses spanning the stellar to planetary regime.</td><td>2015</td><td>810</td><td></td><td>10.1088/0004-637X/810/2/158</td></tr>
+<tr><td>2014ApJ...793...75R</td><td>ApJ</td><td>Strong brightness variations signal cloudy-to-clear transition of brown dwarfs.</td><td>2014</td><td>793</td><td></td><td>10.1088/0004-637X/793/2/75</td></tr>
+<tr><td>2013MNRAS.433.2054S</td><td>MNRAS</td><td>NPARSEC: NTT Parallaxes of Southern Extremely Cool objects. Goals,  targets, procedures and first results.</td><td>2013</td><td>433</td><td>2054-2063</td><td>10.1093/mnras/stt876</td></tr>
+<tr><td>2013MNRAS.433..457B</td><td>MNRAS</td><td>76 T dwarfs from the UKIDSS LAS: benchmarks, kinematics and an updated  space density.</td><td>2013</td><td>433</td><td>457-497</td><td>10.1093/mnras/stt740</td></tr>
+<tr><td>2012ApJ...752...56F</td><td>ApJ</td><td>The Brown Dwarf Kinematics Project (BDKP). III. Parallaxes for 70  ultracool dwarfs.</td><td>2012</td><td>752</td><td></td><td>10.1088/0004-637X/752/1/56</td></tr>
+<tr><td>2012ApJ...748...74L</td><td>ApJ</td><td>The properties of the 500 K dwarf UGPS J072227.51-054031.2 and a study of  the far-red flux of cold brown dwarfs.</td><td>2012</td><td>748</td><td></td><td>10.1088/0004-637X/748/2/74</td></tr>
+<tr><td>2012ApJ...757..110B</td><td>ApJ</td><td>Discovery of a very low mass triple with late-M and T dwarf components:  LP 704-48/SDSS J0006-0852AB.</td><td>2012</td><td>757</td><td></td><td>10.1088/0004-637X/757/2/110</td></tr>
+<tr><td>2011ApJS..197...19K</td><td>ApJS</td><td>The first hundred brown dwarfs discovered by the Wide-field Infrared  Survey Explorer (WISE).</td><td>2011</td><td>197</td><td></td><td>10.1088/0067-0049/197/2/19</td></tr>
+<tr><td>2010A&amp;A...515A..92S</td><td>A&amp;A</td><td>Hip 63510C, Hip 73786B, and nine new isolated high proper motion T dwarf  candidates from UKIDSS DR6 and SDSS DR7.</td><td>2010</td><td>515</td><td>92-92</td><td>10.1051/0004-6361/201014264</td></tr>
+<tr><td>2010ApJ...710.1627L</td><td>ApJ</td><td>Mid-infrared photometry of cold brown dwarfs: diversity in age, mass, and  metallicity.</td><td>2010</td><td>710</td><td>1627-1640</td><td>10.1088/0004-637X/710/2/1627</td></tr>
+<tr><td>2010ApJ...710.1142B</td><td>ApJ</td><td>SpeX spectroscopy of unresolved very low mass binaries. I. Identification of 17 candidate binaries straddling the L dwarf/T dwarf transition.</td><td>2010</td><td>710</td><td>1142-1169</td><td>10.1088/0004-637X/710/2/1142</td></tr>
+<tr><td>2009AJ....137....1F</td><td>AJ</td><td>The brown dwarf kinematics project I. Proper motions and tangential velocities  for a large sample of late-type M, L, and T dwarfs.</td><td>2009</td><td>137</td><td>1-18</td><td>10.1088/0004-6256/137/1/1</td></tr>
+<tr><td>2009yCat....1.2023S</td><td>yCat</td><td>Catalogue of stellar spectral classifications.</td><td>2009</td><td>1</td><td></td><td></td></tr>
+<tr><td>2008MNRAS.390.1517C</td><td>MNRAS</td><td>Proper motions of field L and T dwarfs - II.</td><td>2008</td><td>390</td><td>1517-1526</td><td>10.1111/j.1365-2966.2008.13855.x</td></tr>
+<tr><td>2008ApJ...676.1281M</td><td>ApJ</td><td>A cross-match of 2MASS and SDSS: newly found L and T dwarfs and an estimate of the space density of T dwarfs.</td><td>2008</td><td>676</td><td>1281-1306</td><td>10.1086/524721</td></tr>
+<tr><td>2006ApJ...637.1067B</td><td>ApJ</td><td>A unified near-infrared spectral classification scheme for T dwarfs.</td><td>2006</td><td>637</td><td>1067-1093</td><td>10.1086/498563</td></tr>
+<tr><td>2004AJ....127.3553K</td><td>AJ</td><td>Near-infrared photometry and spectroscopy of L and T dwarfs: the effects of temperature, clouds, and gravity.</td><td>2004</td><td>127</td><td>3553-3578</td><td>10.1086/420707</td></tr>
+</table></div></div></div>
+</div>
+<p>For further reading you could now go to <a class="reference external" href="https://ui.adsabs.harvard.edu/" title="https://ui.adsabs.harvard.edu/">ADS</a> and search for the publications via their bibcode (enter in the search field <code class="docutils literal notranslate"><span class="pre">bibcode:...</span></code>) or their doi (<code class="docutils literal notranslate"><span class="pre">doi:...</span></code>).</p>
+<p>To design similar queries for your own research, have a look at <a class="reference external" href="https://simbad.cds.unistra.fr/simbad/tap/tapsearch.html" title="https://simbad.cds.unistra.fr/simbad/tap/tapsearch.html">Simbad database schema</a>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cds-astro/tutorials",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multi-instrument, multi-wavelength study of high energy sources with the Virtual Observatory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="6_Advanced_usage_of_MOCs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced usage of MOCs to explore complex regions of interest</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-discovery">Step #1: Discovery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-cross-matching">Step #2: Cross-matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-filtering">Step #3: Filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-verification-of-the-brown-dwarf-candidates">Step #4: Verification of the Brown Dwarf candidates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-in-simbad">Check in Simbad</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Strasbourg astronomical Data Center (CDS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

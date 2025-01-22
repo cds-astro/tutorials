@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CDS services in Jupyter notebooks &#8212; Astronomy with Python: Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"7364f06f24d3407394d5d2a0eb2b23c5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6e8a4a44b9dd4d13a8c66cf9c0034e07": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.Aladin", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}\n", "_dom_classes": [], "_esm": "import o from\"https://esm.sh/aladin-lite@3.3.3-beta\";var v=0;function b(e){let c=e.split(\"_\");for(let r=1;r<c.length;r++)c[r]=c[r].charAt(0).toUpperCase()+c[r].slice(1);return c.join(\"\")}async function k({model:e}){await o.init}function C({model:e,el:c}){let r={};e.get(\"init_options\").forEach(t=>{r[b(t)]=e.get(t)});let s=document.createElement(\"div\");s.classList.add(\"aladin-widget\"),s.style.height=`${r.height}px`,s.id=`aladin-lite-div-${v}`;let a=new o.aladin(s,r);v+=1,c.appendChild(s);let g=!1,l=!1;a.on(\"positionChanged\",t=>{l?l=!1:(g=!0,e.set(\"target\",`${t.ra} ${t.dec}`),e.save_changes())}),e.on(\"change:target\",()=>{if(g)g=!1;else{l=!0;let t=e.get(\"target\");a.gotoObject(t)}});let d=!1,_=!1;return a.on(\"zoomChanged\",t=>{d?d=!1:(_=!0,e.set(\"fov\",parseFloat(t.toFixed(5))),e.save_changes())}),e.on(\"change:fov\",()=>{if(_)_=!1;else{d=!0;let t=e.get(\"fov\");a.setFoV(t)}}),e.on(\"change:height\",()=>{let t=e.get(\"height\");s.style.height=`${t}px`}),a.on(\"objectHovered\",t=>{t.data!=null&&e.send({event_type:\"object_hovered\",content:{ra:t.ra,dec:t.dec}})}),a.on(\"objectClicked\",t=>{let n={ra:t.ra,dec:t.dec};t.data!==void 0&&(n.data=t.data),e.set(\"clicked\",n),e.send({event_type:\"object_clicked\",content:n}),e.save_changes()}),a.on(\"click\",t=>{e.send({event_type:\"click\",content:t})}),a.on(\"select\",t=>{let n=[];t.forEach(f=>{f.forEach(i=>{n.push({ra:i.ra,dec:i.dec,data:i.data,x:i.x,y:i.y})})}),e.send({event_type:\"select\",content:n})}),e.on(\"change:coo_frame\",()=>{a.setFrame(e.get(\"coo_frame\"))}),e.on(\"change:survey\",()=>{a.setImageSurvey(e.get(\"survey\"))}),e.on(\"change:overlay_survey\",()=>{a.setOverlayImageLayer(e.get(\"overlay_survey\"))}),e.on(\"change:overlay_survey_opacity\",()=>{a.getOverlayImageLayer().setAlpha(e.get(\"overlay_survey_opacity\"))}),e.on(\"msg:custom\",t=>{let n={};switch(t.event_name){case\"add_catalog_from_URL\":a.addCatalog(o.catalogFromURL(t.votable_URL,t.options));break;case\"add_MOC_from_URL\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromURL(t.moc_URL,n));break;case\"add_MOC_from_dict\":n=t.options,n.lineWidth===void 0&&(n.lineWidth=3),a.addMOC(o.MOCFromJSON(t.moc_dict,n));break;case\"add_overlay_from_stcs\":let f=o.graphicOverlay(t.overlay_options);a.addOverlay(f),f.addFootprints(o.footprintsFromSTCS(t.stc_string));break;case\"change_colormap\":a.getBaseImageLayer().setColormap(t.colormap);break;case\"get_JPG_thumbnail\":a.exportAsPNG();break;case\"trigger_rectangular_selection\":a.select();break;case\"add_table\":let i=e.get(\"_table\"),p=new TextDecoder(\"utf-8\"),u=new Blob([p.decode(i)]),h=URL.createObjectURL(u);o.catalogFromURL(h,Object.assign(t.options,{onClick:\"showTable\"}),y=>{a.addCatalog(y)},!1),URL.revokeObjectURL(h);break}}),()=>{e.off(\"change:target\"),e.off(\"change:fov\"),e.off(\"change:height\"),e.off(\"change:coo_frame\"),e.off(\"change:survey\"),e.off(\"change:overlay_survey\"),e.off(\"change:overlay_survey_opacity\"),e.off(\"change:trigger_event\"),e.off(\"change:_table\"),e.off(\"msg:custom\"),a.off(\"positionChanged\"),a.off(\"zoomChanged\"),a.off(\"objectHovered\"),a.off(\"objectClicked\"),a.off(\"click\"),a.off(\"select\")}}var x={initialize:k,render:C};export{x as default};\n", "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "background_color": "rgb(60, 60, 60)", "clicked_object": {}, "coo_frame": "J2000", "fov": 0.5, "full_screen": false, "grid_color": "rgb(178, 50, 178)", "grid_opacity": 0.5, "grid_options": {}, "height": 600, "init_options": ["background_color", "coo_frame", "fov", "full_screen", "grid_color", "grid_opacity", "grid_options", "height", "overlay_survey", "overlay_survey_opacity", "projection", "reticle_color", "reticle_size", "samp", "show_catalog", "show_context_menu", "show_coo_grid", "show_coo_grid_control", "show_coo_location", "show_fov", "show_frame", "show_fullscreen_control", "show_layers_control", "show_overlay_stack_control", "show_projection_control", "show_reticle", "show_settings_control", "show_share_control", "show_simbad_pointer_control", "show_status_bar", "show_zoom_control", "survey", "target"], "layout": "IPY_MODEL_7364f06f24d3407394d5d2a0eb2b23c5", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "reticle_color": "rgb(178, 50, 178)", "reticle_size": 20, "samp": false, "show_catalog": true, "show_context_menu": true, "show_coo_grid": false, "show_coo_grid_control": true, "show_coo_location": true, "show_fov": true, "show_frame": true, "show_fullscreen_control": true, "show_layers_control": true, "show_overlay_stack_control": true, "show_projection_control": true, "show_reticle": true, "show_settings_control": true, "show_share_control": false, "show_simbad_pointer_control": true, "show_status_bar": true, "show_zoom_control": false, "survey": "P/allWISE/color", "tabbable": null, "target": "M101", "tooltip": null}, "buffers": [{"data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBQcm9kdWNlZCB3aXRoIGFzdHJvcHkuaW8udm90YWJsZSB2ZXJzaW9uIDUuMnJjMQogICAgIGh0dHA6Ly93d3cuYXN0cm9weS5vcmcvIC0tPgo8Vk9UQUJMRSB2ZXJzaW9uPSIxLjQiIHhtbG5zPSJodHRwOi8vd3d3Lml2b2EubmV0L3htbC9WT1RhYmxlL3YxLjMiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5pdm9hLm5ldC94bWwvVk9UYWJsZS92MS4zIGh0dHA6Ly93d3cuaXZvYS5uZXQveG1sL1ZPVGFibGUvVk9UYWJsZS0xLjQueHNkIj4KIDxSRVNPVVJDRSB0eXBlPSJyZXN1bHRzIj4KICA8VEFCTEUgSUQ9IkpfTU5SQVNfNDUxXzEzMDdfSElJcmVnIiBuYW1lPSJKL01OUkFTLzQ1MS8xMzA3L0hJSXJlZyI+CiAgIDxERVNDUklQVElPTj4KICAgIFBoeXNpY2FsIHByb3BlcnRpZXMgb2YgdGhlIGJyaWdodGVzdCBISUkgcmVnaW9ucyBpbiBpbnRlcmFjdGluZwogICAgZ2FsYXhpZXMgKHRhYmxlIEExKSBhbmQgaXNvbGF0ZWQgZ2FsYXhpZXMgKHRhYmxlIEEyKQogICA8L0RFU0NSSVBUSU9OPgogICA8RklFTEQgSUQ9Ik5hbWUiIGFycmF5c2l6ZT0iNyIgZGF0YXR5cGU9ImNoYXIiIG5hbWU9Ik5hbWUiIHVjZD0iSURfUEFSRU5UIj4KICAgIDxERVNDUklQVElPTj4KICAgICBHYWxheHkgbmFtZQogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJSQUoyMDAwIiBhcnJheXNpemU9IjEwIiBkYXRhdHlwZT0iY2hhciIgbmFtZT0iUkFKMjAwMCIgdWNkPSJQT1NfRVFfUkFfTUFJTiIgdW5pdD0iLS0tIj4KICAgIDxERVNDUklQVElPTj4KICAgICBSaWdodCBBc2NlbnNpb24gKEoyMDAwKQogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJERUoyMDAwIiBhcnJheXNpemU9IjExIiBkYXRhdHlwZT0iY2hhciIgbmFtZT0iREVKMjAwMCIgdWNkPSJQT1NfRVFfREVDX01BSU4iIHVuaXQ9Ii0tLSI+CiAgICA8REVTQ1JJUFRJT04+CiAgICAgRGVjbGluYXRpb24gKEoyMDAwKQogICAgPC9ERVNDUklQVElPTj4KICAgPC9GSUVMRD4KICAgPEZJRUxEIElEPSJsb2dMSGEiIGRhdGF0eXBlPSJmbG9hdCIgbmFtZT0ibG9nTEhhIiBwcmVjaXNpb249IjMiIHVjZD0iUEhZU19MVU1JTk9TSVRZX0hBTFBIQSIgdW5pdD0ibG9nKDFlLTA3VykiIHdpZHRoPSI2Ij4KICAgIDxERVNDUklQVElPTj4KICAgICBbMzUvNDFdIExvZyBvZiBIe2FscGhhfSBsdW1pbm9zaXR5IChlcmcvcykKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0iUiIgZGF0YXR5cGU9InNob3J0IiBuYW1lPSJSIiB1Y2Q9IlBIWVNfU0laRV9SQURJVVNfR0VORVJBTCIgdW5pdD0icGMiIHdpZHRoPSIzIj4KICAgIDxERVNDUklQVElPTj4KICAgICBbMTYvNDgxXSBHbG9idWxhciByYWRpdXMKICAgIDwvREVTQ1JJUFRJT04+CiAgIDwvRklFTEQ+CiAgIDxGSUVMRCBJRD0ic2lnbWEiIGRhdGF0eXBlPSJmbG9hdCIgbmFtZT0ic2lnbWEiIHByZWNpc2lvbj0iMSIgdWNkPSJWRUxPQ19ESVNQIiB1bml0PSJrbS5zLTEiIHdpZHRoPSI0Ij4KICAgIDxERVNDUklQVElPTj4KICAgICBbNC80M10gVmVsb2NpdHkgZGlzcGVyc2lvbiB7c2lnbWF9CiAgICA8L0RFU0NSSVBUSU9OPgogICA8L0ZJRUxEPgogICA8REFUQT4KICAgIDxUQUJMRURBVEE+CiAgICAgPFRSPgogICAgICA8VEQ+TkdDMjE0NjwvVEQ+CiAgICAgIDxURD4wNiAxOCAzOS40PC9URD4KICAgICAgPFREPis3OCAyMSAxOC4yPC9URD4KICAgICAgPFREPjM5LjA0MDwvVEQ+CiAgICAgIDxURD4xMTQ8L1REPgogICAgICA8VEQ+MTUuMDwvVEQ+CiAgICAgPC9UUj4KICAgICA8VFI+CiAgICAgIDxURD5BcnAyNDQ8L1REPgogICAgICA8VEQ+MTIgMDEgNTQuNjwvVEQ+CiAgICAgIDxURD4tMTggNTMgMDMuMTwvVEQ+CiAgICAgIDxURD40MC4yMDA8L1REPgogICAgICA8VEQ+MjgwPC9URD4KICAgICAgPFREPjMyLjg8L1REPgogICAgIDwvVFI+CiAgICAgPFRSPgogICAgICA8VEQ+TkdDNTIwPC9URD4KICAgICAgPFREPjAxIDI0IDMzLjM8L1REPgogICAgICA8VEQ+KzAzIDQ4IDA0LjY8L1REPgogICAgICA8VEQ+MzkuMTIwPC9URD4KICAgICAgPFREPjI1NTwvVEQ+CiAgICAgIDxURD4xNC4xPC9URD4KICAgICA8L1RSPgogICAgIDxUUj4KICAgICAgPFREPlVHQzM5OTU8L1REPgogICAgICA8VEQ+MDcgNDQgMDkuMjwvVEQ+CiAgICAgIDxURD4rMjkgMTQgNTEuMzwvVEQ+CiAgICAgIDxURD40MC4yOTA8L1REPgogICAgICA8VEQ+MjcwPC9URD4KICAgICAgPFREPjQzLjA8L1REPgogICAgIDwvVFI+CiAgICAgPFRSPgogICAgICA8VEQ+TkdDMzc4ODwvVEQ+CiAgICAgIDxURD4xMSAzOSA0MS40PC9URD4KICAgICAgPFREPiszMSA1NCAyMy4zPC9URD4KICAgICAgPFREPjM5LjcwMDwvVEQ+CiAgICAgIDxURD4yODA8L1REPgogICAgICA8VEQ+MTEuOTwvVEQ+CiAgICAgPC9UUj4KICAgICA8VFI+CiAgICAgIDxURD5OR0MzNzg2PC9URD4KICAgICAgPFREPjExIDM5IDQ1LjE8L1REPgogICAgICA8VEQ+KzMxIDU1IDQ2LjM8L1REPgogICAgICA8VEQ+MzkuODYwPC9URD4KICAgICAgPFREPjMwMDwvVEQ+CiAgICAgIDxURD4xNi41PC9URD4KICAgICA8L1RSPgogICAgIDxUUj4KICAgICAgPFREPk5HQzI3ODI8L1REPgogICAgICA8VEQ+MDkgMTQgMDUuMzwvVEQ+CiAgICAgIDxURD4rNDAgMDYgNTAuNDwvVEQ+CiAgICAgIDxURD4zOS44MDA8L1REPgogICAgICA8VEQ+MTY2PC9URD4KICAgICAgPFREPjI4LjA8L1REPgogICAgIDwvVFI+CiAgICAgPFRSPgogICAgICA8VEQ+TkdDMjk5MzwvVEQ+CiAgICAgIDxURD4wOSA0NSA0OC4zPC9URD4KICAgICAgPFREPi0xNCAyMiAwNS45PC9URD4KICAgICAgPFREPjQwLjA3MDwvVEQ+CiAgICAgIDxURD4yNTg8L1REPgogICAgICA8VEQ+MTIuMDwvVEQ+CiAgICAgPC9UUj4KICAgICA8VFI+CiAgICAgIDxURD5OR0MyOTkyPC9URD4KICAgICAgPFREPjA5IDQ1IDQxLjk8L1REPgogICAgICA8VEQ+LTE0IDE5IDMzLjQ8L1REPgogICAgICA8VEQ+MzkuMTgwPC9URD4KICAgICAgPFREPjEwMDwvVEQ+CiAgICAgIDxURD4xNi4wPC9URD4KICAgICA8L1RSPgogICAgIDxUUj4KICAgICAgPFREPk5HQzM5OTE8L1REPgogICAgICA8VEQ+MTEgNTcgMzEuNzwvVEQ+CiAgICAgIDxURD4rMzIgMjAgMjkuNjwvVEQ+CiAgICAgIDxURD40MC40NDA8L1REPgogICAgICA8VEQ+NDcwPC9URD4KICAgICAgPFREPjIwLjk8L1REPgogICAgIDwvVFI+CiAgICAgPFRSPgogICAgICA8VEQ+QXJwMjcwPC9URD4KICAgICAgPFREPjEwIDQ5IDU1Ljg8L1REPgogICAgICA8VEQ+KzMyIDU5IDI4LjA8L1REPgogICAgICA8VEQ+NDAuMjIwPC9URD4KICAgICAgPFREPjIyOTwvVEQ+CiAgICAgIDxURD4yMC40PC9URD4KICAgICA8L1RSPgogICAgIDxUUj4KICAgICAgPFREPk5HQzM3Njk8L1REPgogICAgICA8VEQ+MTEgMzcgNDMuNzwvVEQ+CiAgICAgIDxURD4rNDcgNTMgMjQuNDwvVEQ+CiAgICAgIDxURD4zOC4zMTA8L1REPgogICAgICA8VEQ+NjY8L1REPgogICAgICA8VEQ+IDQuMDwvVEQ+CiAgICAgPC9UUj4KICAgIDwvVEFCTEVEQVRBPgogICA8L0RBVEE+CiAgPC9UQUJMRT4KIDwvUkVTT1VSQ0U+CjwvVk9UQUJMRT4K", "encoding": "base64", "path": ["_table"]}]}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_Intro_to_CDS_services_in_notebooks';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://cds-astro.github.io/tutorials/intro.html/1_Intro_to_CDS_services_in_notebooks.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s" href="2_Peculiar_galaxies__first_steps_with_MOCs.html" />
+    <link rel="prev" title="Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-light" alt="Astronomy with Python: Tutorials - Home"/>
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-dark pst-js-only" alt="Astronomy with Python: Tutorials - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to the CDS services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Peculiar_galaxies__first_steps_with_MOCs.html">First steps with Multi-Order Coverage data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html">The Simple Spectral Access Protocol to explore Abel 1656</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html">Combining the CDS services to study gamma-ray and high energy spectral bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Brown_Dwarf_Search__Cross-matching_Catalogs.html">Cross matching catalogs to discover potential brown dwarfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Advanced_usage_of_MOCs.html">Advanced usage of MOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html">Planning multi-messenger observations rapidly with MOCs</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cds-astro/tutorials/master?urlpath=tree/1_Intro_to_CDS_services_in_notebooks.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F1_Intro_to_CDS_services_in_notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/1_Intro_to_CDS_services_in_notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CDS services in Jupyter notebooks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-gather-information-on-ngc4038">Step #1: Gather information on NGC4038</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-visualise-the-source-on-a-sky-map">Step #2: Visualise the source on a sky map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-find-and-visualize-additional-data">Step #3: Find and visualize additional data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-cross-match-tables">Step #5: Cross-match tables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cds-services-in-jupyter-notebooks">
+<h1>CDS services in Jupyter notebooks<a class="headerlink" href="#cds-services-in-jupyter-notebooks" title="Link to this heading">#</a></h1>
+<p>Katarina A. Lutz¹, Manon Marchand¹</p>
+<ol class="arabic simple">
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+</ol>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Welcome to a Jupyter notebook demonstrating how to access some of the services provided by the Strasbourg astronomical Data Center (<a class="reference external" href="https://cdsweb.u-strasbg.fr/">CDS</a>) with Python.</p>
+<p>In this tutorial, we will:</p>
+<ol class="arabic simple">
+<li><p>gather information on a specific object using <a class="reference external" href="https://simbad.u-strasbg.fr/simbad/" title="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a>,</p></li>
+<li><p>visualise it through survey images using the <a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a> Lite widget,</p></li>
+<li><p>find and download a catalogue from <a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a>,</p></li>
+<li><p>overlay the sources of this catalog on the sky view in the Aladin Lite widget,</p></li>
+<li><p>cross-match the sources with a large catalogue using <a class="reference external" href="http://cdsxmatch.u-strasbg.fr/" title="http://cdsxmatch.u-strasbg.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Astronomy tools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span>
+
+<span class="c1"># Access astronomical databases</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.simbad</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simbad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.vizier</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vizier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.xmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">XMatch</span>
+
+<span class="c1"># Sky visualization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyaladin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aladin</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-gather-information-on-ngc4038">
+<h2>Step #1: Gather information on NGC4038<a class="headerlink" href="#step-1-gather-information-on-ngc4038" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://simbad.u-strasbg.fr/simbad/" title="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a></p>
+<p>As a first step, we check what information is directly available from the <ins>Simbad</ins> python module. Let’s use the method <code class="docutils literal notranslate"><span class="pre">query_object</span></code> to gather information. Note that you can look at the methods available for the <code class="docutils literal notranslate"><span class="pre">Simbad</span></code> class with the <code class="docutils literal notranslate"><span class="pre">help(Simbad)</span></code> command:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Simbad</span><span class="o">.</span><span class="n">query_object</span><span class="p">(</span><span class="s2">&quot;NGC4038&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table140630054011712" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>matched_id</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th></tr></thead>
+<tr><td>NGC  4038</td><td>180.47084166666667</td><td>-18.86758888888889</td><td>--</td><td>--</td><td>--</td><td>I</td><td>2006AJ....131.1163S</td><td>NGC  4038</td></tr>
+</table></div></div></div>
+</div>
+<p>We get basic information, like the position of <code class="docutils literal notranslate"><span class="pre">NCG4038</span></code>. This search function can be personalized by adding fields to the response. Let’s list the possible fields:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span> <span class="o">=</span> <span class="n">Simbad</span><span class="o">.</span><span class="n">list_votable_fields</span><span class="p">()</span>
+<span class="n">fields</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=116</i>
+<table id="table140630053920576" class="table-striped table-bordered table-condensed">
+<thead><tr><th>name</th><th>description</th><th>type</th></tr></thead>
+<thead><tr><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>mesDiameter</td><td>Collection of stellar diameters.</td><td>table</td></tr>
+<tr><td>mesPM</td><td>Collection of proper motions.</td><td>table</td></tr>
+<tr><td>mesISO</td><td>Infrared Space Observatory (ISO) observing log.</td><td>table</td></tr>
+<tr><td>mesSpT</td><td>Collection of spectral types.</td><td>table</td></tr>
+<tr><td>allfluxes</td><td>all flux/magnitudes U,B,V,I,J,H,K,u_,g_,r_,i_,z_</td><td>table</td></tr>
+<tr><td>ident</td><td>Identifiers of an astronomical object</td><td>table</td></tr>
+<tr><td>flux</td><td>Magnitude/Flux information about an astronomical object</td><td>table</td></tr>
+<tr><td>mesPLX</td><td>Collection of trigonometric parallaxes.</td><td>table</td></tr>
+<tr><td>otypedef</td><td>all names and definitions for the object types</td><td>table</td></tr>
+<tr><td>mesDistance</td><td>Collection of distances (pc, kpc or Mpc) by several means.</td><td>table</td></tr>
+<tr><td>otypes</td><td>List of all object types associated with an object</td><td>table</td></tr>
+<tr><td>mesVar</td><td>Collection of stellar variability types and periods.</td><td>table</td></tr>
+<tr><td>mesXmm</td><td>XMM observing log.</td><td>table</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>R</td><td>Magnitude R</td><td>filter name</td></tr>
+<tr><td>I</td><td>Magnitude I</td><td>filter name</td></tr>
+<tr><td>J</td><td>Magnitude J</td><td>filter name</td></tr>
+<tr><td>H</td><td>Magnitude H</td><td>filter name</td></tr>
+<tr><td>K</td><td>Magnitude K</td><td>filter name</td></tr>
+<tr><td>u</td><td>Magnitude SDSS u</td><td>filter name</td></tr>
+<tr><td>g</td><td>Magnitude SDSS g</td><td>filter name</td></tr>
+<tr><td>r</td><td>Magnitude SDSS r</td><td>filter name</td></tr>
+<tr><td>i</td><td>Magnitude SDSS i</td><td>filter name</td></tr>
+<tr><td>z</td><td>Magnitude SDSS z</td><td>filter name</td></tr>
+<tr><td>G</td><td>Magnitude Gaia G</td><td>filter name</td></tr>
+<tr><td>F150W</td><td>JWST NIRCam F150W</td><td>filter name</td></tr>
+<tr><td>F200W</td><td>JWST NIRCam F200W</td><td>filter name</td></tr>
+<tr><td>F444W</td><td>JWST NIRCan F444W</td><td>filter name</td></tr>
+</table></div></div></div>
+</div>
+<p>We get a list of the available fields we could add to the SIMBAD response.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simbad</span> <span class="o">=</span> <span class="n">Simbad</span><span class="p">()</span>  <span class="c1"># we create an instance that we can personalize</span>
+<span class="n">simbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;otype&quot;</span><span class="p">,</span> <span class="s2">&quot;alltypes&quot;</span><span class="p">,</span> <span class="s2">&quot;dim&quot;</span><span class="p">)</span>
+<span class="n">info_simbad</span> <span class="o">=</span> <span class="n">simbad</span><span class="o">.</span><span class="n">query_object</span><span class="p">(</span><span class="s2">&quot;NGC4038&quot;</span><span class="p">)</span>
+<span class="n">info_simbad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table140629153850176" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th><th>otypes</th><th>galdim_majaxis_prec</th><th>galdim_minaxis_prec</th><th>galdim_bibcode</th><th>galdim_majaxis</th><th>galdim_minaxis</th><th>galdim_qual</th><th>galdim_angle</th><th>galdim_wavelength</th><th>matched_id</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>arcmin</th><th>arcmin</th><th></th><th>deg</th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th><th>object</th><th>int16</th><th>int16</th><th>object</th><th>float32</th><th>float32</th><th>str1</th><th>int16</th><th>str1</th><th>object</th></tr></thead>
+<tr><td>NGC  4038</td><td>180.47084166666667</td><td>-18.86758888888889</td><td>--</td><td>--</td><td>--</td><td>I</td><td>2006AJ....131.1163S</td><td>EmG</td><td>AG?|EmG|G|GiP|HI|IG|PaG|Rad</td><td>1</td><td>1</td><td>2007ApJS..173..185G</td><td>5.2</td><td>3.1</td><td>D</td><td>80</td><td></td><td>NGC  4038</td></tr>
+</table></div></div></div>
+</div>
+<p>We added the object type with the field <code class="docutils literal notranslate"><span class="pre">otype</span></code>. We now know the main object type of NGC4038: “Emission line Galaxy” <code class="docutils literal notranslate"><span class="pre">EmG</span></code>.</p>
+<p>We can also read the object dimensions, that we added with the field <code class="docutils literal notranslate"><span class="pre">dim</span></code>. (major axis <code class="docutils literal notranslate"><span class="pre">galdim_majaxis</span></code>, minor axis <code class="docutils literal notranslate"><span class="pre">galdim_minaxis</span></code>, inclination angle <code class="docutils literal notranslate"><span class="pre">galdim_angle</span></code>…, and the related bibliographic reference <code class="docutils literal notranslate"><span class="pre">galdim_bibcode</span></code> where the dimension information was extracted).</p>
+<p>We can also see the full list of object types attributed to NGC4038 in the past (ex: <code class="docutils literal notranslate"><span class="pre">HI</span></code> HI (21cm) Source, <code class="docutils literal notranslate"><span class="pre">G</span></code> Galaxy, <code class="docutils literal notranslate"><span class="pre">GiP</span></code> Galaxy in Pair, <code class="docutils literal notranslate"><span class="pre">Rad</span></code> Radio Source…). This comes from the fact that an object can have a lot of descriptions, a galaxy can very well also be a radio source. Sometimes, our understanding evolved with time and some of these former types won’t be compatible. The descriptions and relations between object types can be explored on <a class="reference external" href="https://simbad.cds.unistra.fr/guide/otypes.htx">Simbad’s webpages</a>.</p>
+<p>As we saw that NGC4038 is a galaxy in a pair, let’s search for the second galaxy in the pair. Let’s first identify the pair by looking into <code class="docutils literal notranslate"><span class="pre">NGC4038</span></code>’s parents:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simbad</span><span class="o">.</span><span class="n">reset_votable_fields</span><span class="p">()</span>
+<span class="n">simbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;otype&quot;</span><span class="p">)</span>
+<span class="n">siblings</span> <span class="o">=</span> <span class="n">simbad</span><span class="o">.</span><span class="n">query_hierarchy</span><span class="p">(</span><span class="s2">&quot;NGC4038&quot;</span><span class="p">,</span> <span class="n">hierarchy</span><span class="o">=</span><span class="s2">&quot;parents&quot;</span><span class="p">)</span>
+<span class="n">siblings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=4</i>
+<table id="table140629154224208" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th></tr></thead>
+<tr><td>NAME Antennae</td><td>180.47154166666667</td><td>-18.8772</td><td>--</td><td>--</td><td>--</td><td>I</td><td>2006AJ....131.1163S</td><td>IG</td></tr>
+<tr><td>NAME NGC 4038 Group</td><td>179.98833333333332</td><td>-19.2725</td><td>--</td><td>--</td><td>--</td><td>O</td><td>1993A&amp;AS..100...47G</td><td>GrG</td></tr>
+<tr><td>[T2015] nest 100219</td><td>179.8429</td><td>-18.9931</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2015AJ....149..171T</td><td>GrG</td></tr>
+<tr><td>[TSK2008] 409</td><td>179.85802908705062</td><td>-19.40075160642234</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2013AJ....146...86T</td><td>GrG</td></tr>
+</table></div></div></div>
+</div>
+<p>The Antennae Interacting Galaxies (of object type <code class="docutils literal notranslate"><span class="pre">IG</span></code>) ais the parent. Let’s now look at its children. We also add a filter on the type of objects with the <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument in which we select any type of galaxies (that’s the notation <code class="docutils literal notranslate"><span class="pre">G..</span></code>)</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">siblings</span> <span class="o">=</span> <span class="n">simbad</span><span class="o">.</span><span class="n">query_hierarchy</span><span class="p">(</span>
+    <span class="s2">&quot;Antennae&quot;</span><span class="p">,</span> <span class="n">hierarchy</span><span class="o">=</span><span class="s2">&quot;children&quot;</span><span class="p">,</span> <span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;otype=&#39;G..&#39;&quot;</span>
+<span class="p">)</span>
+<span class="n">siblings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=2</i>
+<table id="table140629153852528" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th></tr></thead>
+<tr><td>NGC  4038</td><td>180.47084166666667</td><td>-18.86758888888889</td><td>--</td><td>--</td><td>--</td><td>I</td><td>2006AJ....131.1163S</td><td>EmG</td></tr>
+<tr><td>NGC  4039</td><td>180.47295999999997</td><td>-18.88619</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2020MNRAS.494.1784A</td><td>GiP</td></tr>
+</table></div></div></div>
+</div>
+<p>You can learn more on the features of the Simbad python module here: <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/simbad/simbad.html">https://astroquery.readthedocs.io/en/latest/simbad/simbad.html</a></p>
+<p>and on the Simbad query criteria: <a class="reference external" href="http://simbad.cds.unistra.fr/simbad/sim-fsam">http://simbad.cds.unistra.fr/simbad/sim-fsam</a></p>
+</section>
+<section id="step-2-visualise-the-source-on-a-sky-map">
+<h2>Step #2: Visualise the source on a sky map<a class="headerlink" href="#step-2-visualise-the-source-on-a-sky-map" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
+<p>We now open the <a class="reference external" href="https://github.com/cds-astro/ipyaladin" title="https://github.com/cds-astro/ipyaladin">Aladin Lite widget</a>. We set it first to center on the Antennae galaxies, have a <strong>field of view</strong> of 0.5 <span class="math notranslate nohighlight">\(^\circ\)</span> and show color images from the Digitized Sky Survey (<a class="reference external" href="https://archive.stsci.edu/cgi-bin/dss_form">DSS</a>). Typing <code class="docutils literal notranslate"><span class="pre">aladin</span></code> in the second line of code tells the notebook to display the widget.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s2">&quot;Antennae&quot;</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s2">&quot;P/DSS2/color&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "6e8a4a44b9dd4d13a8c66cf9c0034e07"}</script></div>
+</div>
+<p>As with any Aladin Lite implementation, you can interact with this widget. Try to:</p>
+<ul class="simple">
+<li><p>scroll with your mouse pointer on the image to zoom in and out,</p></li>
+<li><p>select other image surveys and manage the current view with <img src="Data/images/ipyaladin_layer.png" width="30"></p></li>
+<li><p>look at another target using the search field <img src="Data/images/ipyaladin_search.png" width="30"></p></li>
+<li><p>find more information on something with the target tool <img src="Data/images/target.png" width="30"></p></li>
+<li><p>do a right click to discover more tools</p></li>
+</ul>
+<p>You can also directly change the properties of the variable <code class="docutils literal notranslate"><span class="pre">aladin</span></code>. For example, to focus on M101 instead of the Antennae galaxies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;M101&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Feel free to explore other targets and methods available for the Aladin widget.</p>
+</section>
+<section id="step-3-find-and-visualize-additional-data">
+<h2>Step #3: Find and visualize additional data<a class="headerlink" href="#step-3-find-and-visualize-additional-data" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a>
+<a class="reference external" href="https://simbad.u-strasbg.fr/simbad/" title="https://simbad.u-strasbg.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a>
+<a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>We want to look for data related to HII regions in these interacting galaxies. We make a query in <ins>Simbad</ins> for HII regions within 14 arcmins around the Antennae galaxies.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simbad</span><span class="o">.</span><span class="n">reset_votable_fields</span><span class="p">()</span>
+<span class="c1"># biblio contains the bibcodes of all papers where the SIMBAD team found the object</span>
+<span class="n">simbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;otype&quot;</span><span class="p">,</span> <span class="s2">&quot;biblio&quot;</span><span class="p">)</span>
+<span class="n">table_simbad</span> <span class="o">=</span> <span class="n">simbad</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="s2">&quot;Antennae&quot;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;14m&quot;</span><span class="p">,</span> <span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;otype=&#39;HII&#39;&quot;</span><span class="p">)</span>
+<span class="n">table_simbad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=317</i>
+<table id="table140629154249024" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>otype</th><th>biblio</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>object</th><th>object</th></tr></thead>
+<tr><td>[ZFB2014] HII  47</td><td>180.46208333333334</td><td>-18.86958333333333</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z</td></tr>
+<tr><td>[ZBF2015] Arp244 175</td><td>180.4625</td><td>-18.861666666666668</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244  77</td><td>180.47750000000002</td><td>-18.881194444444443</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 120</td><td>180.47916666666669</td><td>-18.88586111111111</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 252</td><td>180.47208333333333</td><td>-18.885027777777776</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 264</td><td>180.4754166666667</td><td>-18.867416666666667</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 233</td><td>180.48125000000002</td><td>-18.86836111111111</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 195</td><td>180.4779166666667</td><td>-18.867416666666667</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 271</td><td>180.47333333333336</td><td>-18.886583333333334</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>RX J120155.4-185209</td><td>180.48083333333335</td><td>-18.86916666666667</td><td>--</td><td>--</td><td>--</td><td></td><td></td><td>HII</td><td>1995MNRAS.277..397R|1997ApJ...478..542F</td></tr>
+<tr><td>[MDL92]    I</td><td>180.36370833333336</td><td>-19.015194444444447</td><td>--</td><td>--</td><td>--</td><td></td><td>2004AJ....127..660S</td><td>HII</td><td>1992A&amp;A...256L..19M|2001AJ....122.2969H|2004AJ....127..660S</td></tr>
+<tr><td>[ZBF2015] Arp244 187</td><td>180.47750000000002</td><td>-18.878333333333334</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 189</td><td>180.46125</td><td>-18.871333333333336</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>[ZBF2015] Arp244  61</td><td>180.47750000000002</td><td>-18.868972222222222</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 198</td><td>180.48333333333335</td><td>-18.876055555555556</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 234</td><td>180.4779166666667</td><td>-18.874194444444445</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 150</td><td>180.4779166666667</td><td>-18.88111111111111</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 204</td><td>180.4691666666667</td><td>-18.869</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 275</td><td>180.47833333333335</td><td>-18.880694444444444</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[HMR2016] N4038 H29</td><td>180.481</td><td>-18.880719444444445</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2016ApJ...830...10H</td><td>HII</td><td>2016ApJ...830...10H</td></tr>
+<tr><td>[ZBF2015] Arp244  45</td><td>180.48125000000002</td><td>-18.873250000000002</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 155</td><td>180.46333333333334</td><td>-18.875500000000002</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 158</td><td>180.46583333333334</td><td>-18.875416666666666</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 202</td><td>180.47708333333335</td><td>-18.88138888888889</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 224</td><td>180.47750000000002</td><td>-18.87863888888889</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+<tr><td>[ZBF2015] Arp244 211</td><td>180.4691666666667</td><td>-18.858333333333334</td><td>--</td><td>--</td><td>--</td><td>O</td><td>2014MNRAS.445.1412Z</td><td>HII</td><td>2014MNRAS.445.1412Z|2015MNRAS.451.1307Z</td></tr>
+</table></div></div></div>
+</div>
+<p>Once we have identified a bibliographic reference of interest, we can search the corresponding catalogs on <ins>VizieR</ins>. Here, the Biblio column has quite some occurrences of the reference <code class="docutils literal notranslate"><span class="pre">'2015MNRAS.451.1307Z'</span></code>.</p>
+<p>Note that by default VizieR will only return 50 entries (as in the web interface). To get all sources, set <code class="docutils literal notranslate"><span class="pre">ROW_LIMIT=-1</span></code>.</p>
+<p>A good practice is to check first what data are available by querying only a subsample, then customize your Vizier query with the useful rows and columns before downloading the entire catalog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_viz</span> <span class="o">=</span> <span class="n">Vizier</span><span class="p">(</span><span class="n">row_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;2015MNRAS.451.1307Z&quot;</span><span class="p">)</span>
+<span class="n">cat_viz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: UnitsWarning: The unit &#39;pix&#39; has been deprecated in the VOUnit standard. [astropy.units.format.utils]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 2 tables:
+	&#39;0:J/MNRAS/451/1307/HIIreg&#39; with 15 column(s) and 10 row(s) 
+	&#39;1:J/MNRAS/451/1307/list&#39; with 13 column(s) and 10 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the example above, we see that 2 tables are associated with the reference <code class="docutils literal notranslate"><span class="pre">2015MNRAS.451.1307Z</span></code>: a table called ‘HIIreg’ accessible by the index [0] and a table called ‘list’ accessible by the index [1]. The number of rows has been fixed by the parameter <code class="docutils literal notranslate"><span class="pre">row_limit=10</span></code>.</p>
+<p>Let’s check the ‘HIIreg’ table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the metadata</span>
+<span class="n">cat_viz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;J_MNRAS_451_1307_HIIreg&#39;,
+ &#39;name&#39;: &#39;J/MNRAS/451/1307/HIIreg&#39;,
+ &#39;description&#39;: &#39;Physical properties of the brightest HII regions in interacting galaxies (table A1) and isolated galaxies (table A2)&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the table itself</span>
+<span class="n">cat_viz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=10</i>
+<table id="table140629154247344" class="table-striped table-bordered table-condensed">
+<thead><tr><th>Seq</th><th>n_Name</th><th>Name</th><th>Nf</th><th>RAJ2000</th><th>DEJ2000</th><th>logLHa</th><th>R</th><th>logMHII</th><th>rhoHII</th><th>sigma</th><th>alpVir</th><th>EWHa</th><th>logAge</th><th>Simbad</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>log(1e-07W)</th><th>pc</th><th>log(solMass)</th><th>solMass / pc3</th><th>km / s</th><th></th><th>0.1 nm</th><th>log(yr)</th><th></th></tr></thead>
+<thead><tr><th>int16</th><th>str3</th><th>str7</th><th>int16</th><th>str10</th><th>str11</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>str6</th></tr></thead>
+<tr><td>1</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 39.4</td><td>+78 21 18.2</td><td>39.040</td><td>114</td><td>5.90</td><td>0.1270</td><td>15.0</td><td>40.0</td><td>159.79</td><td>6.770</td><td>Simbad</td></tr>
+<tr><td>2</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 38.1</td><td>+78 21 26.8</td><td>38.830</td><td>116</td><td>5.80</td><td>0.0970</td><td>17.0</td><td>60.0</td><td>54.70</td><td>6.810</td><td>Simbad</td></tr>
+<tr><td>3</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 44.6</td><td>+78 21 50.6</td><td>38.590</td><td>142</td><td>5.80</td><td>0.0550</td><td>11.0</td><td>30.0</td><td>125.30</td><td>6.780</td><td>Simbad</td></tr>
+<tr><td>4</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 27.7</td><td>+78 22 21.0</td><td>38.470</td><td>155</td><td>5.81</td><td>0.0410</td><td>8.6</td><td>20.0</td><td>119.64</td><td>6.780</td><td>Simbad</td></tr>
+<tr><td>5</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 35.0</td><td>+78 21 28.0</td><td>38.440</td><td>124</td><td>5.65</td><td>0.0560</td><td>15.0</td><td>80.0</td><td>103.35</td><td>6.790</td><td>Simbad</td></tr>
+<tr><td>6</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 42.8</td><td>+78 21 58.1</td><td>38.410</td><td>136</td><td>5.70</td><td>0.0470</td><td>4.0</td><td>--</td><td>155.86</td><td>6.770</td><td>Simbad</td></tr>
+<tr><td>7</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 39.8</td><td>+78 21 22.5</td><td>38.350</td><td>81</td><td>5.30</td><td>0.0960</td><td>15.0</td><td>100.0</td><td>109.47</td><td>6.790</td><td>Simbad</td></tr>
+<tr><td>8</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 48.0</td><td>+78 21 43.3</td><td>38.320</td><td>144</td><td>5.69</td><td>0.0390</td><td>4.0</td><td>--</td><td>81.89</td><td>6.800</td><td>Simbad</td></tr>
+<tr><td>9</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 42.1</td><td>+78 21 12.0</td><td>38.310</td><td>94</td><td>5.40</td><td>0.0730</td><td>4.0</td><td>--</td><td>103.95</td><td>6.790</td><td>Simbad</td></tr>
+<tr><td>10</td><td>int</td><td>NGC2146</td><td>3</td><td>06 18 44.2</td><td>+78 21 00.9</td><td>38.300</td><td>96</td><td>5.40</td><td>0.0700</td><td>4.0</td><td>--</td><td>67.87</td><td>6.800</td><td>Simbad</td></tr>
+</table></div></div></div>
+</div>
+<p>As for every function in python, we can call <code class="docutils literal notranslate"><span class="pre">help(Vizier)</span></code> in a code cell and run it to print the documentation.</p>
+<p>We won’t do it here as it is quite long, but if we did, we could have read that <code class="docutils literal notranslate"><span class="pre">columns</span></code> should be a list, <code class="docutils literal notranslate"><span class="pre">column_filters</span></code> a dictionary, and <code class="docutils literal notranslate"><span class="pre">row_limits</span></code> is an int for which -1 means infinity. Now we can customize our VizieR query by selecting columns, filtering to keep only the interacting galaxies (<code class="docutils literal notranslate"><span class="pre">n_Name='int'</span></code>), and keeping only the first region for each galaxy (<code class="docutils literal notranslate"><span class="pre">Seq=1</span></code>, for visualization purposes).</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_hii</span> <span class="o">=</span> <span class="n">Vizier</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span> <span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span> <span class="s2">&quot;logLHa&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;sigma&quot;</span><span class="p">],</span>
+    <span class="n">column_filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Seq&quot;</span><span class="p">:</span> <span class="s2">&quot;==1&quot;</span><span class="p">,</span> <span class="s2">&quot;n_Name&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">},</span>
+    <span class="n">row_limit</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;2015MNRAS.451.1307Z&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">cat_hii</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=12</i>
+<table id="table140629154225312" class="table-striped table-bordered table-condensed">
+<thead><tr><th>Name</th><th>RAJ2000</th><th>DEJ2000</th><th>logLHa</th><th>R</th><th>sigma</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th>log(1e-07W)</th><th>pc</th><th>km / s</th></tr></thead>
+<thead><tr><th>str7</th><th>str10</th><th>str11</th><th>float32</th><th>int16</th><th>float32</th></tr></thead>
+<tr><td>NGC2146</td><td>06 18 39.4</td><td>+78 21 18.2</td><td>39.040</td><td>114</td><td>15.0</td></tr>
+<tr><td>Arp244</td><td>12 01 54.6</td><td>-18 53 03.1</td><td>40.200</td><td>280</td><td>32.8</td></tr>
+<tr><td>NGC520</td><td>01 24 33.3</td><td>+03 48 04.6</td><td>39.120</td><td>255</td><td>14.1</td></tr>
+<tr><td>UGC3995</td><td>07 44 09.2</td><td>+29 14 51.3</td><td>40.290</td><td>270</td><td>43.0</td></tr>
+<tr><td>NGC3788</td><td>11 39 41.4</td><td>+31 54 23.3</td><td>39.700</td><td>280</td><td>11.9</td></tr>
+<tr><td>NGC3786</td><td>11 39 45.1</td><td>+31 55 46.3</td><td>39.860</td><td>300</td><td>16.5</td></tr>
+<tr><td>NGC2782</td><td>09 14 05.3</td><td>+40 06 50.4</td><td>39.800</td><td>166</td><td>28.0</td></tr>
+<tr><td>NGC2993</td><td>09 45 48.3</td><td>-14 22 05.9</td><td>40.070</td><td>258</td><td>12.0</td></tr>
+<tr><td>NGC2992</td><td>09 45 41.9</td><td>-14 19 33.4</td><td>39.180</td><td>100</td><td>16.0</td></tr>
+<tr><td>NGC3991</td><td>11 57 31.7</td><td>+32 20 29.6</td><td>40.440</td><td>470</td><td>20.9</td></tr>
+<tr><td>Arp270</td><td>10 49 55.8</td><td>+32 59 28.0</td><td>40.220</td><td>229</td><td>20.4</td></tr>
+<tr><td>NGC3769</td><td>11 37 43.7</td><td>+47 53 24.4</td><td>38.310</td><td>66</td><td>4.0</td></tr>
+</table></div></div></div>
+</div>
+<p>We can also display the table on <ins>Aladin</ins>.
+We use <code class="docutils literal notranslate"><span class="pre">aladin.add_table</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">cat_hii</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Go up to the <ins>Aladin Lite</ins> widget, zoom out to see all the sources, then rotate and zoom in to see the interacting galaxies. You can click on one source to display the information in the table.</p>
+<p>Change the view to the AllWISE Infrared survey, either in the widget:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Base</span> <span class="pre">image</span> <span class="pre">layer</span> <span class="pre">-&gt;</span> <span class="pre">The</span> <span class="pre">Wide-field</span> <span class="pre">Infrared</span> <span class="pre">Survey</span> <span class="pre">Explorer</span></code></p>
+<p>or in the command line below.</p>
+<p>You can find the list of available sky maps at <a class="reference external" href="https://aladin.u-strasbg.fr/hips/list">https://aladin.u-strasbg.fr/hips/list</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">survey</span> <span class="o">=</span> <span class="s2">&quot;P/allWISE/color&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to overlay the survey instead of replacing it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">aladin.overlay_survey=</span> <span class="pre">'P/allWISE/color'</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">aladin.overlay_survey_opacity</span> <span class="pre">=</span> <span class="pre">0.5</span></code></p>
+<p><strong>Exercise:</strong></p>
+<p>Retrieve the second table from Zaragoza-Cardiel+, 2015 (2015MNRAS.451.1307Z) containing data related to the image fits files and try to answer the questions:</p>
+<ul class="simple">
+<li><p>What are the typical sizes of the fits images?</p></li>
+<li><p>What is the approximate resolution of the images? [arcsec/pix]</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-cross-match-tables">
+<h2>Step #5: Cross-match tables<a class="headerlink" href="#step-5-cross-match-tables" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a>
+<a class="reference external" href="http://cdsxmatch.u-strasbg.fr/" title="http://cdsxmatch.u-strasbg.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a></p>
+<p>We have HII data for a sample of interacting galaxies. Since we are also interested in the infrared fluxes we search for the Wide-field Infrared Survey Explorer (<a class="reference external" href="https://wise2.ipac.caltech.edu/docs/release/allwise/">AllWISE</a>) data release.</p>
+<p>We want to match the sources in J/MNRAS/451/1307/HIIreg with the AllWISE source catalog that contains 747 million objects!</p>
+<p>We use the <ins>X-Match</ins> python module for cross-identification of objects. It is particularly efficient and fast with very large catalogs, like AllWISE. All we need are the names of the catalogs, the names of the columns containing the coordinates of the sources, and the desired maximum distance for the match (optionally the area as well, otherwise all-sky is the default).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What is the AllWISE catalogue reference in VizieR?</span>
+<span class="n">cat_allwise</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;AllWISE&quot;</span><span class="p">)</span>
+<span class="n">cat_allwise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:II/328/allwise&#39; with 28 column(s) and 50 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xmatch_zbf_wise</span> <span class="o">=</span> <span class="n">XMatch</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="n">cat1</span><span class="o">=</span><span class="s2">&quot;vizier:J/MNRAS/451/1307/HIIreg&quot;</span><span class="p">,</span>
+    <span class="n">cat2</span><span class="o">=</span><span class="s2">&quot;vizier:II/328/allwise&quot;</span><span class="p">,</span>
+    <span class="n">max_distance</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">,</span>
+    <span class="n">colRA1</span><span class="o">=</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span>
+    <span class="n">colDec1</span><span class="o">=</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span>
+    <span class="n">colRA2</span><span class="o">=</span><span class="s2">&quot;RAJ2000&quot;</span><span class="p">,</span>
+    <span class="n">colDec2</span><span class="o">=</span><span class="s2">&quot;DEJ2000&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">xmatch_zbf_wise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1314</i>
+<table id="table140629153185120" class="table-striped table-bordered table-condensed">
+<thead><tr><th>angDist</th><th>_RAJ2000</th><th>_DEJ2000</th><th>recno</th><th>Seq</th><th>n_Name</th><th>Name</th><th>Nf</th><th>RAJ2000</th><th>DEJ2000</th><th>logLHa</th><th>R</th><th>logMHII</th><th>rhoHII</th><th>sigma</th><th>alpVir</th><th>EWHa</th><th>logAge</th><th>Simbad</th><th>AllWISE</th><th>RAJ20002</th><th>DEJ20002</th><th>eeMaj</th><th>eeMin</th><th>eePA</th><th>W1mag</th><th>W2mag</th><th>W3mag</th><th>W4mag</th><th>Jmag</th><th>Hmag</th><th>Kmag</th><th>e_W1mag</th><th>e_W2mag</th><th>e_W3mag</th><th>e_W4mag</th><th>e_Jmag</th><th>e_Hmag</th><th>e_Kmag</th><th>ID</th><th>ccf</th><th>ex</th><th>var</th><th>qph</th><th>pmRA</th><th>e_pmRA</th><th>pmDE</th><th>e_pmDE</th><th>d2M</th></tr></thead>
+<thead><tr><th>arcsec</th><th>deg</th><th>deg</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>log(1e-07W)</th><th>pc</th><th>log(solMass)</th><th>solMass.pc**-3</th><th>km / s</th><th></th><th>0.1 nm</th><th>log(yr)</th><th></th><th></th><th>deg</th><th>deg</th><th>arcsec</th><th>arcsec</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>int32</th><th>int16</th><th>str3</th><th>str7</th><th>int16</th><th>str10</th><th>str11</th><th>float32</th><th>int16</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>object</th><th>str19</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>int64</th><th>str4</th><th>str1</th><th>str4</th><th>str4</th><th>int32</th><th>int32</th><th>int32</th><th>int32</th><th>float32</th></tr></thead>
+<tr><td>9.439952</td><td>250.775</td><td>36.839056</td><td>1820</td><td>27</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 06.0</td><td>+36 50 20.6</td><td>37.69</td><td>66</td><td>4.9</td><td>0.06</td><td>4.0</td><td>--</td><td>134.26</td><td>6.78</td><td>Simbad</td><td>J164305.83+365029.8</td><td>250.7743217</td><td>36.8416214</td><td>0.0374</td><td>0.0369</td><td>67.0</td><td>12.87</td><td>12.918</td><td>8.29</td><td>5.588</td><td>--</td><td>--</td><td>--</td><td>0.073</td><td>0.025</td><td>0.022</td><td>0.037</td><td>--</td><td>--</td><td>--</td><td>2499136301351044678</td><td>0000</td><td>3</td><td>3000</td><td>AAAA</td><td>10</td><td>40</td><td>359</td><td>42</td><td>--</td></tr>
+<tr><td>6.754932</td><td>250.767917</td><td>36.834944</td><td>1821</td><td>28</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.3</td><td>+36 50 05.8</td><td>37.66</td><td>101</td><td>5.1</td><td>0.031</td><td>4.0</td><td>--</td><td>22.27</td><td>6.91</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+<tr><td>8.575258</td><td>250.767917</td><td>36.834944</td><td>1821</td><td>28</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.3</td><td>+36 50 05.8</td><td>37.66</td><td>101</td><td>5.1</td><td>0.031</td><td>4.0</td><td>--</td><td>22.27</td><td>6.91</td><td>Simbad</td><td>J164303.79+364959.7</td><td>250.7658199</td><td>36.8332538</td><td>0.0379</td><td>0.0338</td><td>158.6</td><td>10.953</td><td>10.936</td><td>7.758</td><td>5.483</td><td>--</td><td>--</td><td>--</td><td>0.023</td><td>0.022</td><td>0.024</td><td>0.066</td><td>--</td><td>--</td><td>--</td><td>2499136301351044647</td><td>d0d0</td><td>5</td><td>3200</td><td>AAAA</td><td>113</td><td>31</td><td>484</td><td>32</td><td>--</td></tr>
+<tr><td>5.99581</td><td>250.76375</td><td>36.833083</td><td>1822</td><td>29</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.3</td><td>+36 49 59.1</td><td>37.66</td><td>87</td><td>5.0</td><td>0.039</td><td>4.0</td><td>--</td><td>20.6</td><td>6.93</td><td>Simbad</td><td>J164303.79+364959.7</td><td>250.7658199</td><td>36.8332538</td><td>0.0379</td><td>0.0338</td><td>158.6</td><td>10.953</td><td>10.936</td><td>7.758</td><td>5.483</td><td>--</td><td>--</td><td>--</td><td>0.023</td><td>0.022</td><td>0.024</td><td>0.066</td><td>--</td><td>--</td><td>--</td><td>2499136301351044647</td><td>d0d0</td><td>5</td><td>3200</td><td>AAAA</td><td>113</td><td>31</td><td>484</td><td>32</td><td>--</td></tr>
+<tr><td>7.312318</td><td>250.76375</td><td>36.833083</td><td>1822</td><td>29</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.3</td><td>+36 49 59.1</td><td>37.66</td><td>87</td><td>5.0</td><td>0.039</td><td>4.0</td><td>--</td><td>20.6</td><td>6.93</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+<tr><td>3.802161</td><td>250.766667</td><td>36.832444</td><td>1823</td><td>30</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.0</td><td>+36 49 56.8</td><td>37.66</td><td>91</td><td>5.1</td><td>0.036</td><td>4.0</td><td>--</td><td>8.9</td><td>7.09</td><td>Simbad</td><td>J164303.79+364959.7</td><td>250.7658199</td><td>36.8332538</td><td>0.0379</td><td>0.0338</td><td>158.6</td><td>10.953</td><td>10.936</td><td>7.758</td><td>5.483</td><td>--</td><td>--</td><td>--</td><td>0.023</td><td>0.022</td><td>0.024</td><td>0.066</td><td>--</td><td>--</td><td>--</td><td>2499136301351044647</td><td>d0d0</td><td>5</td><td>3200</td><td>AAAA</td><td>113</td><td>31</td><td>484</td><td>32</td><td>--</td></tr>
+<tr><td>7.648264</td><td>250.766667</td><td>36.832444</td><td>1823</td><td>30</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.0</td><td>+36 49 56.8</td><td>37.66</td><td>91</td><td>5.1</td><td>0.036</td><td>4.0</td><td>--</td><td>8.9</td><td>7.09</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+<tr><td>9.762527</td><td>250.769167</td><td>36.832833</td><td>1825</td><td>34</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 04.6</td><td>+36 49 58.2</td><td>37.49</td><td>57</td><td>4.7</td><td>0.06</td><td>4.0</td><td>--</td><td>18.26</td><td>6.98</td><td>Simbad</td><td>J164303.79+364959.7</td><td>250.7658199</td><td>36.8332538</td><td>0.0379</td><td>0.0338</td><td>158.6</td><td>10.953</td><td>10.936</td><td>7.758</td><td>5.483</td><td>--</td><td>--</td><td>--</td><td>0.023</td><td>0.022</td><td>0.024</td><td>0.066</td><td>--</td><td>--</td><td>--</td><td>2499136301351044647</td><td>d0d0</td><td>5</td><td>3200</td><td>AAAA</td><td>113</td><td>31</td><td>484</td><td>32</td><td>--</td></tr>
+<tr><td>4.218263</td><td>250.775</td><td>36.840583</td><td>1830</td><td>41</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 06.0</td><td>+36 50 26.1</td><td>37.26</td><td>33</td><td>4.2</td><td>0.1</td><td>4.0</td><td>--</td><td>255.83</td><td>6.75</td><td>Simbad</td><td>J164305.83+365029.8</td><td>250.7743217</td><td>36.8416214</td><td>0.0374</td><td>0.0369</td><td>67.0</td><td>12.87</td><td>12.918</td><td>8.29</td><td>5.588</td><td>--</td><td>--</td><td>--</td><td>0.073</td><td>0.025</td><td>0.022</td><td>0.037</td><td>--</td><td>--</td><td>--</td><td>2499136301351044678</td><td>0000</td><td>3</td><td>3000</td><td>AAAA</td><td>10</td><td>40</td><td>359</td><td>42</td><td>--</td></tr>
+<tr><td>0.814803</td><td>40.89875</td><td>1.377222</td><td>1834</td><td>1</td><td>iso</td><td>NGC1073</td><td>0</td><td>02 43 35.7</td><td>+01 22 38.0</td><td>39.22</td><td>124</td><td>6.04</td><td>0.138</td><td>13.4</td><td>23.0</td><td>522.67</td><td>6.59</td><td>Simbad</td><td>J024335.67+012237.2</td><td>40.8986511</td><td>1.3770184</td><td>0.0807</td><td>0.0757</td><td>126.3</td><td>14.868</td><td>14.664</td><td>10.041</td><td>7.24</td><td>--</td><td>--</td><td>--</td><td>0.033</td><td>0.065</td><td>0.066</td><td>0.129</td><td>--</td><td>--</td><td>--</td><td>408101501351028660</td><td>0000</td><td>3</td><td>nnnn</td><td>AAAB</td><td>0</td><td>0</td><td>0</td><td>0</td><td>--</td></tr>
+<tr><td>9.556441</td><td>40.89875</td><td>1.377222</td><td>1834</td><td>1</td><td>iso</td><td>NGC1073</td><td>0</td><td>02 43 35.7</td><td>+01 22 38.0</td><td>39.22</td><td>124</td><td>6.04</td><td>0.138</td><td>13.4</td><td>23.0</td><td>522.67</td><td>6.59</td><td>Simbad</td><td>J024335.06+012236.8</td><td>40.8961145</td><td>1.3768984</td><td>0.0777</td><td>0.0726</td><td>113.5</td><td>14.665</td><td>14.547</td><td>10.116</td><td>7.751</td><td>--</td><td>--</td><td>--</td><td>0.032</td><td>0.059</td><td>0.07</td><td>0.201</td><td>--</td><td>--</td><td>--</td><td>408101501351028659</td><td>0000</td><td>3</td><td>nnnn</td><td>AAAB</td><td>519</td><td>113</td><td>184</td><td>115</td><td>--</td></tr>
+<tr><td>2.050378</td><td>40.91625</td><td>1.398056</td><td>1835</td><td>2</td><td>iso</td><td>NGC1073</td><td>0</td><td>02 43 39.9</td><td>+01 23 53.0</td><td>38.87</td><td>87</td><td>5.64</td><td>0.16</td><td>9.9</td><td>23.0</td><td>641.02</td><td>6.54</td><td>Simbad</td><td>J024339.95+012351.1</td><td>40.9164643</td><td>1.3975283</td><td>0.0891</td><td>0.0842</td><td>142.7</td><td>15.058</td><td>15.11</td><td>10.021</td><td>7.007</td><td>--</td><td>--</td><td>--</td><td>0.036</td><td>0.101</td><td>0.062</td><td>0.092</td><td>--</td><td>--</td><td>--</td><td>408101501351028680</td><td>0000</td><td>2</td><td>1111</td><td>AAAA</td><td>342</td><td>161</td><td>-432</td><td>166</td><td>--</td></tr>
+<tr><td>6.778978</td><td>40.917083</td><td>1.375444</td><td>1836</td><td>3</td><td>iso</td><td>NGC1073</td><td>0</td><td>02 43 40.1</td><td>+01 22 31.6</td><td>38.69</td><td>115</td><td>5.73</td><td>0.084</td><td>7.2</td><td>13.0</td><td>63.08</td><td>6.8</td><td>Simbad</td><td>J024340.51+012234.1</td><td>40.9188331</td><td>1.3761402</td><td>0.0422</td><td>0.0408</td><td>84.4</td><td>12.252</td><td>12.259</td><td>8.977</td><td>6.376</td><td>15.101</td><td>14.573</td><td>14.292</td><td>0.025</td><td>0.025</td><td>0.029</td><td>0.063</td><td>0.16</td><td>0.241</td><td>0.16</td><td>408101501351028598</td><td>0000</td><td>5</td><td>1100</td><td>AAAA</td><td>-153</td><td>48</td><td>62</td><td>47</td><td>0.394</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>2.461872</td><td>262.364583</td><td>75.690333</td><td>1789</td><td>75</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.5</td><td>+75 41 25.2</td><td>37.54</td><td>100</td><td>5.1</td><td>0.026</td><td>4.0</td><td>--</td><td>1.63</td><td>7.24</td><td>Simbad</td><td>J172927.37+754122.7</td><td>262.3640507</td><td>75.6896619</td><td>0.0403</td><td>0.0374</td><td>77.5</td><td>12.05</td><td>12.097</td><td>12.917</td><td>9.369</td><td>12.52</td><td>12.177</td><td>12.107</td><td>0.023</td><td>0.021</td><td>--</td><td>--</td><td>0.022</td><td>0.019</td><td>0.025</td><td>2613175701351028212</td><td>0000</td><td>2</td><td>11nn</td><td>AAUU</td><td>-48</td><td>34</td><td>26</td><td>34</td><td>0.157</td></tr>
+<tr><td>6.919677</td><td>262.364583</td><td>75.690333</td><td>1789</td><td>75</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.5</td><td>+75 41 25.2</td><td>37.54</td><td>100</td><td>5.1</td><td>0.026</td><td>4.0</td><td>--</td><td>1.63</td><td>7.24</td><td>Simbad</td><td>J172925.67+754123.7</td><td>262.3569903</td><td>75.6899173</td><td>0.3268</td><td>0.1897</td><td>101.4</td><td>16.104</td><td>16.518</td><td>12.619</td><td>9.184</td><td>--</td><td>--</td><td>--</td><td>0.126</td><td>0.248</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>2613175701351029820</td><td>0000</td><td>2</td><td>3nnn</td><td>BBUU</td><td>-253</td><td>460</td><td>362</td><td>559</td><td>--</td></tr>
+<tr><td>9.385763</td><td>262.399167</td><td>75.702444</td><td>1791</td><td>77</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 35.8</td><td>+75 42 08.8</td><td>37.47</td><td>100</td><td>5.0</td><td>0.027</td><td>4.0</td><td>--</td><td>10.6</td><td>7.06</td><td>Simbad</td><td>J172937.39+754216.1</td><td>262.405793</td><td>75.7044738</td><td>0.0336</td><td>0.033</td><td>78.6</td><td>11.656</td><td>11.636</td><td>8.119</td><td>5.815</td><td>14.424</td><td>13.639</td><td>13.506</td><td>0.022</td><td>0.022</td><td>0.019</td><td>0.037</td><td>0.082</td><td>0.094</td><td>0.086</td><td>2613175701351028211</td><td>0000</td><td>5</td><td>4200</td><td>AAAA</td><td>0</td><td>30</td><td>0</td><td>30</td><td>0.861</td></tr>
+<tr><td>2.430664</td><td>262.36375</td><td>75.690333</td><td>1792</td><td>78</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.3</td><td>+75 41 25.2</td><td>37.3</td><td>80</td><td>4.8</td><td>0.03</td><td>4.0</td><td>--</td><td>1.43</td><td>7.25</td><td>Simbad</td><td>J172927.37+754122.7</td><td>262.3640507</td><td>75.6896619</td><td>0.0403</td><td>0.0374</td><td>77.5</td><td>12.05</td><td>12.097</td><td>12.917</td><td>9.369</td><td>12.52</td><td>12.177</td><td>12.107</td><td>0.023</td><td>0.021</td><td>--</td><td>--</td><td>0.022</td><td>0.019</td><td>0.025</td><td>2613175701351028212</td><td>0000</td><td>2</td><td>11nn</td><td>AAUU</td><td>-48</td><td>34</td><td>26</td><td>34</td><td>0.157</td></tr>
+<tr><td>6.198088</td><td>262.36375</td><td>75.690333</td><td>1792</td><td>78</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.3</td><td>+75 41 25.2</td><td>37.3</td><td>80</td><td>4.8</td><td>0.03</td><td>4.0</td><td>--</td><td>1.43</td><td>7.25</td><td>Simbad</td><td>J172925.67+754123.7</td><td>262.3569903</td><td>75.6899173</td><td>0.3268</td><td>0.1897</td><td>101.4</td><td>16.104</td><td>16.518</td><td>12.619</td><td>9.184</td><td>--</td><td>--</td><td>--</td><td>0.126</td><td>0.248</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>2613175701351029820</td><td>0000</td><td>2</td><td>3nnn</td><td>BBUU</td><td>-253</td><td>460</td><td>362</td><td>559</td><td>--</td></tr>
+<tr><td>2.619531</td><td>262.364167</td><td>75.690389</td><td>1794</td><td>80</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.4</td><td>+75 41 25.4</td><td>36.9</td><td>60</td><td>4.4</td><td>0.03</td><td>4.0</td><td>--</td><td>3.33</td><td>7.12</td><td>Simbad</td><td>J172927.37+754122.7</td><td>262.3640507</td><td>75.6896619</td><td>0.0403</td><td>0.0374</td><td>77.5</td><td>12.05</td><td>12.097</td><td>12.917</td><td>9.369</td><td>12.52</td><td>12.177</td><td>12.107</td><td>0.023</td><td>0.021</td><td>--</td><td>--</td><td>0.022</td><td>0.019</td><td>0.025</td><td>2613175701351028212</td><td>0000</td><td>2</td><td>11nn</td><td>AAUU</td><td>-48</td><td>34</td><td>26</td><td>34</td><td>0.157</td></tr>
+<tr><td>6.607669</td><td>262.364167</td><td>75.690389</td><td>1794</td><td>80</td><td>iso</td><td>NGC6412</td><td>0</td><td>17 29 27.4</td><td>+75 41 25.4</td><td>36.9</td><td>60</td><td>4.4</td><td>0.03</td><td>4.0</td><td>--</td><td>3.33</td><td>7.12</td><td>Simbad</td><td>J172925.67+754123.7</td><td>262.3569903</td><td>75.6899173</td><td>0.3268</td><td>0.1897</td><td>101.4</td><td>16.104</td><td>16.518</td><td>12.619</td><td>9.184</td><td>--</td><td>--</td><td>--</td><td>0.126</td><td>0.248</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>2613175701351029820</td><td>0000</td><td>2</td><td>3nnn</td><td>BBUU</td><td>-253</td><td>460</td><td>362</td><td>559</td><td>--</td></tr>
+<tr><td>5.639364</td><td>250.76375</td><td>36.834722</td><td>1795</td><td>1</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.3</td><td>+36 50 05.0</td><td>39.51</td><td>154</td><td>6.33</td><td>0.14</td><td>18.0</td><td>27.0</td><td>68.4</td><td>6.8</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+<tr><td>7.969164</td><td>250.76375</td><td>36.834722</td><td>1795</td><td>1</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.3</td><td>+36 50 05.0</td><td>39.51</td><td>154</td><td>6.33</td><td>0.14</td><td>18.0</td><td>27.0</td><td>68.4</td><td>6.8</td><td>Simbad</td><td>J164303.79+364959.7</td><td>250.7658199</td><td>36.8332538</td><td>0.0379</td><td>0.0338</td><td>158.6</td><td>10.953</td><td>10.936</td><td>7.758</td><td>5.483</td><td>--</td><td>--</td><td>--</td><td>0.023</td><td>0.022</td><td>0.024</td><td>0.066</td><td>--</td><td>--</td><td>--</td><td>2499136301351044647</td><td>d0d0</td><td>5</td><td>3200</td><td>AAAA</td><td>113</td><td>31</td><td>484</td><td>32</td><td>--</td></tr>
+<tr><td>7.499991</td><td>250.764583</td><td>36.836306</td><td>1796</td><td>2</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.5</td><td>+36 50 10.7</td><td>39.36</td><td>131</td><td>6.15</td><td>0.148</td><td>13.9</td><td>21.0</td><td>138.94</td><td>6.78</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+<tr><td>3.3028</td><td>250.775</td><td>36.842361</td><td>1797</td><td>3</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 06.0</td><td>+36 50 32.5</td><td>38.88</td><td>138</td><td>5.94</td><td>0.079</td><td>6.0</td><td>7.0</td><td>264.23</td><td>6.75</td><td>Simbad</td><td>J164305.83+365029.8</td><td>250.7743217</td><td>36.8416214</td><td>0.0374</td><td>0.0369</td><td>67.0</td><td>12.87</td><td>12.918</td><td>8.29</td><td>5.588</td><td>--</td><td>--</td><td>--</td><td>0.073</td><td>0.025</td><td>0.022</td><td>0.037</td><td>--</td><td>--</td><td>--</td><td>2499136301351044678</td><td>0000</td><td>3</td><td>3000</td><td>AAAA</td><td>10</td><td>40</td><td>359</td><td>42</td><td>--</td></tr>
+<tr><td>2.552215</td><td>250.774583</td><td>36.840944</td><td>1806</td><td>12</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 05.9</td><td>+36 50 27.4</td><td>38.26</td><td>72</td><td>5.2</td><td>0.1</td><td>4.0</td><td>--</td><td>264.14</td><td>6.75</td><td>Simbad</td><td>J164305.83+365029.8</td><td>250.7743217</td><td>36.8416214</td><td>0.0374</td><td>0.0369</td><td>67.0</td><td>12.87</td><td>12.918</td><td>8.29</td><td>5.588</td><td>--</td><td>--</td><td>--</td><td>0.073</td><td>0.025</td><td>0.022</td><td>0.037</td><td>--</td><td>--</td><td>--</td><td>2499136301351044678</td><td>0000</td><td>3</td><td>3000</td><td>AAAA</td><td>10</td><td>40</td><td>359</td><td>42</td><td>--</td></tr>
+<tr><td>7.317245</td><td>250.764583</td><td>36.83625</td><td>1817</td><td>24</td><td>iso</td><td>NGC6207</td><td>0</td><td>16 43 03.5</td><td>+36 50 10.5</td><td>37.73</td><td>72</td><td>4.9</td><td>0.056</td><td>4.0</td><td>--</td><td>200.19</td><td>6.76</td><td>Simbad</td><td>J164303.76+365003.8</td><td>250.7656686</td><td>36.8344125</td><td>0.0212</td><td>0.0201</td><td>135.0</td><td>10.792</td><td>11.24</td><td>7.028</td><td>4.232</td><td>12.866</td><td>12.603</td><td>12.523</td><td>0.03</td><td>0.019</td><td>0.013</td><td>0.021</td><td>0.043</td><td>0.056</td><td>0.058</td><td>2499136301351044679</td><td>hd00</td><td>3</td><td>n9n3</td><td>AAAA</td><td>-929</td><td>25</td><td>-1205</td><td>26</td><td>0.458</td></tr>
+</table></div></div></div>
+</div>
+<h4 align="center">This is the end of the tutorial.</h4> 
+<h4 align="center">Try to apply what you have learned here to your data sets and science cases! </h4></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cds-astro/tutorials",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_Peculiar_galaxies__first_steps_with_MOCs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-gather-information-on-ngc4038">Step #1: Gather information on NGC4038</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-visualise-the-source-on-a-sky-map">Step #2: Visualise the source on a sky map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-find-and-visualize-additional-data">Step #3: Find and visualize additional data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-cross-match-tables">Step #5: Cross-match tables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Strasbourg astronomical Data Center (CDS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
