@@ -1,5 +1,6 @@
 [project]
 name = "cds-escape-tutorials"
+version = "1.1.0"
 # 3.8 has been dropped by astropy
 requires-python = ">=3.9"
 
@@ -38,12 +39,6 @@ extend-include = [".ipynb"]
 
 [tool.ruff.flake8-errmsg]
 max-string-length = 20
-
-[tool.ruff.flake8-import-conventions]
-# Declare the default aliases.
-# seaborn = "sns"
-# Declare a custom alias for the `matplotlib` module.
-# "dask.dataframe" = "dd"
 
 [tool.ruff.pydocstyle]
 convention = "numpy"  # Accepts: "google", "numpy", or "pep257"
