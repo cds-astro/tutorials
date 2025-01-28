@@ -29,3 +29,11 @@ repos:
   hooks:
     - id: ruff
       fail_fast: true
+-   repo: local
+    hooks:
+    -   id: nbconvert
+        name: nbconvert
+        entry: python3 -m jupyter nbconvert --ClearMetadataPreprocessor.enabled=True --inplace
+        language: system
+        files: \.ipynb$
+        require_serial: true
