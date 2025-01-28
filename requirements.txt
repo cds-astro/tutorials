@@ -1,6 +1,6 @@
 astroplan>=0.8
 astropy>=5.2.0.a
-astroquery>=0.4.8
+astroquery>=0.4.9
 ipyaladin>=0.3.0
 MOCpy>=0.15.0
 pandas>=2.0.3
