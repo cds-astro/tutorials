@@ -17,15 +17,12 @@ on:
 jobs:
   test-windows:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        python-version: ["3.11"]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.12
         uses: actions/setup-python@v6
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.12
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip

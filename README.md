@@ -23,7 +23,6 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
   - [How to use the tutorials](#how-to-use-the-tutorials)
     - [On your machine](#on-your-machine)
     - [In github codespaces](#in-github-codespaces)
-    - [On mybinder](#on-mybinder)
     - [As a book](#as-a-book)
   - [Flight plan](#flight-plan)
     - [1. Intro to CDS services in notebooks](#1-intro-to-cds-services-in-notebooks)
@@ -46,7 +45,7 @@ Some tutorials hosted here are based on [EURO-VO tutorials](https://www.euro-vo.
 
 ### On your machine
 
-[![python](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/")
+[![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-informational)](https://www.python.org/downloads/ "https://www.python.org/downloads/")
 [![ubuntu](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_ubuntu.yml)
 [![windows](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-check_windows.yml)
 [![mac-os](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml/badge.svg)](https://github.com/cds-astro/tutorials/actions/workflows/notebooks-checks_mac-os.yml)
@@ -64,19 +63,11 @@ This can be done with the following commands:
   jupyter lab
 ```
 
-Note: the file `justfile` contains the instructions to create an environnement with `conda`.
-
 ### In github codespaces
 
 - In Github, you can open a JupyterLab instance. To do so, go in your [`Settings`](https://github.com/settings/profile), then `Codespaces` and in `Editor Preference` choose `Jupyter Lab`. And voilà, you can now launch the tutorials, execute and modify them without any installation!
 
 ![codespace](https://github.com/cds-astro/tutorials/assets/16650466/1e969477-2230-4a39-920c-3a1ee2c9d9e4)
-
-
-### On mybinder
-
-- You can click on the Binder button here
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cds-astro/tutorials/master?filepath=Notebooks)
 
 ### As a book
 
