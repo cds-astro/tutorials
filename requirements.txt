@@ -1,5 +1,5 @@
-astroplan>=0.8
-astropy>=5.2.0.a
+astroplan>=0.10
+astropy>=6.1.5
 astroquery>=0.4.9
 cdshealpix>=0.6.0
 ipyaladin>=0.3.0
@@ -9,4 +9,4 @@ pandas>=2.0.3
 plotly>=5.14.0.a
 pyvo>=1.4.1
 regions>=0.7
-specutils>=1.9.0.a
+specutils>=1.18.0
