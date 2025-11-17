@@ -2,7 +2,7 @@ exclude: 'Past_Conferences_and_Schools/' # ignores the unmaintained notebooks
 
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.5.0
+  rev: v6.0.0
   hooks:
     - id: detect-private-key
       description: "Check accidental private keys in code"
@@ -15,17 +15,8 @@ repos:
   hooks:
   - id: markdown-toc
     name: markdown-toc
-- repo: https://github.com/nbQA-dev/nbQA
-  rev: 1.7.1
-  hooks:
-    - id: nbqa-black
-      name: nbqa-black
-      description: "Run 'black' on a Jupyter Notebook"
-      language: python
-      require_serial: true
-    - id: nbqa-isort
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.1.6
+  rev: v0.14.5
   hooks:
     - id: ruff
       fail_fast: true
