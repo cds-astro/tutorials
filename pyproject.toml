@@ -1,8 +1,7 @@
 [project]
 name = "cds-escape-tutorials"
 version = "1.1.0"
-# 3.8 has been dropped by astropy
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 [project.urls]
 repository = "https://github.com/cds-astro/tutorials"
@@ -17,7 +16,7 @@ repository = "https://github.com/cds-astro/tutorials"
 fix = true
 force-exclude = true
 output-format = "grouped"
-target-version = "py39"
+target-version = "py310"
 # Allow lines to be as long as 120 characters.
 line-length = 120
 
