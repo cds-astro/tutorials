@@ -39,7 +39,7 @@
     "publisher": {
         "@type": "Organization",
         "name": "Centre de Données Astronomiques de Strasbourg",
-        "url": "http://cdsweb.u-strasbg.fr/"
+        "url": "http://cds.unistra.fr/"
     },
     "softwareRequirements": "https://github.com/cds-astro/tutorials/blob/master/requirements.txt",
     "author": [

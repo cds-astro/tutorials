@@ -6,7 +6,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json)](https://github.com/charliermarsh/ruff "https://github.com/charliermarsh/ruff")
 
-Welcome to the repository of Strasbourg astronomical Data Center [CDS](https://cds.u-strasbg.fr/ "https://cds.u-strasbg.fr/") jupyter notebooks.
+Welcome to the repository of Strasbourg astronomical Data Center [CDS](https://cds.unistra.fr/ "https://cds.unistra.fr/") jupyter notebooks.
 
 <img align="right" width="20%" alt="CDS logo" src="Notebooks/Data/images/cds.png">
 
@@ -82,7 +82,7 @@ The tutorials come in a recommended order ranging from basic usage of the CDS to
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
-[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
+[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.cds.unistra.fr/ "http://cdsxmatch.cds.unistra.fr/")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
 [![units](https://custom-icon-badges.demolab.com/badge/units-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
 
@@ -103,7 +103,7 @@ This tutorial highlights two python modules for querying data : [astroquery](htt
 
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
-[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/)
+[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.cds.unistra.fr/)
 [![SSA](https://img.shields.io/badge/SSA-gray)](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA")
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
@@ -117,7 +117,7 @@ This tutorial focuses on the Coma Cluster of Galaxies. In particular, we search 
 
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
-[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
+[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.cds.unistra.fr/ "http://cdsxmatch.cds.unistra.fr/")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
 [![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates%20%7C%20tables-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
@@ -128,7 +128,7 @@ For this tutorial we focus on gamma-ray and high energy spectral bands and start
 
 [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/")
 [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml")
-[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/")
+[![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.cds.unistra.fr/ "http://cdsxmatch.cds.unistra.fr/")
 [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR")
 [![astroquery](https://img.shields.io/badge/astroquery-gray.svg)](https://github.com/astropy/astroquery "https://github.com/astropy/astroquery")
 [![astropy](https://custom-icon-badges.demolab.com/badge/units%20%7C%20coordinates-gray.svg?logo=astropy)](https://github.com/astropy/astropy "https://github.com/astropy/astropy")
@@ -168,7 +168,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 
 ### IVOA Standards
 
-- **HiPS**: Hierarchical Progressive Surveys - efficient tiling systems to serve (all-sky) imaging surveys, cubes or catalogues, the user only downloads and sees what they are interested in and the more they zoom the more they see, more information [here](https://aladin.u-strasbg.fr/hips/ "https://aladin.u-strasbg.fr/hips/")
+- **HiPS**: Hierarchical Progressive Surveys - efficient tiling systems to serve (all-sky) imaging surveys, cubes or catalogues, the user only downloads and sees what they are interested in and the more they zoom the more they see, more information [here](https://aladin.cds.unistra.fr/hips/ "https://aladin.cds.unistra.fr/hips/")
 - **MOC** also **SMOC**: MultiOrder Coverage map (or Space MultiOrder Coverage) - efficient way of describing arbitrary patches of the sky, logical operations such as union, intersection of MOC can be calculated, tables can be filtered by MOCs, more information [here](https://ivoa.net/documents/MOC/ "https://ivoa.net/documents/MOC/")
 - **STMOC**: Space-Time MultiOrder Coverage map - is a MOC that encompasses time information.
 - **SSA**: Simple Spectral Access protocol to access spectrums, more information [here](https://github.com/ivoa-std/SSA "https://github.com/ivoa-std/SSA")
@@ -179,7 +179,7 @@ Don't hesitate to ask a question in the Q&A of our [`Discussions`](https://githu
 - [![Simbad](https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&logoColor=lightblue&logoWidth=20)](https://simbad.cds.unistra.fr/simbad/ "https://simbad.cds.unistra.fr/simbad/"): dynamic astronomical database of objects appearing in scientific publications, updated every working day,
 - [![Aladin](https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&logoColor=purple&logoWidth=20)](https://aladin.cds.unistra.fr/aladin.gml "https://aladin.cds.unistra.fr/aladin.gml"): an interactive sky atlas,
 - [![Vizier](https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&logoColor=orange&logoWidth=20)](https://vizier.cds.unistra.fr/viz-bin/VizieR "https://vizier.cds.unistra.fr/viz-bin/VizieR"): a collection of published astronomical catalogues,
-- [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.u-strasbg.fr/ "http://cdsxmatch.u-strasbg.fr/"): an efficient cross-matching tool between very large catalogues,
+- [![Xmatch](https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&logoColor=blue&logoWidth=20)](http://cdsxmatch.cds.unistra.fr/ "http://cdsxmatch.cds.unistra.fr/"): an efficient cross-matching tool between very large catalogues,
 - [![MOCpy](https://custom-icon-badges.demolab.com/badge/MOCpy-gray.svg?logo=mocpy&logoWidth=20&)](https://github.com/cds-astro/mocpy "https://github.com/cds-astro/mocpy"): a python library allowing MOC manipulation
 
 ## Contributions
