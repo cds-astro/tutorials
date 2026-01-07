@@ -1,0 +1,256 @@
+Traceback (most recent call last):
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/asyncio/base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/manon.marchand/.conda/envs/build-jupybook/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+test_gaia = Vizier.get_catalogs("I/345")
+print(test_gaia)
+test_gaia[0]
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mRemoteDisconnected[39m                        Traceback (most recent call last)
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connectionpool.py:787[39m, in [36mHTTPConnectionPool.urlopen[39m[34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[39m
+[32m    786[39m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[32m--> [39m[32m787[39m response = [38;5;28;43mself[39;49m[43m.[49m[43m_make_request[49m[43m([49m
+[32m    788[39m [43m    [49m[43mconn[49m[43m,[49m
+[32m    789[39m [43m    [49m[43mmethod[49m[43m,[49m
+[32m    790[39m [43m    [49m[43murl[49m[43m,[49m
+[32m    791[39m [43m    [49m[43mtimeout[49m[43m=[49m[43mtimeout_obj[49m[43m,[49m
+[32m    792[39m [43m    [49m[43mbody[49m[43m=[49m[43mbody[49m[43m,[49m
+[32m    793[39m [43m    [49m[43mheaders[49m[43m=[49m[43mheaders[49m[43m,[49m
+[32m    794[39m [43m    [49m[43mchunked[49m[43m=[49m[43mchunked[49m[43m,[49m
+[32m    795[39m [43m    [49m[43mretries[49m[43m=[49m[43mretries[49m[43m,[49m
+[32m    796[39m [43m    [49m[43mresponse_conn[49m[43m=[49m[43mresponse_conn[49m[43m,[49m
+[32m    797[39m [43m    [49m[43mpreload_content[49m[43m=[49m[43mpreload_content[49m[43m,[49m
+[32m    798[39m [43m    [49m[43mdecode_content[49m[43m=[49m[43mdecode_content[49m[43m,[49m
+[32m    799[39m [43m    [49m[43m*[49m[43m*[49m[43mresponse_kw[49m[43m,[49m
+[32m    800[39m [43m[49m[43m)[49m
+[32m    802[39m [38;5;66;03m# Everything went great![39;00m
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connectionpool.py:534[39m, in [36mHTTPConnectionPool._make_request[39m[34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[39m
+[32m    533[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m534[39m     response = [43mconn[49m[43m.[49m[43mgetresponse[49m[43m([49m[43m)[49m
+[32m    535[39m [38;5;28;01mexcept[39;00m (BaseSSLError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m e:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connection.py:565[39m, in [36mHTTPConnection.getresponse[39m[34m(self)[39m
+[32m    564[39m [38;5;66;03m# Get the response from http.client.HTTPConnection[39;00m
+[32m--> [39m[32m565[39m httplib_response = [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mgetresponse[49m[43m([49m[43m)[49m
+[32m    567[39m [38;5;28;01mtry[39;00m:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:1428[39m, in [36mHTTPConnection.getresponse[39m[34m(self)[39m
+[32m   1427[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1428[39m     [43mresponse[49m[43m.[49m[43mbegin[49m[43m([49m[43m)[49m
+[32m   1429[39m [38;5;28;01mexcept[39;00m [38;5;167;01mConnectionError[39;00m:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:331[39m, in [36mHTTPResponse.begin[39m[34m(self)[39m
+[32m    330[39m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[32m--> [39m[32m331[39m     version, status, reason = [38;5;28;43mself[39;49m[43m.[49m[43m_read_status[49m[43m([49m[43m)[49m
+[32m    332[39m     [38;5;28;01mif[39;00m status != CONTINUE:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:300[39m, in [36mHTTPResponse._read_status[39m[34m(self)[39m
+[32m    297[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m line:
+[32m    298[39m     [38;5;66;03m# Presumably, the server closed the connection before[39;00m
+[32m    299[39m     [38;5;66;03m# sending a valid response.[39;00m
+[32m--> [39m[32m300[39m     [38;5;28;01mraise[39;00m RemoteDisconnected([33m"[39m[33mRemote end closed connection without[39m[33m"[39m
+[32m    301[39m                              [33m"[39m[33m response[39m[33m"[39m)
+[32m    302[39m [38;5;28;01mtry[39;00m:
+
+[31mRemoteDisconnected[39m: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+[31mProtocolError[39m                             Traceback (most recent call last)
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/requests/adapters.py:644[39m, in [36mHTTPAdapter.send[39m[34m(self, request, stream, timeout, verify, cert, proxies)[39m
+[32m    643[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m644[39m     resp = [43mconn[49m[43m.[49m[43murlopen[49m[43m([49m
+[32m    645[39m [43m        [49m[43mmethod[49m[43m=[49m[43mrequest[49m[43m.[49m[43mmethod[49m[43m,[49m
+[32m    646[39m [43m        [49m[43murl[49m[43m=[49m[43murl[49m[43m,[49m
+[32m    647[39m [43m        [49m[43mbody[49m[43m=[49m[43mrequest[49m[43m.[49m[43mbody[49m[43m,[49m
+[32m    648[39m [43m        [49m[43mheaders[49m[43m=[49m[43mrequest[49m[43m.[49m[43mheaders[49m[43m,[49m
+[32m    649[39m [43m        [49m[43mredirect[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[32m    650[39m [43m        [49m[43massert_same_host[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[32m    651[39m [43m        [49m[43mpreload_content[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[32m    652[39m [43m        [49m[43mdecode_content[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[32m    653[39m [43m        [49m[43mretries[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mmax_retries[49m[43m,[49m
+[32m    654[39m [43m        [49m[43mtimeout[49m[43m=[49m[43mtimeout[49m[43m,[49m
+[32m    655[39m [43m        [49m[43mchunked[49m[43m=[49m[43mchunked[49m[43m,[49m
+[32m    656[39m [43m    [49m[43m)[49m
+[32m    658[39m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connectionpool.py:841[39m, in [36mHTTPConnectionPool.urlopen[39m[34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[39m
+[32m    839[39m     new_e = ProtocolError([33m"[39m[33mConnection aborted.[39m[33m"[39m, new_e)
+[32m--> [39m[32m841[39m retries = [43mretries[49m[43m.[49m[43mincrement[49m[43m([49m
+[32m    842[39m [43m    [49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43merror[49m[43m=[49m[43mnew_e[49m[43m,[49m[43m [49m[43m_pool[49m[43m=[49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43m_stacktrace[49m[43m=[49m[43msys[49m[43m.[49m[43mexc_info[49m[43m([49m[43m)[49m[43m[[49m[32;43m2[39;49m[43m][49m
+[32m    843[39m [43m[49m[43m)[49m
+[32m    844[39m retries.sleep()
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/util/retry.py:474[39m, in [36mRetry.increment[39m[34m(self, method, url, response, error, _pool, _stacktrace)[39m
+[32m    473[39m [38;5;28;01mif[39;00m read [38;5;129;01mis[39;00m [38;5;28;01mFalse[39;00m [38;5;129;01mor[39;00m method [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mor[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._is_method_retryable(method):
+[32m--> [39m[32m474[39m     [38;5;28;01mraise[39;00m [43mreraise[49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[43merror[49m[43m)[49m[43m,[49m[43m [49m[43merror[49m[43m,[49m[43m [49m[43m_stacktrace[49m[43m)[49m
+[32m    475[39m [38;5;28;01melif[39;00m read [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/util/util.py:38[39m, in [36mreraise[39m[34m(tp, value, tb)[39m
+[32m     37[39m [38;5;28;01mif[39;00m value.__traceback__ [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m tb:
+[32m---> [39m[32m38[39m     [38;5;28;01mraise[39;00m value.with_traceback(tb)
+[32m     39[39m [38;5;28;01mraise[39;00m value
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connectionpool.py:787[39m, in [36mHTTPConnectionPool.urlopen[39m[34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[39m
+[32m    786[39m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[32m--> [39m[32m787[39m response = [38;5;28;43mself[39;49m[43m.[49m[43m_make_request[49m[43m([49m
+[32m    788[39m [43m    [49m[43mconn[49m[43m,[49m
+[32m    789[39m [43m    [49m[43mmethod[49m[43m,[49m
+[32m    790[39m [43m    [49m[43murl[49m[43m,[49m
+[32m    791[39m [43m    [49m[43mtimeout[49m[43m=[49m[43mtimeout_obj[49m[43m,[49m
+[32m    792[39m [43m    [49m[43mbody[49m[43m=[49m[43mbody[49m[43m,[49m
+[32m    793[39m [43m    [49m[43mheaders[49m[43m=[49m[43mheaders[49m[43m,[49m
+[32m    794[39m [43m    [49m[43mchunked[49m[43m=[49m[43mchunked[49m[43m,[49m
+[32m    795[39m [43m    [49m[43mretries[49m[43m=[49m[43mretries[49m[43m,[49m
+[32m    796[39m [43m    [49m[43mresponse_conn[49m[43m=[49m[43mresponse_conn[49m[43m,[49m
+[32m    797[39m [43m    [49m[43mpreload_content[49m[43m=[49m[43mpreload_content[49m[43m,[49m
+[32m    798[39m [43m    [49m[43mdecode_content[49m[43m=[49m[43mdecode_content[49m[43m,[49m
+[32m    799[39m [43m    [49m[43m*[49m[43m*[49m[43mresponse_kw[49m[43m,[49m
+[32m    800[39m [43m[49m[43m)[49m
+[32m    802[39m [38;5;66;03m# Everything went great![39;00m
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connectionpool.py:534[39m, in [36mHTTPConnectionPool._make_request[39m[34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[39m
+[32m    533[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m534[39m     response = [43mconn[49m[43m.[49m[43mgetresponse[49m[43m([49m[43m)[49m
+[32m    535[39m [38;5;28;01mexcept[39;00m (BaseSSLError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m e:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/urllib3/connection.py:565[39m, in [36mHTTPConnection.getresponse[39m[34m(self)[39m
+[32m    564[39m [38;5;66;03m# Get the response from http.client.HTTPConnection[39;00m
+[32m--> [39m[32m565[39m httplib_response = [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[43mgetresponse[49m[43m([49m[43m)[49m
+[32m    567[39m [38;5;28;01mtry[39;00m:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:1428[39m, in [36mHTTPConnection.getresponse[39m[34m(self)[39m
+[32m   1427[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1428[39m     [43mresponse[49m[43m.[49m[43mbegin[49m[43m([49m[43m)[49m
+[32m   1429[39m [38;5;28;01mexcept[39;00m [38;5;167;01mConnectionError[39;00m:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:331[39m, in [36mHTTPResponse.begin[39m[34m(self)[39m
+[32m    330[39m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[32m--> [39m[32m331[39m     version, status, reason = [38;5;28;43mself[39;49m[43m.[49m[43m_read_status[49m[43m([49m[43m)[49m
+[32m    332[39m     [38;5;28;01mif[39;00m status != CONTINUE:
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/http/client.py:300[39m, in [36mHTTPResponse._read_status[39m[34m(self)[39m
+[32m    297[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m line:
+[32m    298[39m     [38;5;66;03m# Presumably, the server closed the connection before[39;00m
+[32m    299[39m     [38;5;66;03m# sending a valid response.[39;00m
+[32m--> [39m[32m300[39m     [38;5;28;01mraise[39;00m RemoteDisconnected([33m"[39m[33mRemote end closed connection without[39m[33m"[39m
+[32m    301[39m                              [33m"[39m[33m response[39m[33m"[39m)
+[32m    302[39m [38;5;28;01mtry[39;00m:
+
+[31mProtocolError[39m: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+[31mConnectionError[39m                           Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[28][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m test_gaia = [43mVizier[49m[43m.[49m[43mget_catalogs[49m[43m([49m[33;43m"[39;49m[33;43mI/345[39;49m[33;43m"[39;49m[43m)[49m
+[32m      2[39m [38;5;28mprint[39m(test_gaia)
+[32m      3[39m test_gaia[[32m0[39m]
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/astroquery/utils/class_or_instance.py:25[39m, in [36mclass_or_instance.__get__.<locals>.f[39m[34m(*args, **kwds)[39m
+[32m     23[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mf[39m(*args, **kwds):
+[32m     24[39m     [38;5;28;01mif[39;00m obj [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m---> [39m[32m25[39m         [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mfn[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwds[49m[43m)[49m
+[32m     26[39m     [38;5;28;01melse[39;00m:
+[32m     27[39m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m.fn([38;5;28mcls[39m, *args, **kwds)
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/astroquery/utils/process_asyncs.py:28[39m, in [36masync_to_sync.<locals>.create_method.<locals>.newmethod[39m[34m(self, *args, **kwargs)[39m
+[32m     24[39m [38;5;129m@class_or_instance[39m
+[32m     25[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mnewmethod[39m([38;5;28mself[39m, *args, **kwargs):
+[32m     26[39m     verbose = kwargs.pop([33m'[39m[33mverbose[39m[33m'[39m, [38;5;28;01mFalse[39;00m)
+[32m---> [39m[32m28[39m     response = [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43masync_method_name[49m[43m)[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m     29[39m     [38;5;28;01mif[39;00m kwargs.get([33m'[39m[33mget_query_payload[39m[33m'[39m) [38;5;129;01mor[39;00m kwargs.get([33m'[39m[33mfield_help[39m[33m'[39m):
+[32m     30[39m         [38;5;28;01mreturn[39;00m response
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/astroquery/vizier/core.py:270[39m, in [36mVizierClass.get_catalogs_async[39m[34m(self, catalog, verbose, return_type, get_query_payload)[39m
+[32m    267[39m [38;5;28;01mif[39;00m get_query_payload:
+[32m    268[39m     [38;5;28;01mreturn[39;00m data_payload
+[32m--> [39m[32m270[39m response = [38;5;28;43mself[39;49m[43m.[49m[43m_request[49m[43m([49m
+[32m    271[39m [43m    [49m[43mmethod[49m[43m=[49m[33;43m'[39;49m[33;43mPOST[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43murl[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43m_server_to_url[49m[43m([49m[43mreturn_type[49m[43m=[49m[43mreturn_type[49m[43m)[49m[43m,[49m
+[32m    272[39m [43m    [49m[43mdata[49m[43m=[49m[43mdata_payload[49m[43m,[49m[43m [49m[43mtimeout[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mTIMEOUT[49m[43m)[49m
+[32m    274[39m [38;5;28;01mreturn[39;00m response
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/astroquery/query.py:379[39m, in [36mBaseQuery._request[39m[34m(self, method, url, params, data, headers, files, save, savedir, timeout, cache, stream, auth, continuation, verify, allow_redirects, json, return_response_on_save)[39m
+[32m    377[39m     response = query.from_cache([38;5;28mself[39m.cache_location, cache_conf.cache_timeout)
+[32m    378[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m response:
+[32m--> [39m[32m379[39m         response = [43mquery[49m[43m.[49m[43mrequest[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43m_session[49m[43m,[49m
+[32m    380[39m [43m                                 [49m[38;5;28;43mself[39;49m[43m.[49m[43mcache_location[49m[43m,[49m
+[32m    381[39m [43m                                 [49m[43mstream[49m[43m=[49m[43mstream[49m[43m,[49m
+[32m    382[39m [43m                                 [49m[43mauth[49m[43m=[49m[43mauth[49m[43m,[49m
+[32m    383[39m [43m                                 [49m[43mallow_redirects[49m[43m=[49m[43mallow_redirects[49m[43m,[49m
+[32m    384[39m [43m                                 [49m[43mverify[49m[43m=[49m[43mverify[49m[43m,[49m
+[32m    385[39m [43m                                 [49m[43mjson[49m[43m=[49m[43mjson[49m[43m)[49m
+[32m    386[39m         to_cache(response, query.request_file([38;5;28mself[39m.cache_location))
+[32m    388[39m [38;5;28mself[39m._last_query = query
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/astroquery/query.py:77[39m, in [36mAstroQuery.request[39m[34m(self, session, cache_location, stream, auth, verify, allow_redirects, json)[39m
+[32m     74[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrequest[39m([38;5;28mself[39m, session, cache_location=[38;5;28;01mNone[39;00m, stream=[38;5;28;01mFalse[39;00m,
+[32m     75[39m             auth=[38;5;28;01mNone[39;00m, verify=[38;5;28;01mTrue[39;00m, allow_redirects=[38;5;28;01mTrue[39;00m,
+[32m     76[39m             json=[38;5;28;01mNone[39;00m):
+[32m---> [39m[32m77[39m     [38;5;28;01mreturn[39;00m [43msession[49m[43m.[49m[43mrequest[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mmethod[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43murl[49m[43m,[49m[43m [49m[43mparams[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mparams[49m[43m,[49m
+[32m     78[39m [43m                           [49m[43mdata[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mdata[49m[43m,[49m[43m [49m[43mheaders[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mheaders[49m[43m,[49m
+[32m     79[39m [43m                           [49m[43mfiles[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mfiles[49m[43m,[49m[43m [49m[43mtimeout[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43mtimeout[49m[43m,[49m
+[32m     80[39m [43m                           [49m[43mstream[49m[43m=[49m[43mstream[49m[43m,[49m[43m [49m[43mauth[49m[43m=[49m[43mauth[49m[43m,[49m[43m [49m[43mverify[49m[43m=[49m[43mverify[49m[43m,[49m
+[32m     81[39m [43m                           [49m[43mallow_redirects[49m[43m=[49m[43mallow_redirects[49m[43m,[49m
+[32m     82[39m [43m                           [49m[43mjson[49m[43m=[49m[43mjson[49m[43m)[49m
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/requests/sessions.py:589[39m, in [36mSession.request[39m[34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[39m
+[32m    584[39m send_kwargs = {
+[32m    585[39m     [33m"[39m[33mtimeout[39m[33m"[39m: timeout,
+[32m    586[39m     [33m"[39m[33mallow_redirects[39m[33m"[39m: allow_redirects,
+[32m    587[39m }
+[32m    588[39m send_kwargs.update(settings)
+[32m--> [39m[32m589[39m resp = [38;5;28;43mself[39;49m[43m.[49m[43msend[49m[43m([49m[43mprep[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43msend_kwargs[49m[43m)[49m
+[32m    591[39m [38;5;28;01mreturn[39;00m resp
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/requests/sessions.py:703[39m, in [36mSession.send[39m[34m(self, request, **kwargs)[39m
+[32m    700[39m start = preferred_clock()
+[32m    702[39m [38;5;66;03m# Send the request[39;00m
+[32m--> [39m[32m703[39m r = [43madapter[49m[43m.[49m[43msend[49m[43m([49m[43mrequest[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    705[39m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[32m    706[39m elapsed = preferred_clock() - start
+
+[36mFile [39m[32m~/.conda/envs/build-jupybook/lib/python3.13/site-packages/requests/adapters.py:659[39m, in [36mHTTPAdapter.send[39m[34m(self, request, stream, timeout, verify, cert, proxies)[39m
+[32m    644[39m     resp = conn.urlopen(
+[32m    645[39m         method=request.method,
+[32m    646[39m         url=url,
+[32m   (...)[39m[32m    655[39m         chunked=chunked,
+[32m    656[39m     )
+[32m    658[39m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+[32m--> [39m[32m659[39m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(err, request=request)
+[32m    661[39m [38;5;28;01mexcept[39;00m MaxRetryError [38;5;28;01mas[39;00m e:
+[32m    662[39m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e.reason, ConnectTimeoutError):
+[32m    663[39m         [38;5;66;03m# TODO: Remove this in 3.0.0: see #2811[39;00m
+
+[31mConnectionError[39m: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+

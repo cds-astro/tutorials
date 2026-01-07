@@ -1,0 +1,1949 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Abell 1656: the Coma Cluster of Galaxies __ Simple Spectral Access Protocol (SSA) &#8212; Astronomy with Python: Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"12baea34ba9c426cbf03ba5b2ced3d15": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f870f84e1251440ca805993e08f58db5": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.widget.Aladin", "_base_layer_last_view": "https://alaskybis.unistra.fr/DSS/DSSColor", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}.lm-Widget.aladin-lite-lm-container{height:100%}\n", "_dom_classes": [], "_esm": "function y(n){n.charAt(0)===\"_\"&&(n=n.slice(1));let t=n.split(\"_\");for(let a=1;a<t.length;a++)t[a]=t[a].charAt(0).toUpperCase()+t[a].slice(1);return t.join(\"\")}function m(n){let t={};for(let a in n)t[y(a)]=n[a];return t}var g=class{locked=!1;unlock(){this.locked=!1}lock(){this.locked=!0}},p=-1;function _(n){p=n}function v(n,t){n==-1?t.style.height=\"100%\":t.style.height=`${n}px`}import C from\"https://esm.sh/aladin-lite@3.6.5\";var l=C;var k=0,u=class{constructor(t,a){this.aladin=t,this.model=a}handleAddMarker(t){let a=m(t.options||{});a.name||(a.name=\"markers\");let s=l.catalog(a);this.aladin.addCatalog(s);let o=t.markers,e=[];for(let i of o)e.push(l.marker(i.lon,i.lat,{useMarkerDefaultIcon:a.useMarkerDefaultIcon|!1,popupTitle:i.title,popupDesc:i.description}));s.addSources(e)}handleChangeFoV(t){this.aladin.setFoV(t.fov)}handleGotoRaDec(t){this.aladin.gotoRaDec(t.ra,t.dec)}async handleSaveViewAsImage(t){let a=t.path,s=t.format,o=t.with_logo,e=await this.aladin.getViewData(\"arraybuffer\",`image/${s}`,o);this.model.send({event_type:\"save_view_as_image\",path:a},null,[e])}handleAddFits(t,a){let s=m(t.options||{});s.name||(s.name=`image_${String(++k).padStart(3,\"0\")}`);let o=a[0],e=new Blob([o],{type:\"application/octet-stream\"}),i=URL.createObjectURL(e),r=this.aladin.createImageFITS(i,s,(h,d)=>{this.aladin.gotoRaDec(h,d),console.info(`FITS located at ra: ${h}, dec: ${d}`),URL.revokeObjectURL(i)});this.aladin.setOverlayImageLayer(r,s.name)}handleAddCatalogFromURL(t){let a=m(t.options||{});this.aladin.addCatalog(l.catalogFromURL(t.votable_URL,a))}handleAddMOCFromURL(t){let a=m(t.options||{});this.aladin.addMOC(l.MOCFromURL(t.moc_URL,a))}handleAddMOCFromDict(t){let a=m(t.options||{});this.aladin.addMOC(l.MOCFromJSON(t.moc_dict,a))}handleAddOverlay(t){let a=t.regions_infos,s=m(t.graphic_options||{});s.color||(s.color=\"red\");let o=l.graphicOverlay(s);this.aladin.addOverlay(o);for(let e of a){let i=e.infos;switch(e.region_type){case\"stcs\":o.addFootprints(l.footprintsFromSTCS(i.stcs,e.options));break;case\"circle\":o.add(l.circle(i.ra,i.dec,i.radius,e.options));break;case\"ellipse\":o.add(l.ellipse(i.ra,i.dec,i.a,i.b,i.theta,e.options));break;case\"line\":e.options.lineWidth=e.options.lineWidth||3,o.add(l.vector(i.ra1,i.dec1,i.ra2,i.dec2,e.options));break;case\"polygon\":o.add(l.polygon(i.vertices,e.options));break}}}handleChangeColormap(t){this.aladin.getBaseImageLayer().setColormap(t.colormap)}handleGetJPGThumbnail(){this.aladin.exportAsPNG()}handleTriggerSelection(t){let a=t.selection_type;a===\"rectangle\"?a=\"rect\":a===\"polygon\"&&(a=\"poly\"),this.aladin.select(a)}handleAddTable(t,a){let s=m(t.options||{}),o=m(s.circleError||{}),e=m(s.ellipseError||{}),i=a[0].buffer,r=new TextDecoder(\"utf-8\"),h=new Blob([r.decode(i)]),d=URL.createObjectURL(h);s.onClick=\"showTable\";let b=s.shape||\"cross\";Object.keys(o).length!=0&&(s.shape=c=>c.data[o.radius]?l.circle(c.ra,c.dec,c.data[o.radius]*o.conversionRadius):b),Object.keys(e).length!=0&&(s.shape=c=>c.data[e.majAxis]&c.data[e.minAxis]?l.ellipse(c.ra,c.dec,c.data[e.majAxis]*e.conversionMajAxis,c.data[e.minAxis]*e.conversionMinAxis,c.data[e.angle]*e.conversionAngle):b),l.catalogFromURL(d,s,c=>{this.aladin.addCatalog(c)},!1),URL.revokeObjectURL(d)}};var f=class{constructor(t,a,s){this.aladin=t,this.aladinDiv=a,this.model=s,this.messageHandler=new u(t,s),this.currentDivNumber=parseInt(a.id.split(\"-\").pop())}isLastDiv(){if(this.currentDivNumber===p)return!0;let t=p;for(let a=t;a>=0;a--){let s=document.getElementById(`aladin-lite-div-${a}`);if(s&&s.style.display!==\"none\"){t=a;break}}return _(t),this.currentDivNumber===t}updateWCS(){this.isLastDiv()&&this.model.set(\"_wcs\",this.aladin.getViewWCS())}update2AxisFoV(){if(!this.isLastDiv())return;let t=this.aladin.getFov();this.model.set(\"_fov_xy\",{x:t[0],y:t[1]})}subscribeAll(){let t=new g,a=new g;this.aladin.on(\"positionChanged\",e=>{if(a.locked){a.unlock();return}t.lock();let i=[e.ra,e.dec];this.updateWCS(),this.model.set(\"_target\",`${i[0]} ${i[1]}`),this.model.save_changes()}),this.model.on(\"change:_target\",()=>{if(t.locked){t.unlock();return}a.lock();let e=this.model.get(\"_target\"),[i,r]=e.split(\" \");this.aladin.gotoRaDec(i,r)});let s=new g,o=new g;this.aladin.on(\"zoomChanged\",e=>{if(o.locked){o.unlock();return}s.lock(),this.updateWCS(),this.update2AxisFoV(),this.model.set(\"_fov\",parseFloat(e.toFixed(5))),this.model.save_changes()}),this.model.on(\"change:_fov\",()=>{if(s.locked){s.unlock();return}o.lock();let e=this.model.get(\"_fov\");this.aladin.setFoV(e)}),this.model.on(\"change:_height\",()=>{v(this.model.get(\"_height\"),this.aladinDiv),this.updateWCS(),this.update2AxisFoV(),this.model.save_changes()}),this.aladin.on(\"cooFrameChanged\",()=>{this.updateWCS(),this.model.save_changes()}),this.aladin.on(\"projectionChanged\",()=>{this.updateWCS(),this.model.save_changes()}),this.aladin.on(\"layerChanged\",(e,i,r)=>{i===\"base\"&&this.model.set(\"_survey_body\",e.hipsBody||\"sky\"),!(i!==\"base\"||r!==\"ADDED\")&&(this.updateWCS(),this.model.set(\"_base_layer_last_view\",e.id),this.model.save_changes())}),this.aladin.on(\"resizeChanged\",(e,i)=>{if(e===1&&i===1){this.model.set(\"_is_reduced\",!0),this.model.save_changes();return}else this.model.set(\"_is_reduced\",!1);this.updateWCS(),this.update2AxisFoV(),this.model.set(\"_height\",i),this.model.save_changes()}),this.aladin.on(\"objectHovered\",e=>{e.data!==void 0&&this.model.send({event_type:\"object_hovered\",content:{ra:e.ra,dec:e.dec}})}),this.aladin.on(\"objectClicked\",e=>{if(e){let i={ra:e.ra||e.source.ra,dec:e.dec||e.source.dec};e.data!==void 0&&(i.data=e.data),e.source!==void 0&&(i.data=e.source.data),this.model.set(\"clicked_object\",i),this.model.send({event_type:\"object_clicked\",content:i}),this.model.save_changes()}}),this.aladin.on(\"click\",e=>{this.model.send({event_type:\"click\",content:e})}),this.aladin.on(\"select\",e=>{let i=e.map(h=>h.map(d=>({ra:d.ra,dec:d.dec,data:d.data,x:d.x,y:d.y})));this.model.set(\"_selected_objects\",i),this.model.save_changes();let r=[];e.forEach(h=>{h.forEach(d=>{r.push({ra:d.ra,dec:d.dec,data:d.data,x:d.x,y:d.y})})}),this.model.send({event_type:\"select\",content:r})}),this.model.on(\"change:coo_frame\",()=>{this.aladin.setFrame(this.model.get(\"coo_frame\"))}),this.model.on(\"change:survey\",()=>{this.aladin.setImageSurvey(this.model.get(\"survey\"))}),this.model.on(\"change:overlay_survey\",()=>{this.aladin.setOverlayImageLayer(this.model.get(\"overlay_survey\"))}),this.model.on(\"change:overlay_survey_opacity\",()=>{this.aladin.getOverlayImageLayer().setAlpha(this.model.get(\"overlay_survey_opacity\"))}),this.eventHandlers={add_marker:this.messageHandler.handleAddMarker,change_fov:this.messageHandler.handleChangeFoV,goto_ra_dec:this.messageHandler.handleGotoRaDec,save_view_as_image:this.messageHandler.handleSaveViewAsImage,add_fits:this.messageHandler.handleAddFits,add_catalog_from_URL:this.messageHandler.handleAddCatalogFromURL,add_MOC_from_URL:this.messageHandler.handleAddMOCFromURL,add_MOC_from_dict:this.messageHandler.handleAddMOCFromDict,add_overlay:this.messageHandler.handleAddOverlay,change_colormap:this.messageHandler.handleChangeColormap,get_JPG_thumbnail:this.messageHandler.handleGetJPGThumbnail,trigger_selection:this.messageHandler.handleTriggerSelection,add_table:this.messageHandler.handleAddTable},this.model.on(\"msg:custom\",(e,i)=>{let r=e.event_name,h=this.eventHandlers[r];if(h)h.call(this,e,i);else throw new Error(`Unknown event name: ${r}`)})}unsubscribeAll(){this.model.off(\"change:_target\"),this.model.off(\"change:_fov\"),this.model.off(\"change:_height\"),this.model.off(\"change:coo_frame\"),this.model.off(\"change:survey\"),this.model.off(\"change:overlay_survey\"),this.model.off(\"change:overlay_survey_opacity\"),this.model.off(\"change:trigger_event\"),this.model.off(\"msg:custom\")}};function A(n,t){t.classList.add(\"aladin-lite-lm-container\"),_(p+1);let a=n.get(\"_init_options\"),s={};for(let d in a)s[y(d)]=a[d];let o=document.createElement(\"div\");o.classList.add(\"aladin-widget\"),v(n.get(\"_height\"),o),o.id=`aladin-lite-div-${p}`;let e=new l.aladin(o,s);t.appendChild(o);let i=n.get(\"_target\").split(\" \");e.gotoRaDec(i[0],i[1]);let r={...e.getFov()};n.set(\"_fov_xy\",{x:r[0],y:r[1]});let h={...e.getViewWCS()};return n.set(\"_wcs\",h),n.set(\"_is_loaded\",!0),n.save_changes(),{aladin:e,aladinDiv:o}}async function w({model:n}){await l.init}function D({model:n,el:t}){let{aladin:a,aladinDiv:s}=A(n,t),o=new f(a,s,n);return o.subscribeAll(),()=>{o.unsubscribeAll()}}var $={initialize:w,render:D};export{$ as default};\n", "_fov": 9.0, "_fov_xy": {}, "_height": 400, "_init_options": {"show_simbad_pointer_control": true, "show_coo_grid_control": true, "show_settings_control": true, "show_context_menu": true, "target": "A1656", "fov": 0.7, "survey": "P/DSS2/color"}, "_is_loaded": true, "_is_reduced": false, "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_ready": false, "_selected_objects": [], "_survey_body": "sky", "_target": "194.93502 27.91246", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "_wcs": {}, "clicked_object": {}, "coo_frame": "ICRS", "layout": "IPY_MODEL_12baea34ba9c426cbf03ba5b2ced3d15", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "survey": "P/DSS2/color", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol';</script>
+    <link rel="icon" href="_static/cds.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multi-instrument, multi-wavelength study of high energy sources with the Virtual Observatory" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html" />
+    <link rel="prev" title="Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s" href="2_Peculiar_galaxies__first_steps_with_MOCs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-light" alt="Astronomy with Python: Tutorials - Home"/>
+    <script>document.write(`<img src="_static/Tutorials_front_logo.png" class="logo__image only-dark" alt="Astronomy with Python: Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">Introduction to the CDS services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Peculiar_galaxies__first_steps_with_MOCs.html">First steps with Multi-Order Coverage data structure</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Simple Spectral Access Protocol to explore Abel 1656</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html">Combining the CDS services to study gamma-ray and high energy spectral bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Brown_Dwarf_Search__Cross-matching_Catalogs.html">Cross matching catalogs to discover potential brown dwarfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Advanced_usage_of_MOCs.html">Advanced usage of MOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html">Planning multi-messenger observations rapidly with MOCs</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Abell 1656: the Coma Cluster of Galaxies __ Simple Spectral Access Protocol (SSA)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-exploration-of-the-coma-cluster">Step #1: Exploration of the Coma cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-region-of-abell-1656-in-aladin-lite">Display the region of Abell 1656 in Aladin lite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-sdss-catalog-and-select-galaxies">Load the SDSS catalog and select galaxies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-brightest-sources-as-stars-contaminating-the-sample">Identify the brightest sources as stars contaminating the sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-subset-of-galaxies-with-photometry-and-redshift-in-sdss">Build a subset of galaxies with photometry and redshift in SDSS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-the-completeness-with-other-sources-of-redshifts-in-vizier">Improve the completeness with other sources of redshifts in Vizier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-final-catalog-including-the-rines-et-al-2003-redshifts">Build the final catalog including the Rines et al. (2003) redshifts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-velocity-distribution-cluster-average-velocity-and-velocity-dispersion">Determine velocity distribution, cluster average velocity, and velocity dispersion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-hubble-space-telescope-hst-spectra-from-the-coma-cluster">Search for Hubble Space Telescope (HST) spectra from the Coma Cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-analysis-of-the-discovered-spectrum">A quick analysis of the discovered spectrum</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="abell-1656-the-coma-cluster-of-galaxies-simple-spectral-access-protocol-ssa">
+<h1>Abell 1656: the Coma Cluster of Galaxies __ Simple Spectral Access Protocol (SSA)<a class="headerlink" href="#abell-1656-the-coma-cluster-of-galaxies-simple-spectral-access-protocol-ssa" title="Link to this heading">#</a></h1>
+<p>Stefania Amodeo¹, Thomas Boch¹, Caroline Bot¹, Giulia Iafrate², Katharina A. Lutz¹, Manon Marchand¹, Massimo Ramella², and Jenny G.Sorce³⁴⁵</p>
+<ol class="arabic simple">
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+<li><p>INAF - Osservatorio Astronomico di Trieste</p></li>
+<li><p>Univ. Lille, CNRS, Centrale Lille, UMR 9189 CRIStAL, F-59000 Lille, France</p></li>
+<li><p>Université Paris-Saclay, CNRS, Institut d’Astrophysique Spatiale, 91405, Orsay, France</p></li>
+<li><p>Leibniz-Institut für Astrophysik (AIP), An der Sternwarte 16, D-14482 Potsdam, Germany</p></li>
+</ol>
+<p>The original form of this tutorial authored by Massimo Ramella &amp; Giulia Iafrate can be found on the <a class="reference external" href="http://www.euro-vo.org/?q=science/scientific-tutorials">EURO-VO tutorials page</a>. The version here is an adaptation into a jupyter notebook by the Strasbourg astronomical Data Center (CDS) team.</p>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The Coma Cluster is an ensemble of over 1000 galaxies that takes its name from the constellation Coma Berenices.</p>
+<p>The goals of this notebook tutorial are to:</p>
+<ol class="arabic simple">
+<li><p>examine the Coma cluster of galaxies (Abell 1656) using services and data from the virtual observatory within a jupyter notebook. This allows a quick evaluation of the mean redshift and velocity dispersion of the cluster. Both measurements are important to study the evolution of galaxy clusters. To do so we use redshifts and photometry (Petrosian r magnitude) from the Sloan Digital Sky Survey (<a class="reference external" href="https://www.sdss.org/">SDSS</a>) and then add redshifts from the Cluster And Infall Region Nearby Survey (<a class="reference external" href="https://iopscience.iop.org/article/10.1086/378599">CAIRNS</a>) (Rines et al. 2003). This improves the completeness of the redshift sample,</p></li>
+<li><p>research the Mikulski Archive for Space Telescopes (<a class="reference external" href="https://archive.stsci.edu/">MAST</a>) for Hubble Space Telescope (HST) spectra in the region of the Coma cluster,</p></li>
+<li><p>download a spectrum from MAST and do a quick analysis of the redshift of the emission lines in the spectrum.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Astronomy tools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.coordinates</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">vstack</span>
+
+<span class="c1"># Access astronomical databases</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.simbad</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simbad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.vizier</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vizier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.xmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">XMatch</span>
+
+<span class="c1"># Sky visualization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyaladin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aladin</span>
+
+<span class="c1"># For plots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Data handling</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">specutils.analysis</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spec_ana</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">specutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpectralRegion</span><span class="p">,</span> <span class="n">Spectrum1D</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1-exploration-of-the-coma-cluster">
+<h2>Step #1: Exploration of the Coma cluster<a class="headerlink" href="#step-1-exploration-of-the-coma-cluster" title="Link to this heading">#</a></h2>
+<section id="display-the-region-of-abell-1656-in-aladin-lite">
+<h3>Display the region of Abell 1656 in Aladin lite<a class="headerlink" href="#display-the-region-of-abell-1656-in-aladin-lite" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
+<p>We start by displaying the Coma Cluster in an Aladin Lite widget. We will display DSS2 color images (<code class="docutils literal notranslate"><span class="pre">survey='P/DSS2/color'</span></code>) centered on Abell 1656 (<code class="docutils literal notranslate"><span class="pre">target='A1656'</span></code>) and set the field of view to <span class="math notranslate nohighlight">\(0.7^\circ\)</span> (<code class="docutils literal notranslate"><span class="pre">fov=0.7</span></code>).
+At this distance, this field of view corresponds to approximately 1Mpc: this is large enough to look at the cluster.</p>
+<p>If you are using Jupyter lab you can open a second python3 notebook. On this new notebook click the “Python 3” button in the top-right corner of this notebook to switch kernel. A new window will pop up and you can then select this notebook (i.e. “Abel1656…”) as a kernel. This will link the two notebooks such that they see the same variables. You may use the second notebook to look at Aladin Lite widget while doing the analysis in this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s2">&quot;A1656&quot;</span><span class="p">,</span> <span class="n">fov</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s2">&quot;P/DSS2/color&quot;</span><span class="p">)</span>
+<span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "f870f84e1251440ca805993e08f58db5"}</script></div>
+</div>
+<p>You can already see galaxies composing the cluster, and a few stars, like for example the bright <a class="reference external" href="https://simbad.cds.unistra.fr/simbad/sim-coo?Coord=12+59+32.92000000000+%2B28+03+56.7300000000&amp;amp;Radius=10&amp;amp;Radius.unit=arcmin&amp;amp;submit=submit+query">HD112887 star</a> (click for a surprise Simbad query). But there is more! As with any Aladin Lite implementation, you can interact with this widget.</p>
+<ul class="simple">
+<li><p>to zoom in and out, place your mouse pointer on the image and scroll,</p></li>
+<li><p>you can right-click on a point to grab it and center the reticule on it,</p></li>
+<li><p>with <img alt="layers" src="_images/ipyaladin_layer.png" /> you can select other image surveys,</p></li>
+<li><p>if you would like to look at another target, you can use the search field <img alt="search" src="_images/ipyaladin_search.png" /> to get there.</p></li>
+</ul>
+<p>We can also interact with the variable <code class="docutils literal notranslate"><span class="pre">aladin</span></code>. If, for example, after zooming in and out, you wanted to set the FoV (field of view) again to <span class="math notranslate nohighlight">\(0.7^\circ\)</span>, run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">fov</span> <span class="o">=</span> <span class="mf">0.4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and look back up … or call the variable <code class="docutils literal notranslate"><span class="pre">aladin</span></code> again to pop a new widget window. You’ll remark that the field of view and reticule position are synchronized, but not the survey if you change if manually with <img alt="layers" src="_images/ipyaladin_layer.png" />. It can allow the exploration of the same region in two different wavelengths.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "f870f84e1251440ca805993e08f58db5"}</script></div>
+</div>
+</section>
+<section id="load-the-sdss-catalog-and-select-galaxies">
+<h3>Load the SDSS catalog and select galaxies<a class="headerlink" href="#load-the-sdss-catalog-and-select-galaxies" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>In this section, we will access the SDSS DR12 catalog from the <a class="reference external" href="https://vizier.cds.unistra.fr/">VizieR</a> catalog service. We will download all entries that are located within 40arcmin of the center of the cluster A1656. We start by querying VizieR for all catalogs that match the term <code class="docutils literal notranslate"><span class="pre">SDSS</span> <span class="pre">DR12</span></code>.</p>
+<p>Since this query takes a few seconds, we will store its results in the variable <code class="docutils literal notranslate"><span class="pre">catalog_list_sdss</span></code> for further analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_sdss</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;SDSS DR12&quot;</span><span class="p">)</span>
+<span class="n">catalog_list_sdss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OrderedDict([(&#39;II/294&#39;, &lt;/&gt;),
+             (&#39;V/139&#39;, &lt;/&gt;),
+             (&#39;V/147&#39;, &lt;/&gt;),
+             (&#39;V/154&#39;, &lt;/&gt;),
+             (&#39;VII/289&#39;, &lt;/&gt;)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output is not easily readable. Let’s inspect a bit more this object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The catalog is returned and stored in a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">catalog_list_sdss</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The catalog is returned and stored in a &lt;class &#39;collections.OrderedDict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is not easy to read. Let’s list the methods these objects have with the build-in <code class="docutils literal notranslate"><span class="pre">dir</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">catalog_list_sdss</span><span class="p">[</span><span class="s2">&quot;II/294&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ID&#39;,
+ &#39;_ID&#39;,
+ &#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__firstlineno__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__static_attributes__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_add_coosys&#39;,
+ &#39;_add_definitions&#39;,
+ &#39;_add_group&#39;,
+ &#39;_add_info&#39;,
+ &#39;_add_link&#39;,
+ &#39;_add_param&#39;,
+ &#39;_add_resource&#39;,
+ &#39;_add_table&#39;,
+ &#39;_add_timesys&#39;,
+ &#39;_add_unknown_tag&#39;,
+ &#39;_attr_list&#39;,
+ &#39;_config&#39;,
+ &#39;_coordinate_systems&#39;,
+ &#39;_description&#39;,
+ &#39;_element_name&#39;,
+ &#39;_extra_attributes&#39;,
+ &#39;_groups&#39;,
+ &#39;_ignore_add&#39;,
+ &#39;_infos&#39;,
+ &#39;_links&#39;,
+ &#39;_mivot_block&#39;,
+ &#39;_name&#39;,
+ &#39;_params&#39;,
+ &#39;_pos&#39;,
+ &#39;_resources&#39;,
+ &#39;_tables&#39;,
+ &#39;_time_systems&#39;,
+ &#39;_type&#39;,
+ &#39;_utype&#39;,
+ &#39;_utype_in_v1_2&#39;,
+ &#39;coordinate_systems&#39;,
+ &#39;description&#39;,
+ &#39;extra_attributes&#39;,
+ &#39;groups&#39;,
+ &#39;infos&#39;,
+ &#39;iter_coosys&#39;,
+ &#39;iter_fields_and_params&#39;,
+ &#39;iter_info&#39;,
+ &#39;iter_tables&#39;,
+ &#39;iter_timesys&#39;,
+ &#39;links&#39;,
+ &#39;mivot_block&#39;,
+ &#39;name&#39;,
+ &#39;params&#39;,
+ &#39;parse&#39;,
+ &#39;resources&#39;,
+ &#39;tables&#39;,
+ &#39;time_systems&#39;,
+ &#39;to_xml&#39;,
+ &#39;type&#39;,
+ &#39;utype&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Among the possible methods, we chose to print the <code class="docutils literal notranslate"><span class="pre">description</span></code>, but feel free to explore the catalog list in any other way :)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s display a list of the catalogs&#39; names and descriptions</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">catalog</span> <span class="ow">in</span> <span class="n">catalog_list_sdss</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>II/294 :  The SDSS Photometric Catalog, Release 7 (Adelman-McCarthy+, 2009)
+V/139 :  The SDSS Photometric Catalog, Release 9 (Adelman-McCarthy+, 2012)
+V/147 :  The SDSS Photometric Catalogue, Release 12 (Alam+, 2015)
+V/154 :  Sloan Digital Sky Surveys (SDSS), Release 16 (DR16) (Ahumada+, 2020)
+VII/289 :  SDSS quasar catalog, sixteenth data release (DR16Q) (Lyke+, 2020)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are interested in data from the main SDSS DR12 photometric catalog: “The SDSS Photometric Catalogue, Release 12 (Alam+, 2015)”. We query its content in 10arcmin around the center of the Coma Cluster.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="s2">&quot;A1656&quot;</span><span class="p">)</span>
+<span class="n">results_test_sdss</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;0d10m0s&quot;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="s2">&quot;V/147&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_test_sdss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:V/147/sdss12&#39; with 23 column(s) and 50 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you see, there is only one table in our resulting list of tables. Moreover, this table has only 50 rows, an extremely small number! It is actually due to the default limit in the number of rows of the <code class="docutils literal notranslate"><span class="pre">Vizier.query_region</span></code> function. For now, we will use this small table to see what columns could be interesting. We will query without a row limit once we know what we need. This is a general good practice and allows to avoid unneccesary manipulation of huge tables.</p>
+<p>To access the unique table in the list, we select the first table of the catalogue with <code class="docutils literal notranslate"><span class="pre">results_test_sdss[0]</span></code>. And we can again print the list of available methods for this object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">results_test_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Column&#39;, &#39;ColumnClass&#39;, &#39;MaskedColumn&#39;, &#39;Row&#39;, &#39;TableColumns&#39;, &#39;TableFormatter&#39;, &#39;__array__&#39;, &#39;__bytes__&#39;, &#39;__class__&#39;, &#39;__copy__&#39;, &#39;__deepcopy__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__firstlineno__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__ior__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__or__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__setstate__&#39;, &#39;__sizeof__&#39;, &#39;__static_attributes__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;_base_repr_&#39;, &#39;_check_names_dtype&#39;, &#39;_column_class&#39;, &#39;_convert_col_for_table&#39;, &#39;_convert_data_to_col&#39;, &#39;_convert_string_dtype&#39;, &#39;_copy_indices&#39;, &#39;_first_colname&#39;, &#39;_get_col_cls_for_table&#39;, &#39;_init_from_cols&#39;, &#39;_init_from_dict&#39;, &#39;_init_from_list&#39;, &#39;_init_from_list_of_dicts&#39;, &#39;_init_from_ndarray&#39;, &#39;_init_indices&#39;, &#39;_ipython_key_completions_&#39;, &#39;_is_list_or_tuple_of_str&#39;, &#39;_is_mixin_for_table&#39;, &#39;_make_index_row_display_table&#39;, &#39;_make_table_from_cols&#39;, &#39;_mask&#39;, &#39;_masked&#39;, &#39;_meta&#39;, &#39;_new_from_slice&#39;, &#39;_replace_cols&#39;, &#39;_replace_column_warnings&#39;, &#39;_repr_html_&#39;, &#39;_rows_equal&#39;, &#39;_set_col_parent_table_and_mask&#39;, &#39;_set_column_attribute&#39;, &#39;_set_masked&#39;, &#39;_set_of_names_in_colnames&#39;, &#39;_set_row&#39;, &#39;add_column&#39;, &#39;add_columns&#39;, &#39;add_index&#39;, &#39;add_row&#39;, &#39;argsort&#39;, &#39;as_array&#39;, &#39;colnames&#39;, &#39;columns&#39;, &#39;convert_bytestring_to_unicode&#39;, &#39;convert_unicode_to_bytestring&#39;, &#39;copy&#39;, &#39;dtype&#39;, &#39;field&#39;, &#39;filled&#39;, &#39;formatter&#39;, &#39;from_pandas&#39;, &#39;group_by&#39;, &#39;groups&#39;, &#39;has_masked_columns&#39;, &#39;has_masked_values&#39;, &#39;has_mixin_columns&#39;, &#39;iloc&#39;, &#39;index_column&#39;, &#39;index_mode&#39;, &#39;indices&#39;, &#39;info&#39;, &#39;insert_row&#39;, &#39;items&#39;, &#39;itercols&#39;, &#39;iterrows&#39;, &#39;keep_columns&#39;, &#39;keys&#39;, &#39;loc&#39;, &#39;loc_indices&#39;, &#39;mask&#39;, &#39;masked&#39;, &#39;meta&#39;, &#39;more&#39;, &#39;pformat&#39;, &#39;pformat_all&#39;, &#39;pprint&#39;, &#39;pprint_all&#39;, &#39;pprint_exclude_names&#39;, &#39;pprint_include_names&#39;, &#39;primary_key&#39;, &#39;read&#39;, &#39;remove_column&#39;, &#39;remove_columns&#39;, &#39;remove_indices&#39;, &#39;remove_row&#39;, &#39;remove_rows&#39;, &#39;rename_column&#39;, &#39;rename_columns&#39;, &#39;replace_column&#39;, &#39;reverse&#39;, &#39;round&#39;, &#39;setdefault&#39;, &#39;show_in_browser&#39;, &#39;show_in_notebook&#39;, &#39;sort&#39;, &#39;to_pandas&#39;, &#39;update&#39;, &#39;values&#39;, &#39;values_equal&#39;, &#39;write&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see its columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results_test_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;RA_ICRS&#39;, &#39;DE_ICRS&#39;, &#39;mode&#39;, &#39;q_mode&#39;, &#39;class&#39;, &#39;SDSS12&#39;, &#39;m_SDSS12&#39;, &#39;ObsDate&#39;, &#39;Q&#39;, &#39;umag&#39;, &#39;e_umag&#39;, &#39;gmag&#39;, &#39;e_gmag&#39;, &#39;rmag&#39;, &#39;e_rmag&#39;, &#39;imag&#39;, &#39;e_imag&#39;, &#39;zmag&#39;, &#39;e_zmag&#39;, &#39;zsp&#39;, &#39;zph&#39;, &#39;e_zph&#39;, &#39;&lt;zph&gt;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>But since the names don’t mean a lot by themselves, let’s also look at another method, the <code class="docutils literal notranslate"><span class="pre">info</span></code> one that gives more detailed information about each column. If these descriptions are still not clear, you can also have a look directly at the <a class="reference external" href="https://www.sdss.org/dr12/">SDSS DR12 webpage</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results_test_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Table length=50&gt;
+  name    dtype  unit  format                                                                   description                                                                  n_bad
+-------- ------- ---- -------- --------------------------------------------------------------------------------------------------------------------------------------------- -----
+ RA_ICRS float64  deg {:10.6f}                                                                                  Right Ascension of the object (ICRS) at Epoch=&quot;ObsDate&quot; (ra)     0
+ DE_ICRS float64  deg {:10.6f}                                                                                     Declination of the object (ICRS) at Epoch=&quot;ObsDate&quot; (dec)     0
+    mode   uint8                                                                                  [1/2] 1: primary (469,053,874 sources), 2: secondary (324,960,094 sources)     0
+  q_mode    str1                                                                               [+] &#39;+&#39; indicates clean photometry (310,190,812 sources with mode 1+) (clean)     0
+   class   uint8                                                                                                                       Type of object (3=galaxy, 6=star) (1)     0
+  SDSS12   str19                                                                                                                     SDSS-DR12 name, based on J2000 position     0
+m_SDSS12    str1                                                                         [*] The asterisk indicates that 2 different SDSS objects share the same SDSS12 name     0
+ ObsDate float64   yr  {:9.4f}                                                                                                                     Mean Observation date (6)     0
+       Q   uint8                                                                                                 [1/3] Quality of the observation: 1=bad 2=acceptable 3=good     0
+    umag float32  mag  {:6.3f}                                                                                         [4/38]? Model magnitude in u filter, AB scale (u) (5)     0
+  e_umag float32  mag  {:6.3f}                                                                                                                  ? Mean error on umag (err_u)     0
+    gmag float32  mag  {:6.3f}                                                                                         [5/40]? Model magnitude in g filter, AB scale (g) (5)     0
+  e_gmag float32  mag  {:6.3f}                                                                                                                  ? Mean error on gmag (err_g)     0
+    rmag float32  mag  {:6.3f}                                                                                         [4/39]? Model magnitude in r filter, AB scale (r) (5)     0
+  e_rmag float32  mag  {:6.3f}                                                                                                                  ? Mean error on rmag (err_r)     0
+    imag float32  mag  {:6.3f}                                                                                         [3/40]? Model magnitude in i filter, AB scale (i) (5)     0
+  e_imag float32  mag  {:6.3f}                                                                                                                  ? Mean error on imag (err_i)     0
+    zmag float32  mag  {:6.3f}                                                                                         [3/38]? Model magnitude in z filter, AB scale (z) (5)     0
+  e_zmag float32  mag  {:6.3f}                                                                                                                  ? Mean error on zmag (err_z)     0
+     zsp float64       {:8.5f}                                                                                      [-0.02/7.1]? Spectroscopic redshift (when SpObjID&gt;0) (7)    49
+     zph float64      {:10.4f}                                          [-9999/]? Photometric redshift; estimated by robust fit to nearest neighbors in a reference set (12)    14
+   e_zph float64      {:10.4f}                                                                             [-9999/]? Estimated error of the photometric redshift (zErr) (12)    14
+   &lt;zph&gt; float32       {:7.4f} [0.009/0.9]? average redshift of the nearest neighbors; if significantly different from zph this might be a better estimate than zph (nnAvgZ)    14
+</pre></div>
+</div>
+</div>
+</div>
+<p>For our current goal, we will need the coordinates (<code class="docutils literal notranslate"><span class="pre">RA_ICRS</span></code> and <code class="docutils literal notranslate"><span class="pre">DE_ICRS</span></code>), r-band magnitudes (<code class="docutils literal notranslate"><span class="pre">rmag</span></code>),and redshifts (<code class="docutils literal notranslate"><span class="pre">zsp</span></code>) of the galaxies in the Coma cluster. Hence, we only keep these columns.</p>
+<p>SDSS furthermore provides information on the type of source (galaxies correspond to <code class="docutils literal notranslate"><span class="pre">class</span></code> = 3, see the <code class="docutils literal notranslate"><span class="pre">info</span></code> output above) so we’ll want to keep these.</p>
+<p>Additionally, and this information is specific to the SDSS survey (see <a class="reference external" href="https://www.sdss.org/dr12/help/glossary/">their website</a>), some objects are observed more than once because of the overlaps between plates. To avoid these duplicates, we select only the primary observation of each object (corresponding to <code class="docutils literal notranslate"><span class="pre">mode</span></code> = 1).</p>
+<p>A first way of obtaining unique records (<code class="docutils literal notranslate"><span class="pre">mode</span></code> = 1) for the galaxies (<code class="docutils literal notranslate"><span class="pre">class</span></code> = 3) would be to apply masks on the precedent test table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masked_sdss</span> <span class="o">=</span> <span class="n">results_test_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">masked_sdss</span> <span class="o">=</span> <span class="n">masked_sdss</span><span class="p">[(</span><span class="n">masked_sdss</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">masked_sdss</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="c1"># note the important double [] here</span>
+<span class="n">masked_sdss</span><span class="p">[[</span><span class="s2">&quot;RA_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DE_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;rmag&quot;</span><span class="p">,</span> <span class="s2">&quot;zsp&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">pprint</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> RA_ICRS    DE_ICRS    rmag    zsp   
+   deg        deg      mag           
+---------- ---------- ------ --------
+194.961678  27.747497 19.066       --
+194.964509  27.751451 19.493       --
+194.962575  27.751330 21.734       --
+194.965196  27.760211 21.384       --
+194.954276  27.747906 21.882       --
+194.951946  27.750161 22.809       --
+194.922187  27.749474 22.965       --
+194.942831  27.746250 17.506  0.03241
+194.933771  27.768774 19.309       --
+       ...        ...    ...      ...
+194.905555  27.757574 19.560       --
+194.905083  27.759304 20.144       --
+194.906373  27.759380 22.632       --
+194.905415  27.754786 22.924       --
+194.890201  27.755278 22.117       --
+194.892054  27.757366 21.550       --
+194.894186  27.760119 22.314       --
+194.909914  27.762054 20.590       --
+194.911237  27.760531 22.450       --
+194.901115  27.751032 21.240       --
+Length = 36 rows
+</pre></div>
+</div>
+</div>
+</div>
+<p>But here is a second option using a specialized instance of the Vizier class in which we will lift the restriction on the number of rows.</p>
+<p>To know how to do so, always use the help function <code class="docutils literal notranslate"><span class="pre">help(Vizier)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># help(Vizier)</span>
+<span class="c1"># that we comment here because the output is very long</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this documentation we can directly read that we should give the <code class="docutils literal notranslate"><span class="pre">columns</span></code> names as a list, the <code class="docutils literal notranslate"><span class="pre">column_filters</span></code> as a dictionary, and the <code class="docutils literal notranslate"><span class="pre">row_limit</span></code> as an int. It is even specified that <code class="docutils literal notranslate"><span class="pre">row_limit</span></code> = -1 puts no limit on the number of rows. So let us do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vizier_instance</span> <span class="o">=</span> <span class="n">Vizier</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RA_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DE_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;rmag&quot;</span><span class="p">,</span> <span class="s2">&quot;zsp&quot;</span><span class="p">],</span>
+    <span class="n">column_filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;==3&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;==1&quot;</span><span class="p">},</span>
+    <span class="n">row_limit</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have prepared everything, we can query VizieR for all galaxies, which are primary sources and within 40arcmin of the center of the Coma cluster. Note that VizieR knows that <code class="docutils literal notranslate"><span class="pre">A1656</span></code> is the center of the Coma cluster. If you wanted to search at some other place in the sky, you could also give coordinates (in the form of Astropy’s <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>) instead of <code class="docutils literal notranslate"><span class="pre">'A1656'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_coma_sdss</span> <span class="o">=</span> <span class="n">vizier_instance</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span>
+    <span class="n">coordinates</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;0d40m0s&quot;</span><span class="p">,</span>
+    <span class="n">catalog</span><span class="o">=</span><span class="s2">&quot;V/147&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_coma_sdss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 1 tables:
+	&#39;0:V/147/sdss12&#39; with 4 column(s) and 23812 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the result of our query includes data from one catalog for almost 24000 objects! (<em>i.e.</em> the table has around 24000 row). The output from this query is again a list of Astropy Table objects. We assign the table to the variable <code class="docutils literal notranslate"><span class="pre">sdss</span></code> and work with this from here on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss</span> <span class="o">=</span> <span class="n">results_coma_sdss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sdss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=23812</i>
+<table id="table140077702945424" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>rmag</th><th>zsp</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>mag</th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>194.772004</td><td>27.272475</td><td>19.438</td><td>--</td></tr>
+<tr><td>194.775059</td><td>27.265924</td><td>20.488</td><td>--</td></tr>
+<tr><td>194.765176</td><td>27.269949</td><td>22.247</td><td>--</td></tr>
+<tr><td>194.763613</td><td>27.264614</td><td>22.862</td><td>--</td></tr>
+<tr><td>195.116104</td><td>27.271787</td><td>17.800</td><td>0.02587</td></tr>
+<tr><td>195.102259</td><td>27.264699</td><td>22.475</td><td>--</td></tr>
+<tr><td>195.106752</td><td>27.269004</td><td>21.150</td><td>--</td></tr>
+<tr><td>195.119253</td><td>27.277194</td><td>22.266</td><td>--</td></tr>
+<tr><td>195.168433</td><td>27.286515</td><td>21.790</td><td>--</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>194.569628</td><td>28.493457</td><td>21.425</td><td>--</td></tr>
+<tr><td>194.630739</td><td>28.519832</td><td>21.454</td><td>--</td></tr>
+<tr><td>194.630746</td><td>28.511081</td><td>19.985</td><td>--</td></tr>
+<tr><td>194.630616</td><td>28.507562</td><td>19.779</td><td>--</td></tr>
+<tr><td>194.649549</td><td>28.521074</td><td>21.350</td><td>--</td></tr>
+<tr><td>194.639055</td><td>28.514099</td><td>21.518</td><td>--</td></tr>
+<tr><td>194.642312</td><td>28.521855</td><td>21.406</td><td>--</td></tr>
+<tr><td>194.646981</td><td>28.521450</td><td>22.247</td><td>--</td></tr>
+<tr><td>194.665958</td><td>28.535445</td><td>22.229</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+<p>By navigating this table, you’ll remark that very few entries have a spectroscopic redshift <code class="docutils literal notranslate"><span class="pre">zsp</span></code>. Thus we will complete the results later with information from another table. But we’ll first ensure the validity of the entries here.</p>
+</section>
+<section id="identify-the-brightest-sources-as-stars-contaminating-the-sample">
+<h3>Identify the brightest sources as stars contaminating the sample<a class="headerlink" href="#identify-the-brightest-sources-as-stars-contaminating-the-sample" title="Link to this heading">#</a></h3>
+<img src=Data/images/logos/aladin.svg alt="aladin's logo" style="height:100px; display: inline-block;"/>
+We have already restricted our sample to sources that are classified as galaxies (`class` = 3). However, for very bright sources, stars might be confused with galaxies. To test this and exclude any contamination from stars, we now take a closer look at the brightest sources. To do so we select sources brighter than 11.5 mag in r-band (`rmag < 11.5`) and check with the Aladin widget what these sources look like.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "f870f84e1251440ca805993e08f58db5"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">limit_magnitude</span> <span class="o">=</span> <span class="mf">11.5</span>
+<span class="n">stars</span> <span class="o">=</span> <span class="n">sdss</span><span class="p">[</span><span class="n">sdss</span><span class="p">[</span><span class="s2">&quot;rmag&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">limit_magnitude</span><span class="p">]</span>
+<span class="n">aladin</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;cross&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sdss&quot;</span><span class="p">,</span> <span class="n">source_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Our sample contains </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">stars</span><span class="p">)</span><span class="si">}</span><span class="s2"> really bright sources with a magnitude below </span><span class="si">{</span><span class="n">limit_magnitude</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">aladin</span><span class="o">.</span><span class="n">fov</span> <span class="o">=</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our sample contains 9 really bright sources with a magnitude below 11.5.
+</pre></div>
+</div>
+</div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">aladin.add_table(stars)</span></code>, we have added symbols to the Aladin Lite widget at the location of the brightest sources (<em>i.e.</em> stars). You will be able to find all the brightest sources. By looking at each source you will find that these are indeed stars. Feel free to change the limit magnitude or other parameters to see if you can find better filters, this one is pretty rudimentary.</p>
+<p>You can choose to hide or show the symbols for the table entries in the <img alt="layer" src="_images/ipyaladin_layer.png" /> options, the table appears as <code class="docutils literal notranslate"><span class="pre">sdss</span></code>, the name we gave it when we called <code class="docutils literal notranslate"><span class="pre">add_table</span></code>.</p>
+</section>
+<section id="build-a-subset-of-galaxies-with-photometry-and-redshift-in-sdss">
+<h3>Build a subset of galaxies with photometry and redshift in SDSS<a class="headerlink" href="#build-a-subset-of-galaxies-with-photometry-and-redshift-in-sdss" title="Link to this heading">#</a></h3>
+<p>Now on to exploring the galaxies in our sample.
+We again build a subset, this time for all sources fainter than 11.5mag (to leave out the stars identified in the section above) but brighter than 17.77mag, which is the <a class="reference external" href="https://www.sdss.org/dr12/algorithms/legacy_target_selection/">completeness limit of the SDSS spectroscopic sample</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdss_sample</span> <span class="o">=</span> <span class="n">sdss</span><span class="p">[(</span><span class="n">sdss</span><span class="p">[</span><span class="s2">&quot;rmag&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">11.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sdss</span><span class="p">[</span><span class="s2">&quot;rmag&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">17.77</span><span class="p">)]</span>
+<span class="n">sdss_sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=630</i>
+<table id="table140077701890448" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>rmag</th><th>zsp</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>mag</th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>195.205140</td><td>27.290719</td><td>17.136</td><td>0.14536</td></tr>
+<tr><td>195.275800</td><td>27.397826</td><td>15.842</td><td>0.02706</td></tr>
+<tr><td>195.065145</td><td>27.256672</td><td>17.726</td><td>0.02378</td></tr>
+<tr><td>195.060211</td><td>27.280727</td><td>15.638</td><td>0.03704</td></tr>
+<tr><td>195.026165</td><td>27.300713</td><td>15.149</td><td>0.02625</td></tr>
+<tr><td>194.862938</td><td>27.259896</td><td>17.119</td><td>0.18807</td></tr>
+<tr><td>194.899615</td><td>27.261861</td><td>17.226</td><td>0.21462</td></tr>
+<tr><td>194.905631</td><td>27.336047</td><td>16.011</td><td>0.02326</td></tr>
+<tr><td>195.128497</td><td>27.300180</td><td>17.767</td><td>0.02564</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>195.178155</td><td>28.510423</td><td>16.563</td><td>--</td></tr>
+<tr><td>195.017063</td><td>28.414089</td><td>15.433</td><td>--</td></tr>
+<tr><td>195.007641</td><td>28.434816</td><td>16.209</td><td>0.02699</td></tr>
+<tr><td>195.059241</td><td>28.458066</td><td>17.747</td><td>0.02610</td></tr>
+<tr><td>195.169506</td><td>28.519893</td><td>15.869</td><td>--</td></tr>
+<tr><td>194.922106</td><td>28.507195</td><td>15.010</td><td>0.02748</td></tr>
+<tr><td>194.894937</td><td>28.537282</td><td>17.397</td><td>--</td></tr>
+<tr><td>194.898630</td><td>28.551365</td><td>14.960</td><td>0.02530</td></tr>
+<tr><td>194.508327</td><td>28.456361</td><td>16.738</td><td>0.16127</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="improve-the-completeness-with-other-sources-of-redshifts-in-vizier">
+<h3>Improve the completeness with other sources of redshifts in Vizier<a class="headerlink" href="#improve-the-completeness-with-other-sources-of-redshifts-in-vizier" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>As you can see in the table above, not all galaxies in our zsp17 sample have redshift measurements (some rows have ‘–’ in the ‘zsp’ column, i.e. they are masked). So to improve the completeness of our sample we will now use Vizier to search for redshifts in the Rines et al (2003) catalog. First, find all catalogs that match the search terms ‘redshifts Rines 2003’:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_rines</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;Rines 2003&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">catalog_list_rines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>J/ApJ/700/331 :  Light curves of type Ia supernovae (CfA3) (Hicken+, 2009)
+J/ApJ/757/22 :  Strong and weak lensing analysis of A2261 (Coe+, 2012)
+J/ApJ/767/15 :  Hectospec Cluster Survey (HeCS) (Rines+, 2013)
+J/ApJ/783/52 :  Redshifts in the field of A383 (Geller+, 2014)
+J/ApJ/797/106 :  Redshifts in nine galaxy cluster fields (Hwang+, 2014)
+J/ApJ/819/63 :  Hectospec survey of SZ clusters (HeCS-SZ) (Rines+, 2016)
+J/ApJ/855/100 :  The HectoMAP cluster survey. II. X-ray clusters (Sohn+, 2018)
+J/ApJ/856/172 :  The HectoMAP cluster survey. I. (Sohn+, 2018)
+J/ApJ/862/172 :  HeCS-red: Hectospec surveys of redMaPPer clusters (Rines+, 2018)
+J/ApJ/871/129 :  A redshift catalog of the galaxy cluster A2029 (Sohn+, 2019)
+J/ApJ/891/129 :  The HeCS-omnibus catalog: SDSS &amp; MMT sp. obs. (Sohn+, 2020)
+J/ApJ/923/143 :  HectoMAP Cluster Survey: clusters &amp; BCGs (Sohn+, 2021)
+J/ApJ/930/156 :  MMT/Hectospec spectra of ACO 1489 (Rines+, 2022)
+J/ApJS/229/20 :  MMT/Hectospec redshift survey for Abell 2029 (Sohn+, 2017)
+J/AJ/120/2338 :  Abell 576 redshifts (Rines+, 2000)
+J/AJ/124/1266 :  Redshift survey around Abell 2199 (Rines+, 2002)
+J/AJ/126/2152 :  Cluster And Infall Region Nearby Survey. I (Rines+, 2003)
+J/AJ/128/1078 :  Cluster and Infall Region Nearby Survey. II (Rines+, 2004)
+J/AJ/131/527 :  UBVRI light curves of 44 type Ia supernovae (Jha+, 2006)
+J/AJ/132/1275 :  CIRS (Cluster Infall Regions in the SDSS). I. (Rines+, 2006)
+J/AJ/135/1598 :  Optical spectroscopy of type Ia supernovae (Matheson+, 2008)
+J/AJ/135/1837 :  Spectroscopy in A2199 and Virgo clusters (Rines+, 2008)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Among these, we find the ‘J/AJ/126/2152’ catalog:  Cluster And Infall Region Nearby Survey. I (Rines+, 2003): the one we’d like to read.</p>
+<p>So again, let’s take a quick look at this catalog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_test_rines</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span>
+    <span class="n">coordinates</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;0d10m0s&quot;</span><span class="p">,</span>
+    <span class="n">catalog</span><span class="o">=</span><span class="s2">&quot;J/AJ/126/2152&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results_test_rines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 2 tables:
+	&#39;0:J/AJ/126/2152/clusters&#39; with 10 column(s) and 1 row(s) 
+	&#39;1:J/AJ/126/2152/galaxies&#39; with 6 column(s) and 50 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_test_rines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table140077701898128" class="table-striped table-bordered table-condensed">
+<thead><tr><th>Cluster</th><th>n_Cluster</th><th>RAJ2000</th><th>DEJ2000</th><th>cz</th><th>sigmap(3s)</th><th>sigmap(ca)</th><th>LX</th><th>TX</th><th>R</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>km / s</th><th>km / s</th><th>km / s</th><th>1e+36 W</th><th>keV</th><th></th></tr></thead>
+<thead><tr><th>str5</th><th>str1</th><th>str10</th><th>str9</th><th>int32</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>uint8</th></tr></thead>
+<tr><td>A1656</td><td>g</td><td>12 59 31.9</td><td>+27 54 10</td><td>6973</td><td>1042</td><td>957</td><td>18.0</td><td>8.0</td><td>2</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_test_rines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=50</i>
+<table id="table140077701898288" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RAJ2000</th><th>DEJ2000</th><th>cz</th><th>e_cz</th><th>r_cz</th><th>Cluster</th></tr></thead>
+<thead><tr><th></th><th></th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
+<thead><tr><th>str11</th><th>str11</th><th>int32</th><th>int32</th><th>uint8</th><th>str5</th></tr></thead>
+<tr><td>12 59 01.88</td><td>+27 51 54.2</td><td>7555</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 03.85</td><td>+27 57 32.6</td><td>6978</td><td>6</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 03.93</td><td>+27 56 43.7</td><td>74738</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 04.77</td><td>+27 54 37.9</td><td>6417</td><td>26</td><td>1</td><td>A1656</td></tr>
+<tr><td>12 59 05.55</td><td>+27 50 56.5</td><td>20074</td><td>44</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 05.83</td><td>+27 59 49.5</td><td>7699</td><td>27</td><td>1</td><td>A1656</td></tr>
+<tr><td>12 59 07.90</td><td>+27 51 20.0</td><td>6604</td><td>27</td><td>1</td><td>A1656</td></tr>
+<tr><td>12 59 09.06</td><td>+27 53 51.0</td><td>7812</td><td>45</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 09.61</td><td>+27 52 02.1</td><td>6892</td><td>40</td><td>2</td><td>A1656</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>12 59 29.20</td><td>+27 51 03.0</td><td>6814</td><td>40</td><td>1</td><td>A1656</td></tr>
+<tr><td>12 59 29.21</td><td>+27 56 30.8</td><td>5613</td><td>58</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 29.29</td><td>+27 48 24.3</td><td>6710</td><td>89</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 30.00</td><td>+27 57 22.0</td><td>6800</td><td>27</td><td>1</td><td>A1656</td></tr>
+<tr><td>12 59 30.08</td><td>+27 49 33.2</td><td>8874</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 30.27</td><td>+28 01 14.6</td><td>7166</td><td>173</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 30.50</td><td>+27 56 24.0</td><td>123</td><td>28</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 30.63</td><td>+27 47 28.6</td><td>7825</td><td>6</td><td>2</td><td>A1656</td></tr>
+<tr><td>12 59 30.80</td><td>+27 53 03.0</td><td>4741</td><td>25</td><td>1</td><td>A1656</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_test_rines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Table length=50&gt;
+  name  dtype  unit            description          
+------- ----- ------ -------------------------------
+RAJ2000 str11        Hour of right ascension (J2000)
+DEJ2000 str11          Degree of declination (J2000)
+     cz int32 km / s                        Redshift
+   e_cz int32 km / s                   ? Error in cz
+   r_cz uint8           [1/2] Redshift reference (1)
+Cluster  str5          Abell cluster name, or &quot;Both&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="http://cdsxmatch.cds.unistra.fr/" title="http://cdsxmatch.cds.unistra.fr/"><img alt="Xmatch" src="https://custom-icon-badges.demolab.com/badge/Xmatch-gray.svg?logo=xmatch&amp;logoColor=blue&amp;logoWidth=20" /></a></p>
+<p>After inspecting the result of the test query, we see that the first table describes the cluster as an ensemble. The second one describes individual galaxies in the cluster. The later, named <code class="docutils literal notranslate"><span class="pre">1:J/AJ/126/2152/galaxies</span></code> contains the information we want.</p>
+<p>To see which of the galaxies in the <code class="docutils literal notranslate"><span class="pre">1:J/AJ/126/2152/galaxies</span></code> table could fill in the gaps in our SDSS table, we first isolate the galaxies without redshifts in <code class="docutils literal notranslate"><span class="pre">zsp17</span></code>. Then we spatially crossmatch the two tables using the <a class="reference external" href="http://cdsxmatch.cds.unistra.fr/xmatch">CDS XMatch service</a> via the <code class="docutils literal notranslate"><span class="pre">astroquery.XMatch.query</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mask zsp17 for entries with a nan value in the zsp column</span>
+<span class="n">sdss_sample_without_zsp</span> <span class="o">=</span> <span class="n">sdss_sample</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sdss_sample</span><span class="p">[</span><span class="s2">&quot;zsp&quot;</span><span class="p">])]</span>
+<span class="n">sdss_sample_with_zsp</span> <span class="o">=</span> <span class="n">sdss_sample</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sdss_sample</span><span class="p">[</span><span class="s2">&quot;zsp&quot;</span><span class="p">])]</span>
+<span class="n">sdss_sample_without_zsp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=135</i>
+<table id="table140077701898448" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>rmag</th><th>zsp</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>mag</th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>195.074954</td><td>27.385966</td><td>17.653</td><td>--</td></tr>
+<tr><td>195.219915</td><td>27.384368</td><td>17.561</td><td>--</td></tr>
+<tr><td>195.152531</td><td>27.575845</td><td>17.521</td><td>--</td></tr>
+<tr><td>194.563614</td><td>27.464697</td><td>17.736</td><td>--</td></tr>
+<tr><td>194.482062</td><td>27.490099</td><td>17.555</td><td>--</td></tr>
+<tr><td>194.350646</td><td>27.507101</td><td>16.305</td><td>--</td></tr>
+<tr><td>194.363876</td><td>27.512126</td><td>17.701</td><td>--</td></tr>
+<tr><td>194.437268</td><td>27.576120</td><td>17.760</td><td>--</td></tr>
+<tr><td>194.724123</td><td>27.388636</td><td>17.521</td><td>--</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>194.657981</td><td>28.315764</td><td>17.002</td><td>--</td></tr>
+<tr><td>194.521551</td><td>28.249971</td><td>17.705</td><td>--</td></tr>
+<tr><td>194.625138</td><td>28.426631</td><td>17.051</td><td>--</td></tr>
+<tr><td>194.751431</td><td>28.374256</td><td>17.215</td><td>--</td></tr>
+<tr><td>195.170490</td><td>28.511943</td><td>17.620</td><td>--</td></tr>
+<tr><td>195.178155</td><td>28.510423</td><td>16.563</td><td>--</td></tr>
+<tr><td>195.017063</td><td>28.414089</td><td>15.433</td><td>--</td></tr>
+<tr><td>195.169506</td><td>28.519893</td><td>15.869</td><td>--</td></tr>
+<tr><td>194.894937</td><td>28.537282</td><td>17.397</td><td>--</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xmatch_sdss_rines</span> <span class="o">=</span> <span class="n">XMatch</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="n">cat1</span><span class="o">=</span><span class="n">sdss_sample_without_zsp</span><span class="p">,</span>
+    <span class="n">cat2</span><span class="o">=</span><span class="s2">&quot;vizier:J/AJ/126/2152/galaxies&quot;</span><span class="p">,</span>
+    <span class="n">max_distance</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">,</span>
+    <span class="n">colRA1</span><span class="o">=</span><span class="s2">&quot;RA_ICRS&quot;</span><span class="p">,</span>
+    <span class="n">colDec1</span><span class="o">=</span><span class="s2">&quot;DE_ICRS&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">xmatch_sdss_rines</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=25</i>
+<table id="table140077701904848" class="table-striped table-bordered table-condensed">
+<thead><tr><th>angDist</th><th>RA_ICRS</th><th>DE_ICRS</th><th>rmag</th><th>zsp</th><th>_RAJ2000</th><th>_DEJ2000</th><th>RAJ2000</th><th>DEJ2000</th><th>cz</th><th>e_cz</th><th>r_cz</th><th>Cluster</th></tr></thead>
+<thead><tr><th>arcsec</th><th></th><th></th><th></th><th></th><th>deg</th><th>deg</th><th></th><th></th><th>km / s</th><th>km / s</th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>bool</th><th>float64</th><th>float64</th><th>str11</th><th>str11</th><th>int32</th><th>int32</th><th>int16</th><th>str5</th></tr></thead>
+<tr><td>4.756129</td><td>195.074954</td><td>27.385966</td><td>17.653</td><td>--</td><td>195.0743333</td><td>27.3871667</td><td>13 00 17.84</td><td>+27 23 13.8</td><td>11114</td><td>9</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.268487</td><td>194.563614</td><td>27.464697</td><td>17.736</td><td>--</td><td>194.5636667</td><td>27.4646389</td><td>12 58 15.28</td><td>+27 27 52.7</td><td>7625</td><td>27</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.089868</td><td>194.724123</td><td>27.388636</td><td>17.521</td><td>--</td><td>194.724125</td><td>27.3886111</td><td>12 58 53.79</td><td>+27 23 19.0</td><td>7654</td><td>50</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.284257</td><td>194.860237</td><td>27.856882</td><td>17.548</td><td>--</td><td>194.8601667</td><td>27.8568333</td><td>12 59 26.44</td><td>+27 51 24.6</td><td>5007</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>1.346011</td><td>194.7349</td><td>27.803568</td><td>17.533</td><td>--</td><td>194.7349167</td><td>27.8031944</td><td>12 58 56.38</td><td>+27 48 11.5</td><td>7864</td><td>64</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.271796</td><td>195.213773</td><td>27.689156</td><td>17.643</td><td>--</td><td>195.21375</td><td>27.6890833</td><td>13 00 51.30</td><td>+27 41 20.7</td><td>8184</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.993647</td><td>195.466883</td><td>27.636194</td><td>17.703</td><td>--</td><td>195.46675</td><td>27.6359444</td><td>13 01 52.02</td><td>+27 38 09.4</td><td>17437</td><td>27</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.503127</td><td>195.118402</td><td>27.761221</td><td>17.495</td><td>--</td><td>195.118375</td><td>27.7610833</td><td>13 00 28.41</td><td>+27 45 39.9</td><td>6835</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>2.31869</td><td>195.442461</td><td>27.9578</td><td>15.158</td><td>--</td><td>195.441875</td><td>27.9574167</td><td>13 01 46.05</td><td>+27 57 26.7</td><td>4706</td><td>13</td><td>2</td><td>A1656</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>3.582934</td><td>195.160575</td><td>28.01606</td><td>16.203</td><td>--</td><td>195.1607917</td><td>28.0150833</td><td>13 00 38.59</td><td>+28 00 54.3</td><td>7594</td><td>32</td><td>1</td><td>A1656</td></tr>
+<tr><td>0.815348</td><td>195.177341</td><td>28.116305</td><td>17.018</td><td>--</td><td>195.1772083</td><td>28.1161111</td><td>13 00 42.53</td><td>+28 06 58.0</td><td>6206</td><td>75</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.843958</td><td>195.082099</td><td>28.121521</td><td>17.696</td><td>--</td><td>195.0818333</td><td>28.1215278</td><td>13 00 19.64</td><td>+28 07 17.5</td><td>6659</td><td>65</td><td>2</td><td>A1656</td></tr>
+<tr><td>4.3169</td><td>195.549769</td><td>28.173223</td><td>16.363</td><td>--</td><td>195.5487917</td><td>28.1723889</td><td>13 02 11.71</td><td>+28 10 20.6</td><td>8950</td><td>11</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.546321</td><td>194.629479</td><td>27.895503</td><td>17.676</td><td>--</td><td>194.6293333</td><td>27.8955833</td><td>12 58 31.04</td><td>+27 53 44.1</td><td>6804</td><td>83</td><td>2</td><td>A1656</td></tr>
+<tr><td>0.518468</td><td>194.562693</td><td>28.125907</td><td>14.632</td><td>--</td><td>194.5628333</td><td>28.1258333</td><td>12 58 15.08</td><td>+28 07 33.0</td><td>7428</td><td>23</td><td>1</td><td>A1656</td></tr>
+<tr><td>4.509648</td><td>194.869572</td><td>28.085779</td><td>16.586</td><td>--</td><td>194.8683333</td><td>28.0851667</td><td>12 59 28.40</td><td>+28 05 06.6</td><td>3650</td><td>100</td><td>2</td><td>A1656</td></tr>
+<tr><td>2.489322</td><td>194.91736</td><td>28.179347</td><td>17.323</td><td>--</td><td>194.9165833</td><td>28.17925</td><td>12 59 39.98</td><td>+28 10 45.3</td><td>5437</td><td>0</td><td>2</td><td>A1656</td></tr>
+<tr><td>1.210618</td><td>195.169506</td><td>28.519893</td><td>15.869</td><td>--</td><td>195.169125</td><td>28.5198611</td><td>13 00 40.59</td><td>+28 31 11.5</td><td>8901</td><td>4</td><td>2</td><td>A1656</td></tr>
+</table></div></div></div>
+</div>
+</section>
+<section id="build-the-final-catalog-including-the-rines-et-al-2003-redshifts">
+<h3>Build the final catalog including the Rines et al. (2003) redshifts<a class="headerlink" href="#build-the-final-catalog-including-the-rines-et-al-2003-redshifts" title="Link to this heading">#</a></h3>
+<p>The resulting table of the cross-match above contains 25 rows, so we have found recession velocity (‘cz’) measurements for 25 galaxies. Now let’s add these data to the zsp17_with table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converts redshift into velocity</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.998e5</span>  <span class="c1"># km/s speed of light</span>
+<span class="n">sdss_sample_with_zsp</span><span class="p">[</span><span class="s2">&quot;cz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdss_sample_with_zsp</span><span class="p">[</span><span class="s2">&quot;zsp&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span>
+<span class="c1"># from the cross math result, only keep columns that are in sdss_sample_with_zsp</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RA_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DE_ICRS&quot;</span><span class="p">,</span> <span class="s2">&quot;rmag&quot;</span><span class="p">,</span> <span class="s2">&quot;cz&quot;</span><span class="p">]</span>
+<span class="c1"># put together the two tables</span>
+<span class="n">complete_sample</span> <span class="o">=</span> <span class="n">vstack</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">sdss_sample_with_zsp</span><span class="p">[</span><span class="n">columns</span><span class="p">],</span> <span class="n">xmatch_sdss_rines</span><span class="p">[</span><span class="n">columns</span><span class="p">]],</span>
+    <span class="n">metadata_conflicts</span><span class="o">=</span><span class="s2">&quot;silent&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># don&#39;t forget to set the unit of the newly created column</span>
+<span class="n">complete_sample</span><span class="p">[</span><span class="s2">&quot;cz&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span>
+<span class="n">complete_sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=520</i>
+<table id="table140077701904528" class="table-striped table-bordered table-condensed">
+<thead><tr><th>RA_ICRS</th><th>DE_ICRS</th><th>rmag</th><th>cz</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th>mag</th><th>km / s</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float64</th></tr></thead>
+<tr><td>195.205140</td><td>27.290719</td><td>17.136</td><td>43578.928</td></tr>
+<tr><td>195.275800</td><td>27.397826</td><td>15.842</td><td>8112.588000000001</td></tr>
+<tr><td>195.065145</td><td>27.256672</td><td>17.726</td><td>7129.244</td></tr>
+<tr><td>195.060211</td><td>27.280727</td><td>15.638</td><td>11104.591999999999</td></tr>
+<tr><td>195.026165</td><td>27.300713</td><td>15.149</td><td>7869.75</td></tr>
+<tr><td>194.862938</td><td>27.259896</td><td>17.119</td><td>56383.386</td></tr>
+<tr><td>194.899615</td><td>27.261861</td><td>17.226</td><td>64343.076</td></tr>
+<tr><td>194.905631</td><td>27.336047</td><td>16.011</td><td>6973.348</td></tr>
+<tr><td>195.128497</td><td>27.300180</td><td>17.767</td><td>7686.872</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>195.160575</td><td>28.016060</td><td>16.203</td><td>7594.0</td></tr>
+<tr><td>195.177341</td><td>28.116305</td><td>17.018</td><td>6206.0</td></tr>
+<tr><td>195.082099</td><td>28.121521</td><td>17.696</td><td>6659.0</td></tr>
+<tr><td>195.549769</td><td>28.173223</td><td>16.363</td><td>8950.0</td></tr>
+<tr><td>194.629479</td><td>27.895503</td><td>17.676</td><td>6804.0</td></tr>
+<tr><td>194.562693</td><td>28.125907</td><td>14.632</td><td>7428.0</td></tr>
+<tr><td>194.869572</td><td>28.085779</td><td>16.586</td><td>3650.0</td></tr>
+<tr><td>194.917360</td><td>28.179347</td><td>17.323</td><td>5437.0</td></tr>
+<tr><td>195.169506</td><td>28.519893</td><td>15.869</td><td>8901.0</td></tr>
+</table></div></div></div>
+</div>
+<p>Now we have a table with all galaxies that either have a redshift measurement in SDSS or a velocity value obtained by (Rines <em>et al.</em> 2003).</p>
+<p>Overall, this sample within 40arcmin of the center of the Coma cluster contains 514 galaxies.</p>
+<p>Before we start the analysis of the data, let’s look at the galaxies in the sample by loading the table into the Aladin Lite widget. They will appear as <code class="docutils literal notranslate"><span class="pre">catalog_1</span></code> and with a different color than the bright stars we added before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">complete_sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>scroll up to the aladin widget to see the table</p>
+</section>
+<section id="determine-velocity-distribution-cluster-average-velocity-and-velocity-dispersion">
+<h3>Determine velocity distribution, cluster average velocity, and velocity dispersion<a class="headerlink" href="#determine-velocity-distribution-cluster-average-velocity-and-velocity-dispersion" title="Link to this heading">#</a></h3>
+<p>Based on the 514 galaxies, we can now analyze the recession velocity and velocity dispersion of the Abell 1656 galaxy cluster. First, we visualize the recession velocity distribution of the entire sample:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bins is the number of bars in the histogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">complete_sample</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cz&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/56a7e7d72ce0f02c497b63936d20184d2c7d74285cd16986342dfb3d01d4c9af.png" src="_images/56a7e7d72ce0f02c497b63936d20184d2c7d74285cd16986342dfb3d01d4c9af.png" />
+</div>
+</div>
+<p>Note how there is a large range of recession velocities in our sample. We are only interested in the range of recession velocities of the Coma cluster. These are around the peak at low velocities. Thus, we restrict our sample to a subset <code class="docutils literal notranslate"><span class="pre">df_Coma</span></code> to recession velocities between 3000 and 11000 km/s:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Coma</span> <span class="o">=</span> <span class="n">complete_sample</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">complete_sample</span><span class="p">[</span><span class="s2">&quot;cz&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">3000.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">complete_sample</span><span class="p">[</span><span class="s2">&quot;cz&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">11000.0</span><span class="p">)</span>
+<span class="p">]</span>  <span class="c1"># here we apply a mask with two conditions to the sample based on criteria about the column &quot;cz&quot;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Coma</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cz&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">&quot;$cz~(\mathrm{km/s})$&quot;</span><span class="p">,</span>
+<span class="p">);</span>  <span class="c1"># the r before the string allows to write the label in LaTex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/531be203dd935fde1320b3fa9d7af200227914a74ecbc6dfeb3f6deadd43687d.png" src="_images/531be203dd935fde1320b3fa9d7af200227914a74ecbc6dfeb3f6deadd43687d.png" />
+</div>
+</div>
+<p>This subset corresponds to galaxies in the vicinity of the cluster (both spatially and in recession velocity). Let’s calculate the mean recession velocity of the cluster and its velocity dispersion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The mean velocity in Coma is </span><span class="si">{</span><span class="n">Coma</span><span class="p">[</span><span class="s1">&#39;cz&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> km/s.&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot; Its velocity dispersion (i.e. standard deviation) is </span><span class="si">{</span><span class="n">Coma</span><span class="p">[</span><span class="s1">&#39;cz&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">}</span><span class="s2"> km/s.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean velocity in Coma is 6965.967498771499 km/s. Its velocity dispersion (i.e. standard deviation) is 1120.973981479845 km/s.
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is in agreement with more refined analyses (e.g. <a class="reference external" href="https://iopscience.iop.org/article/10.3847/1538-4365/aa653e">Sohn et al. 2017, ApJS, 229, 20</a>).</p>
+<p>When looking back at the query results for the Rines et al. (2003) catalog, you can check again the table that describes the full cluster. The mean recession velocity <code class="docutils literal notranslate"><span class="pre">cz</span></code> = 6973km/s and dispersion <code class="docutils literal notranslate"><span class="pre">sigmap_3s_</span></code> = 1042km/s for the Coma cluster are is also in good agreement with our results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_test_rines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table140077701898128" class="table-striped table-bordered table-condensed">
+<thead><tr><th>Cluster</th><th>n_Cluster</th><th>RAJ2000</th><th>DEJ2000</th><th>cz</th><th>sigmap(3s)</th><th>sigmap(ca)</th><th>LX</th><th>TX</th><th>R</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th><th>km / s</th><th>km / s</th><th>km / s</th><th>1e+36 W</th><th>keV</th><th></th></tr></thead>
+<thead><tr><th>str5</th><th>str1</th><th>str10</th><th>str9</th><th>int32</th><th>int16</th><th>int16</th><th>float32</th><th>float32</th><th>uint8</th></tr></thead>
+<tr><td>A1656</td><td>g</td><td>12 59 31.9</td><td>+27 54 10</td><td>6973</td><td>1042</td><td>957</td><td>18.0</td><td>8.0</td><td>2</td></tr>
+</table></div></div></div>
+</div>
+</section>
+</section>
+<section id="search-for-hubble-space-telescope-hst-spectra-from-the-coma-cluster">
+<h2>Search for Hubble Space Telescope (HST) spectra from the Coma Cluster<a class="headerlink" href="#search-for-hubble-space-telescope-hst-spectra-from-the-coma-cluster" title="Link to this heading">#</a></h2>
+<p>We now want to find out whether there are HST spectra available for the galaxies that had neither a redshift in SDSS nor a velocity in the catalog Rines <em>et al.</em> (2003).</p>
+<p>We use the <a class="reference external" href="http://www.ivoa.net/documents/SSA/">Simple Spectral Access (SSA) protocol from the IVOA</a> to query the Mikulski Archive for Space Telescopes (MAST). Once again, we look at an area of 40arcmin around the center of the Coma Cluster.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mast_ssa_service</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">SSAService</span><span class="p">(</span>
+    <span class="s2">&quot;https://archive.stsci.edu/ssap/search2.php?id=HST&amp;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">40.0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;arcmin&quot;</span><span class="p">)</span>
+<span class="n">mast_hst_results</span> <span class="o">=</span> <span class="n">mast_ssa_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="n">diameter</span><span class="p">)</span>
+<span class="n">mast_hst_results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;DALResultsTable length=21&gt;
+   ra_obs    dec_obs           coord_targ         ...   fluxcal    ang_sep
+    deg        deg                deg             ...                     
+  float64    float64           float64[2]         ...    object    float64
+----------- ---------- -------------------------- ... ------------ -------
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ... UNCALIBRATED  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ... UNCALIBRATED  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+        ...        ...                        ... ...          ...     ...
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ... UNCALIBRATED  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+195.2537375 28.3289472 195.2537375 .. 28.32894722 ...     ABSOLUTE  30.148
+   195.0925    28.4005        195.0925 .. 28.4005 ...     ABSOLUTE  30.444
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">mast_hst_results</span></code> is not a list of tables as we had for <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> queries. This time, we get a pyvo <code class="docutils literal notranslate"><span class="pre">resultset</span></code>. Thus the methods to handle the <code class="docutils literal notranslate"><span class="pre">resultset</span></code> are slightly different but can still be printed out with the <code class="docutils literal notranslate"><span class="pre">dir()</span></code> function which is generic in python. Let’s find out which columns are available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Available methods: &quot;</span><span class="p">,</span> <span class="nb">dir</span><span class="p">(</span><span class="n">mast_hst_results</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Name of columns: &quot;</span><span class="p">,</span> <span class="n">mast_hst_results</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Available methods:  [&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__firstlineno__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__static_attributes__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;_adhocservices&#39;, &#39;_findinfos&#39;, &#39;_findresultsresource&#39;, &#39;_findresultstable&#39;, &#39;_findstatus&#39;, &#39;_findstatusinfo&#39;, &#39;_fldnames&#39;, &#39;_from_result_url&#39;, &#39;_guess_access_format&#39;, &#39;_guess_access_url&#39;, &#39;_guess_datalink&#39;, &#39;_infos&#39;, &#39;_iter_datalinks_from_dlblock&#39;, &#39;_iter_datalinks_from_product_rows&#39;, &#39;_resultstable&#39;, &#39;_session&#39;, &#39;_status&#39;, &#39;_url&#39;, &#39;_votable&#39;, &#39;broadcast_samp&#39;, &#39;cursor&#39;, &#39;fielddescs&#39;, &#39;fieldname_with_ucd&#39;, &#39;fieldname_with_utype&#39;, &#39;fieldnames&#39;, &#39;from_result_url&#39;, &#39;get_adhocservice_by_id&#39;, &#39;get_adhocservice_by_ivoid&#39;, &#39;getcolumn&#39;, &#39;getdesc&#39;, &#39;getrecord&#39;, &#39;getvalue&#39;, &#39;iter_adhocservices&#39;, &#39;iter_datalinks&#39;, &#39;queryurl&#39;, &#39;resultstable&#39;, &#39;status&#39;, &#39;table&#39;, &#39;to_qtable&#39;, &#39;to_table&#39;, &#39;votable&#39;]
+--- Name of columns:  (&#39;ra_obs&#39;, &#39;dec_obs&#39;, &#39;coord_targ&#39;, &#39;coord_obs&#39;, &#39;url&#39;, &#39;object&#39;, &#39;datalen&#39;, &#39;exposure&#39;, &#39;date_obs&#39;, &#39;tstart&#39;, &#39;tmid&#39;, &#39;tstop&#39;, &#39;format&#39;, &#39;radecsys&#39;, &#39;equinox&#39;, &#39;preview&#39;, &#39;representative&#39;, &#39;min_wavelength&#39;, &#39;max_wavelength&#39;, &#39;title&#39;, &#39;timesys&#39;, &#39;specsys&#39;, &#39;vover&#39;, &#39;vodate&#39;, &#39;author&#39;, &#39;collection&#39;, &#39;ds_ident&#39;, &#39;cr_ident&#39;, &#39;date&#39;, &#39;version&#39;, &#39;instrume&#39;, &#39;dssource&#39;, &#39;specband&#39;, &#39;der_snr&#39;, &#39;spec_val&#39;, &#39;spec_bw&#39;, &#39;spec_fil&#39;, &#39;spec_rp&#39;, &#39;s_fov&#39;, &#39;aperture&#39;, &#39;telescop&#39;, &#39;fluxavg&#39;, &#39;fluxmax2&#39;, &#39;min_flux&#39;, &#39;max_flux&#39;, &#39;min_error&#39;, &#39;max_error&#39;, &#39;filesize&#39;, &#39;spectralaxisname&#39;, &#39;fluxaxisname&#39;, &#39;spectralsi&#39;, &#39;fluxsi&#39;, &#39;spectralunit&#39;, &#39;fluxunit&#39;, &#39;fluxucd&#39;, &#39;fluxcal&#39;, &#39;ang_sep&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">observation</span> <span class="ow">in</span> <span class="n">mast_hst_results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">observation</span><span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WAVE
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+WAVE
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+WAVE
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+WAVE
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+QSO-1258+285
+1257+2840
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://simbad.cds.unistra.fr/simbad/" title="https://simbad.cds.unistra.fr/simbad/"><img alt="Simbad" src="https://custom-icon-badges.demolab.com/badge/Simbad-gray.svg?logo=simbad&amp;logoColor=lightblue&amp;logoWidth=20" /></a></p>
+<p>Often Quasars are further away than the Coma cluster, so let’s check quickly on Simbad whether this source is interesting for further analysis. Usually a Simbad query would only return information on the object’s identifier and coordinates. We are, however, also interested in its redshift, so we first create a customised Simbad query (as we did above for VizieR, for more details see <a class="reference external" href="https://astroquery.readthedocs.io/en/latest/simbad/simbad.html#customizing-the-default-settings">here</a>) and then submit the query.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">custom_Simbad</span> <span class="o">=</span> <span class="n">Simbad</span><span class="p">()</span>
+<span class="n">custom_Simbad</span><span class="o">.</span><span class="n">add_votable_fields</span><span class="p">(</span><span class="s2">&quot;rvz_redshift&quot;</span><span class="p">)</span>
+<span class="n">qso_table</span> <span class="o">=</span> <span class="n">custom_Simbad</span><span class="o">.</span><span class="n">query_object</span><span class="p">(</span><span class="s2">&quot;QSO 1258+285&quot;</span><span class="p">)</span>
+<span class="n">qso_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=1</i>
+<table id="table140077662699376" class="table-striped table-bordered table-condensed">
+<thead><tr><th>main_id</th><th>ra</th><th>dec</th><th>coo_err_maj</th><th>coo_err_min</th><th>coo_err_angle</th><th>coo_wavelength</th><th>coo_bibcode</th><th>rvz_redshift</th><th>matched_id</th></tr></thead>
+<thead><tr><th></th><th>deg</th><th>deg</th><th>mas</th><th>mas</th><th>deg</th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>object</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>int16</th><th>str1</th><th>object</th><th>float64</th><th>object</th></tr></thead>
+<tr><td>A2 330</td><td>195.25361497434997</td><td>28.32909494325</td><td>0.0486</td><td>0.0401</td><td>90</td><td>O</td><td>2020yCat.1350....0G</td><td>1.36102</td><td>QSO B1258+285</td></tr>
+</table></div></div></div>
+</div>
+<p>As you can see in the column before last, the Quasar is at a redshift of 1.36. This is far beyond the Coma Cluster. Therefore, we focus on the source ‘1257+2840’ for now. 1257+2840 is the last source in the list: we assign it to a new variable (<code class="docutils literal notranslate"><span class="pre">interesting_observation</span></code>). Then we exploit the functionalities of <code class="docutils literal notranslate"><span class="pre">resultset</span></code> to find out where the data is and what kind of file it is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interesting_observation</span> <span class="o">=</span> <span class="n">mast_hst_results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">observation_url</span> <span class="o">=</span> <span class="n">interesting_observation</span><span class="o">.</span><span class="n">getdataurl</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">observation_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://archive.stsci.edu/pub/vospectra/fos2/y1hi1402t_vop.fits
+</pre></div>
+</div>
+</div>
+</div>
+<section id="a-quick-analysis-of-the-discovered-spectrum">
+<h3>A quick analysis of the discovered spectrum<a class="headerlink" href="#a-quick-analysis-of-the-discovered-spectrum" title="Link to this heading">#</a></h3>
+<p>With the previous step, we obtained a link to a fits file which we can download and open with <code class="docutils literal notranslate"><span class="pre">astropy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spectrum_fits</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">observation_url</span><span class="p">)</span>
+<span class="n">spectrum_fits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;astropy.io.fits.hdu.image.PrimaryHDU object at 0x7f6661a2c980&gt;, &lt;astropy.io.fits.hdu.table.BinTableHDU object at 0x7f6661a2d400&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>we see that <code class="docutils literal notranslate"><span class="pre">spectrum_fits</span></code> is a list of two astropy HDU (Header Data Unit) objects. Let’s look at the second one (with index 1)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XTENSION= &#39;BINTABLE&#39;           /Binary table written by MWRFITS v1.4b           
+BITPIX  =                    8 /Required value                                  
+NAXIS   =                    2 /Required value                                  
+NAXIS1  =                24768 /Number of bytes per row                         
+NAXIS2  =                    1 /Number of rows                                  
+PCOUNT  =                    0 /Normally 0 (no varying arrays)                  
+GCOUNT  =                    1 /Required value                                  
+TFIELDS =                    3 /Number of columns in table                      
+COMMENT                                                                         
+COMMENT  *** Column names ***                                                   
+COMMENT                                                                         
+TTYPE1  = &#39;WAVE    &#39;           /                                                
+TTYPE2  = &#39;FLUX    &#39;           /                                                
+TTYPE3  = &#39;SIGMA   &#39;           /                                                
+COMMENT                                                                         
+COMMENT  *** Column formats ***                                                 
+COMMENT                                                                         
+TFORM1  = &#39;2064E   &#39;           /                                                
+TFORM2  = &#39;2064E   &#39;           /                                                
+TFORM3  = &#39;2064E   &#39;           /                                                
+COMMENT                                                                         
+COMMENT   *** Column units ***                                                  
+COMMENT                                                                         
+TUNIT1  = &#39;angstrom&#39;           / wavelength unit is Angstrom                    
+TUNIT2  = &#39;erg/cm**2/s/angstrom&#39; / flux units                                   
+TUNIT3  = &#39;erg/cm**2/s/angstrom&#39; / sigma units                                  
+COMMENT                                                                         
+COMMENT   *** Column limits ***                                                 
+COMMENT                                                                         
+TDMIN1  =              1087.14 / [angstrom] Min Value for Field 1               
+TDMAX1  =              1605.76 / [angstrom] Max Value for Field 1               
+TDMIN2  =         -3.26402E-14 / [erg/cm**2/s/angstrom] Min Value for Field 2   
+TDMAX2  =          1.39739E-13 / [erg/cm**2/s/angstrom] Max Value for Field 2   
+TDMIN3  =          0.00000E+00 / [erg/cm**2/s/angstrom] Min Value for Field 3   
+TDMAX3  =          5.63300E-14 / [erg/cm**2/s/angstrom] Max Value for Field 3   
+COMMENT                                                                         
+COMMENT   *** Column UCDs, UTYPEs ***                                           
+COMMENT                                                                         
+TUCD1   = &#39;em.wl&#39;              / Wavelength UCD                                 
+TUCD2   = &#39;phot.flux.density;em.wl&#39; / Flux UCD                                  
+TUCD3   = &#39;stat.error;em.wl&#39;   / Sigma UCD                                      
+TUTYP1  = &#39;Spectrum.Data.SpectralAxis.Value&#39; / Wavelength UTYPE                 
+TUTYP2  = &#39;Spectrum.Data.FluxAxis.Value&#39; / Flux UTYPE                           
+TUTYP3  = &#39;Spectrum.Data.FluxAxis.Accuracy.StatError&#39; / Sigma UTYPE             
+                                                                                
+          GENERAL KEYWORDS                                                      
+                                                                                
+EXTNAME = &#39;Spectral Container&#39; / HST VO spectral container format               
+EQUINOX =              2000.00 / Coordinates precessed to J2000                 
+RADECSYS= &#39;FK4&#39;                /                                                
+TIMESYS = &#39;UTC&#39;                / Time system                                    
+MJDREF  =              0.00000 / [d] MJD zero point for times                   
+SPECSYS = &#39;TOPOCENT&#39;           / no velocity corrections applied                
+VOCLASS = &#39;SPECTRUM V1.0&#39;      / VO Data Model                                  
+VOSEGT  = &#39;SPECTRUM&#39;           / Segment type                                   
+DATALEN =                 2064 / [ ] Number of points in spectrum               
+DSSOURCE= &#39;POINTED&#39;            / Survey or Pointed                              
+                                                                                
+          DATA ID KEYWORDS                                                      
+                                                                                
+DATE    = &#39;2008-06-28&#39;         / Processing-Creation Date                       
+VODATE  = &#39;2010-08-12&#39;         / Curation Date                                  
+VOREF   = &#39;http://archive.stsci.edu/vodocs/hst/fos&#39; / URL for Documentation     
+DS_IDENT= &#39;ads/sa.hst#y1hi1402t&#39; / Publishers Data Set ID                       
+VERSION = &#39;1.0&#39;                / Processing Version                             
+COLLECT = &#39;HST/FOS&#39;            / Data Set Collection                            
+INSTRUME= &#39;FOS&#39;                / Instrument                                     
+TELESCOP= &#39;HST&#39;                / Telescope                                      
+FILENAME= &#39;y1hi1402t_vop.fits&#39; / File Name                                      
+CR_IDENT= &#39;y1hi1402t&#39;          / Internal dataset ID                            
+CRETYPE = &#39;Archival&#39;           / Not an on-the-fly dataset                      
+                                                                                
+          CURATION KEYWORDS                                                     
+                                                                                
+VOPUB   = &#39;MAST&#39;               / VO Publishing Authority                        
+AUTHOR  = &#39;HST project&#39;        / Creator                                        
+VOPUBID = &#39;ivo://mast.stsci.edu&#39; / URI for VO Publisher                         
+VOLOGO  = &#39;http://archive.stsci.edu/images/100.mastlogo.gif&#39; / MAST logo        
+VOVER   = &#39;1.0&#39;                / VO Curation version                            
+VORIGHTS= &#39;PUBLIC&#39;             / Data is public                                 
+CONTRIB1=                 4952 / PEP proposal identifier                        
+CONTACT = &#39;archive help desk&#39;  /                                                
+EMAIL   = &#39;archive@stsci.edu&#39;  /                                                
+                                                                                
+          TARGET KEYWORDS                                                       
+                                                                                
+OBJECT  = &#39;1257+2840&#39;          / proposer&#39;s target name                         
+TITLE   = &#39;y1hi1402t, 1257+2840&#39; / filename, object                             
+RA_TARG =       195.0925000000 / right ascension of target                      
+DEC_TARG=        28.4005000000 / declination of target                          
+                                                                                
+          WCS Paper 3 Keywords                                                  
+                                                                                
+1S2_1   = &#39;WAVE&#39;               / Column name with spectral coordinates          
+1CYTP2  = &#39;WAVE-TAB&#39;           / Spectral coordinate is wavelength              
+1S3_1   = &#39;WAVE&#39;               / Column name with spectral coordinates          
+1CYTP3  = &#39;WAVE-TAB&#39;           / Spectral coordinate is wavelength              
+                                                                                
+          COVERAGE: SPATIAL                                                     
+                                                                                
+RA      =       195.0925000000 / right ascension of aperture                    
+DEC     =        28.4005000000 / declination of aperture                        
+APERTURE= &#39;4.3x4.3&#39;            / [arcsec] Aperture (width or lengthxwidth)      
+LONGSTRN= &#39;OGIP 1.0&#39;           / The OGIP long string convention may be used.&#39;  
+COMMENT   This FITS file may contain long string keyword values that are        
+COMMENT   continued over multiple keywords.  This convention uses the  &#39;&amp;&#39;      
+COMMENT   character at the end of a string which is then continued              
+COMMENT   on subsequent keywords whose name = &#39;CONTINUE&#39;.                       
+FTPRT_AP= &#39;Polygon J2000 195.09191171 28.40116854 195.09174013 28.39998032 &amp;&#39; / 
+CONTINUE= &#39;195.09308871 28.39983280 195.09325945 28.40101834&#39; / aperture footpri
+                                                                                
+          COVERAGE: TEMPORAL                                                    
+                                                                                
+DATE-OBS= &#39;1993-07-15T04:07:11&#39; / UT observation start time                     
+EXPOSURE=             759.9844 / [s] exposure duration                          
+TSTART  =       49183.16861829 / [d] MJD exposure start time                    
+TSTOP   =       49183.17779164 / [d] MJD exposure stop time                     
+TMID    =       49183.17320497 / [d] MJD exposure mid time                      
+                                                                                
+          COVERAGE: SPECTRAL                                                    
+                                                                                
+SPECSDIM= &#39;1.0E-10 L&#39;          /                                                
+SPEC_CAL= &#39;ABSOLUTE&#39;           / Calibrated spectral coordinate                 
+SPEC_ERR=                  0.2 / [angstrom] Wavelength statistical error        
+SPECBAND= &#39;Far-UV&#39;             / Spectral Band(s)                               
+SPEC_VAL=             1346.450 / [angstrom] Mean Wavelength                     
+SPEC_BW =              518.618 / [angstrom] Bandpass Width Wmax - Wmin          
+SPEC_FIL=                 1.00 / [ ] No gaps between points                     
+SPEC_RP =               1300.0 / [ ] average resolving power W/dW               
+                                                                                
+          COVERAGE: OBSERVABLE                                                  
+                                                                                
+FLUXSDIM= &#39;1.0E+7 ML-1T-3&#39;     / Flux SI Dimensions                             
+FLUX_CAL= &#39;ABSOLUTE&#39;           / Calibrated or uncalibrated Fluxes              
+STAT_ERR=                    3 / [ ] flux error in percent                      
+DER_SNR =                 1.15 / [ ] Mean signal-to-noise ratio                 
+FLUXAVG =           4.6306E-15 / [erg/cm**2/s/angstrom] Average Flux            
+FLUXMAX2=           8.7484E-14 / [erg/cm**2/s/angstrom] 98% Maximum Flux        
+SPECDISP=                0.251 / [angstrom/pixel] Dispersion                    
+                                                                                
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the fits information and the header, it appears that we have three columns (listed in one axis though):</p>
+<ul class="simple">
+<li><p>wavelength in Angstrom,</p></li>
+<li><p>flux and flux error in <span class="math notranslate nohighlight">\(\mathrm{erg \cdot cm}^{-2} \mathrm{s}^{-1} \mathrm{\r{A}}^{-1}\)</span>.</p></li>
+</ul>
+<p>For a first quick look we can plot the spectrum:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.77</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Wavelength ($\mathrm{\AA}$)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">&quot;Flux ($\mathrm{erg \cdot cm}^{-2} \mathrm</span><span class="si">{s}</span><span class="s2">^{-1} \mathrm{\AA}^{-1}$)&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Flux ($\\mathrm{erg \\cdot cm}^{-2} \\mathrm{s}^{-1} \\mathrm{\\AA}^{-1}$)&#39;)
+</pre></div>
+</div>
+<img alt="_images/c96135586771ae5f897f462ca69ad5ae2d073c9e455fbd2cb36d0b0627a90a6a.png" src="_images/c96135586771ae5f897f462ca69ad5ae2d073c9e455fbd2cb36d0b0627a90a6a.png" />
+</div>
+</div>
+<p>It is a spectrum in the ultraviolet with two visible emission lines, one around <span class="math notranslate nohighlight">\(1220\mathrm{\r{A}}\)</span> and one around <span class="math notranslate nohighlight">\(1330\mathrm{\r{A}}\)</span>. We know that wavelength at rest of the Lyman <span class="math notranslate nohighlight">\(\alpha\)</span> line is at <span class="math notranslate nohighlight">\(1216\mathrm{\r{A}}\)</span>. This spectrum might thus show Ly<span class="math notranslate nohighlight">\(\alpha\)</span> (atomic hydrogen, HI) emission of the Milky Way (hardly redshifted) and a redshifted extragalactic source.</p>
+<p>To investigate this further, we use the <code class="docutils literal notranslate"><span class="pre">specutils</span></code> package. First, we define a 1D spectrum: the data format that <code class="docutils literal notranslate"><span class="pre">specutils</span></code> accepts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flux_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="n">Spectrum1D</span><span class="p">(</span>
+    <span class="n">spectral_axis</span><span class="o">=</span><span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span><span class="p">,</span>
+    <span class="n">flux</span><span class="o">=</span><span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">flux_unit</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">spectrum</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The Spectrum1D class is deprecated and may be removed in a future version.
+        Use Spectrum instead. [warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Spectrum(flux=[0.0 ... 0.0] erg / (Angstrom s cm2) (shape=(2064,), mean=0.00000 erg / (Angstrom s cm2)); spectral_axis=&lt;SpectralAxis [1087.1409 1087.3932 1087.6455 ... 1605.2651 1605.5122 1605.7592] Angstrom&gt; (length=2064))&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">specutils_analysis</span></code> functions to analyze the spectrum. Let’s find the centroid of the two lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the first peak, between 1200 and 1260 Angstrom</span>
+<span class="n">centroid_Milky_Way</span> <span class="o">=</span> <span class="n">spec_ana</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span>
+    <span class="n">spectrum</span><span class="p">,</span>
+    <span class="n">SpectralRegion</span><span class="p">(</span><span class="mi">1200</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span><span class="p">,</span> <span class="mi">1260</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="c1"># find the second peak, between 1300 and 1370 Angstrom</span>
+<span class="n">centroid_second_peak</span> <span class="o">=</span> <span class="n">spec_ana</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span>
+    <span class="n">spectrum</span><span class="p">,</span>
+    <span class="n">SpectralRegion</span><span class="p">(</span><span class="mi">1300</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span><span class="p">,</span> <span class="mi">1370</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Angstrom</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The centroid of the first peak is located at: &quot;</span><span class="p">,</span> <span class="n">centroid_Milky_Way</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The centroid of the second peak is located at: &quot;</span><span class="p">,</span> <span class="n">centroid_second_peak</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The centroid of the first peak is located at:  1216.476806640625 Angstrom
+The centroid of the second peak is located at:  1332.959228515625 Angstrom
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: The Spectrum1D class is deprecated and may be removed in a future version.
+        Use Spectrum instead. [astropy.nddata.mixins.ndslicing]
+WARNING: AstropyDeprecationWarning: The Spectrum1D class is deprecated and may be removed in a future version.
+        Use Spectrum instead. [specutils.spectra.spectrum]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Indeed the first peak is centered around the rest wavelength of the Ly<span class="math notranslate nohighlight">\(\alpha\)</span> line. We may thus assume that this is the HI emission from the Milky Way in the foreground. Now assuming that the second line is also Ly<span class="math notranslate nohighlight">\(\alpha\)</span> emission, let’s calculate the redshift and recession velocity:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rest_Ly_alpha</span> <span class="o">=</span> <span class="mf">1216.0</span>
+<span class="n">redshift_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">centroid_second_peak</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="n">rest_Ly_alpha</span><span class="p">)</span> <span class="o">/</span> <span class="n">rest_Ly_alpha</span>
+<span class="n">cz</span> <span class="o">=</span> <span class="n">redshift_z</span> <span class="o">*</span> <span class="n">c</span>  <span class="c1"># speed of light in km/s, defined before</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The source has a redshift of </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">redshift_z</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot; and a recession velocity of </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">cz</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The source has a redshift of 0.09600000083446503 and a recession velocity of 28835.83984375 km/s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although this source is much closer than the Quasar, it is still further away than the Coma Cluster and thus not a member of the Cluster.</p>
+<p>An alternative to using <code class="docutils literal notranslate"><span class="pre">specutils</span></code> we can also use more generic python packages and fit the emission lines with simple Gaussians. Let’s define the Gaussian:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gauss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">peak_position</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gaussian 1d function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : numpy 1d array or a list</span>
+<span class="sd">        list or array of wavelengths</span>
+<span class="sd">    height : float</span>
+<span class="sd">        multiplicative factor for the height of the gaussian function</span>
+<span class="sd">    peak_position : float</span>
+<span class="sd">        wavelength corresponding to the peak position</span>
+<span class="sd">    sigma : float</span>
+<span class="sd">        standard deviation that controlls with of the peak</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+        <span class="o">-</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">peak_position</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we select the two parts of the spectrum where the emission lines are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate wavelengths and fluxes in different objects</span>
+<span class="n">spectrum_wavelengths</span> <span class="o">=</span> <span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">spectrum_flux</span> <span class="o">=</span> <span class="n">spectrum_fits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># make a mask to select wavelengths between 1190 and 1240 Angstrom</span>
+<span class="n">mask_Milky_Way</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">spectrum_wavelengths</span> <span class="o">&lt;</span> <span class="mf">1240.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spectrum_wavelengths</span> <span class="o">&gt;</span> <span class="mi">1190</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">wavelengths_Milky_Way</span> <span class="o">=</span> <span class="n">spectrum_wavelengths</span><span class="p">[</span><span class="n">mask_Milky_Way</span><span class="p">]</span>
+<span class="n">flux_Milky_Way</span> <span class="o">=</span> <span class="n">spectrum_flux</span><span class="p">[</span><span class="n">mask_Milky_Way</span><span class="p">]</span>
+
+<span class="c1"># make a mask to select wavelengths between 1300 and 1380 Angstrom</span>
+<span class="n">mask_second_peak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">spectrum_wavelengths</span> <span class="o">&lt;</span> <span class="mi">1380</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spectrum_wavelengths</span> <span class="o">&gt;</span> <span class="mi">1300</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">wavelengths_second_peak</span> <span class="o">=</span> <span class="n">spectrum_wavelengths</span><span class="p">[</span><span class="n">mask_second_peak</span><span class="p">]</span>
+<span class="n">flux_second_peak</span> <span class="o">=</span> <span class="n">spectrum_flux</span><span class="p">[</span><span class="n">mask_second_peak</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Gaussian fit is done with the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function of the <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">popt_Milky_Way_line</span><span class="p">,</span> <span class="n">pcov_Milky_Way_line</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+    <span class="n">gauss</span><span class="p">,</span>
+    <span class="n">wavelengths_Milky_Way</span><span class="p">,</span>
+    <span class="n">flux_Milky_Way</span><span class="p">,</span>
+    <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mf">1.25e-13</span><span class="p">,</span> <span class="mf">1220.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;The first peak, attributed to the Milky Way, has a&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot; central wavelength of </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">popt_Milky_Way_line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;+/- </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov_Milky_Way_line</span><span class="p">))[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> km/s.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">popt_second_line</span><span class="p">,</span> <span class="n">pcov_second_line</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span>
+    <span class="n">gauss</span><span class="p">,</span>
+    <span class="n">wavelengths_second_peak</span><span class="p">,</span>
+    <span class="n">flux_second_peak</span><span class="p">,</span>
+    <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2e-13</span><span class="p">,</span> <span class="mf">1330.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;The first peak for the other object has a&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;central wavelength of </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">popt_second_line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot; +/- </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov_second_line</span><span class="p">))[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> km/s.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The first peak, attributed to the Milky Way, has a  central wavelength of 1215.38  +/- 0.13 km/s.
+The first peak for the other object has a central wavelength of 1329.18  +/- 0.6 km/s.
+</pre></div>
+</div>
+</div>
+</div>
+<p>These values are close to the results from the <code class="docutils literal notranslate"><span class="pre">specutils</span></code> package.</p>
+<p>To further check the fitting results, we plot the data, our model, and residuals:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># First plot is the data and models</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths_Milky_Way</span><span class="p">,</span> <span class="n">flux_Milky_Way</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">wavelengths_Milky_Way</span><span class="p">,</span>
+    <span class="n">gauss</span><span class="p">(</span><span class="n">wavelengths_Milky_Way</span><span class="p">,</span> <span class="o">*</span><span class="n">popt_Milky_Way_line</span><span class="p">),</span>
+    <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths_second_peak</span><span class="p">,</span> <span class="n">flux_second_peak</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">wavelengths_second_peak</span><span class="p">,</span>
+    <span class="n">gauss</span><span class="p">(</span><span class="n">wavelengths_second_peak</span><span class="p">,</span> <span class="o">*</span><span class="n">popt_second_line</span><span class="p">),</span>
+    <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;gaussian fits&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Flux [erg cm$^{-2}$ s$^{-1}$ $\AA^{-1}$]&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Second plot is the residuals = data - model</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">wavelengths_Milky_Way</span><span class="p">,</span>
+    <span class="n">flux_Milky_Way</span> <span class="o">-</span> <span class="n">gauss</span><span class="p">(</span><span class="n">wavelengths_Milky_Way</span><span class="p">,</span> <span class="o">*</span><span class="n">popt_Milky_Way_line</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">wavelengths_second_peak</span><span class="p">,</span>
+    <span class="n">flux_second_peak</span> <span class="o">-</span> <span class="n">gauss</span><span class="p">(</span><span class="n">wavelengths_second_peak</span><span class="p">,</span> <span class="o">*</span><span class="n">popt_second_line</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Wavelength [$\mathrm{\AA}$]&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Residual&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Residual&#39;)
+</pre></div>
+</div>
+<img alt="_images/3374f44a35b2c1e1a341ba0eac8f327f902d4eea91021ac5f31e72e2a2d4a98f.png" src="_images/3374f44a35b2c1e1a341ba0eac8f327f902d4eea91021ac5f31e72e2a2d4a98f.png" />
+</div>
+</div>
+<p>While fitting a Gaussian to the emission lines provides very good results with regard to the central wavelength (and thus redshift) of the observed objects, the residuals show that the emission from the Milky Way is much more complicated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># End of the tutorial</span>
+<span class="n">spectrum_fits</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_Peculiar_galaxies__first_steps_with_MOCs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multi-instrument, multi-wavelength study of high energy sources with the Virtual Observatory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-exploration-of-the-coma-cluster">Step #1: Exploration of the Coma cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-region-of-abell-1656-in-aladin-lite">Display the region of Abell 1656 in Aladin lite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-sdss-catalog-and-select-galaxies">Load the SDSS catalog and select galaxies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-brightest-sources-as-stars-contaminating-the-sample">Identify the brightest sources as stars contaminating the sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-subset-of-galaxies-with-photometry-and-redshift-in-sdss">Build a subset of galaxies with photometry and redshift in SDSS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improve-the-completeness-with-other-sources-of-redshifts-in-vizier">Improve the completeness with other sources of redshifts in Vizier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-final-catalog-including-the-rines-et-al-2003-redshifts">Build the final catalog including the Rines et al. (2003) redshifts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-velocity-distribution-cluster-average-velocity-and-velocity-dispersion">Determine velocity distribution, cluster average velocity, and velocity dispersion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-hubble-space-telescope-hst-spectra-from-the-coma-cluster">Search for Hubble Space Telescope (HST) spectra from the Coma Cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-analysis-of-the-discovered-spectrum">A quick analysis of the discovered spectrum</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Strasbourg astronomical Data Center (CDS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

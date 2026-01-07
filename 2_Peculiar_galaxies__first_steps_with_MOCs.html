@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s &#8212; Astronomy with Python: Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"b0d1656bf2af411e946684d5ab07ae4a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8c6d7c8f588d4be9b138fe53499434d8": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.9.*", "state": {"_anywidget_id": "ipyaladin.widget.Aladin", "_base_layer_last_view": "https://alaskybis.unistra.fr/DSS/DSSColor", "_css": ".cell-output-ipywidget-background{background:transparent}.jp-OutputArea-output,.aladin-widget{background-color:transparent}.aladin-widget .aladin-measurement-div{max-height:100px}.lm-Widget.aladin-lite-lm-container{height:100%}\n", "_dom_classes": [], "_esm": "function y(n){n.charAt(0)===\"_\"&&(n=n.slice(1));let t=n.split(\"_\");for(let a=1;a<t.length;a++)t[a]=t[a].charAt(0).toUpperCase()+t[a].slice(1);return t.join(\"\")}function m(n){let t={};for(let a in n)t[y(a)]=n[a];return t}var g=class{locked=!1;unlock(){this.locked=!1}lock(){this.locked=!0}},p=-1;function _(n){p=n}function v(n,t){n==-1?t.style.height=\"100%\":t.style.height=`${n}px`}import C from\"https://esm.sh/aladin-lite@3.6.5\";var l=C;var k=0,u=class{constructor(t,a){this.aladin=t,this.model=a}handleAddMarker(t){let a=m(t.options||{});a.name||(a.name=\"markers\");let s=l.catalog(a);this.aladin.addCatalog(s);let o=t.markers,e=[];for(let i of o)e.push(l.marker(i.lon,i.lat,{useMarkerDefaultIcon:a.useMarkerDefaultIcon|!1,popupTitle:i.title,popupDesc:i.description}));s.addSources(e)}handleChangeFoV(t){this.aladin.setFoV(t.fov)}handleGotoRaDec(t){this.aladin.gotoRaDec(t.ra,t.dec)}async handleSaveViewAsImage(t){let a=t.path,s=t.format,o=t.with_logo,e=await this.aladin.getViewData(\"arraybuffer\",`image/${s}`,o);this.model.send({event_type:\"save_view_as_image\",path:a},null,[e])}handleAddFits(t,a){let s=m(t.options||{});s.name||(s.name=`image_${String(++k).padStart(3,\"0\")}`);let o=a[0],e=new Blob([o],{type:\"application/octet-stream\"}),i=URL.createObjectURL(e),r=this.aladin.createImageFITS(i,s,(h,d)=>{this.aladin.gotoRaDec(h,d),console.info(`FITS located at ra: ${h}, dec: ${d}`),URL.revokeObjectURL(i)});this.aladin.setOverlayImageLayer(r,s.name)}handleAddCatalogFromURL(t){let a=m(t.options||{});this.aladin.addCatalog(l.catalogFromURL(t.votable_URL,a))}handleAddMOCFromURL(t){let a=m(t.options||{});this.aladin.addMOC(l.MOCFromURL(t.moc_URL,a))}handleAddMOCFromDict(t){let a=m(t.options||{});this.aladin.addMOC(l.MOCFromJSON(t.moc_dict,a))}handleAddOverlay(t){let a=t.regions_infos,s=m(t.graphic_options||{});s.color||(s.color=\"red\");let o=l.graphicOverlay(s);this.aladin.addOverlay(o);for(let e of a){let i=e.infos;switch(e.region_type){case\"stcs\":o.addFootprints(l.footprintsFromSTCS(i.stcs,e.options));break;case\"circle\":o.add(l.circle(i.ra,i.dec,i.radius,e.options));break;case\"ellipse\":o.add(l.ellipse(i.ra,i.dec,i.a,i.b,i.theta,e.options));break;case\"line\":e.options.lineWidth=e.options.lineWidth||3,o.add(l.vector(i.ra1,i.dec1,i.ra2,i.dec2,e.options));break;case\"polygon\":o.add(l.polygon(i.vertices,e.options));break}}}handleChangeColormap(t){this.aladin.getBaseImageLayer().setColormap(t.colormap)}handleGetJPGThumbnail(){this.aladin.exportAsPNG()}handleTriggerSelection(t){let a=t.selection_type;a===\"rectangle\"?a=\"rect\":a===\"polygon\"&&(a=\"poly\"),this.aladin.select(a)}handleAddTable(t,a){let s=m(t.options||{}),o=m(s.circleError||{}),e=m(s.ellipseError||{}),i=a[0].buffer,r=new TextDecoder(\"utf-8\"),h=new Blob([r.decode(i)]),d=URL.createObjectURL(h);s.onClick=\"showTable\";let b=s.shape||\"cross\";Object.keys(o).length!=0&&(s.shape=c=>c.data[o.radius]?l.circle(c.ra,c.dec,c.data[o.radius]*o.conversionRadius):b),Object.keys(e).length!=0&&(s.shape=c=>c.data[e.majAxis]&c.data[e.minAxis]?l.ellipse(c.ra,c.dec,c.data[e.majAxis]*e.conversionMajAxis,c.data[e.minAxis]*e.conversionMinAxis,c.data[e.angle]*e.conversionAngle):b),l.catalogFromURL(d,s,c=>{this.aladin.addCatalog(c)},!1),URL.revokeObjectURL(d)}};var f=class{constructor(t,a,s){this.aladin=t,this.aladinDiv=a,this.model=s,this.messageHandler=new u(t,s),this.currentDivNumber=parseInt(a.id.split(\"-\").pop())}isLastDiv(){if(this.currentDivNumber===p)return!0;let t=p;for(let a=t;a>=0;a--){let s=document.getElementById(`aladin-lite-div-${a}`);if(s&&s.style.display!==\"none\"){t=a;break}}return _(t),this.currentDivNumber===t}updateWCS(){this.isLastDiv()&&this.model.set(\"_wcs\",this.aladin.getViewWCS())}update2AxisFoV(){if(!this.isLastDiv())return;let t=this.aladin.getFov();this.model.set(\"_fov_xy\",{x:t[0],y:t[1]})}subscribeAll(){let t=new g,a=new g;this.aladin.on(\"positionChanged\",e=>{if(a.locked){a.unlock();return}t.lock();let i=[e.ra,e.dec];this.updateWCS(),this.model.set(\"_target\",`${i[0]} ${i[1]}`),this.model.save_changes()}),this.model.on(\"change:_target\",()=>{if(t.locked){t.unlock();return}a.lock();let e=this.model.get(\"_target\"),[i,r]=e.split(\" \");this.aladin.gotoRaDec(i,r)});let s=new g,o=new g;this.aladin.on(\"zoomChanged\",e=>{if(o.locked){o.unlock();return}s.lock(),this.updateWCS(),this.update2AxisFoV(),this.model.set(\"_fov\",parseFloat(e.toFixed(5))),this.model.save_changes()}),this.model.on(\"change:_fov\",()=>{if(s.locked){s.unlock();return}o.lock();let e=this.model.get(\"_fov\");this.aladin.setFoV(e)}),this.model.on(\"change:_height\",()=>{v(this.model.get(\"_height\"),this.aladinDiv),this.updateWCS(),this.update2AxisFoV(),this.model.save_changes()}),this.aladin.on(\"cooFrameChanged\",()=>{this.updateWCS(),this.model.save_changes()}),this.aladin.on(\"projectionChanged\",()=>{this.updateWCS(),this.model.save_changes()}),this.aladin.on(\"layerChanged\",(e,i,r)=>{i===\"base\"&&this.model.set(\"_survey_body\",e.hipsBody||\"sky\"),!(i!==\"base\"||r!==\"ADDED\")&&(this.updateWCS(),this.model.set(\"_base_layer_last_view\",e.id),this.model.save_changes())}),this.aladin.on(\"resizeChanged\",(e,i)=>{if(e===1&&i===1){this.model.set(\"_is_reduced\",!0),this.model.save_changes();return}else this.model.set(\"_is_reduced\",!1);this.updateWCS(),this.update2AxisFoV(),this.model.set(\"_height\",i),this.model.save_changes()}),this.aladin.on(\"objectHovered\",e=>{e.data!==void 0&&this.model.send({event_type:\"object_hovered\",content:{ra:e.ra,dec:e.dec}})}),this.aladin.on(\"objectClicked\",e=>{if(e){let i={ra:e.ra||e.source.ra,dec:e.dec||e.source.dec};e.data!==void 0&&(i.data=e.data),e.source!==void 0&&(i.data=e.source.data),this.model.set(\"clicked_object\",i),this.model.send({event_type:\"object_clicked\",content:i}),this.model.save_changes()}}),this.aladin.on(\"click\",e=>{this.model.send({event_type:\"click\",content:e})}),this.aladin.on(\"select\",e=>{let i=e.map(h=>h.map(d=>({ra:d.ra,dec:d.dec,data:d.data,x:d.x,y:d.y})));this.model.set(\"_selected_objects\",i),this.model.save_changes();let r=[];e.forEach(h=>{h.forEach(d=>{r.push({ra:d.ra,dec:d.dec,data:d.data,x:d.x,y:d.y})})}),this.model.send({event_type:\"select\",content:r})}),this.model.on(\"change:coo_frame\",()=>{this.aladin.setFrame(this.model.get(\"coo_frame\"))}),this.model.on(\"change:survey\",()=>{this.aladin.setImageSurvey(this.model.get(\"survey\"))}),this.model.on(\"change:overlay_survey\",()=>{this.aladin.setOverlayImageLayer(this.model.get(\"overlay_survey\"))}),this.model.on(\"change:overlay_survey_opacity\",()=>{this.aladin.getOverlayImageLayer().setAlpha(this.model.get(\"overlay_survey_opacity\"))}),this.eventHandlers={add_marker:this.messageHandler.handleAddMarker,change_fov:this.messageHandler.handleChangeFoV,goto_ra_dec:this.messageHandler.handleGotoRaDec,save_view_as_image:this.messageHandler.handleSaveViewAsImage,add_fits:this.messageHandler.handleAddFits,add_catalog_from_URL:this.messageHandler.handleAddCatalogFromURL,add_MOC_from_URL:this.messageHandler.handleAddMOCFromURL,add_MOC_from_dict:this.messageHandler.handleAddMOCFromDict,add_overlay:this.messageHandler.handleAddOverlay,change_colormap:this.messageHandler.handleChangeColormap,get_JPG_thumbnail:this.messageHandler.handleGetJPGThumbnail,trigger_selection:this.messageHandler.handleTriggerSelection,add_table:this.messageHandler.handleAddTable},this.model.on(\"msg:custom\",(e,i)=>{let r=e.event_name,h=this.eventHandlers[r];if(h)h.call(this,e,i);else throw new Error(`Unknown event name: ${r}`)})}unsubscribeAll(){this.model.off(\"change:_target\"),this.model.off(\"change:_fov\"),this.model.off(\"change:_height\"),this.model.off(\"change:coo_frame\"),this.model.off(\"change:survey\"),this.model.off(\"change:overlay_survey\"),this.model.off(\"change:overlay_survey_opacity\"),this.model.off(\"change:trigger_event\"),this.model.off(\"msg:custom\")}};function A(n,t){t.classList.add(\"aladin-lite-lm-container\"),_(p+1);let a=n.get(\"_init_options\"),s={};for(let d in a)s[y(d)]=a[d];let o=document.createElement(\"div\");o.classList.add(\"aladin-widget\"),v(n.get(\"_height\"),o),o.id=`aladin-lite-div-${p}`;let e=new l.aladin(o,s);t.appendChild(o);let i=n.get(\"_target\").split(\" \");e.gotoRaDec(i[0],i[1]);let r={...e.getFov()};n.set(\"_fov_xy\",{x:r[0],y:r[1]});let h={...e.getViewWCS()};return n.set(\"_wcs\",h),n.set(\"_is_loaded\",!0),n.save_changes(),{aladin:e,aladinDiv:o}}async function w({model:n}){await l.init}function D({model:n,el:t}){let{aladin:a,aladinDiv:s}=A(n,t),o=new f(a,s,n);return o.subscribeAll(),()=>{o.unsubscribeAll()}}var $={initialize:w,render:D};export{$ as default};\n", "_fov": 60.0, "_fov_xy": {}, "_height": 600, "_init_options": {"show_simbad_pointer_control": true, "show_coo_grid_control": true, "show_settings_control": true, "show_context_menu": true, "height": 600}, "_is_loaded": true, "_is_reduced": false, "_model_module": "anywidget", "_model_module_version": "~0.9.*", "_model_name": "AnyModel", "_ready": false, "_selected_objects": [], "_survey_body": "sky", "_target": "0.0 0.0", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.9.*", "_view_name": "AnyView", "_wcs": {}, "clicked_object": {}, "coo_frame": "ICRS", "layout": "IPY_MODEL_b0d1656bf2af411e946684d5ab07ae4a", "overlay_survey": "", "overlay_survey_opacity": 0.0, "projection": "SIN", "survey": "https://alaskybis.unistra.fr/DSS/DSSColor", "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_Peculiar_galaxies__first_steps_with_MOCs';</script>
+    <link rel="icon" href="_static/cds.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Abell 1656: the Coma Cluster of Galaxies __ Simple Spectral Access Protocol (SSA)" href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html" />
+    <link rel="prev" title="CDS services in Jupyter notebooks" href="1_Intro_to_CDS_services_in_notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Tutorials_front_logo.png" class="logo__image only-light" alt="Astronomy with Python: Tutorials - Home"/>
+    <script>document.write(`<img src="_static/Tutorials_front_logo.png" class="logo__image only-dark" alt="Astronomy with Python: Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Accessing and using astronomical data from Python: a series of Jupyter notebooks tutorials
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Intro_to_CDS_services_in_notebooks.html">Introduction to the CDS services</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">First steps with Multi-Order Coverage data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html">The Simple Spectral Access Protocol to explore Abel 1656</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_High_Energy_sources__Multi_instrument_multi_wavelength_exploration_using_VO_tools.html">Combining the CDS services to study gamma-ray and high energy spectral bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Brown_Dwarf_Search__Cross-matching_Catalogs.html">Cross matching catalogs to discover potential brown dwarfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Advanced_usage_of_MOCs.html">Advanced usage of MOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Multi-messenger_astronomy__Planning_observations_rapidly_with_MOCs.html">Planning multi-messenger observations rapidly with MOCs</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cds-astro/tutorials/issues/new?title=Issue%20on%20page%20%2F2_Peculiar_galaxies__first_steps_with_MOCs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2_Peculiar_galaxies__first_steps_with_MOCs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-download-tables-from-vizier">Find and download tables from VizieR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mocs-in-python">MOCs in Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="arp-peculiars-galaxies-catalog-first-steps-with-multi-order-coverage-map-s">
+<h1>Arp peculiars galaxies catalog __ First steps with Multi-Order Coverage map’s<a class="headerlink" href="#arp-peculiars-galaxies-catalog-first-steps-with-multi-order-coverage-map-s" title="Link to this heading">#</a></h1>
+<p>Stefania Amodeo¹, Katarina A. Lutz¹, Manon Marchand¹, Sébastien Derrière¹</p>
+<ol class="arabic simple">
+<li><p>Université de Strasbourg, CNRS, Observatoire Astronomique de Strasbourg, UMR 7550, F-67000, Strasbourg, France</p></li>
+</ol>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this tutorial, we will explore Arp’s Catalog of peculiar galaxies. Using Multi-Order Coverage maps, we will find in seconds wich galaxies are present in the Sloan Digital Sky Survey (<a class="reference external" href="https://www.sdss.org/" title="https://www.sdss.org/">SDSS</a>) and have been observed by the Galaxy Evolution Explorer (<a class="reference external" href="https://galex.stsci.edu/GR6/" title="https://galex.stsci.edu/GR6/">GALEX</a>) satellite.</p>
+<p><img alt="" src="_images/joachim_dietrich_02.jpg" /></p>
+<p>Figure: Arp147 taken by Joachim Dietrich. Credit: NASA &amp; ESA</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Astronomy tools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy.units</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.coordinates</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkyCoord</span>
+
+<span class="c1"># Access astronomical databases</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.mocserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">MOCServer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astroquery.vizier</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vizier</span>
+
+<span class="c1"># Sky visualization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipyaladin</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aladin</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="find-and-download-tables-from-vizier">
+<h2>Find and download tables from VizieR<a class="headerlink" href="#find-and-download-tables-from-vizier" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://vizier.cds.unistra.fr/viz-bin/VizieR" title="https://vizier.cds.unistra.fr/viz-bin/VizieR"><img alt="Vizier" src="https://custom-icon-badges.demolab.com/badge/Vizier-gray.svg?logo=vizier&amp;logoColor=orange&amp;logoWidth=20" /></a></p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> sub-module from the <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> module.</p>
+<p>We will explore the <a class="reference external" href="http://arpgalaxy.com/">Arp’s Catalog of Peculiar Galaxies</a> compiled by <a class="reference external" href="https://www.haltonarp.com/">Halton C. Arp</a> and published by Denis Webb.</p>
+<p>Hence, we ask <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> to find all catalogues that have a match with the keywords ‘Arp Galaxies’ and write the result into the variable <code class="docutils literal notranslate"><span class="pre">catalog_list_arp</span></code> (first line of code). Then we tell Python to <code class="docutils literal notranslate"><span class="pre">print</span></code> out the query result in a readable way (second line of code).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog_list_arp</span> <span class="o">=</span> <span class="n">Vizier</span><span class="o">.</span><span class="n">find_catalogs</span><span class="p">(</span><span class="s2">&quot;Arp peculiar galaxies&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">catalog_list_arp</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VII/74A :  Atlas of Peculiar Galaxies (Arp 1966)
+VII/192 :  Arp&#39;s Peculiar Galaxies (Webb 1996)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The catalogue that we are interested in today is <code class="docutils literal notranslate"><span class="pre">VII/192</span></code> and its description is “Arp’s Peculiar Galaxies (Webb 1996)”.</p>
+<p>In oder to get the full catalogue with <code class="docutils literal notranslate"><span class="pre">astroquery</span></code>, we first set the row limit to infinite (<em>i.e.</em> <code class="docutils literal notranslate"><span class="pre">-1</span></code> for astroquery), we specify that we want the default columns <code class="docutils literal notranslate"><span class="pre">*</span></code> and the additional columns <code class="docutils literal notranslate"><span class="pre">_RAJ2000</span></code> and <code class="docutils literal notranslate"><span class="pre">_DEJ2000</span></code> that are added by the VizieR team to each catalogue, and then we ask <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> to write the content of the catalogue into the variable <code class="docutils literal notranslate"><span class="pre">catalogs_arp</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalogs_arp</span> <span class="o">=</span> <span class="n">Vizier</span><span class="p">(</span><span class="n">row_limit</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;_RAJ2000&quot;</span><span class="p">,</span> <span class="s2">&quot;_DEJ2000&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">get_catalogs</span><span class="p">(</span><span class="s2">&quot;VII/192&quot;</span><span class="p">)</span>
+<span class="n">catalogs_arp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TableList with 2 tables:
+	&#39;0:VII/192/arpord&#39; with 14 column(s) and 338 row(s) 
+	&#39;1:VII/192/arplist&#39; with 15 column(s) and 592 row(s) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s inspect, what we got:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">catalog</span> <span class="ow">in</span> <span class="n">catalogs_arp</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">catalog</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VII/192/arpord: list of Arp views with imaging data
+VII/192/arplist: list and info for involved galaxies
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we have seen, the catalogue “Arp’s Peculiar Galaxies (Webb 1996)” comes with two tables: arpord and arplist. As you can see from the printout <code class="docutils literal notranslate"><span class="pre">Vizier</span></code> has downloaded both of them. However, we are only interested in the arplist (index <code class="docutils literal notranslate"><span class="pre">1</span></code> in the TableList). Therefore, we write only the arplist table into a new variable <code class="docutils literal notranslate"><span class="pre">table_arplist</span></code> (first line) and then display the table (second line):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_arplist</span> <span class="o">=</span> <span class="n">catalogs_arp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">table_arplist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=592</i>
+<table id="table140181911251120" class="table-striped table-bordered table-condensed">
+<thead><tr><th>_RAJ2000</th><th>_DEJ2000</th><th>Arp</th><th>Name</th><th>VT</th><th>u_VT</th><th>dim1</th><th>dim2</th><th>u_dim2</th><th>MType</th><th>Uchart</th><th>RAJ2000</th><th>DEJ2000</th><th>Simbad</th><th>NED</th></tr></thead>
+<thead><tr><th>deg</th><th>deg</th><th></th><th></th><th>mag</th><th></th><th>arcmin</th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>int16</th><th>str16</th><th>float32</th><th>str1</th><th>float32</th><th>float32</th><th>str1</th><th>str14</th><th>int16</th><th>str10</th><th>str9</th><th>str6</th><th>str3</th></tr></thead>
+<tr><td>0.080417</td><td>22.990556</td><td>249</td><td>UGC 12891</td><td>16.2</td><td></td><td>--</td><td>--</td><td></td><td></td><td>--</td><td>00 00 19.3</td><td>+22 59 26</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>0.090000</td><td>22.995000</td><td>249</td><td>UGC 12891</td><td>16.2</td><td></td><td>1.3</td><td>0.5</td><td></td><td></td><td>--</td><td>00 00 21.6</td><td>+22 59 42</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>0.362083</td><td>31.433889</td><td>112</td><td>NGC 7805</td><td>13.3</td><td></td><td>1.2</td><td>0.9</td><td></td><td>SAB0^0: pec</td><td>89</td><td>00 01 26.9</td><td>+31 26 02</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>0.375833</td><td>31.442500</td><td>112</td><td>NGC 7806</td><td>13.5</td><td></td><td>1.1</td><td>0.8</td><td></td><td>SA(rs)bc? pec</td><td>89</td><td>00 01 30.2</td><td>+31 26 33</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>0.657083</td><td>16.652222</td><td>130</td><td>IC 5378</td><td>15.6</td><td></td><td>0.5</td><td>--</td><td></td><td>SBc</td><td>--</td><td>00 02 37.7</td><td>+16 39 08</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>0.657500</td><td>16.643611</td><td>130</td><td>IC 5378</td><td>15.3</td><td></td><td>--</td><td>--</td><td></td><td>E</td><td>--</td><td>00 02 37.8</td><td>+16 38 37</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>1.570000</td><td>-13.448056</td><td>51</td><td>MGC-02-01-24</td><td>15.0</td><td></td><td>0.8</td><td>--</td><td></td><td></td><td>--</td><td>00 06 16.8</td><td>-13 26 53</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>1.612917</td><td>-13.416111</td><td>144</td><td>NGC 7828</td><td>14.4</td><td></td><td>0.9</td><td>0.5</td><td></td><td>Ring A</td><td>260</td><td>00 06 27.1</td><td>-13 24 58</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>1.620833</td><td>-13.420833</td><td>144</td><td>NGC 7829</td><td>14.6</td><td></td><td>0.7</td><td>--</td><td></td><td>Ring B pec</td><td>260</td><td>00 06 29.0</td><td>-13 25 15</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>355.517083</td><td>-3.589167</td><td>295</td><td>ARP 295</td><td>14.6</td><td></td><td>0.9</td><td>0.5</td><td>?</td><td>Sb pec</td><td>--</td><td>23 42 04.1</td><td>-03 35 21</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>356.743750</td><td>29.458889</td><td>86</td><td>NGC 7752</td><td>14.3</td><td></td><td>0.8</td><td>0.5</td><td>?</td><td>I0:</td><td>89</td><td>23 46 58.5</td><td>+29 27 32</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>356.769583</td><td>29.483611</td><td>86</td><td>NGC 7753</td><td>12.0</td><td></td><td>3.3</td><td>2.1</td><td></td><td>SAB(rs)bc I</td><td>89</td><td>23 47 04.7</td><td>+29 29 01</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>357.187917</td><td>4.173333</td><td>68</td><td>NGC 7757</td><td>12.7</td><td></td><td>2.5</td><td>1.8</td><td></td><td>SAB(rs)c</td><td>215</td><td>23 48 45.1</td><td>+04 10 24</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>358.541667</td><td>0.382778</td><td>323</td><td>NGC 7783</td><td>13.0</td><td></td><td>1.3</td><td>0.6</td><td></td><td>S0^0: sp</td><td>215</td><td>23 54 10.0</td><td>+00 22 58</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>358.550000</td><td>0.377222</td><td>323</td><td>NGC 7783B</td><td>14.0</td><td></td><td>0.4</td><td>0.3</td><td></td><td>S0</td><td>215</td><td>23 54 12.0</td><td>+00 22 38</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>359.182500</td><td>16.807500</td><td>262</td><td>MCG+03-01-003</td><td>14.6</td><td></td><td>0.5</td><td>0.4</td><td></td><td>S</td><td>125</td><td>23 56 43.8</td><td>+16 48 27</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>359.187083</td><td>16.812500</td><td>262</td><td>UGC 12856</td><td>13.2</td><td></td><td>2.4</td><td>--</td><td></td><td>IB(s)m</td><td>125</td><td>23 56 44.9</td><td>+16 48 45</td><td>Simbad</td><td>NED</td></tr>
+<tr><td>359.491667</td><td>-14.030000</td><td>50</td><td>IC 1520</td><td>14.0</td><td></td><td>0.5</td><td>0.5</td><td></td><td></td><td>--</td><td>23 57 58.0</td><td>-14 01 48</td><td>Simbad</td><td>NED</td></tr>
+</table></div></div></div>
+</div>
+<p>Nice, we got the data we want. Before moving on, let’s have a look at how to use <code class="docutils literal notranslate"><span class="pre">pyVO</span></code> to get the same table with a Table Access Protocol (<a class="reference external" href="https://ivoa.net/documents/TAP/20190927/index.html" title="https://ivoa.net/documents/TAP/20190927/index.html">TAP</a>) query.</p>
+<p>First, we set the <code class="docutils literal notranslate"><span class="pre">TAPService</span></code> of <code class="docutils literal notranslate"><span class="pre">pyvo</span></code> to the server of Vizier that will receive our TAP query.</p>
+<p>Then we write a simple query telling VizieR that we want all the rows and all (all is written <code class="docutils literal notranslate"><span class="pre">*</span></code> in SQL) the columns from the table <code class="docutils literal notranslate"><span class="pre">VII/192/arplist</span></code>. Note that we have to encompass the table name with quotation marks due to the special character <code class="docutils literal notranslate"><span class="pre">/</span></code> in the table name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tap_vizier</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span><span class="s2">&quot;https://tapvizier.cds.unistra.fr/TAPVizieR/tap/&quot;</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT  *  FROM &quot;VII/192/arplist&quot; &quot;&quot;&quot;</span>
+<span class="n">table_arplist_from_tap</span> <span class="o">=</span> <span class="n">tap_vizier</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">table_arplist_from_tap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=592</i>
+<table id="table140182421377568" class="table-striped table-bordered table-condensed">
+<thead><tr><th>recno</th><th>Arp</th><th>Name</th><th>VT</th><th>u_VT</th><th>dim1</th><th>dim2</th><th>u_dim2</th><th>MType</th><th>Uchart</th><th>RAJ2000</th><th>DEJ2000</th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th>mag</th><th></th><th>arcmin</th><th>arcmin</th><th></th><th></th><th></th><th></th><th></th></tr></thead>
+<thead><tr><th>int32</th><th>int16</th><th>object</th><th>float64</th><th>str1</th><th>float64</th><th>float64</th><th>str1</th><th>object</th><th>int16</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>112</td><td>333</td><td>NGC 1024</td><td>12.1</td><td></td><td>3.9</td><td>1.4</td><td></td><td>(R&apos;)SA(r)ab</td><td>175</td><td>39.80083333333333</td><td>10.847222222222221</td></tr>
+<tr><td>120</td><td>200</td><td>NGC 1134</td><td>12.1</td><td></td><td>2.5</td><td>0.9</td><td></td><td>S?</td><td>175</td><td>43.42124999999999</td><td>13.015277777777776</td></tr>
+<tr><td>119</td><td>190</td><td>UGC 02320</td><td>15.2</td><td></td><td>0.5</td><td>0.3</td><td></td><td>Multiple Sys</td><td>--</td><td>42.58291666666666</td><td>12.889444444444443</td></tr>
+<tr><td>89</td><td>290</td><td>IC 0195</td><td>14.3</td><td></td><td>1.6</td><td>0.8</td><td></td><td>S0</td><td>--</td><td>30.935833333333328</td><td>14.708611111111109</td></tr>
+<tr><td>90</td><td>290</td><td>IC 0196</td><td>14.2</td><td></td><td>2.8</td><td>1.4</td><td></td><td>S0-</td><td>--</td><td>30.95833333333333</td><td>14.73972222222222</td></tr>
+<tr><td>111</td><td>258</td><td>UGC 02140A</td><td>15.5</td><td></td><td>0.9</td><td>0.2</td><td></td><td>SB.0*/</td><td>--</td><td>39.78874999999999</td><td>18.367499999999996</td></tr>
+<tr><td>110</td><td>258</td><td>UGC 02140</td><td>15.4</td><td></td><td>1.7</td><td>0.7</td><td></td><td>IBS9P</td><td>--</td><td>39.77583333333333</td><td>18.382777777777775</td></tr>
+<tr><td>109</td><td>258</td><td>Hickson 18C</td><td>16.1</td><td></td><td>--</td><td>--</td><td></td><td>S?</td><td>--</td><td>39.774583333333325</td><td>18.388333333333332</td></tr>
+<tr><td>108</td><td>258</td><td>Hickson 18D</td><td>14.6</td><td></td><td>--</td><td>--</td><td></td><td>S?</td><td>--</td><td>39.76916666666666</td><td>18.393888888888885</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>464</td><td>261</td><td>ARP 261</td><td>--</td><td></td><td>--</td><td>--</td><td></td><td></td><td>--</td><td>222.38624999999996</td><td>-10.163055555555554</td></tr>
+<tr><td>463</td><td>261</td><td>ARP 261</td><td>--</td><td></td><td>--</td><td>--</td><td></td><td></td><td>--</td><td>222.38624999999996</td><td>-10.156666666666665</td></tr>
+<tr><td>549</td><td>14</td><td>NGC 7314</td><td>10.9</td><td></td><td>4.6</td><td>2.1</td><td></td><td>SAB(rs)c: II</td><td>347</td><td>338.94041666666664</td><td>-26.05083333333333</td></tr>
+<tr><td>547</td><td>93</td><td>NGC 7284</td><td>11.9</td><td></td><td>2.1</td><td>1.5</td><td></td><td>SB(s)0^0 pec</td><td>347</td><td>337.15</td><td>-24.844166666666663</td></tr>
+<tr><td>548</td><td>93</td><td>NGC 7285</td><td>11.9</td><td></td><td>2.4</td><td>1.4</td><td></td><td>SB(rs)a pec</td><td>347</td><td>337.1583333333333</td><td>-24.84083333333333</td></tr>
+<tr><td>546</td><td>226</td><td>NGC 7252</td><td>11.4</td><td></td><td>2.0</td><td>1.6</td><td></td><td>SAB0^0? pec</td><td>347</td><td>335.1866666666666</td><td>-24.678611111111106</td></tr>
+<tr><td>541</td><td>325</td><td>ESO 601- G 018</td><td>16.1</td><td></td><td>--</td><td>--</td><td></td><td></td><td>--</td><td>331.6008333333333</td><td>-21.079166666666662</td></tr>
+<tr><td>540</td><td>325</td><td>ESO 601- G 018</td><td>17.9</td><td></td><td>--</td><td>--</td><td></td><td></td><td>--</td><td>331.59666666666664</td><td>-21.077499999999997</td></tr>
+<tr><td>539</td><td>325</td><td>ESO 601- G 018</td><td>18.1</td><td></td><td>1.7</td><td>0.7</td><td></td><td></td><td>--</td><td>331.5925</td><td>-21.072499999999998</td></tr>
+</table></div></div></div>
+</div>
+<p>There we go, we now know two nifty ways to get VizieR tables with Python. Obviously there are many other things you can do with this tools. For example if you set your TAP endpoint to <code class="docutils literal notranslate"><span class="pre">https://simbad.cds.unistra.fr/simbad/sim-tap</span></code> instead of the VizieR endpoint, you can query SIMBAD just like that.</p>
+<p>If you want to learn more about the TAP interface, you can have a look at <a class="reference external" href="https://cds.unistra.fr/help/documentation/vizier-more/adql-vizier/">VizieR’s documentation</a>.</p>
+<p><a class="reference external" href="https://aladin.cds.unistra.fr/aladin.gml" title="https://aladin.cds.unistra.fr/aladin.gml"><img alt="Aladin" src="https://custom-icon-badges.demolab.com/badge/Aladin-gray.svg?logo=aladin&amp;logoColor=purple&amp;logoWidth=20" /></a></p>
+<p>Note that not all rows but only the first and last 10 rows for all columns are shown in the display. To finish off this little excursion, we now want to visualise the location of the entries of this table in an Aladin Lite widget. To do so, we tell Python to take the variable <code class="docutils literal notranslate"><span class="pre">aladin</span></code> and add the table <code class="docutils literal notranslate"><span class="pre">table_arplist</span></code> to it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span> <span class="o">=</span> <span class="n">Aladin</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">aladin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 1, "model_id": "8c6d7c8f588d4be9b138fe53499434d8"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_arplist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now explore the Aladin Lite widget. You will find that the location of the sources in the arplist table are marked with coloured symbols. You can zoom in and out to look at the different sources and check their peculiarity. If you click on one of the colour symbols, you will be able to see the corresponding row in the bottom of the Aladin Lite widget.</p>
+<p>Note if you are using Jupyter Lab instead of single Jupyter notebooks, you can open two notebooks that share a kernel. Then one notebook could contain your working environment, where you get and work on your tables ect. The other notebook could contain the Aladin Lite widget, and just remain visible all the time. This way there would be no need to scroll up and down.</p>
+</section>
+<section id="mocs-in-python">
+<h2>MOCs in Python<a class="headerlink" href="#mocs-in-python" title="Link to this heading">#</a></h2>
+<p>We can use MOCs to find out whether any of these galaxies have been observed both by SDSS and GALEX. For this task we use the <code class="docutils literal notranslate"><span class="pre">mocserver</span></code> module of <code class="docutils literal notranslate"><span class="pre">astroquery</span></code> and the functionalities of <code class="docutils literal notranslate"><span class="pre">MOCpy</span></code> to get the intersection of the MOCs. First let’s query the MOC server for all things SDSS and all things GALEX.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_sdss</span> <span class="o">=</span> <span class="n">MOCServer</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span>
+    <span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;ID=*SDSS*&quot;</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># if we don&#39;t give a region to query_region, it looks in the whole sky</span>
+<span class="n">info_sdss</span><span class="p">[[</span><span class="s2">&quot;ID&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=14</i>
+<table id="table140181911295568" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ID</th></tr></thead>
+<thead><tr><th>str25</th></tr></thead>
+<tr><td>CDS/J/ApJ/749/10/SDSS-obs</td></tr>
+<tr><td>CDS/P/HLA/SDSSg</td></tr>
+<tr><td>CDS/P/HLA/SDSSr</td></tr>
+<tr><td>CDS/P/HLA/SDSSz</td></tr>
+<tr><td>CDS/P/HST/SDSSg</td></tr>
+<tr><td>CDS/P/HST/SDSSr</td></tr>
+<tr><td>CDS/P/HST/SDSSz</td></tr>
+<tr><td>CDS/P/SDSS9/color</td></tr>
+<tr><td>CDS/P/SDSS9/color-alt</td></tr>
+<tr><td>CDS/P/SDSS9/g</td></tr>
+<tr><td>CDS/P/SDSS9/i</td></tr>
+<tr><td>CDS/P/SDSS9/r</td></tr>
+<tr><td>CDS/P/SDSS9/u</td></tr>
+<tr><td>CDS/P/SDSS9/z</td></tr>
+</table></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_galex</span> <span class="o">=</span> <span class="n">MOCServer</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;ID=*GALEX*&quot;</span><span class="p">)</span>
+<span class="n">info_galex</span><span class="p">[[</span><span class="s2">&quot;ID&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=6</i>
+<table id="table140181908365360" class="table-striped table-bordered table-condensed">
+<thead><tr><th>ID</th></tr></thead>
+<thead><tr><th>str24</th></tr></thead>
+<tr><td>CDS/P/GALEXGR6/AIS/FUV</td></tr>
+<tr><td>CDS/P/GALEXGR6/AIS/NUV</td></tr>
+<tr><td>CDS/P/GALEXGR6/AIS/color</td></tr>
+<tr><td>CDS/P/GALEXGR6_7/FUV</td></tr>
+<tr><td>CDS/P/GALEXGR6_7/NUV</td></tr>
+<tr><td>CDS/P/GALEXGR6_7/color</td></tr>
+</table></div></div></div>
+</div>
+<p>Now that we know what the relevant data sets are called, we can move on to download the corresponding MOCs,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_sdss</span> <span class="o">=</span> <span class="n">MOCServer</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span><span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;ID=CDS/P/SDSS9/color&quot;</span><span class="p">,</span> <span class="n">return_moc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">moc_galex</span> <span class="o">=</span> <span class="n">MOCServer</span><span class="o">.</span><span class="n">query_region</span><span class="p">(</span>
+    <span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;ID=CDS/P/GALEXGR6/AIS/color&quot;</span><span class="p">,</span>
+    <span class="n">return_moc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and calculate the intersection of these two MOCs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moc_intersection</span> <span class="o">=</span> <span class="n">moc_sdss</span><span class="o">.</span><span class="n">degrade_to_order</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">moc_galex</span>
+<span class="c1"># we degrade the SDSS MOC to have the same order than the Galex MOC. This step is not </span>
+<span class="c1"># mandatory and only allows to get a less precise - and thus easier to print - MOC</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The intersection of SDSS and GALEX covers&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">moc_intersection</span><span class="o">.</span><span class="n">sky_fraction</span><span class="w"> </span><span class="o">*</span><span class="mf">100.</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">% of the sky&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The intersection of SDSS and GALEX covers 32.5% of the sky
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use this MOC to filter our table of Peculiar Galaxies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+    <span class="n">ra</span><span class="o">=</span><span class="n">table_arplist</span><span class="p">[</span><span class="s2">&quot;_RAJ2000&quot;</span><span class="p">],</span>
+    <span class="n">dec</span><span class="o">=</span><span class="n">table_arplist</span><span class="p">[</span><span class="s2">&quot;_DEJ2000&quot;</span><span class="p">],</span>
+    <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">moc_intersection</span><span class="o">.</span><span class="n">contains_skycoords</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Among the </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">table_arplist</span><span class="p">)</span><span class="si">}</span><span class="s2"> peculiar galaxies, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">table_arplist</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="si">}</span><span class="s2"> are observed by both GALEX and SDSS!&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Among the 592 peculiar galaxies, 429 are observed by both GALEX and SDSS!
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mask</span></code> is a boolean table that is <code class="docutils literal notranslate"><span class="pre">True</span></code> where a peculiar galaxy is contained in the intersection of SDSS and GALEX MOCs. Doing <code class="docutils literal notranslate"><span class="pre">table_arplist[mask]</span></code> results in a smaller table corresponding to the lines that are <code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">mask</span></code>.</p>
+<p>To visualise only the galaxies within the MOC, we can add the filtered table to the AladinLite widget. This table will show up in a different colour than the first one we visualised.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span>
+    <span class="n">table_arplist</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;observed_by_GALEX_and_SDSS&quot;</span><span class="p">,</span>
+    <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+    <span class="n">source_size</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The last thing to do with our MOC is to visualise it. We can either plot it using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (see <a class="reference external" href="https://cds-astro.github.io/mocpy/examples/user_documentation.html#smoc-a-k-a-moc-spatial-coverages">MOCPy’s documentation</a>) or add it to our ipyaladin widget:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aladin</span><span class="o">.</span><span class="n">add_moc</span><span class="p">(</span><span class="n">moc_intersection</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before leaving the tutorial, don’t forget to scroll back up and look at the results in the Aladin widget where you can check that the peculiar galaxies are indeed in the MOC ;)</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_Intro_to_CDS_services_in_notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CDS services in Jupyter notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3_Cluster_of_Galaxies__the_Simple_Spectral_Access_Protocol.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Abell 1656: the Coma Cluster of Galaxies __ Simple Spectral Access Protocol (SSA)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-download-tables-from-vizier">Find and download tables from VizieR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mocs-in-python">MOCs in Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Strasbourg astronomical Data Center (CDS)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This work has a BSD-3 clause license and has been supported by the ESCAPE project (the European Science Cluster of Astronomy & Particle Physics), funded from the European Union’s Horizon 2020 research and innovation program under grant agreement n°824064, the EOSC Future project co-funded by the European Union Horizon Program call INFRAEOSC-03-2020 - grant agreement n°101017536, and the project ASTERICS supported by the European Commission Framework Programme Horizon 2020 Research and Innovation action under grant agreement n°653477.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
