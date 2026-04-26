@@ -9,4 +9,4 @@ pandas>=2.0.3
 plotly>=5.14.0.a
 pyvo>=1.4.1
 regions>=0.7
-specutils>=1.18.0
+specutils>=2.1.0
