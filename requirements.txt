@@ -7,6 +7,6 @@ matplotlib>=3.10.0
 MOCpy>=0.15.0
 pandas>=2.0.3
 plotly>=5.14.0.a
-pyvo>=1.4.1
+pyvo>=1.8.1
 regions>=0.7
 specutils>=1.18.0
