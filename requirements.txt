@@ -1,7 +1,7 @@
 astroplan>=0.10
 astropy>=6.1.5
 astroquery>=0.4.9
-cdshealpix>=0.6.0
+cdshealpix>=0.8.1
 ipyaladin>=0.3.0
 matplotlib>=3.10.0
 MOCpy>=0.15.0
